@@ -12,6 +12,7 @@
 		F9E731281FB9085C0020C89E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E731261FB9085C0020C89E /* Main.storyboard */; };
 		F9E7312A1FB9085C0020C89E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E731291FB9085C0020C89E /* Assets.xcassets */; };
 		F9E7312D1FB9085C0020C89E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E7312B1FB9085C0020C89E /* LaunchScreen.storyboard */; };
+		F9E731371FB933EC0020C89E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731361FB933EC0020C89E /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		F9E731291FB9085C0020C89E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9E7312C1FB9085C0020C89E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9E7312E1FB9085C0020C89E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9E731361FB933EC0020C89E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		F9E731381FB942F50020C89E /* turmeric.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = turmeric.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +43,7 @@
 			children = (
 				F9E731211FB9085C0020C89E /* FoodSkout */,
 				F9E731201FB9085C0020C89E /* Products */,
+				F9E731381FB942F50020C89E /* turmeric.pdf */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +60,7 @@
 			children = (
 				F9E731221FB9085C0020C89E /* AppDelegate.swift */,
 				F9E731241FB9085C0020C89E /* ViewController.swift */,
+				F9E731361FB933EC0020C89E /* GradientView.swift */,
 				F9E731261FB9085C0020C89E /* Main.storyboard */,
 				F9E731291FB9085C0020C89E /* Assets.xcassets */,
 				F9E7312B1FB9085C0020C89E /* LaunchScreen.storyboard */,
@@ -138,6 +143,7 @@
 			files = (
 				F9E731251FB9085C0020C89E /* ViewController.swift in Sources */,
 				F9E731231FB9085C0020C89E /* AppDelegate.swift in Sources */,
+				F9E731371FB933EC0020C89E /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

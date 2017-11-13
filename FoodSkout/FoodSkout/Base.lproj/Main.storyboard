@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,70 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FoodSkout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mq5-R9-FdU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNj-m9-bsZ" customClass="GradientView" customModule="FoodSkout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Editor's Pick" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WKg-Aj-VPb">
+                                        <rect key="frame" x="80" y="30" width="215" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="BqI-Wy-KMo"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="LEL-ft-65m"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.94509803921568625" green="0.14117647058823529" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="WKg-Aj-VPb" secondAttribute="trailing" constant="80" id="9Iu-JU-IwF"/>
+                                    <constraint firstItem="WKg-Aj-VPb" firstAttribute="leading" secondItem="VNj-m9-bsZ" secondAttribute="leading" constant="80" id="NzU-2Z-fDf"/>
+                                    <constraint firstItem="WKg-Aj-VPb" firstAttribute="top" secondItem="VNj-m9-bsZ" secondAttribute="top" constant="30" id="aNq-lH-p3i"/>
+                                    <constraint firstItem="WKg-Aj-VPb" firstAttribute="leading" secondItem="VNj-m9-bsZ" secondAttribute="leading" constant="80" id="eC2-Km-MXx"/>
+                                    <constraint firstItem="WKg-Aj-VPb" firstAttribute="top" secondItem="VNj-m9-bsZ" secondAttribute="top" constant="30" id="lNT-mv-gWm"/>
+                                    <constraint firstAttribute="trailing" secondItem="WKg-Aj-VPb" secondAttribute="trailing" constant="80" id="lmS-D3-eO0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="0.28416630993150682" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.090196078431372548" green="0.14901960784313725" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VNj-m9-bsZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3nn-kv-WiT"/>
+                            <constraint firstItem="Mq5-R9-FdU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="LyW-2f-0Qx"/>
+                            <constraint firstItem="Mq5-R9-FdU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ddc-dg-jRW"/>
+                            <constraint firstItem="Mq5-R9-FdU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lHy-W9-JK9"/>
+                            <constraint firstItem="VNj-m9-bsZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="od5-gW-kbn"/>
+                            <constraint firstItem="VNj-m9-bsZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sMg-Hj-Rqh"/>
+                            <constraint firstItem="Mq5-R9-FdU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="up9-U2-atV"/>
+                            <constraint firstItem="VNj-m9-bsZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yv2-uS-MrB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImg" destination="Mq5-R9-FdU" id="wKg-bP-9XK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
