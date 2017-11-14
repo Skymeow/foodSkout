@@ -13,6 +13,10 @@
 		F9E7312A1FB9085C0020C89E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E731291FB9085C0020C89E /* Assets.xcassets */; };
 		F9E7312D1FB9085C0020C89E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E7312B1FB9085C0020C89E /* LaunchScreen.storyboard */; };
 		F9E731371FB933EC0020C89E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731361FB933EC0020C89E /* GradientView.swift */; };
+		F9E7313B1FB969B90020C89E /* timeburnerbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E7313A1FB95AB40020C89E /* timeburnerbold.ttf */; };
+		F9E7313C1FB969BC0020C89E /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E731391FB95AB40020C89E /* timeburnernormal.ttf */; };
+		F9E7313E1FBA0AF30020C89E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9E7312E1FB9085C0020C89E /* Info.plist */; };
+		F9E7313F1FBA0AFA0020C89E /* TypoGraphica_demo.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9E7313D1FBA0ACC0020C89E /* TypoGraphica_demo.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,9 @@
 		F9E7312E1FB9085C0020C89E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9E731361FB933EC0020C89E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F9E731381FB942F50020C89E /* turmeric.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = turmeric.pdf; sourceTree = "<group>"; };
+		F9E731391FB95AB40020C89E /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
+		F9E7313A1FB95AB40020C89E /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
+		F9E7313D1FBA0ACC0020C89E /* TypoGraphica_demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypoGraphica_demo.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +51,9 @@
 				F9E731211FB9085C0020C89E /* FoodSkout */,
 				F9E731201FB9085C0020C89E /* Products */,
 				F9E731381FB942F50020C89E /* turmeric.pdf */,
+				F9E7313A1FB95AB40020C89E /* timeburnerbold.ttf */,
+				F9E731391FB95AB40020C89E /* timeburnernormal.ttf */,
+				F9E7313D1FBA0ACC0020C89E /* TypoGraphica_demo.otf */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,7 +138,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E7313B1FB969B90020C89E /* timeburnerbold.ttf in Resources */,
+				F9E7313C1FB969BC0020C89E /* timeburnernormal.ttf in Resources */,
+				F9E7313E1FBA0AF30020C89E /* Info.plist in Resources */,
 				F9E7312D1FB9085C0020C89E /* LaunchScreen.storyboard in Resources */,
+				F9E7313F1FBA0AFA0020C89E /* TypoGraphica_demo.otf in Resources */,
 				F9E7312A1FB9085C0020C89E /* Assets.xcassets in Resources */,
 				F9E731281FB9085C0020C89E /* Main.storyboard in Resources */,
 			);
