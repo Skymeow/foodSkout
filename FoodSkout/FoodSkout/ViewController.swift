@@ -28,6 +28,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var circleElement3: UIButton!
     
+    
+    @IBOutlet weak var buttonStackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         for family: String in UIFont.familyNames
@@ -38,15 +41,19 @@ class ViewController: UIViewController {
                 print("== \(names)")
             }
         }
-        self.backgroundImg.image = UIImage(named: "turmeric")
+        self.backgroundImg.image = UIImage(named: "turmeric")!
         
         headerLabel.font = UIFont(name: "Thonburi-Bold", size: 30)
         
         foodInfoLabel.text = "Turmeric is a rhizomatous herbaceous perennial plant of the ginger family, Zingiberaceae. It is native to Southeast Asia"
+        foodInfoLabel.numberOfLines = 0
         
         nutritionElement1.text = "Ve"
         nutritionElement2.text = "Vb"
         nutritionElement3.text = "Vc"
+        nutritionElement1.textColor = UIColor(red:0.95, green:0.14, blue:0.47, alpha:1.0)
+        nutritionElement2.textColor = UIColor(red:0.95, green:0.14, blue:0.47, alpha:1.0)
+        nutritionElement3.textColor = UIColor(red:0.95, green:0.14, blue:0.47, alpha:1.0)
         
         circleElement1.setTitle("E", for: .normal)
         circleElement1.setTitleColor(UIColor.white, for: .normal)
@@ -62,6 +69,8 @@ class ViewController: UIViewController {
         circleElement3.setTitleColor(UIColor.white, for: .normal)
         circleElement3.titleLabel?.font = UIFont(name: "Thonburi-Bold", size: 38)
         circleElement3.layer.cornerRadius = 0.5 * circleElement3.bounds.width
+        
+        pinBackground(backgroundButtonView, to: buttonStackView)
         
     }
 
