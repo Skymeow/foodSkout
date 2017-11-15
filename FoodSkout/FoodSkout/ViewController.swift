@@ -10,16 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var branded_food_results = [Food]()
+    var common_food_results = [Food]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         Networking.instance.fetch(route: .food, method: "Get", headers: [:], data: nil) { (data) in
-//             let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
-            let foods = try? JSONDecoder().decode(Foods.self, from: data)
-            for food in (foods?.common)! {
-                print(food)
+
+            guard let foods = try? JSONDecoder().decode(Foods.self, from: data) else {return}
+            
+            DispatchQueue.main.async {
+                self.branded_food_results = foods.branded
+                self.common_food_results = foods.common
             }
         }
     }
