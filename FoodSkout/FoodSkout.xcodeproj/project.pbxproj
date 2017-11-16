@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		908B1E741FBE287800E76F22 /* Nutritionix Track API - Full Nutrient USDA Field Definitions [PUBLIC] - Sheet1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 908B1E731FBE287800E76F22 /* Nutritionix Track API - Full Nutrient USDA Field Definitions [PUBLIC] - Sheet1.csv */; };
+		908B1E781FBE291800E76F22 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908B1E771FBE291800E76F22 /* Nutrient.swift */; };
+		90EDBAFC1FBA42A000C39D75 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDBAFB1FBA42A000C39D75 /* Networking.swift */; };
+		90EDBAFE1FBA432F00C39D75 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDBAFD1FBA432F00C39D75 /* Food.swift */; };
 		F9E731231FB9085C0020C89E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731221FB9085C0020C89E /* AppDelegate.swift */; };
 		F9E731251FB9085C0020C89E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731241FB9085C0020C89E /* ViewController.swift */; };
 		F9E731281FB9085C0020C89E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E731261FB9085C0020C89E /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		908B1E731FBE287800E76F22 /* Nutritionix Track API - Full Nutrient USDA Field Definitions [PUBLIC] - Sheet1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Nutritionix Track API - Full Nutrient USDA Field Definitions [PUBLIC] - Sheet1.csv"; sourceTree = "<group>"; };
+		908B1E771FBE291800E76F22 /* Nutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
+		90EDBAFB1FBA42A000C39D75 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		90EDBAFD1FBA432F00C39D75 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		F9E7311F1FB9085C0020C89E /* FoodSkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodSkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E731221FB9085C0020C89E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9E731241FB9085C0020C89E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +43,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		908B1E751FBE288200E76F22 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				908B1E731FBE287800E76F22 /* Nutritionix Track API - Full Nutrient USDA Field Definitions [PUBLIC] - Sheet1.csv */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
+		90EDBAF71FBA374C00C39D75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90EDBAFD1FBA432F00C39D75 /* Food.swift */,
+				908B1E771FBE291800E76F22 /* Nutrient.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90EDBAF81FBA375400C39D75 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		90EDBAF91FBA375900C39D75 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		90EDBAFA1FBA375F00C39D75 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				90EDBAFB1FBA42A000C39D75 /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		F9E731161FB9085C0020C89E = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +101,11 @@
 		F9E731211FB9085C0020C89E /* FoodSkout */ = {
 			isa = PBXGroup;
 			children = (
+				908B1E751FBE288200E76F22 /* vendor */,
+				90EDBAFA1FBA375F00C39D75 /* Networking */,
+				90EDBAF91FBA375900C39D75 /* Controller */,
+				90EDBAF81FBA375400C39D75 /* View */,
+				90EDBAF71FBA374C00C39D75 /* Model */,
 				F9E731221FB9085C0020C89E /* AppDelegate.swift */,
 				F9E731241FB9085C0020C89E /* ViewController.swift */,
 				F9E731261FB9085C0020C89E /* Main.storyboard */,
@@ -123,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				908B1E741FBE287800E76F22 /* Nutritionix Track API - Full Nutrient USDA Field Definitions [PUBLIC] - Sheet1.csv in Resources */,
 				F9E7312D1FB9085C0020C89E /* LaunchScreen.storyboard in Resources */,
 				F9E7312A1FB9085C0020C89E /* Assets.xcassets in Resources */,
 				F9E731281FB9085C0020C89E /* Main.storyboard in Resources */,
@@ -136,6 +189,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90EDBAFC1FBA42A000C39D75 /* Networking.swift in Sources */,
+				908B1E781FBE291800E76F22 /* Nutrient.swift in Sources */,
+				90EDBAFE1FBA432F00C39D75 /* Food.swift in Sources */,
 				F9E731251FB9085C0020C89E /* ViewController.swift in Sources */,
 				F9E731231FB9085C0020C89E /* AppDelegate.swift in Sources */,
 			);
