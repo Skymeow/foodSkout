@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct Foods: Codable {
+    var branded: [Food]
+    var common: [Food]
+}
+
 struct Food: Codable {
     var food_name: String
     var full_nutrients: [Nutrient]?

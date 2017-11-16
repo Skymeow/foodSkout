@@ -11,5 +11,4 @@ import UIKit
 struct Nutrient: Codable{
     var value: Double
     var attr_id: Int
-    
 }

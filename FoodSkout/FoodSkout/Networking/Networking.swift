@@ -57,7 +57,7 @@ class Networking {
     
     func fetch(route: Route, method: String, headers: [String: String], data: Encodable?, completion: @escaping (Data) -> Void) {
         
-        let fullUrlString = "https://trackapi.nutritionix.com/v2/search/instant?query=organifi"
+        let fullUrlString = "https://trackapi.nutritionix.com/v2/search/instant?query=bananas&detailed=true"
         
         let url = URL(string: fullUrlString)!
         

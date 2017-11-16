@@ -17,8 +17,10 @@ class ViewController: UIViewController {
         
         Networking.instance.fetch(route: .food, method: "Get", headers: [:], data: nil) { (data) in
 //             let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
-            let json = try? JSONDecoder().decode([Food].self, from: data)
-            print(json ?? "no hay na")
+            let foods = try? JSONDecoder().decode(Foods.self, from: data)
+            for food in (foods?.common)! {
+                print(food)
+            }
         }
     }
 
