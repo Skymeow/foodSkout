@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		908B1E741FBE287800E76F22 /* Nutritionix Track API - Full Nutrient USDA Field Definitions [PUBLIC] - Sheet1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 908B1E731FBE287800E76F22 /* Nutritionix Track API - Full Nutrient USDA Field Definitions [PUBLIC] - Sheet1.csv */; };
+		0B55C92947DD2097D8DB33FD /* Pods_FoodSkout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461E2505849C8D86961970BF /* Pods_FoodSkout.framework */; };
+		90146CD71FBE67DB00A966BF /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90146CD61FBE67DB00A966BF /* csv.swift */; };
+		908B1E741FBE287800E76F22 /* Sheet1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 908B1E731FBE287800E76F22 /* Sheet1.csv */; };
 		908B1E781FBE291800E76F22 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908B1E771FBE291800E76F22 /* Nutrient.swift */; };
 		90EDBAFC1FBA42A000C39D75 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDBAFB1FBA42A000C39D75 /* Networking.swift */; };
 		90EDBAFE1FBA432F00C39D75 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDBAFD1FBA432F00C39D75 /* Food.swift */; };
@@ -19,10 +21,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		908B1E731FBE287800E76F22 /* Nutritionix Track API - Full Nutrient USDA Field Definitions [PUBLIC] - Sheet1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Nutritionix Track API - Full Nutrient USDA Field Definitions [PUBLIC] - Sheet1.csv"; sourceTree = "<group>"; };
+		460E122294992BDB8C976FEE /* Pods-FoodSkout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodSkout.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout.release.xcconfig"; sourceTree = "<group>"; };
+		461E2505849C8D86961970BF /* Pods_FoodSkout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodSkout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90146CD61FBE67DB00A966BF /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
+		908B1E731FBE287800E76F22 /* Sheet1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sheet1.csv; sourceTree = "<group>"; };
 		908B1E771FBE291800E76F22 /* Nutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
 		90EDBAFB1FBA42A000C39D75 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		90EDBAFD1FBA432F00C39D75 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		A25A7B443C9D46C9CE5B4526 /* Pods-FoodSkout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodSkout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout.debug.xcconfig"; sourceTree = "<group>"; };
 		F9E7311F1FB9085C0020C89E /* FoodSkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodSkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E731221FB9085C0020C89E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9E731241FB9085C0020C89E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,16 +43,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B55C92947DD2097D8DB33FD /* Pods_FoodSkout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C5D137B637A3CDC21F21D70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				461E2505849C8D86961970BF /* Pods_FoodSkout.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90146CD51FBE67D400A966BF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				90146CD61FBE67DB00A966BF /* csv.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		908B1E751FBE288200E76F22 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
-				908B1E731FBE287800E76F22 /* Nutritionix Track API - Full Nutrient USDA Field Definitions [PUBLIC] - Sheet1.csv */,
+				908B1E731FBE287800E76F22 /* Sheet1.csv */,
 			);
 			path = vendor;
 			sourceTree = "<group>";
@@ -82,11 +105,22 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		C72BA1BED1BC764F99AC9D26 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A25A7B443C9D46C9CE5B4526 /* Pods-FoodSkout.debug.xcconfig */,
+				460E122294992BDB8C976FEE /* Pods-FoodSkout.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F9E731161FB9085C0020C89E = {
 			isa = PBXGroup;
 			children = (
 				F9E731211FB9085C0020C89E /* FoodSkout */,
 				F9E731201FB9085C0020C89E /* Products */,
+				C72BA1BED1BC764F99AC9D26 /* Pods */,
+				5C5D137B637A3CDC21F21D70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +135,7 @@
 		F9E731211FB9085C0020C89E /* FoodSkout */ = {
 			isa = PBXGroup;
 			children = (
+				90146CD51FBE67D400A966BF /* Util */,
 				908B1E751FBE288200E76F22 /* vendor */,
 				90EDBAFA1FBA375F00C39D75 /* Networking */,
 				90EDBAF91FBA375900C39D75 /* Controller */,
@@ -123,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9E731311FB9085C0020C89E /* Build configuration list for PBXNativeTarget "FoodSkout" */;
 			buildPhases = (
+				0DB3756989A63279ACFAF874 /* [CP] Check Pods Manifest.lock */,
 				F9E7311B1FB9085C0020C89E /* Sources */,
 				F9E7311C1FB9085C0020C89E /* Frameworks */,
 				F9E7311D1FB9085C0020C89E /* Resources */,
+				FEF483921171130E5A2DF70F /* [CP] Embed Pods Frameworks */,
+				60B29E01A87A878CADDE002A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -175,7 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				908B1E741FBE287800E76F22 /* Nutritionix Track API - Full Nutrient USDA Field Definitions [PUBLIC] - Sheet1.csv in Resources */,
+				908B1E741FBE287800E76F22 /* Sheet1.csv in Resources */,
 				F9E7312D1FB9085C0020C89E /* LaunchScreen.storyboard in Resources */,
 				F9E7312A1FB9085C0020C89E /* Assets.xcassets in Resources */,
 				F9E731281FB9085C0020C89E /* Main.storyboard in Resources */,
@@ -184,11 +222,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0DB3756989A63279ACFAF874 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodSkout-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60B29E01A87A878CADDE002A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEF483921171130E5A2DF70F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F9E7311B1FB9085C0020C89E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90146CD71FBE67DB00A966BF /* csv.swift in Sources */,
 				90EDBAFC1FBA42A000C39D75 /* Networking.swift in Sources */,
 				908B1E781FBE291800E76F22 /* Nutrient.swift in Sources */,
 				90EDBAFE1FBA432F00C39D75 /* Food.swift in Sources */,
@@ -328,6 +421,7 @@
 		};
 		F9E731321FB9085C0020C89E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A25A7B443C9D46C9CE5B4526 /* Pods-FoodSkout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -343,6 +437,7 @@
 		};
 		F9E731331FB9085C0020C89E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 460E122294992BDB8C976FEE /* Pods-FoodSkout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
