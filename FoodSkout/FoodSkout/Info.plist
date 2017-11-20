@@ -4,14 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
+		<string>timeburnerbold.ttf</string>
+		<string>timeburnernormal.ttf</string>
+		<string>TypoGraphica_demo.otf</string>
 	</array>
-	<key>item 0</key>
-	<string>timeburnerbold.ttf</string>
-	<key>item 1</key>
-	<string>timeburnernormal.ttf</string>
-	<key>item 2</key>
-	<string>TypoGraphica_demo.otf</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

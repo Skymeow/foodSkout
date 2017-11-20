@@ -44,7 +44,7 @@ import UIKit
         
         let x1 = cos(radians) * 0.5 + 0.5
         let x2 = 1 - x1
-        let y1 = sin(radians) * 0.5 + 0.5
+        let y1 = sin(radians) * 0.5 + 0.3
         let y2 = 1 - y1 + 0.2
         
         gradientLayer.endPoint = CGPoint(x: x1, y: y1)
@@ -52,8 +52,6 @@ import UIKit
         
         self.setNeedsDisplay()
     }
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+
 }
 

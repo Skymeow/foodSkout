@@ -1,4 +1,4 @@
-//
+ //
 //  ViewController.swift
 //  FoodSkout
 //
@@ -51,9 +51,9 @@ class ViewController: UIViewController {
         nutritionElement1.text = "Ve"
         nutritionElement2.text = "Vb"
         nutritionElement3.text = "Vc"
-        nutritionElement1.textColor = UIColor(red:0.95, green:0.14, blue:0.47, alpha:1.0)
-        nutritionElement2.textColor = UIColor(red:0.95, green:0.14, blue:0.47, alpha:1.0)
-        nutritionElement3.textColor = UIColor(red:0.95, green:0.14, blue:0.47, alpha:1.0)
+        nutritionElement1.textColor = UIColor(red:0.88, green:0.16, blue:0.33, alpha:1.0)
+        nutritionElement2.textColor = UIColor(red:0.88, green:0.16, blue:0.33, alpha:1.0)
+        nutritionElement3.textColor = UIColor(red:0.88, green:0.16, blue:0.33, alpha:1.0)
         
         circleElement1.setTitle("E", for: .normal)
         circleElement1.setTitleColor(UIColor.white, for: .normal)
@@ -72,6 +72,11 @@ class ViewController: UIViewController {
         
         pinBackground(backgroundButtonView, to: buttonStackView)
         
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        backgroundButtonView.addBorder(side: .top, thickness: 0.65, color: UIColor(red:0.78, green:0.58, blue:0.58, alpha:1.0), leftOffset: 0, rightOffset: 0)
     }
 
     override func didReceiveMemoryWarning() {
