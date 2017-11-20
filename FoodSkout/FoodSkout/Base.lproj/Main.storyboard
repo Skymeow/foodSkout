@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1FJ-Fu-28v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QtE-54-ONj">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FoodSkout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="FoodSkout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,67 +209,134 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-191" y="580"/>
+            <point key="canvasLocation" x="-1194" y="20"/>
         </scene>
-        <!--Organ View Controller-->
-        <scene sceneID="MNU-XB-jDH">
+        <!--Pick Organ View Controller-->
+        <scene sceneID="wVY-D7-HGJ">
             <objects>
-                <viewController id="1FJ-Fu-28v" customClass="OrganViewController" customModule="FoodSkout" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Pj8-72-OOz">
+                <viewController id="QtE-54-ONj" customClass="PickOrganViewController" customModule="FoodSkout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EVe-ne-QUL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5y-4h-4Ds">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="304"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9f-TW-G2W" userLabel="UpperView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="284"/>
+                                <connections>
+                                    <segue destination="zAU-ig-ihs" kind="embed" id="dbl-rO-cKp"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoS-8P-zYI" userLabel="Lower View">
+                                <rect key="frame" x="0.0" y="333" width="375" height="445"/>
+                                <connections>
+                                    <segue destination="elP-Dg-vRl" kind="embed" id="i12-OY-VQM"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KoS-8P-zYI" firstAttribute="trailing" secondItem="0PV-Br-GhM" secondAttribute="trailing" id="33s-7C-scI"/>
+                            <constraint firstItem="w9f-TW-G2W" firstAttribute="trailing" secondItem="0PV-Br-GhM" secondAttribute="trailing" id="44f-FE-dhn"/>
+                            <constraint firstItem="0PV-Br-GhM" firstAttribute="bottom" secondItem="w9f-TW-G2W" secondAttribute="bottom" constant="450" id="6tL-PT-whK"/>
+                            <constraint firstItem="KoS-8P-zYI" firstAttribute="leading" secondItem="0PV-Br-GhM" secondAttribute="leading" id="Ayx-C9-Vzo"/>
+                            <constraint firstItem="KoS-8P-zYI" firstAttribute="bottom" secondItem="0PV-Br-GhM" secondAttribute="bottom" id="G96-IR-Vdb"/>
+                            <constraint firstItem="w9f-TW-G2W" firstAttribute="leading" secondItem="0PV-Br-GhM" secondAttribute="leading" id="U7X-Oz-xYY"/>
+                            <constraint firstItem="w9f-TW-G2W" firstAttribute="top" secondItem="0PV-Br-GhM" secondAttribute="top" id="cBE-a4-ofl"/>
+                            <constraint firstItem="KoS-8P-zYI" firstAttribute="top" secondItem="w9f-TW-G2W" secondAttribute="bottom" constant="5" id="rGY-Yk-U8C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0PV-Br-GhM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xzf-7F-HQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-270" y="20"/>
+        </scene>
+        <!--Upper View Controller-->
+        <scene sceneID="zMi-tN-hza">
+            <objects>
+                <viewController id="zAU-ig-ihs" customClass="UpperViewController" customModule="FoodSkout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4YJ-By-Oq3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="284"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVs-cP-hWV">
+                                <rect key="frame" x="0.0" y="44" width="375" height="240"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I6g-KY-fqm">
-                                        <rect key="frame" x="77" y="0.0" width="220" height="304"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNI-VY-Kec">
+                                        <rect key="frame" x="77.666666666666686" y="0.0" width="220" height="240"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="220" id="PUJ-PP-7q0"/>
+                                            <constraint firstAttribute="width" constant="220" id="s2z-5l-gFg"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="EXN-NL-c8w" appends="YES" id="bu7-cs-Sjd"/>
+                                            <outletCollection property="gestureRecognizers" destination="hvs-KA-g3n" appends="YES" id="yOd-zH-wfP"/>
+                                        </connections>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.87843137250000003" green="0.15686274510000001" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
-                                <gestureRecognizers/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.15686274510000001" blue="0.42579305810000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="I6g-KY-fqm" firstAttribute="top" secondItem="D5y-4h-4Ds" secondAttribute="top" id="fIk-Tp-nMH"/>
-                                    <constraint firstItem="I6g-KY-fqm" firstAttribute="centerX" secondItem="D5y-4h-4Ds" secondAttribute="centerX" id="gqs-8A-KBe"/>
-                                    <constraint firstAttribute="bottom" secondItem="I6g-KY-fqm" secondAttribute="bottom" id="h4W-XW-6ql"/>
+                                    <constraint firstItem="GNI-VY-Kec" firstAttribute="top" secondItem="PVs-cP-hWV" secondAttribute="top" id="NDH-g0-Koy"/>
+                                    <constraint firstItem="GNI-VY-Kec" firstAttribute="centerX" secondItem="PVs-cP-hWV" secondAttribute="centerX" id="gkE-HN-wSn"/>
+                                    <constraint firstAttribute="bottom" secondItem="GNI-VY-Kec" secondAttribute="bottom" id="qi1-Gd-vWd"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="xwo-Xh-hay" appends="YES" id="Kwb-ic-G4a"/>
-                                    <outletCollection property="gestureRecognizers" destination="A3H-Gw-6OW" appends="YES" id="gJ9-tb-JWJ"/>
-                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="D5y-4h-4Ds" firstAttribute="leading" secondItem="SIA-oG-DVO" secondAttribute="leading" id="7xP-MB-dx9"/>
-                            <constraint firstItem="D5y-4h-4Ds" firstAttribute="top" secondItem="Pj8-72-OOz" secondAttribute="top" id="EUQ-vv-h7g"/>
-                            <constraint firstItem="SIA-oG-DVO" firstAttribute="bottom" secondItem="D5y-4h-4Ds" secondAttribute="bottom" constant="474" id="NWb-E6-dsd"/>
-                            <constraint firstItem="D5y-4h-4Ds" firstAttribute="trailing" secondItem="SIA-oG-DVO" secondAttribute="trailing" id="kFA-ks-Vq0"/>
+                            <constraint firstItem="PVs-cP-hWV" firstAttribute="leading" secondItem="qOV-ns-ar0" secondAttribute="leading" id="7MA-kt-9ss"/>
+                            <constraint firstItem="PVs-cP-hWV" firstAttribute="trailing" secondItem="qOV-ns-ar0" secondAttribute="trailing" id="OkE-yt-34N"/>
+                            <constraint firstAttribute="bottom" secondItem="PVs-cP-hWV" secondAttribute="bottom" id="Rgy-xb-K3i"/>
+                            <constraint firstItem="PVs-cP-hWV" firstAttribute="top" secondItem="qOV-ns-ar0" secondAttribute="top" id="UO3-UR-45X"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="SIA-oG-DVO"/>
+                        <viewLayoutGuide key="safeArea" id="qOV-ns-ar0"/>
                     </view>
                     <connections>
-                        <outlet property="scrollView" destination="I6g-KY-fqm" id="ksh-yx-7UB"/>
-                        <outlet property="upperView" destination="D5y-4h-4Ds" id="cPu-7P-grj"/>
+                        <outlet property="scrollView" destination="GNI-VY-Kec" id="7wm-bd-M27"/>
+                        <outlet property="upperView" destination="PVs-cP-hWV" id="eJO-EL-dmo"/>
+                        <outlet property="view" destination="PVs-cP-hWV" id="V8b-Bg-sB3"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NrL-Ac-d7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="xwo-Xh-hay">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p72-DS-iON" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="EXN-NL-c8w">
                     <connections>
-                        <action selector="slideToRight:" destination="1FJ-Fu-28v" id="G6b-hL-KVm"/>
+                        <action selector="swipeToRight:" destination="zAU-ig-ihs" id="h91-uv-2IS"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="A3H-Gw-6OW">
+                <swipeGestureRecognizer direction="left" id="hvs-KA-g3n">
                     <connections>
-                        <action selector="slideToLeft:" destination="1FJ-Fu-28v" id="BOb-Pu-Hav"/>
+                        <action selector="swipeToLeft:" destination="zAU-ig-ihs" id="y9J-OP-RMC"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="541.60000000000002" y="70.935960591133011"/>
+            <point key="canvasLocation" x="870" y="-176"/>
+        </scene>
+        <!--Lower Table View Controller-->
+        <scene sceneID="N3G-DA-BR0">
+            <objects>
+                <tableViewController id="elP-Dg-vRl" customClass="LowerTableViewController" customModule="FoodSkout" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2jj-TA-pjY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="445"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="110" id="aMg-oJ-bta">
+                                <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aMg-oJ-bta" id="BBB-lt-gKN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109.66666666666667"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="elP-Dg-vRl" id="ngu-Lj-lMm"/>
+                            <outlet property="delegate" destination="elP-Dg-vRl" id="RWA-2n-YsN"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dj2-j0-4nh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="870" y="258"/>
         </scene>
     </scenes>
     <resources>

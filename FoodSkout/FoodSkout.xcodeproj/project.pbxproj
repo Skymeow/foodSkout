@@ -10,9 +10,11 @@
 		F9567EE71FBBB3CF0069D7DF /* BackgroundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */; };
 		F9567EE81FBC1C7C0069D7DF /* turmeric.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F9E731381FB942F50020C89E /* turmeric.pdf */; };
 		F9567EEA1FBCD6AA0069D7DF /* UIView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9567EE91FBCD6AA0069D7DF /* UIView+Borders.swift */; };
-		F9D98CE11FC25C1900E32C11 /* OrganViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D98CE01FC25C1900E32C11 /* OrganViewController.swift */; };
+		F9887EC91FC3651F007324B0 /* UpperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9887EC81FC3651F007324B0 /* UpperViewController.swift */; };
+		F9887ECB1FC3685B007324B0 /* LowerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9887ECA1FC3685B007324B0 /* LowerTableViewController.swift */; };
+		F9D98CE51FC357B700E32C11 /* PickOrganViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D98CE41FC357B700E32C11 /* PickOrganViewController.swift */; };
 		F9E731231FB9085C0020C89E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731221FB9085C0020C89E /* AppDelegate.swift */; };
-		F9E731251FB9085C0020C89E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731241FB9085C0020C89E /* ViewController.swift */; };
+		F9E731251FB9085C0020C89E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731241FB9085C0020C89E /* HomeViewController.swift */; };
 		F9E731281FB9085C0020C89E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E731261FB9085C0020C89E /* Main.storyboard */; };
 		F9E7312A1FB9085C0020C89E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E731291FB9085C0020C89E /* Assets.xcassets */; };
 		F9E7312D1FB9085C0020C89E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E7312B1FB9085C0020C89E /* LaunchScreen.storyboard */; };
@@ -26,10 +28,12 @@
 /* Begin PBXFileReference section */
 		F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundButtonView.swift; sourceTree = "<group>"; };
 		F9567EE91FBCD6AA0069D7DF /* UIView+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Borders.swift"; sourceTree = "<group>"; };
-		F9D98CE01FC25C1900E32C11 /* OrganViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganViewController.swift; sourceTree = "<group>"; };
+		F9887EC81FC3651F007324B0 /* UpperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperViewController.swift; sourceTree = "<group>"; };
+		F9887ECA1FC3685B007324B0 /* LowerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerTableViewController.swift; sourceTree = "<group>"; };
+		F9D98CE41FC357B700E32C11 /* PickOrganViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickOrganViewController.swift; sourceTree = "<group>"; };
 		F9E7311F1FB9085C0020C89E /* FoodSkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodSkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E731221FB9085C0020C89E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F9E731241FB9085C0020C89E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F9E731241FB9085C0020C89E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9E731271FB9085C0020C89E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9E731291FB9085C0020C89E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9E7312C1FB9085C0020C89E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,10 +88,12 @@
 			isa = PBXGroup;
 			children = (
 				F9E731221FB9085C0020C89E /* AppDelegate.swift */,
-				F9E731241FB9085C0020C89E /* ViewController.swift */,
-				F9D98CE01FC25C1900E32C11 /* OrganViewController.swift */,
+				F9E731241FB9085C0020C89E /* HomeViewController.swift */,
 				F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */,
 				F9E731361FB933EC0020C89E /* GradientView.swift */,
+				F9D98CE41FC357B700E32C11 /* PickOrganViewController.swift */,
+				F9887EC81FC3651F007324B0 /* UpperViewController.swift */,
+				F9887ECA1FC3685B007324B0 /* LowerTableViewController.swift */,
 				F9E731261FB9085C0020C89E /* Main.storyboard */,
 				F9567EEB1FBCD8550069D7DF /* Helpers */,
 				F9E731291FB9085C0020C89E /* Assets.xcassets */,
@@ -174,12 +180,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9E731251FB9085C0020C89E /* ViewController.swift in Sources */,
+				F9887ECB1FC3685B007324B0 /* LowerTableViewController.swift in Sources */,
+				F9E731251FB9085C0020C89E /* HomeViewController.swift in Sources */,
 				F9E731231FB9085C0020C89E /* AppDelegate.swift in Sources */,
 				F9E731371FB933EC0020C89E /* GradientView.swift in Sources */,
 				F9567EE71FBBB3CF0069D7DF /* BackgroundButtonView.swift in Sources */,
-				F9D98CE11FC25C1900E32C11 /* OrganViewController.swift in Sources */,
+				F9D98CE51FC357B700E32C11 /* PickOrganViewController.swift in Sources */,
 				F9567EEA1FBCD6AA0069D7DF /* UIView+Borders.swift in Sources */,
+				F9887EC91FC3651F007324B0 /* UpperViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

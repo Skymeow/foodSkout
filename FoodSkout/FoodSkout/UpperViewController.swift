@@ -1,27 +1,27 @@
 //
-//  OrganViewController.swift
+//  UpperViewController.swift
 //  FoodSkout
 //
-//  Created by Sky Xu on 11/19/17.
+//  Created by Sky Xu on 11/20/17.
 //  Copyright © 2017 Sky Xu. All rights reserved.
 //
 
 import UIKit
 
-class OrganViewController: UIViewController {
+class UpperViewController: UIViewController {
 
-    @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var upperView: UIView!
     
     var images = [UIImageView]()
-//    we have 4 pics for now
+    //    we have 4 pics for now
     let maxPage = 3
     let minPage = 0
     var currentPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //        self.view.addSubview(FoodDetailTableView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,7 +46,7 @@ class OrganViewController: UIViewController {
     }
     
     /** set scrolling view point and create animation to increse scrolled img while revert the size of non-active img view
- */
+     */
     func scrollMove(direction: Int) {
         currentPage += direction
         let point: CGPoint = CGPoint(x: scrollView.frame.size.width * CGFloat(currentPage), y: 0.0)
@@ -63,14 +63,13 @@ class OrganViewController: UIViewController {
         }
     }
     
-    @IBAction func slideToRight(_ sender: UISwipeGestureRecognizer) {
+    @IBAction func swipeToRight(_ sender: UISwipeGestureRecognizer) {
         if (currentPage < maxPage) {
             scrollMove(direction: 1)
         }
     }
     
-    
-    @IBAction func slideToLeft(_ sender: UISwipeGestureRecognizer) {
+    @IBAction func swipeToLeft(_ sender: UISwipeGestureRecognizer) {
         if (currentPage > minPage) {
             scrollMove(direction: -1)
         }
