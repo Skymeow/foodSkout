@@ -14,7 +14,7 @@ app = Flask(__name__)
 mongo = MongoClient('localhost', 27017)
 # mongo = MongoClient(app.config['MONGODB_URI'])
 # app.db = mongo.trip_planner_development
-app.db = mongo.trip_panner
+app.db = mongo.foodskout
 app.bcrypt_rounds = 12
 api = Api(app)
 
@@ -133,108 +133,109 @@ class User(Resource):
         return ({'deleted': 'User with email ' + email + " has been deleted"}, 200, None)
 
 
-class Trip(Resource):
+class Organ(Resource):
 
-    @auth_function
-    def get(self, user_id):
-        """Get a trip. If no parameter was specified, then get all trips"""
+    # @auth_function
+    def get(self):
+        """Get an organ. If no parameter was specified, then get all organs"""
         args = request.args
-        trips_col = app.db.trips
+        organs_col = app.db.organs
 
-        if 'destination' in args or 'start_date' in args:
-            trip_destination = args.get('destination')
-            trip_start_date = args.get('start_date')
-            trip = trips_col.find_one({
-                'destination': trip_destination
-            })
-            if trip is None:
-                return ({'error': 'no trip found'}, 404, None)
+        # if 'destination' in args or 'start_date' in args:
+        #     trip_destination = args.get('destination')
+        #     trip_start_date = args.get('start_date')
+        #     trip = organs_col.find_one({
+        #         'destination': trip_destination
+        #     })
+        #     if trip is None:
+        #         return ({'error': 'no trip found'}, 404, None)
+        #
+        #     return (trip, 200, None)
 
-            return (trip, 200, None)
+        # print(user_id)
+        organs = organs_col.find()
+        # organs = organs_col.find({"user_id": user_id})
+        organs = json.loads(dumps(organs))
+        print(organs)
+        return (organs, 200, None)
 
-        print(user_id)
-        trips = trips_col.find({"user_id": user_id})
-        trips = json.loads(dumps(trips))
-        print(trips)
-        return (trips, 200, None)
-
-    @auth_function
-    def post(self, user_id):
-        trips_col = app.db.trips
+    # @auth_function
+    def post(self):
+        organs_col = app.db.organs
         json = request.json
         print(json)
 
-        if ('destination' not in json
-        or 'start_date' not in json
-        or user_id is None):
-            return ({'error': 'missing required fields'}, 400, None)
-        else:
-            json['user_id'] = user_id
-            trips_col.insert_one(json)
-            return (json, 201, None)
-
-    @auth_function
-    def put(self, user_id):
-        args = request.args
-        json = request.json
-        trips_col = app.db.trips
-
-        trip_destination = json.get('destination') if json.get('destination') else None
-        trip_start_date = args.get('start_date') if args.get('start_date') else None
-        print(json)
-        print(args)
-        trip = trips_col.find_one({
-            'destination': trip_destination
-        })
-
-        if json.get('waypoints'):
-            waypoints = json.get('waypoints')
-
-            if waypoints[0].get('destination') is None:
-                return (
-                    {'error': 'Updating/Adding a waypoint without specifying destination'},
-                    403,
-                    None
-                    )
-            location = waypoints[0].get('location')
-            if location.get('latitude') is None or location.get('longitude') is None:
-                return (
-                    {'error': 'latitude or longitude is missing for the waypoint'},
-                    403,
-                    None
-                    )
-
-        if trip is not None:
-            if 'destination' in json:
-                trip['destination'] = json['destination']
-
-            if 'start_date' in json:
-                trip['start_date'] = json['start_date']
-
-            if 'completed' in json:
-                trip['completed'] = json['completed']
-
-            trips_col.save(trip)
-            return (trip, 200, None)
-
-        return ({'error': 'no trip with that destination found'}, 404, None)
-
-    @auth_function
-    def delete(self, id):
-        args = request.args
-        trip_id = args.get('_id') if args.get('_id') else None
-
-        if trip_id is None:
-            return({'error': 'trip with id does not exist'}, 404, None)
-
-        trips_col = app.db.trips
-        trips_col.delete_one({'_id': trip_id})
-        return(None, 200, None)
+        # if ('destination' not in json
+        # or 'start_date' not in json
+        # or user_id is None):
+        #     return ({'error': 'missing required fields'}, 400, None)
+        # else:
+        #     json['user_id'] = user_id
+        organs_col.insert_one(json)
+        return (json, 201, None)
+    #
+    # @auth_function
+    # def put(self, user_id):
+    #     args = request.args
+    #     json = request.json
+    #     organs_col = app.db.organs
+    #
+    #     trip_destination = json.get('destination') if json.get('destination') else None
+    #     trip_start_date = args.get('start_date') if args.get('start_date') else None
+    #     print(json)
+    #     print(args)
+    #     trip = organs_col.find_one({
+    #         'destination': trip_destination
+    #     })
+    #
+    #     if json.get('waypoints'):
+    #         waypoints = json.get('waypoints')
+    #
+    #         if waypoints[0].get('destination') is None:
+    #             return (
+    #                 {'error': 'Updating/Adding a waypoint without specifying destination'},
+    #                 403,
+    #                 None
+    #                 )
+    #         location = waypoints[0].get('location')
+    #         if location.get('latitude') is None or location.get('longitude') is None:
+    #             return (
+    #                 {'error': 'latitude or longitude is missing for the waypoint'},
+    #                 403,
+    #                 None
+    #                 )
+    #
+    #     if trip is not None:
+    #         if 'destination' in json:
+    #             trip['destination'] = json['destination']
+    #
+    #         if 'start_date' in json:
+    #             trip['start_date'] = json['start_date']
+    #
+    #         if 'completed' in json:
+    #             trip['completed'] = json['completed']
+    #
+    #         organs_col.save(trip)
+    #         return (trip, 200, None)
+    #
+    #     return ({'error': 'no trip with that destination found'}, 404, None)
+    #
+    # @auth_function
+    # def delete(self, id):
+    #     args = request.args
+    #     trip_id = args.get('_id') if args.get('_id') else None
+    #
+    #     if trip_id is None:
+    #         return({'error': 'trip with id does not exist'}, 404, None)
+    #
+    #     organs_col = app.db.organs
+    #     organs_col.delete_one({'_id': trip_id})
+    #     return(None, 200, None)
 
 
 # Add api routes here
-api.add_resource(User, '/users')
-api.add_resource(Trip, '/trips')
+# api.add_resource(User, '/users')
+api.add_resource(Organ, '/organs')
 
 
 #  Custom JSON serializer for flask_restful
