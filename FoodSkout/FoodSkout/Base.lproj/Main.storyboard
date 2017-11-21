@@ -262,22 +262,17 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="240"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNI-VY-Kec">
-                                        <rect key="frame" x="77.666666666666686" y="0.0" width="220" height="240"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
                                         <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="220" id="s2z-5l-gFg"/>
-                                        </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="EXN-NL-c8w" appends="YES" id="bu7-cs-Sjd"/>
-                                            <outletCollection property="gestureRecognizers" destination="hvs-KA-g3n" appends="YES" id="yOd-zH-wfP"/>
-                                        </connections>
                                     </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.15686274510000001" blue="0.42579305810000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="GNI-VY-Kec" secondAttribute="trailing" id="KeP-9j-vr8"/>
                                     <constraint firstItem="GNI-VY-Kec" firstAttribute="top" secondItem="PVs-cP-hWV" secondAttribute="top" id="NDH-g0-Koy"/>
                                     <constraint firstItem="GNI-VY-Kec" firstAttribute="centerX" secondItem="PVs-cP-hWV" secondAttribute="centerX" id="gkE-HN-wSn"/>
                                     <constraint firstAttribute="bottom" secondItem="GNI-VY-Kec" secondAttribute="bottom" id="qi1-Gd-vWd"/>
+                                    <constraint firstItem="GNI-VY-Kec" firstAttribute="leading" secondItem="PVs-cP-hWV" secondAttribute="leading" id="s1H-zU-g4C"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -297,16 +292,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p72-DS-iON" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="EXN-NL-c8w">
-                    <connections>
-                        <action selector="swipeToRight:" destination="zAU-ig-ihs" id="h91-uv-2IS"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="hvs-KA-g3n">
-                    <connections>
-                        <action selector="swipeToLeft:" destination="zAU-ig-ihs" id="y9J-OP-RMC"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="870" y="-176"/>
         </scene>

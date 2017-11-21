@@ -14,65 +14,55 @@ class UpperViewController: UIViewController {
     @IBOutlet weak var upperView: UIView!
     
     var images = [UIImageView]()
-    //    we have 4 pics for now
-    let maxPage = 3
-    let minPage = 0
-    var currentPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        self.view.addSubview(FoodDetailTableView)
+//        to make the extension have access to contentOffSet
+        scrollView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        var contentWidth: CGFloat = 0.0
         let scrollWidth = scrollView.frame.size.width
-        
-        for x in 0...3 {
-            let image = UIImage(named: "Organ\(x)")
+        let scrollHeight = scrollView.frame.size.height
+        let contentWidth = scrollWidth * 4
+        let imgWidth = scrollWidth * 0.35
+        let gapWidth = scrollWidth / 2 - imgWidth / 2
+//        set the imgView to scrollView
+        for n in 0...3 {
+            let image = UIImage(named: "Organ\(n)")
             let imageView = UIImageView(image: image)
             images.append(imageView)
-            
-            var nextX: CGFloat = 0.0
-            nextX = scrollWidth / 2 + scrollWidth * CGFloat(x)
-            contentWidth += nextX
-            
             scrollView.addSubview(imageView)
-            imageView.frame = CGRect(x: nextX - 75, y: (scrollView.frame.size.height / 2) - 75, width: 120, height: 120)
+            if n == 0 {
+                imageView.frame = CGRect(x: CGFloat(n) * scrollWidth + gapWidth, y: scrollHeight * 0.28, width: imgWidth * 1.3, height: imgWidth * 1.3)
+            } else {
+                imageView.frame = CGRect(x: CGFloat(n) * scrollWidth + gapWidth, y: scrollHeight * 0.35, width: imgWidth, height: imgWidth)
+            }
         }
-        self.images[self.currentPage].transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
-        scrollView.clipsToBounds = false
-        scrollView.contentSize = CGSize(width: contentWidth, height: upperView.frame.size.height)
+        
+        scrollView.contentSize = CGSize(width: contentWidth, height: scrollView.frame.size.height)
     }
     
-    /** set scrolling view point and create animation to increse scrolled img while revert the size of non-active img view
+    /** animation makes the scrolled img bigger
      */
-    func scrollMove(direction: Int) {
-        currentPage += direction
-        let point: CGPoint = CGPoint(x: scrollView.frame.size.width * CGFloat(currentPage), y: 0.0)
-        scrollView.setContentOffset(point, animated: true)
-        
+    func scrollMove(currentPage: Int) {
         UIScrollView.animate(withDuration: 0.4) {
-            self.images[self.currentPage].transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
-            
+            self.images[currentPage].transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             for x in 0..<self.images.count {
-                if (x != self.currentPage) {
+                if (x != currentPage && x != 0) {
                     self.images[x].transform = CGAffineTransform.identity
                 }
             }
         }
     }
     
-    @IBAction func swipeToRight(_ sender: UISwipeGestureRecognizer) {
-        if (currentPage < maxPage) {
-            scrollMove(direction: 1)
-        }
+}
+
+extension UpperViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset
+        let currentPage = 1 + abs((offset.x - scrollView.frame.size.width) / scrollView.frame.size.width)
+        
+        scrollMove(currentPage: Int(currentPage))
     }
-    
-    @IBAction func swipeToLeft(_ sender: UISwipeGestureRecognizer) {
-        if (currentPage > minPage) {
-            scrollMove(direction: -1)
-        }
-    }
-    
 }
