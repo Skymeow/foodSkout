@@ -20,11 +20,19 @@ class LowerTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = allFoods![indexPath.section][indexPath.row] as? String
-//        cell.backgroundColor = UIColor.red
-        return cell
+        let lowerTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LowerTableViewCell
+        lowerTableViewCell.imgView.image = UIImage(named: "turmeric")!
+        lowerTableViewCell.foodNameLabel.text = "yayewfjsdfjsdfj"
+//            allFoods![indexPath.section][indexPath.row] as? String
+        lowerTableViewCell.imgView.frame.size.width = lowerTableViewCell.frame.size.height * 0.30
+        lowerTableViewCell.imgView.frame.size.height = lowerTableViewCell.frame.size.height * 0.30
+        lowerTableViewCell.imgView.contentMode = .scaleAspectFit
+        lowerTableViewCell.foodNameLabel.frame.size.width = lowerTableViewCell.frame.size.height * 0.20
+        lowerTableViewCell.foodNameLabel.frame.size.height = 35
+        
+        return lowerTableViewCell
     }
+    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2

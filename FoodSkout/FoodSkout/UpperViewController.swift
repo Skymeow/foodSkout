@@ -25,7 +25,7 @@ class UpperViewController: UIViewController {
         let scrollWidth = scrollView.frame.size.width
         let scrollHeight = scrollView.frame.size.height
         let contentWidth = scrollWidth * 4
-        let imgWidth = scrollWidth * 0.35
+        let imgWidth = scrollWidth * 0.25
         let gapWidth = scrollWidth / 2 - imgWidth / 2
 //        set the imgView to scrollView
         for n in 0...3 {

@@ -304,13 +304,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="110" id="aMg-oJ-bta">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="110" id="aMg-oJ-bta" customClass="LowerTableViewCell" customModule="FoodSkout" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aMg-oJ-bta" id="BBB-lt-gKN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109.66666666666667"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="180" translatesAutoresizingMaskIntoConstraints="NO" id="Tg9-ne-dba">
+                                            <rect key="frame" x="0.0" y="0.0" width="375.33333333333331" height="109.66666666666667"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-V7-lbA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="153.66666666666666" height="109.66666666666667"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="80" translatesAutoresizingMaskIntoConstraints="NO" id="fIl-gA-cJ0">
+                                                    <rect key="frame" x="333.66666666666669" y="0.0" width="41.666666666666629" height="109.66666666666667"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Tg9-ne-dba" secondAttribute="bottom" id="6oN-Zp-ky3"/>
+                                        <constraint firstItem="Tg9-ne-dba" firstAttribute="leading" secondItem="BBB-lt-gKN" secondAttribute="leading" id="AlD-Mm-Lev"/>
+                                        <constraint firstAttribute="trailing" secondItem="Tg9-ne-dba" secondAttribute="trailing" id="PVZ-kn-mZ5"/>
+                                        <constraint firstItem="Tg9-ne-dba" firstAttribute="top" secondItem="BBB-lt-gKN" secondAttribute="top" id="gq7-et-5Nq"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="foodNameLabel" destination="fIl-gA-cJ0" id="D77-KP-0xs"/>
+                                    <outlet property="imgView" destination="bsL-V7-lbA" id="e8k-js-Mqw"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -321,7 +347,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dj2-j0-4nh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="870" y="258"/>
+            <point key="canvasLocation" x="869.60000000000002" y="257.51231527093597"/>
         </scene>
     </scenes>
     <resources>
