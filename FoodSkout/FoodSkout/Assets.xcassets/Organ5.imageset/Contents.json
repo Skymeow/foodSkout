@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "heart (6).png",
+      "filename" : "thyroid.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "heart (7).png",
+      "filename" : "thyroid (1).png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "heart (8).png",
+      "filename" : "thyroid (2).png",
       "scale" : "3x"
     }
   ],

@@ -5,6 +5,8 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -225,7 +227,7 @@
                                     <segue destination="zAU-ig-ihs" kind="embed" id="dbl-rO-cKp"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoS-8P-zYI" userLabel="Lower View">
+                            <containerView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="KoS-8P-zYI" userLabel="Lower View">
                                 <rect key="frame" x="0.0" y="333" width="375" height="445"/>
                                 <connections>
                                     <segue destination="elP-Dg-vRl" kind="embed" id="i12-OY-VQM"/>
@@ -266,7 +268,7 @@
                                         <gestureRecognizers/>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.87843137250000003" green="0.15686274510000001" blue="0.42579305810000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.14171006944444445" blue="0.41975273182777773" alpha="0.89107983732876717" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="GNI-VY-Kec" secondAttribute="trailing" id="KeP-9j-vr8"/>
                                     <constraint firstItem="GNI-VY-Kec" firstAttribute="top" secondItem="PVs-cP-hWV" secondAttribute="top" id="NDH-g0-Koy"/>
@@ -304,33 +306,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="110" id="aMg-oJ-bta" customClass="LowerTableViewCell" customModule="FoodSkout" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="aMg-oJ-bta" customClass="LowerTableViewCell" customModule="FoodSkout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aMg-oJ-bta" id="BBB-lt-gKN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="180" translatesAutoresizingMaskIntoConstraints="NO" id="Tg9-ne-dba">
-                                            <rect key="frame" x="0.0" y="0.0" width="375.33333333333331" height="109.66666666666667"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-V7-lbA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="153.66666666666666" height="109.66666666666667"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="80" translatesAutoresizingMaskIntoConstraints="NO" id="fIl-gA-cJ0">
-                                                    <rect key="frame" x="333.66666666666669" y="0.0" width="41.666666666666629" height="109.66666666666667"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-V7-lbA">
+                                            <rect key="frame" x="15" y="5" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="bsL-V7-lbA" secondAttribute="height" multiplier="1:1" id="Qd5-B4-YWT"/>
+                                                <constraint firstAttribute="width" constant="90" id="RDi-sH-HXm"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIl-gA-cJ0">
+                                            <rect key="frame" x="195" y="10" width="103.33333333333331" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Uv3-WL-AHn"/>
+                                            </constraints>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Label yo food">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="17"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="Tg9-ne-dba" secondAttribute="bottom" id="6oN-Zp-ky3"/>
-                                        <constraint firstItem="Tg9-ne-dba" firstAttribute="leading" secondItem="BBB-lt-gKN" secondAttribute="leading" id="AlD-Mm-Lev"/>
-                                        <constraint firstAttribute="trailing" secondItem="Tg9-ne-dba" secondAttribute="trailing" id="PVZ-kn-mZ5"/>
-                                        <constraint firstItem="Tg9-ne-dba" firstAttribute="top" secondItem="BBB-lt-gKN" secondAttribute="top" id="gq7-et-5Nq"/>
+                                        <constraint firstAttribute="bottom" secondItem="bsL-V7-lbA" secondAttribute="bottom" constant="5" id="Kc7-ud-MYF"/>
+                                        <constraint firstItem="fIl-gA-cJ0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bsL-V7-lbA" secondAttribute="trailing" constant="8" symbolic="YES" id="PTY-3y-Ifm"/>
+                                        <constraint firstAttribute="bottom" secondItem="fIl-gA-cJ0" secondAttribute="bottom" constant="10" id="Rum-X4-iI7"/>
+                                        <constraint firstAttribute="trailing" secondItem="fIl-gA-cJ0" secondAttribute="trailing" constant="76.666666666666686" id="gBV-U8-MpG"/>
+                                        <constraint firstItem="fIl-gA-cJ0" firstAttribute="top" secondItem="BBB-lt-gKN" secondAttribute="top" constant="10" id="mgJ-jT-TgP"/>
+                                        <constraint firstItem="bsL-V7-lbA" firstAttribute="top" secondItem="BBB-lt-gKN" secondAttribute="top" constant="5" id="tp6-1Q-svy"/>
+                                        <constraint firstItem="bsL-V7-lbA" firstAttribute="leading" secondItem="BBB-lt-gKN" secondAttribute="leadingMargin" constant="7" id="wZa-Fh-Yeb"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
