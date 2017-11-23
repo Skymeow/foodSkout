@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="36px" viewBox="0 0 38 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>icons8-home-page</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect x="122" y="360" width="38" height="38" id="rect-1"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="organ-page-backup" transform="translate(-122.000000, -361.000000)">
+            <g id="icons8-home-page">
+                <image x="122" y="360" width="38" height="38" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAo5JREFUaAXtlz1rFUEUhuMXGpuIjWhMpZjKSgtLFckfSJo0KRRs1SpgIeQPJLai8S+IYOkHKialEC2sElKJIoiEqBFN8rxkzrKOE/be/bh3d50X3jtnZ86c886c/Zg7MBDR8Q4M4ik2GmdR/8FRdiNxFdXf4ZajbPU1BgdQOgs3oRYxDx86W31zUD61xknUvYFagF+Ba/T9cGMLtCMwBKug34Z8K+kbJ+o3KAHv4Cj0ob73UD7ynYA+/AXYte9X+vVeIt6Bf6CSPoJDcDccYeAxlK/mzMB90OAL96/Nr9T2ONFeQiXbgNdhp5Cv5mjuK3gCCr5w/3rHq8TfK8T67BIv057LEfs8c1ZcDMUac7bEGypdyA2y2G4+xz5mWXO06ar+Yr4v3L/OkeLfKUfpeuKS/aadhntgUSiGYtlzVmlFLpBoFSrJR3gRlo3LBPwEK1uIbqWfLoG+E8OwKuj7spgKXsqtdYiA96EFu4etvqqRPmRa7nRfV/lP4f0WKtA6nIL9gJ3XpOV0twImmbAGtYgleAb2CzoNSIO0SJO0ZeIgHrp9rJwPsHtxK2UJ0201n9IljdIahB7g19AWcTPo1b9OvaJvpfRJq50GElWXsOy1ZwtJBmtmmD610iztCb5iaeCpa2XXFbaQZwiU/UVC9+sH3IaH4V2oL3YToHOZbn+9UYOwFQcHa9AZ1Kf/Eq1AaxZiz0jRqqjcRaBXayHEiuyyfd3ubNFKJjJaU5G4kKSmNTFiRWpSiERGrEiyFTUxYkVyFuIF8/Q/onSUddbqVJjybXbqXNQveN7PCJpnjkLmmRecE5+RjAr1fDhWpOdbnpEwViRjg3o+3JqKhP6a6j3dBPylvTUVacLO/18atwHJS6vWQhXsWgAAAABJRU5ErkJggg=="></image>
+                <use fill="#C69393" fill-rule="evenodd" xlink:href="#rect-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>
