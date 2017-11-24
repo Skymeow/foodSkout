@@ -267,11 +267,30 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
                                         <gestureRecognizers/>
                                     </scrollView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7s5-mb-0bF">
+                                        <rect key="frame" x="50" y="204" width="275" height="31"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Search">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchButtonTapped:" destination="zAU-ig-ihs" eventType="touchUpInside" id="Jod-ml-soY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.14171006944444445" blue="0.41975273182777773" alpha="0.89107983732876717" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7s5-mb-0bF" secondAttribute="trailing" constant="50" id="9Vw-O8-ijs"/>
+                                    <constraint firstItem="7s5-mb-0bF" firstAttribute="leading" secondItem="PVs-cP-hWV" secondAttribute="leading" constant="50" id="Gts-o8-hVr"/>
                                     <constraint firstAttribute="trailing" secondItem="GNI-VY-Kec" secondAttribute="trailing" id="KeP-9j-vr8"/>
                                     <constraint firstItem="GNI-VY-Kec" firstAttribute="top" secondItem="PVs-cP-hWV" secondAttribute="top" id="NDH-g0-Koy"/>
+                                    <constraint firstAttribute="bottom" secondItem="7s5-mb-0bF" secondAttribute="bottom" constant="5" id="amz-8E-SLb"/>
                                     <constraint firstItem="GNI-VY-Kec" firstAttribute="centerX" secondItem="PVs-cP-hWV" secondAttribute="centerX" id="gkE-HN-wSn"/>
                                     <constraint firstAttribute="bottom" secondItem="GNI-VY-Kec" secondAttribute="bottom" id="qi1-Gd-vWd"/>
                                     <constraint firstItem="GNI-VY-Kec" firstAttribute="leading" secondItem="PVs-cP-hWV" secondAttribute="leading" id="s1H-zU-g4C"/>
@@ -289,13 +308,14 @@
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="GNI-VY-Kec" id="7wm-bd-M27"/>
+                        <outlet property="searchButton" destination="7s5-mb-0bF" id="hQ6-kd-s88"/>
                         <outlet property="upperView" destination="PVs-cP-hWV" id="eJO-EL-dmo"/>
                         <outlet property="view" destination="PVs-cP-hWV" id="V8b-Bg-sB3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p72-DS-iON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="870" y="-176"/>
+            <point key="canvasLocation" x="869.60000000000002" y="-176.60098522167488"/>
         </scene>
         <!--Lower Table View Controller-->
         <scene sceneID="N3G-DA-BR0">
