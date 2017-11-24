@@ -14,16 +14,16 @@ class LowerTableViewCell: UITableViewCell {
     
     @IBOutlet weak var foodNameLabel: UILabel!
     
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        self.imgView.frame.size.width = self.frame.size.height * 0.85
-//        self.imgView.frame.size.height = self.frame.size.height * 0.85
-//        self.imgView.contentMode = .scaleAspectFit
-////        self.imgView.image = UIImage(named: "tumeric")
-//    }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+  
+  override func layerWillDraw(_ layer: CALayer) {
+    imgView.layer.cornerRadius = imgView.frame.width / 2
+    imgView.layer.masksToBounds = false
+    imgView.clipsToBounds = true
+  }
+//  lowerTableViewCell.imgView.layer.cornerRadius = lowerTableViewCell.imgView.frame.height / 2
+//  lowerTableViewCell.imgView.layer.masksToBounds = false
+//  lowerTableViewCell.imgView.clipsToBounds = true
 }

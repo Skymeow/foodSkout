@@ -267,18 +267,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
                                         <gestureRecognizers/>
                                     </scrollView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7s5-mb-0bF">
-                                        <rect key="frame" x="50" y="204" width="275" height="31"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Search">
-                                                    <attributes>
-                                                        <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7s5-mb-0bF">
+                                        <rect key="frame" x="50" y="201" width="275" height="34"/>
+                                        <state key="normal" title="Search"/>
                                         <connections>
                                             <action selector="searchButtonTapped:" destination="zAU-ig-ihs" eventType="touchUpInside" id="Jod-ml-soY"/>
                                         </connections>
@@ -326,24 +317,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="aMg-oJ-bta" customClass="LowerTableViewCell" customModule="FoodSkout" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="110" id="aMg-oJ-bta" customClass="LowerTableViewCell" customModule="FoodSkout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aMg-oJ-bta" id="BBB-lt-gKN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109.66666666666667"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-V7-lbA">
-                                            <rect key="frame" x="15" y="5" width="30" height="30"/>
+                                            <rect key="frame" x="15" y="2" width="36" height="36"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="bsL-V7-lbA" secondAttribute="height" multiplier="1:1" id="Qd5-B4-YWT"/>
-                                                <constraint firstAttribute="width" constant="90" id="RDi-sH-HXm"/>
+                                                <constraint firstAttribute="width" constant="85" id="RDi-sH-HXm"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIl-gA-cJ0">
-                                            <rect key="frame" x="195" y="10" width="103.33333333333331" height="20"/>
+                                            <rect key="frame" x="171" y="10" width="103.33333333333331" height="20"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Uv3-WL-AHn"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="haG-E7-lYU"/>
                                             </constraints>
                                             <attributedString key="attributedText">
                                                 <fragment content="Label yo food">
@@ -356,12 +347,12 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="bsL-V7-lbA" secondAttribute="bottom" constant="5" id="Kc7-ud-MYF"/>
-                                        <constraint firstItem="fIl-gA-cJ0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bsL-V7-lbA" secondAttribute="trailing" constant="8" symbolic="YES" id="PTY-3y-Ifm"/>
+                                        <constraint firstAttribute="trailing" secondItem="fIl-gA-cJ0" secondAttribute="trailing" constant="100.66666666666669" id="404-CG-6Wg"/>
+                                        <constraint firstAttribute="bottom" secondItem="bsL-V7-lbA" secondAttribute="bottom" constant="2" id="Kc7-ud-MYF"/>
                                         <constraint firstAttribute="bottom" secondItem="fIl-gA-cJ0" secondAttribute="bottom" constant="10" id="Rum-X4-iI7"/>
-                                        <constraint firstAttribute="trailing" secondItem="fIl-gA-cJ0" secondAttribute="trailing" constant="76.666666666666686" id="gBV-U8-MpG"/>
                                         <constraint firstItem="fIl-gA-cJ0" firstAttribute="top" secondItem="BBB-lt-gKN" secondAttribute="top" constant="10" id="mgJ-jT-TgP"/>
-                                        <constraint firstItem="bsL-V7-lbA" firstAttribute="top" secondItem="BBB-lt-gKN" secondAttribute="top" constant="5" id="tp6-1Q-svy"/>
+                                        <constraint firstItem="fIl-gA-cJ0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bsL-V7-lbA" secondAttribute="trailing" constant="8" symbolic="YES" id="rbo-fz-ccl"/>
+                                        <constraint firstItem="bsL-V7-lbA" firstAttribute="top" secondItem="BBB-lt-gKN" secondAttribute="top" constant="2" id="tp6-1Q-svy"/>
                                         <constraint firstItem="bsL-V7-lbA" firstAttribute="leading" secondItem="BBB-lt-gKN" secondAttribute="leadingMargin" constant="7" id="wZa-Fh-Yeb"/>
                                     </constraints>
                                 </tableViewCellContentView>

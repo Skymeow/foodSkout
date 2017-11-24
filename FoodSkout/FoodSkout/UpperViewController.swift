@@ -14,19 +14,29 @@ class UpperViewController: UIViewController {
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var searchButton: UIButton!
   
+    var currentPage = 0
     var images = [UIImageView]()
     let organNames = ["brain", "heart", "liver", "stomach", "muscle", "thyroid", "lungs", "eye"]
     override func viewDidLoad() {
         super.viewDidLoad()
 //        to make the extension have access to contentOffSet
         scrollView.delegate = self
+        self.searchButton.layer.cornerRadius = searchButton.frame.height / 2
         self.searchButton.backgroundColor = UIColor.lightGray
         self.searchButton.setTitleColor(UIColor.gray, for: .normal)
+        self.searchButton.isSelected = false
     }
     
   @IBAction func searchButtonTapped(_ sender: UIButton) {
-    
+    print(organNames[currentPage])
+    Networking.instance.fetch(route: .organs(organName: "\(organNames[currentPage])"), method: "GET") { (data, response) in
+      if response == 200 {
+        print("successfully get", data)
+     
+      }
+    }
   }
+  
   override func viewDidAppear(_ animated: Bool) {
         let scrollWidth = scrollView.frame.size.width
         let scrollHeight = scrollView.frame.size.height
@@ -44,7 +54,7 @@ class UpperViewController: UIViewController {
         let imgWidth = scrollWidth * 0.25
         let gapWidth = scrollWidth / 2 - imgWidth / 2
         imageView.frame = CGRect(x: CGFloat(n) * scrollWidth + gapWidth, y: scrollHeight * 0.35, width: imgWidth, height: imgWidth)
-  
+        
         let topLabel = UILabel()
         topLabel.frame = CGRect(x: CGFloat(n) * scrollWidth + gapWidth + (imgWidth - 85) * 0.5, y: scrollHeight * 0.14, width: 85, height: 25)
         topLabel.text = organNames[n]
@@ -62,11 +72,13 @@ class UpperViewController: UIViewController {
         UIScrollView.animate(withDuration: 0.4) {
             self.searchButton.backgroundColor = UIColor.lightGray
             self.searchButton.setTitleColor(UIColor.gray, for: .normal)
+            self.searchButton.isSelected = false
           
             for x in -1..<self.images.count {
-                if (progress > CGFloat(x) && CGFloat(x) < CGFloat(x) + 1) {
+                if (progress > CGFloat(x) && progress < CGFloat(x) + 1) {
                     self.searchButton.backgroundColor = UIColor(red:0.90, green:0.89, blue:0.58, alpha:1.0)
                     self.searchButton.setTitleColor(UIColor.white, for: .normal)
+                    self.searchButton.isSelected = true
                 }
             }
         }
@@ -78,6 +90,9 @@ extension UpperViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset
         let scrollProgress = CGFloat((offset.x - scrollView.frame.size.width) / scrollView.frame.size.width) + 1
+        var arr = [0]
+        arr.append(Int(floor(scrollProgress)))
+        currentPage = arr.max()!
         scrollMove(progress: scrollProgress)
         self.generateFeedback()
     }
