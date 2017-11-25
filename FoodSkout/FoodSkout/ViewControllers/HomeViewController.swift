@@ -31,7 +31,11 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var buttonStackView: UIStackView!
     
-    override func viewDidLoad() {
+  @IBAction func OrganTabbarButtonTapped(_ sender: UIButton) {
+    performSegue(withIdentifier: "toOrgan", sender: nil)
+  }
+  
+  override func viewDidLoad() {
         super.viewDidLoad()
         for family: String in UIFont.familyNames
         {

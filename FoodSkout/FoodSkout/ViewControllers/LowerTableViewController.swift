@@ -8,10 +8,10 @@
 
 import UIKit
 
-class LowerTableViewController: UITableViewController {
+@IBDesignable class LowerTableViewController: UITableViewController {
     
     let goodFoods = ["Walnut", "Salmon", "Banana"]
-    let badFoods = ["Walnut", "Salmon", "Banana"]
+    let badFoods = ["chips", "poops", "human"]
     var allFoods: [Array<Any>]?
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,7 +28,12 @@ class LowerTableViewController: UITableViewController {
         return lowerTableViewCell
     }
     
-    
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let eachFood = allFoods![indexPath.section][indexPath.row]
+    if let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutrientsViewController") as? NutrientsViewController {
+      present(nutritionVC, animated: true)
+    }
+  }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
