@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var buttonStackView: UIStackView!
     
   @IBAction func OrganTabbarButtonTapped(_ sender: UIButton) {
-    performSegue(withIdentifier: "toOrgan", sender: nil)
+    performSegue(withIdentifier: "toOrgans", sender: nil)
   }
   
   override func viewDidLoad() {

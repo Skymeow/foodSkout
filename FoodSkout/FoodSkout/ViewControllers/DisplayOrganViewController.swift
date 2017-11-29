@@ -8,9 +8,9 @@
 
 import UIKit
 
-class PickOrganViewController: UIViewController {
+class DisplayOrganViewController: UIViewController {
     fileprivate var upperViewController: UpperViewController?
-//    fileprivate var lowerTableViewController: LowerTableViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
