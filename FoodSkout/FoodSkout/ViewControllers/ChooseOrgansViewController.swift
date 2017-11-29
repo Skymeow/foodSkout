@@ -60,7 +60,16 @@ extension ChooseOrgansViewController: UICollectionViewDelegate, UICollectionView
         return CGSize(width: width, height: collectionView.bounds.height * 0.25)
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let row = indexPath.row
+        if let displayVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DisplayOrganViewController") as? DisplayOrganViewController {
+            present(displayVC, animated: true)
+            displayVC.organName = organNames[row]
+            displayVC.row = row
+        }
+        
+    }
     
 }
 
