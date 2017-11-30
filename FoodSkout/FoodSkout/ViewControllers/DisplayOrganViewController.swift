@@ -46,7 +46,6 @@ class DisplayOrganViewController: UIViewController {
 extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return 3
     }
     
@@ -58,15 +57,19 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
         } else {
             lowerTableViewCell.foodNameLabel.text? = badFoods[indexPath.row]
         }
-//        lowerTableViewCell.foodNameLabel.text! = allFoods![indexPath.section][indexPath.row] as! String
         lowerTableViewCell.imgView.contentMode = .scaleAspectFit
         
         return lowerTableViewCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let eachFood = allFoods![indexPath.section][indexPath.row]
+        
         if let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutrientsViewController") as? NutrientsViewController {
+            if indexPath.section == 0 {
+                nutritionVC.foodName = goodFoods[indexPath.row]
+            } else {
+                nutritionVC.foodName = badFoods[indexPath.row]
+            }
             present(nutritionVC, animated: true)
         }
     }

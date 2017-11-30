@@ -10,8 +10,6 @@
 		F9567EE71FBBB3CF0069D7DF /* BackgroundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */; };
 		F9567EE81FBC1C7C0069D7DF /* turmeric.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F9E731381FB942F50020C89E /* turmeric.pdf */; };
 		F9567EEA1FBCD6AA0069D7DF /* UIView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9567EE91FBCD6AA0069D7DF /* UIView+Borders.swift */; };
-		F9887EC91FC3651F007324B0 /* UpperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9887EC81FC3651F007324B0 /* UpperViewController.swift */; };
-		F9887ECB1FC3685B007324B0 /* LowerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9887ECA1FC3685B007324B0 /* LowerTableViewController.swift */; };
 		F9A258E41FC3AA9400DE4C06 /* LowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */; };
 		F9D98CE51FC357B700E32C11 /* DisplayOrganViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D98CE41FC357B700E32C11 /* DisplayOrganViewController.swift */; };
 		F9E37EC81FC7A9A400EBD626 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37EC71FC7A9A400EBD626 /* Networking.swift */; };
@@ -35,8 +33,6 @@
 /* Begin PBXFileReference section */
 		F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundButtonView.swift; sourceTree = "<group>"; };
 		F9567EE91FBCD6AA0069D7DF /* UIView+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Borders.swift"; sourceTree = "<group>"; };
-		F9887EC81FC3651F007324B0 /* UpperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperViewController.swift; sourceTree = "<group>"; };
-		F9887ECA1FC3685B007324B0 /* LowerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerTableViewController.swift; sourceTree = "<group>"; };
 		F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerTableViewCell.swift; sourceTree = "<group>"; };
 		F9D98CE41FC357B700E32C11 /* DisplayOrganViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayOrganViewController.swift; sourceTree = "<group>"; };
 		F9E37EC71FC7A9A400EBD626 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
@@ -84,8 +80,6 @@
 				F9E731241FB9085C0020C89E /* HomeViewController.swift */,
 				F9E37ED61FCE0AD000EBD626 /* ChooseOrgansViewController.swift */,
 				F9D98CE41FC357B700E32C11 /* DisplayOrganViewController.swift */,
-				F9887EC81FC3651F007324B0 /* UpperViewController.swift */,
-				F9887ECA1FC3685B007324B0 /* LowerTableViewController.swift */,
 				F9E37EC91FC8AF0300EBD626 /* NutrientsViewController.swift */,
 			);
 			path = ViewControllers;
@@ -242,7 +236,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9887ECB1FC3685B007324B0 /* LowerTableViewController.swift in Sources */,
 				F9E37ECA1FC8AF0300EBD626 /* NutrientsViewController.swift in Sources */,
 				F9E37ED71FCE0AD100EBD626 /* ChooseOrgansViewController.swift in Sources */,
 				F9E731251FB9085C0020C89E /* HomeViewController.swift in Sources */,
@@ -256,7 +249,6 @@
 				F9E37ED91FCE12C800EBD626 /* OrganCollectionViewCell.swift in Sources */,
 				F9E37EC81FC7A9A400EBD626 /* Networking.swift in Sources */,
 				F9567EEA1FBCD6AA0069D7DF /* UIView+Borders.swift in Sources */,
-				F9887EC91FC3651F007324B0 /* UpperViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,15 +33,26 @@ enum Route {
       return [:]
     }
   }
+    
+    func baseURl() -> String {
+        switch self {
+        case .organs:
+            return "http://127.0.0.1:5000/"
+        case .foods:
+            return ""
+        default:
+            return ""
+        }
+    }
 }
-
 class Networking {
   static let instance = Networking()
 //  var baseURL = "https://foodskout.herokuapp.com/"
-  var baseURL = "http://127.0.0.1:5000/"
+//  var baseURL = "http://127.0.0.1:5000/"
   let session = URLSession.shared
   
   func fetch(route: Route, method: String, completion: @escaping (Data, Int) -> Void) {
+    var baseURL = route.baseURl()
     let urlString = baseURL.appending(route.path())
     var toURL = URL(string: urlString)!
     toURL = toURL.appendingQueryParameters(_parametersDictionary: route.urlParameters())
