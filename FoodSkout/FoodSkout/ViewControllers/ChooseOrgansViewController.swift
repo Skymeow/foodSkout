@@ -64,9 +64,9 @@ extension ChooseOrgansViewController: UICollectionViewDelegate, UICollectionView
         
         let row = indexPath.row
         if let displayVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DisplayOrganViewController") as? DisplayOrganViewController {
-            present(displayVC, animated: true)
             displayVC.organName = organNames[row]
             displayVC.row = row
+            present(displayVC, animated: true)
         }
         
     }

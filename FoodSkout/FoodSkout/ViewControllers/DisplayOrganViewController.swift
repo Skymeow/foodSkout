@@ -11,7 +11,10 @@ import UIKit
 class DisplayOrganViewController: UIViewController {
     
     var organName: String?
+    
     var row: Int?
+    
+    @IBOutlet weak var organImg: UIImageView!
     
     @IBOutlet weak var upperView: UIView!
     
@@ -19,36 +22,55 @@ class DisplayOrganViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(row)
+        let organUIImg = UIImage(named: "Organ\(row)")
+        self.organImg.image = organUIImg
+        
+        Networking.instance.fetch(route: .organs(organName: organName!), method: "GET") { (data, response) in
+              if response == 200 {
+                let organ = try? JSONDecoder().decode(Organ.self, from: data)
+                guard let good = organ?.goodFoods,
+                let bad =  organ?.badFoods else { return }
+                self.goodFoods = good; self.badFoods = bad
+                DispatchQueue.main.async {
+                    self.lowerTableView.reloadData()
+                }
+              }
+        }
     }
-
-    let goodFoods = ["Walnut", "Salmon", "Banana"]
-    let badFoods = ["chips", "poops", "human"]
-    var allFoods: [Array<Any>]?
-
+    
+    var goodFoods = ["Walnut", "Salmon", "Banana"]
+    var badFoods = ["chips", "poops", "human"]
 }
 
 extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.allFoods = [goodFoods, badFoods]
+        
         return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let lowerTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LowerTableViewCell
         lowerTableViewCell.imgView.image = UIImage(named: "turmeric")!
-        lowerTableViewCell.foodNameLabel.text! = allFoods![indexPath.section][indexPath.row] as! String
+        if indexPath.section == 0 {
+            lowerTableViewCell.foodNameLabel.text? = goodFoods[indexPath.row]
+        } else {
+            lowerTableViewCell.foodNameLabel.text? = badFoods[indexPath.row]
+        }
+//        lowerTableViewCell.foodNameLabel.text! = allFoods![indexPath.section][indexPath.row] as! String
         lowerTableViewCell.imgView.contentMode = .scaleAspectFit
         
         return lowerTableViewCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let eachFood = allFoods![indexPath.section][indexPath.row]
+//        let eachFood = allFoods![indexPath.section][indexPath.row]
         if let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutrientsViewController") as? NutrientsViewController {
             present(nutritionVC, animated: true)
         }
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
