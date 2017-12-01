@@ -22,8 +22,8 @@ class DisplayOrganViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(row)
-        let organUIImg = UIImage(named: "Organ\(row)")
+        let organUIImg = UIImage(named: "Organ\(row!)")
+        self.organImg.contentMode = .scaleAspectFit
         self.organImg.image = organUIImg
         
         Networking.instance.fetch(route: .organs(organName: organName!), method: "GET") { (data, response) in

@@ -45,7 +45,7 @@ class NutrientsViewController: UIViewController {
         }
     }
     
-    func getCorrectImg() {
+    func setCorrectImg() {
         let foodImgString = self.foodImgs[0].webformatURL
         let foodImgUrl = URL(string: foodImgString)
         let data = try? Data(contentsOf: foodImgUrl!)
@@ -73,7 +73,7 @@ class NutrientsViewController: UIViewController {
         self.handleFunctionOrder { (success) -> Void in
             if success {
                 // call this function first, then call whatever's inside of handleOrder
-                self.getCorrectImg()
+                self.setCorrectImg()
             }
         }
     }
