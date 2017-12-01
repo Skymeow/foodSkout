@@ -22,6 +22,7 @@
 		F9E37ED71FCE0AD100EBD626 /* ChooseOrgansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37ED61FCE0AD000EBD626 /* ChooseOrgansViewController.swift */; };
 		F9E37ED91FCE12C800EBD626 /* OrganCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37ED81FCE12C800EBD626 /* OrganCollectionViewCell.swift */; };
 		F9E37EDD1FCF8E6C00EBD626 /* Organ.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37EDC1FCF8E6C00EBD626 /* Organ.swift */; };
+		F9E37EE01FD1DF7A00EBD626 /* FoodImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37EDF1FD1DF7A00EBD626 /* FoodImg.swift */; };
 		F9E731231FB9085C0020C89E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731221FB9085C0020C89E /* AppDelegate.swift */; };
 		F9E731251FB9085C0020C89E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731241FB9085C0020C89E /* HomeViewController.swift */; };
 		F9E731281FB9085C0020C89E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E731261FB9085C0020C89E /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		F9E37ED61FCE0AD000EBD626 /* ChooseOrgansViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseOrgansViewController.swift; sourceTree = "<group>"; };
 		F9E37ED81FCE12C800EBD626 /* OrganCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrganCollectionViewCell.swift; path = FoodSkout/Views/OrganCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		F9E37EDC1FCF8E6C00EBD626 /* Organ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organ.swift; sourceTree = "<group>"; };
+		F9E37EDF1FD1DF7A00EBD626 /* FoodImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodImg.swift; sourceTree = "<group>"; };
 		F9E7311F1FB9085C0020C89E /* FoodSkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodSkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E731221FB9085C0020C89E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9E731241FB9085C0020C89E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				F9E37EDC1FCF8E6C00EBD626 /* Organ.swift */,
 				90EDEC241FCFBDA400A2150E /* Nutrient.swift */,
 				90EDEC221FCFBD9D00A2150E /* Food.swift */,
+				F9E37EDF1FD1DF7A00EBD626 /* FoodImg.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			files = (
 				90EDEC2B1FCFBE6500A2150E /* csv.swift in Sources */,
 				F9E37ECA1FC8AF0300EBD626 /* NutrientsViewController.swift in Sources */,
+				F9E37EE01FD1DF7A00EBD626 /* FoodImg.swift in Sources */,
 				F9E37ED71FCE0AD100EBD626 /* ChooseOrgansViewController.swift in Sources */,
 				F9E731251FB9085C0020C89E /* HomeViewController.swift in Sources */,
 				F9A258E41FC3AA9400DE4C06 /* LowerTableViewCell.swift in Sources */,

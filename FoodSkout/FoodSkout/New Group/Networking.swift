@@ -11,6 +11,7 @@ import Foundation
 enum Route {
   case organs(organName: String)
   case foods
+  case foodImg(foodImgQuery: String)
   
   func path() -> String {
     switch self {
@@ -18,6 +19,8 @@ enum Route {
       return "organs"
     case .foods:
       return "foods"
+    case .foodImg:
+        return ""
     default:
       return ""
     }
@@ -29,6 +32,11 @@ enum Route {
       return ["organ_name": organName]
     case .foods:
       return [:]
+    case let .foodImg(foodImgQuery):
+        return ["key": "7246347-e95eeb596160c710188dfa4ff",
+                "q": foodImgQuery,
+                "image_type": "photo",
+                "category": "food"]
     default:
       return [:]
     }
@@ -40,6 +48,8 @@ enum Route {
             return "http://127.0.0.1:5000/"
         case .foods:
             return ""
+        case .foodImg:
+            return "https://pixabay.com/api/"
         default:
             return ""
         }
