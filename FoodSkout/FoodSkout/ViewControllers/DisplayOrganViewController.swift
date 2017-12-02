@@ -26,7 +26,7 @@ class DisplayOrganViewController: UIViewController {
         self.organImg.contentMode = .scaleAspectFit
         self.organImg.image = organUIImg
         
-        Networking.instance.fetch(route: .organs(organName: organName!), method: "GET") { (data, response) in
+        Networking.instance.fetch(route: .organs(organName: organName!), method: "GET", data: nil) { (data, response) in
               if response == 200 {
                 let organ = try? JSONDecoder().decode(Organ.self, from: data)
                 guard let good = organ?.goodFoods,

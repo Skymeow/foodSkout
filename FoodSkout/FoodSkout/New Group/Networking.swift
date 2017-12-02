@@ -12,7 +12,9 @@ enum Route {
   case organs(organName: String)
   case foods
   case foodImg(foodImgQuery: String)
-  
+  case paramForNutrients(ingr: String)
+  case getNutrientsLabel
+    
   func path() -> String {
     switch self {
     case .organs:
@@ -21,6 +23,10 @@ enum Route {
       return "foods"
     case .foodImg:
         return ""
+    case .paramForNutrients:
+        return "parser"
+    case .getNutrientsLabel:
+        return "nutrients"
     default:
       return ""
     }
@@ -37,6 +43,13 @@ enum Route {
                 "q": foodImgQuery,
                 "image_type": "photo",
                 "category": "food"]
+    case let .paramForNutrients(ingr):
+        return ["app_id": "338dc80d",
+                "appp_key": "8af485e0c5915a60459b01f079a95863",
+                "ingr": ingr]
+    case .getNutrientsLabel:
+        return ["app_id": "338dc80d",
+                "appp_key": "8af485e0c5915a60459b01f079a95863"]
     default:
       return [:]
     }
@@ -50,25 +63,46 @@ enum Route {
             return ""
         case .foodImg:
             return "https://pixabay.com/api/"
+        case .paramForNutrients:
+            return "https://api.edamam.com/api/food-database/"
+        case .getNutrientsLabel:
+            return "https://api.edamam.com/api/food-database/"
         default:
             return ""
+        }
+    }
+    
+    func body(data:Encodable) -> Data? {
+        switch self {
+        case .organs:
+            return nil
+        case .foods:
+            return nil
+        case .foodImg:
+            return nil
+        case .paramForNutrients:
+            return nil
+        case let .getNutrientsLabel:
+            let encoder = JSONEncoder()
+            guard let ingredientBody = data as? IngredientBody else { return nil}
+            let result = try? encoder.encode(ingredientBody)
+            return result
+        default:
+            return nil
         }
     }
 }
 class Networking {
   static let instance = Networking()
-//  var baseURL = "https://foodskout.herokuapp.com/"
-//  var baseURL = "http://127.0.0.1:5000/"
   let session = URLSession.shared
   
-  func fetch(route: Route, method: String, completion: @escaping (Data, Int) -> Void) {
+    func fetch(route: Route, method: String, data: Encodable?, completion: @escaping (Data, Int) -> Void) {
     var baseURL = route.baseURl()
     let urlString = baseURL.appending(route.path())
     var toURL = URL(string: urlString)!
     toURL = toURL.appendingQueryParameters(_parametersDictionary: route.urlParameters())
     var request = URLRequest(url: toURL)
-    
-//    request.allHTTPHeaderFields = headers
+    request.httpBody = route.body(data: data)
     request.httpMethod = method
     
     session.dataTask(with: request) { (data, response, error) in

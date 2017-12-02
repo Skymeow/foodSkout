@@ -33,7 +33,7 @@ class NutrientsViewController: UIViewController {
     @IBOutlet weak var nutrientLabel3: UILabel!
     
     func getFoodImg(completion: @escaping (Bool) -> Void) {
-        Networking.instance.fetch(route: .foodImg(foodImgQuery: foodName!), method: "GET") { (data, response) in
+        Networking.instance.fetch(route: .foodImg(foodImgQuery: foodName!), method: "GET", data: nil) { (data, response) in
             if response == 200 {
                 let result = try? JSONDecoder().decode(AllFoodImgs.self, from: data)
                 guard let foodImgsData = result?.hits else { return }
