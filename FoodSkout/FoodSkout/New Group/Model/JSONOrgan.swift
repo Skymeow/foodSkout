@@ -9,9 +9,14 @@
 import Foundation
 import UIKit
 
-struct Organ: Codable {
+struct JSONOrgan: Codable {
     var goodFoods: [String]?
     var badFoods: [String]?
-    var organ_name: String?
+    var organName: String?
     
+    enum CodingKeys: String, CodingKey {
+        case goodFoods
+        case badFoods
+        case organName = "organ_name"
+    }
 }

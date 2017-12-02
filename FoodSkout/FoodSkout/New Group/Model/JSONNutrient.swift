@@ -8,8 +8,14 @@
 
 import UIKit
 
-struct Nutrient: Codable{
+struct JSONNutrient: Codable{
     var value: Double
-    var attr_id: Int
+    var attrId: Int
     var name: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case value
+        case attrId = "attr_id"
+        case name
+    }
 }
