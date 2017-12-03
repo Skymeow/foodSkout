@@ -36,7 +36,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="606"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phh-Pk-bc7">
-                                                <rect key="frame" x="35" y="380" width="0.0" height="106"/>
+                                                <rect key="frame" x="35" y="380" width="379" height="106"/>
                                                 <string key="text">    @IBAction func editInventoryTapped(_ sender: UIButton) {
         let inv = Inventory(context: coreDataStack.viewContext)
         inv.name = nameLabel.text
@@ -348,6 +348,7 @@
                                                         <fragment content="Label yo food">
                                                             <attributes>
                                                                 <font key="NSFont" metaFont="system" size="17"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>

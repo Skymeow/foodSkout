@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Gzip
 
 typealias completed = (Bool) -> Void
 
@@ -17,7 +18,8 @@ class NutrientsViewController: UIViewController {
     var foodImgs: [FoodImg] = []
     
     var foodUri: String?
-
+    
+    var zippedResult: Any?
     @IBOutlet weak var percentageBar1: PercentageBar!
 
     @IBOutlet weak var percentageBar2: PercentageBar!
@@ -73,8 +75,8 @@ class NutrientsViewController: UIViewController {
         Networking.instance.fetch(route: .getNutrientsLabel, method: "POST", data: foodLabelObj) { (data, response) in
             if response == 200 {
                 print(data)
-                let result = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
-                print(result)
+//                let result = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
+//                print(result)
 //                let result = try? JSONDecoder().decode(IngredientResult.self, from: data)
 //                guard let dietLabelResult = result?.dietLabels,
 //                    let healthLabelResult = result?.healthLabels else { return }
@@ -85,7 +87,7 @@ class NutrientsViewController: UIViewController {
             }
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         percentageBar1.value = 0.75
