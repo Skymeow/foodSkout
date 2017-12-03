@@ -35,8 +35,8 @@ enum Route {
             return "foods"
         case .foodImg:
             return ""
-        case .paramForNutrients:
-            return "parser"
+        case let .paramForNutrients(ingr):
+            return "parser?app_key=8af485e0c5915a60459b01f079a95863&app_id=338dc80d&ingr=\(ingr)"
         case .getNutrientsLabel:
             return "nutrients"
         }
@@ -57,13 +57,11 @@ enum Route {
                     "q": foodImgQuery,
                     "image_type": "photo",
                     "category": "food"]
-        case let .paramForNutrients(ingr):
-            return ["app_id": "338dc80d",
-                    "appp_key": "8af485e0c5915a60459b01f079a95863",
-                    "ingr": ingr]
+        case .paramForNutrients:
+            return [:]
         case .getNutrientsLabel:
             return ["app_id": "338dc80d",
-                    "appp_key": "8af485e0c5915a60459b01f079a95863"]
+                    "app_key": "8af485e0c5915a60459b01f079a95863"]
         }
     }
     
@@ -74,7 +72,7 @@ enum Route {
     func baseURl() -> String {
         switch self {
         case .organs:
-            return "http://127.0.0.1:5000/"
+            return "https://foodskout.herokuapp.com/"
         case .foods:
             return ""
         case .foodImg:
@@ -102,4 +100,5 @@ enum Route {
             
         }
     }
+    
 }

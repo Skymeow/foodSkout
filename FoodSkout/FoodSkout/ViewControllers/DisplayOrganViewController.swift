@@ -25,16 +25,14 @@ class DisplayOrganViewController: UIViewController {
     func getParamsForNutrients(completion: @escaping (Bool) -> Void) {
         let newFoodName = self.foodName!.replacingOccurrences(of: " ", with: "%20")
         print(newFoodName)
-            Networking.instance.fetch(route: .paramForNutrients(ingr: newFoodName), method: "GET", data: nil){ (data, response) in
-                if response == 200 {
-                    let result = try? JSONDecoder().decode(Params.self, from: data)
-                    guard let paramsResult = result?.parsed else { return }
-                    print(paramsResult)
-                    let foodUri = paramsResult[0].food.uri
-                    print(foodUri)
-                    completion(true)
-                }
-            }
+        Networking.instance.fetch(route: .paramForNutrients(ingr: newFoodName), method: "GET", data: nil){ (data, response) in
+            let result = try? JSONDecoder().decode(Params.self, from: data)
+            guard let paramsResult = result?.parsed else { return }
+            print(paramsResult)
+            let foodUri = paramsResult[0].food.uri
+            print(foodUri)
+            completion(true)
+        }
     }
     
     override func viewDidLoad() {
@@ -44,15 +42,15 @@ class DisplayOrganViewController: UIViewController {
         self.organImg.image = organUIImg
         
         Networking.instance.fetch(route: .organs(organName: organName!), method: "GET", data: nil) { (data, response) in
-              if response == 200 {
+            if response == 200 {
                 let organ = try? JSONDecoder().decode(Organ.self, from: data)
                 guard let good = organ?.goodFoods,
-                let bad =  organ?.badFoods else { return }
+                    let bad =  organ?.badFoods else { return }
                 self.goodFoods = good; self.badFoods = bad
                 DispatchQueue.main.async {
                     self.lowerTableView.reloadData()
                 }
-              }
+            }
         }
     }
     
