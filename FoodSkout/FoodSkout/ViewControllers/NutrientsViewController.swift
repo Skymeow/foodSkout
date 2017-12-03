@@ -15,6 +15,8 @@ class NutrientsViewController: UIViewController {
     var foodName: String?
     
     var foodImgs: [FoodImg] = []
+    
+    var foodUri: String?
 
     @IBOutlet weak var percentageBar1: PercentageBar!
 
@@ -64,6 +66,25 @@ class NutrientsViewController: UIViewController {
             }
         }
     }
+    
+    func getLabelData() {
+        let ingredientObj = Ingredient(quantity: 1, measureURI: "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram", foodURI: self.foodUri!)
+        let foodLabelObj = IngredientBody(yield: 1, ingredients: [ingredientObj])
+        Networking.instance.fetch(route: .getNutrientsLabel, method: "POST", data: foodLabelObj) { (data, response) in
+            if response == 200 {
+                print(data)
+                let result = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
+                print(result)
+//                let result = try? JSONDecoder().decode(IngredientResult.self, from: data)
+//                guard let dietLabelResult = result?.dietLabels,
+//                    let healthLabelResult = result?.healthLabels else { return }
+//                print(healthLabelResult)
+//                  let formatedLabel =
+//                self.foodDescriptionLabel = dietLabelResult + healthLabelResult
+                
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +97,11 @@ class NutrientsViewController: UIViewController {
                 self.setCorrectImg()
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getLabelData()
     }
     
 

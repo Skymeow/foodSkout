@@ -23,8 +23,8 @@ enum Route {
       return "foods"
     case .foodImg:
         return ""
-    case let .paramForNutrients(ingr):
-        return "parser?app_key=8af485e0c5915a60459b01f079a95863&app_id=338dc80d&ingr=\(ingr)"
+    case .paramForNutrients:
+        return "parser"
     case .getNutrientsLabel:
         return "nutrients"
     default:
@@ -43,11 +43,15 @@ enum Route {
                 "q": foodImgQuery,
                 "image_type": "photo",
                 "category": "food"]
-    case .paramForNutrients:
-        return [:]
+    case let .paramForNutrients(ingr):
+        return [
+                "app_id": "338dc80d",
+                "app_key": "8af485e0c5915a60459b01f079a95863",
+                "ingr": ingr,
+                ]
     case .getNutrientsLabel:
         return ["app_id": "338dc80d",
-                "app_key": "8af485e0c5915a60459b01f079a95863"]
+                "app_key": "8af485e0c5915a60459b01f079a95863",]
     default:
         return [:]
     }
@@ -97,17 +101,22 @@ class Networking {
   func fetch(route: Route, method: String, data: Encodable?, completion: @escaping (Data, Int) -> Void) {
         var baseURL = route.baseURl()
         let urlString = baseURL.appending(route.path())
-    
         var toURL = URL(string: urlString)!
-        if baseURL != "https://api.edamam.com/api/food-database/" {
-            toURL = toURL.appendingQueryParameters(_parametersDictionary: route.urlParameters())
-        }
+        toURL = toURL.appendingQueryParameters(_parametersDictionary: route.urlParameters())
         print(toURL)
         var request = URLRequest(url: toURL)
         request.httpBody = route.body(data: data)
         request.httpMethod = method
+        if request.httpMethod == "POST"
+        {
+            request.setValue(" application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+             let bodyRequest = request.httpBody
+            let resultReq = try? JSONSerialization.jsonObject(with: bodyRequest!, options: .allowFragments)
+            print(resultReq)
+        }
     
         session.dataTask(with: request) { (data, response, error) in
+            print(error?.localizedDescription)
             print(response)
               let statusCode: Int = (response as!
                 HTTPURLResponse).statusCode
@@ -130,7 +139,6 @@ extension Dictionary: URLQueryParameterStringConvertible {
                               String(describing: value).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
             parts.append(part as String)
         }
-        print(parts.joined(separator: "&"))
         return parts.joined(separator: "&")
     }
 }
