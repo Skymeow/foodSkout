@@ -1,15 +1,15 @@
  //
-//  ViewController.swift
-//  FoodSkout
-//
-//  Created by Sky Xu on 11/12/17.
-//  Copyright © 2017 Sky Xu. All rights reserved.
-//
-
-import UIKit
-
-class HomeViewController: UIViewController {
-
+ //  ViewController.swift
+ //  FoodSkout
+ //
+ //  Created by Sky Xu on 11/12/17.
+ //  Copyright © 2017 Sky Xu. All rights reserved.
+ //
+ 
+ import UIKit
+ 
+ class HomeViewController: UIViewController {
+    
     @IBOutlet weak var headerLabel: UILabel!
     
     @IBOutlet weak var backgroundImg: UIImageView!
@@ -31,11 +31,11 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var buttonStackView: UIStackView!
     
-  @IBAction func OrganTabbarButtonTapped(_ sender: UIButton) {
-    performSegue(withIdentifier: "toOrgans", sender: nil)
-  }
-  
-  override func viewDidLoad() {
+    @IBAction func OrganTabbarButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "toOrgans", sender: nil)
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         for family: String in UIFont.familyNames
         {
@@ -77,17 +77,18 @@ class HomeViewController: UIViewController {
         pinBackground(backgroundButtonView, to: buttonStackView)
         
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         backgroundButtonView.addBorder(side: .top, thickness: 0.65, color: UIColor(red:0.78, green:0.58, blue:0.58, alpha:1.0), leftOffset: 0, rightOffset: 0)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-}
-
+    
+    
+ }
+ 

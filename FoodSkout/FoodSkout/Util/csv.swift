@@ -14,11 +14,11 @@ open class CSV {
     public init(content: String?, delimiter: CharacterSet, encoding: UInt) throws{
         if let csvStringToParse = content{
             self.delimiter = delimiter
-
+            
             let newline = CharacterSet.newlines
             var lines: [String] = []
             csvStringToParse.trimmingCharacters(in: newline).enumerateLines { line, stop in lines.append(line) }
-
+            
             self.headers = self.parseHeaders(fromLines: lines)
             self.rows = self.parseRows(fromLines: lines)
             self.columns = self.parseColumns(fromLines: lines)

@@ -18,12 +18,12 @@ class LowerTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
   
-  override func layerWillDraw(_ layer: CALayer) {
-    imgView.layer.cornerRadius = imgView.frame.width / 2
-    imgView.layer.masksToBounds = false
-    imgView.clipsToBounds = true
-  }
-//  lowerTableViewCell.imgView.layer.cornerRadius = lowerTableViewCell.imgView.frame.height / 2
-//  lowerTableViewCell.imgView.layer.masksToBounds = false
-//  lowerTableViewCell.imgView.clipsToBounds = true
+    override func layerWillDraw(_ layer: CALayer) {
+        imgView.layer.cornerRadius = imgView.frame.width / 2
+        imgView.layer.masksToBounds = false
+        imgView.clipsToBounds = true
+    }
+    //  lowerTableViewCell.imgView.layer.cornerRadius = lowerTableViewCell.imgView.frame.height / 2
+    //  lowerTableViewCell.imgView.layer.masksToBounds = false
+    //  lowerTableViewCell.imgView.clipsToBounds = true
 }
