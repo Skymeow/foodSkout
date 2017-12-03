@@ -31,3 +31,16 @@ struct Ingredient: Encodable {
     }
 }
 
+struct Params: Decodable {
+    var parsed: [ParamsLayer]
+}
+
+struct ParamsLayer: Decodable {
+    var food: FoodObj
+}
+
+struct FoodObj: Decodable {
+    var uri: String
+}
+
+
