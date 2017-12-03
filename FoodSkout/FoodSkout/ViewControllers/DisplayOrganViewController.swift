@@ -14,11 +14,28 @@ class DisplayOrganViewController: UIViewController {
     
     var row: Int?
     
+    var foodName: String?
+    
     @IBOutlet weak var organImg: UIImageView!
     
     @IBOutlet weak var upperView: UIView!
     
     @IBOutlet weak var lowerTableView: UITableView!
+    
+    func getParamsForNutrients(completion: @escaping (Bool) -> Void) {
+        let newFoodName = self.foodName!.replacingOccurrences(of: " ", with: "%20")
+        print(newFoodName)
+            Networking.instance.fetch(route: .paramForNutrients(ingr: newFoodName), method: "GET", data: nil){ (data, response) in
+                if response == 200 {
+                    let result = try? JSONDecoder().decode(Params.self, from: data)
+                    guard let paramsResult = result?.parsed else { return }
+                    print(paramsResult)
+                    let foodUri = paramsResult[0].food.uri
+                    print(foodUri)
+                    completion(true)
+                }
+            }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,10 +84,18 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
         if let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutrientsViewController") as? NutrientsViewController {
             if indexPath.section == 0 {
                 nutritionVC.foodName = goodFoods[indexPath.row]
+                self.foodName = goodFoods[indexPath.row]
             } else {
                 nutritionVC.foodName = badFoods[indexPath.row]
+                self.foodName = badFoods[indexPath.row]
             }
-            present(nutritionVC, animated: true)
+            
+            getParamsForNutrients { (success) in
+                if success {
+                    self.present(nutritionVC, animated: true)
+                }
+            }
+            
         }
     }
     
