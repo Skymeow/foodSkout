@@ -2,8 +2,7 @@
 //  NetWorking.swift
 //  FoodSkout
 //
-//  Created by Sky Xu on 11/23/17.
-//  Copyright © 2017 Sky Xu. All rights reserved.
+//  Created by Sky Xu on 11/23/17.//  Copyaright © 2017 Sky Xu. All rights reserved.
 //
 
 import Foundation

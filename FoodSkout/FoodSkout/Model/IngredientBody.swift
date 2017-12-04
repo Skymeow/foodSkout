@@ -31,11 +31,25 @@ struct Ingredient: Codable {
     }
 }
 
-struct IngredientResult: Decodable {
-    var dietLabels: [String]
+struct IngredientResult {
+//    var dietLabels: [String]
     var healthLabels: [String]
+    
+    enum Keys: String, CodingKey {
+        case healthLabels
+    }
 }
 
+extension IngredientResult: Decodable {
+    init(with decoder: Decoder) {
+        let container = try? decoder.container(keyedBy: Keys.self)
+        let healthLabels = try? container?.decode(String.self, forKey: .healthLabels)
+        let utf8Data = healthLabels??.data(using: String.Encoding.utf8)
+        let utf8 = String.init(data: utf8Data!, encoding: String.Encoding.utf8)
+        
+        self.init(healthLabels: utf8)
+    }
+}
 struct Params: Decodable {
     var parsed: [ParamsLayer]
 }
