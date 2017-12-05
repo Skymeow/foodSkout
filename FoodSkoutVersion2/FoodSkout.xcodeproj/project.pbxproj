@@ -12,7 +12,6 @@
 		90EDEC281FCFBDDC00A2150E /* Sheet1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 90EDEC271FCFBDDC00A2150E /* Sheet1.csv */; };
 		90EDEC2B1FCFBE6500A2150E /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDEC2A1FCFBE6500A2150E /* csv.swift */; };
 		F9567EE71FBBB3CF0069D7DF /* BackgroundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */; };
-		F9567EE81FBC1C7C0069D7DF /* turmeric.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F9E731381FB942F50020C89E /* turmeric.pdf */; };
 		F9567EEA1FBCD6AA0069D7DF /* UIView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9567EE91FBCD6AA0069D7DF /* UIView+Borders.swift */; };
 		F98E57A21FD33DAD00DDE9AA /* IngredientBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E57A11FD33DAD00DDE9AA /* IngredientBody.swift */; };
 		F9A258E41FC3AA9400DE4C06 /* LowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */; };
@@ -30,10 +29,7 @@
 		F9E7312A1FB9085C0020C89E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E731291FB9085C0020C89E /* Assets.xcassets */; };
 		F9E7312D1FB9085C0020C89E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E7312B1FB9085C0020C89E /* LaunchScreen.storyboard */; };
 		F9E731371FB933EC0020C89E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731361FB933EC0020C89E /* GradientView.swift */; };
-		F9E7313B1FB969B90020C89E /* timeburnerbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E7313A1FB95AB40020C89E /* timeburnerbold.ttf */; };
-		F9E7313C1FB969BC0020C89E /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E731391FB95AB40020C89E /* timeburnernormal.ttf */; };
 		F9E7313E1FBA0AF30020C89E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9E7312E1FB9085C0020C89E /* Info.plist */; };
-		F9E7313F1FBA0AFA0020C89E /* TypoGraphica_demo.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9E7313D1FBA0ACC0020C89E /* TypoGraphica_demo.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +37,10 @@
 		90EDEC241FCFBDA400A2150E /* Nutrient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
 		90EDEC271FCFBDDC00A2150E /* Sheet1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sheet1.csv; sourceTree = "<group>"; };
 		90EDEC2A1FCFBE6500A2150E /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
+		F93688001FD739FF0060E43C /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
+		F93688011FD739FF0060E43C /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
+		F93688021FD739FF0060E43C /* turmeric.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = turmeric.pdf; sourceTree = "<group>"; };
+		F93688031FD73A000060E43C /* TypoGraphica_demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypoGraphica_demo.otf; sourceTree = "<group>"; };
 		F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundButtonView.swift; sourceTree = "<group>"; };
 		F9567EE91FBCD6AA0069D7DF /* UIView+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Borders.swift"; sourceTree = "<group>"; };
 		F98E57A11FD33DAD00DDE9AA /* IngredientBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientBody.swift; sourceTree = "<group>"; };
@@ -61,10 +61,6 @@
 		F9E7312C1FB9085C0020C89E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9E7312E1FB9085C0020C89E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9E731361FB933EC0020C89E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		F9E731381FB942F50020C89E /* turmeric.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = turmeric.pdf; sourceTree = "<group>"; };
-		F9E731391FB95AB40020C89E /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
-		F9E7313A1FB95AB40020C89E /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
-		F9E7313D1FBA0ACC0020C89E /* TypoGraphica_demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypoGraphica_demo.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,10 +156,10 @@
 			children = (
 				F9E731211FB9085C0020C89E /* FoodSkout */,
 				F9E731201FB9085C0020C89E /* Products */,
-				F9E731381FB942F50020C89E /* turmeric.pdf */,
-				F9E7313A1FB95AB40020C89E /* timeburnerbold.ttf */,
-				F9E731391FB95AB40020C89E /* timeburnernormal.ttf */,
-				F9E7313D1FBA0ACC0020C89E /* TypoGraphica_demo.otf */,
+				F93688001FD739FF0060E43C /* timeburnerbold.ttf */,
+				F93688011FD739FF0060E43C /* timeburnernormal.ttf */,
+				F93688021FD739FF0060E43C /* turmeric.pdf */,
+				F93688031FD73A000060E43C /* TypoGraphica_demo.otf */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,15 +248,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9E7313B1FB969B90020C89E /* timeburnerbold.ttf in Resources */,
-				F9E7313C1FB969BC0020C89E /* timeburnernormal.ttf in Resources */,
 				F9E7313E1FBA0AF30020C89E /* Info.plist in Resources */,
 				90EDEC281FCFBDDC00A2150E /* Sheet1.csv in Resources */,
 				F9E7312D1FB9085C0020C89E /* LaunchScreen.storyboard in Resources */,
-				F9E7313F1FBA0AFA0020C89E /* TypoGraphica_demo.otf in Resources */,
 				F9E7312A1FB9085C0020C89E /* Assets.xcassets in Resources */,
 				F9E731281FB9085C0020C89E /* Main.storyboard in Resources */,
-				F9567EE81FBC1C7C0069D7DF /* turmeric.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

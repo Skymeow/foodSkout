@@ -16,6 +16,8 @@ class DisplayOrganViewController: UIViewController {
     
     var foodName: String?
     
+    var foodUriData: String?
+    
     @IBOutlet weak var organImg: UIImageView!
     
     @IBOutlet weak var upperView: UIView!
@@ -23,18 +25,17 @@ class DisplayOrganViewController: UIViewController {
     @IBOutlet weak var lowerTableView: UITableView!
     
     func getParamsForNutrients(completion: @escaping (Bool) -> Void) {
-        let newFoodName = self.foodName!.replacingOccurrences(of: " ", with: "%20")
-        print(newFoodName)
-            Networking.instance.fetch(route: .paramForNutrients(ingr: newFoodName), method: "GET", data: nil){ (data, response) in
-                if response == 200 {
-                    let result = try? JSONDecoder().decode(Params.self, from: data)
-                    guard let paramsResult = result?.parsed else { return }
-                    print(paramsResult)
-                    let foodUri = paramsResult[0].food.uri
-                    print(foodUri)
-                    completion(true)
-                }
+        
+        Networking.instance.fetch(route: .paramForNutrients(ingr: self.foodName!), method: "GET", data: nil){ (data, response) in
+            if response == 200 {
+                let result = try? JSONDecoder().decode(Params.self, from: data)
+                guard let paramsResult = result?.parsed else { return }
+                let foodUri = paramsResult[0].food.uri
+                print(foodUri)
+                self.foodUriData = foodUri
+                completion(true)
             }
+        }
     }
     
     override func viewDidLoad() {
@@ -44,15 +45,15 @@ class DisplayOrganViewController: UIViewController {
         self.organImg.image = organUIImg
         
         Networking.instance.fetch(route: .organs(organName: organName!), method: "GET", data: nil) { (data, response) in
-              if response == 200 {
+            if response == 200 {
                 let organ = try? JSONDecoder().decode(Organ.self, from: data)
                 guard let good = organ?.goodFoods,
-                let bad =  organ?.badFoods else { return }
+                    let bad =  organ?.badFoods else { return }
                 self.goodFoods = good; self.badFoods = bad
                 DispatchQueue.main.async {
                     self.lowerTableView.reloadData()
                 }
-              }
+            }
         }
     }
     
@@ -92,6 +93,7 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
             
             getParamsForNutrients { (success) in
                 if success {
+                    nutritionVC.foodUri = self.foodUriData
                     self.present(nutritionVC, animated: true)
                 }
             }
@@ -128,3 +130,4 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
         return view
     }
 }
+

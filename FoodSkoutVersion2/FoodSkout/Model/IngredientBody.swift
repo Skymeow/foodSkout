@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct IngredientBody: Encodable {
+struct IngredientBody: Codable {
     var yield: Int
     var ingredients: [Ingredient]
     
@@ -19,7 +19,7 @@ struct IngredientBody: Encodable {
     }
 }
 
-struct Ingredient: Encodable {
+struct Ingredient: Codable {
     var quantity: Int
     var measureURI: String
     var foodURI: String
@@ -29,6 +29,12 @@ struct Ingredient: Encodable {
         self.measureURI = measureURI
         self.foodURI = foodURI
     }
+}
+
+struct IngredientResult: Decodable {
+    //    var dietLabels: [String]
+    let healthLabels: [String]
+    
 }
 
 struct Params: Decodable {

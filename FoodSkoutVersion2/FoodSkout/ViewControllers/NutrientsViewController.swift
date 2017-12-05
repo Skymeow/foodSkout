@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 typealias completed = (Bool) -> Void
 
 class NutrientsViewController: UIViewController {
@@ -15,21 +16,24 @@ class NutrientsViewController: UIViewController {
     var foodName: String?
     
     var foodImgs: [FoodImg] = []
-
+    
+    var foodUri: String?
+    
+    var zippedResult: Any?
     @IBOutlet weak var percentageBar1: PercentageBar!
-
+    
     @IBOutlet weak var percentageBar2: PercentageBar!
-
+    
     @IBOutlet weak var percentageBar3: PercentageBar!
-  
+    
     @IBOutlet weak var foodImgView: UIImageView!
-
+    
     @IBOutlet weak var foodDescriptionLabel: UILabel!
-
+    
     @IBOutlet weak var nutrientLabel1: UILabel!
-
+    
     @IBOutlet weak var nutrientLabel2: UILabel!
-
+    
     @IBOutlet weak var nutrientLabel3: UILabel!
     
     func getFoodImg(completion: @escaping (Bool) -> Void) {
@@ -39,7 +43,7 @@ class NutrientsViewController: UIViewController {
                 guard let foodImgsData = result?.hits else { return }
                 print(foodImgsData)
                 self.foodImgs = foodImgsData
-
+                
                 completion(true)
             }
         }
@@ -57,14 +61,28 @@ class NutrientsViewController: UIViewController {
     }
     
     func handleFunctionOrder(completion: @escaping completed) {
-//       call getFoodImg() first then do the following
+        //       call getFoodImg() first then do the following
         self.getFoodImg { (success) in
             if success{
                 completion(true)
             }
         }
     }
-
+    
+    func getLabelData() {
+        let ingredientObj = Ingredient(quantity: 1, measureURI: "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram", foodURI: self.foodUri!)
+        let foodLabelObj = IngredientBody(yield: 1, ingredients: [ingredientObj])
+        Networking.instance.fetch(route: .getNutrientsLabel, method: "POST", data: foodLabelObj) { (data, response) in
+            if response == 200 {
+                let decoder = JSONDecoder()
+                let res = try? decoder.decode(IngredientResult.self, from: data)
+                guard let healthLabelResult = res?.healthLabels else { return }
+                print(healthLabelResult)
+                
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         percentageBar1.value = 0.75
@@ -78,9 +96,15 @@ class NutrientsViewController: UIViewController {
         }
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getLabelData()
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
+        
     }
 }
+
