@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  FoodSkout
+//  OnboardingForFoodSkout
 //
-//  Created by Sky Xu on 11/12/17.
+//  Created by Sky Xu on 12/3/17.
 //  Copyright © 2017 Sky Xu. All rights reserved.
 //
 

@@ -7,21 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		443920A5BAE2416C0ED6D952 /* Pods_FoodSkout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5A049044DA98049A56F878 /* Pods_FoodSkout.framework */; };
+		90EDEC231FCFBD9D00A2150E /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDEC221FCFBD9D00A2150E /* Food.swift */; };
+		90EDEC251FCFBDA400A2150E /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDEC241FCFBDA400A2150E /* Nutrient.swift */; };
+		90EDEC281FCFBDDC00A2150E /* Sheet1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 90EDEC271FCFBDDC00A2150E /* Sheet1.csv */; };
+		90EDEC2B1FCFBE6500A2150E /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDEC2A1FCFBE6500A2150E /* csv.swift */; };
+		F9567EE71FBBB3CF0069D7DF /* BackgroundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */; };
+		F9567EE81FBC1C7C0069D7DF /* turmeric.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F9E731381FB942F50020C89E /* turmeric.pdf */; };
+		F9567EEA1FBCD6AA0069D7DF /* UIView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9567EE91FBCD6AA0069D7DF /* UIView+Borders.swift */; };
+		F98E57A21FD33DAD00DDE9AA /* IngredientBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E57A11FD33DAD00DDE9AA /* IngredientBody.swift */; };
+		F9A258E41FC3AA9400DE4C06 /* LowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */; };
+		F9D98CE51FC357B700E32C11 /* DisplayOrganViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D98CE41FC357B700E32C11 /* DisplayOrganViewController.swift */; };
+		F9E37EC81FC7A9A400EBD626 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37EC71FC7A9A400EBD626 /* Networking.swift */; };
+		F9E37ECA1FC8AF0300EBD626 /* NutrientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37EC91FC8AF0300EBD626 /* NutrientsViewController.swift */; };
+		F9E37ED01FCA0C5E00EBD626 /* PercentageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37ECF1FCA0C5E00EBD626 /* PercentageBar.swift */; };
+		F9E37ED71FCE0AD100EBD626 /* ChooseOrgansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37ED61FCE0AD000EBD626 /* ChooseOrgansViewController.swift */; };
+		F9E37ED91FCE12C800EBD626 /* OrganCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37ED81FCE12C800EBD626 /* OrganCollectionViewCell.swift */; };
+		F9E37EDD1FCF8E6C00EBD626 /* Organ.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37EDC1FCF8E6C00EBD626 /* Organ.swift */; };
+		F9E37EE01FD1DF7A00EBD626 /* FoodImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37EDF1FD1DF7A00EBD626 /* FoodImg.swift */; };
 		F9E731231FB9085C0020C89E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731221FB9085C0020C89E /* AppDelegate.swift */; };
-		F9E731251FB9085C0020C89E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731241FB9085C0020C89E /* ViewController.swift */; };
+		F9E731251FB9085C0020C89E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731241FB9085C0020C89E /* HomeViewController.swift */; };
 		F9E731281FB9085C0020C89E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E731261FB9085C0020C89E /* Main.storyboard */; };
 		F9E7312A1FB9085C0020C89E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E731291FB9085C0020C89E /* Assets.xcassets */; };
 		F9E7312D1FB9085C0020C89E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E7312B1FB9085C0020C89E /* LaunchScreen.storyboard */; };
+		F9E731371FB933EC0020C89E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731361FB933EC0020C89E /* GradientView.swift */; };
+		F9E7313B1FB969B90020C89E /* timeburnerbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E7313A1FB95AB40020C89E /* timeburnerbold.ttf */; };
+		F9E7313C1FB969BC0020C89E /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9E731391FB95AB40020C89E /* timeburnernormal.ttf */; };
+		F9E7313E1FBA0AF30020C89E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9E7312E1FB9085C0020C89E /* Info.plist */; };
+		F9E7313F1FBA0AFA0020C89E /* TypoGraphica_demo.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9E7313D1FBA0ACC0020C89E /* TypoGraphica_demo.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59EEFFE89FB60C4DA6788C97 /* Pods-FoodSkout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodSkout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout.debug.xcconfig"; sourceTree = "<group>"; };
+		90EDEC221FCFBD9D00A2150E /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		90EDEC241FCFBDA400A2150E /* Nutrient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
+		90EDEC271FCFBDDC00A2150E /* Sheet1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sheet1.csv; sourceTree = "<group>"; };
+		90EDEC2A1FCFBE6500A2150E /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
+		93A1A556371A20857A042D94 /* Pods-FoodSkout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodSkout.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout.release.xcconfig"; sourceTree = "<group>"; };
+		BA5A049044DA98049A56F878 /* Pods_FoodSkout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodSkout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundButtonView.swift; sourceTree = "<group>"; };
+		F9567EE91FBCD6AA0069D7DF /* UIView+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Borders.swift"; sourceTree = "<group>"; };
+		F98E57A11FD33DAD00DDE9AA /* IngredientBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientBody.swift; sourceTree = "<group>"; };
+		F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerTableViewCell.swift; sourceTree = "<group>"; };
+		F9D98CE41FC357B700E32C11 /* DisplayOrganViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayOrganViewController.swift; sourceTree = "<group>"; };
+		F9E37EC71FC7A9A400EBD626 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		F9E37EC91FC8AF0300EBD626 /* NutrientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsViewController.swift; sourceTree = "<group>"; };
+		F9E37ECF1FCA0C5E00EBD626 /* PercentageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageBar.swift; sourceTree = "<group>"; };
+		F9E37ED61FCE0AD000EBD626 /* ChooseOrgansViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseOrgansViewController.swift; sourceTree = "<group>"; };
+		F9E37ED81FCE12C800EBD626 /* OrganCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrganCollectionViewCell.swift; path = FoodSkout/Views/OrganCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		F9E37EDC1FCF8E6C00EBD626 /* Organ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organ.swift; sourceTree = "<group>"; };
+		F9E37EDF1FD1DF7A00EBD626 /* FoodImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodImg.swift; sourceTree = "<group>"; };
 		F9E7311F1FB9085C0020C89E /* FoodSkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodSkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E731221FB9085C0020C89E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F9E731241FB9085C0020C89E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F9E731241FB9085C0020C89E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9E731271FB9085C0020C89E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9E731291FB9085C0020C89E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9E7312C1FB9085C0020C89E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9E7312E1FB9085C0020C89E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9E731361FB933EC0020C89E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		F9E731381FB942F50020C89E /* turmeric.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = turmeric.pdf; sourceTree = "<group>"; };
+		F9E731391FB95AB40020C89E /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
+		F9E7313A1FB95AB40020C89E /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
+		F9E7313D1FBA0ACC0020C89E /* TypoGraphica_demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypoGraphica_demo.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +76,118 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				443920A5BAE2416C0ED6D952 /* Pods_FoodSkout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31F2D42CFAB354FC56980818 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA5A049044DA98049A56F878 /* Pods_FoodSkout.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65A5BC302D447142D637E768 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59EEFFE89FB60C4DA6788C97 /* Pods-FoodSkout.debug.xcconfig */,
+				93A1A556371A20857A042D94 /* Pods-FoodSkout.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		90EDEC261FCFBDC500A2150E /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				90EDEC271FCFBDDC00A2150E /* Sheet1.csv */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		90EDEC291FCFBE3F00A2150E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				90EDEC2A1FCFBE6500A2150E /* csv.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		F9567EEB1FBCD8550069D7DF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F9567EE91FBCD6AA0069D7DF /* UIView+Borders.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F9E37ECB1FC9DE9700EBD626 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F9E731241FB9085C0020C89E /* HomeViewController.swift */,
+				F9E37ED61FCE0AD000EBD626 /* ChooseOrgansViewController.swift */,
+				F9D98CE41FC357B700E32C11 /* DisplayOrganViewController.swift */,
+				F9E37EC91FC8AF0300EBD626 /* NutrientsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F9E37ECC1FC9DEBC00EBD626 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F9E37ED81FCE12C800EBD626 /* OrganCollectionViewCell.swift */,
+				F9E37ECF1FCA0C5E00EBD626 /* PercentageBar.swift */,
+				F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */,
+				F9E731361FB933EC0020C89E /* GradientView.swift */,
+				F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F9E37ECD1FC9DEC800EBD626 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F9E37EC71FC7A9A400EBD626 /* Networking.swift */,
+			);
+			name = Network;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		F9E37ECE1FC9DEF300EBD626 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F9E731261FB9085C0020C89E /* Main.storyboard */,
+				F9E7312B1FB9085C0020C89E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F9E37EDE1FCF8E7500EBD626 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9E37EDC1FCF8E6C00EBD626 /* Organ.swift */,
+				90EDEC241FCFBDA400A2150E /* Nutrient.swift */,
+				90EDEC221FCFBD9D00A2150E /* Food.swift */,
+				F9E37EDF1FD1DF7A00EBD626 /* FoodImg.swift */,
+				F98E57A11FD33DAD00DDE9AA /* IngredientBody.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F9E731161FB9085C0020C89E = {
 			isa = PBXGroup;
 			children = (
 				F9E731211FB9085C0020C89E /* FoodSkout */,
 				F9E731201FB9085C0020C89E /* Products */,
+				F9E731381FB942F50020C89E /* turmeric.pdf */,
+				F9E7313A1FB95AB40020C89E /* timeburnerbold.ttf */,
+				F9E731391FB95AB40020C89E /* timeburnernormal.ttf */,
+				F9E7313D1FBA0ACC0020C89E /* TypoGraphica_demo.otf */,
+				65A5BC302D447142D637E768 /* Pods */,
+				31F2D42CFAB354FC56980818 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,11 +202,16 @@
 		F9E731211FB9085C0020C89E /* FoodSkout */ = {
 			isa = PBXGroup;
 			children = (
+				90EDEC291FCFBE3F00A2150E /* Util */,
+				90EDEC261FCFBDC500A2150E /* Vendor */,
 				F9E731221FB9085C0020C89E /* AppDelegate.swift */,
-				F9E731241FB9085C0020C89E /* ViewController.swift */,
-				F9E731261FB9085C0020C89E /* Main.storyboard */,
+				F9E37EDE1FCF8E7500EBD626 /* Model */,
+				F9E37ECB1FC9DE9700EBD626 /* ViewControllers */,
+				F9E37ECC1FC9DEBC00EBD626 /* Views */,
+				F9E37ECD1FC9DEC800EBD626 /* Network */,
+				F9567EEB1FBCD8550069D7DF /* Helpers */,
+				F9E37ECE1FC9DEF300EBD626 /* Storyboards */,
 				F9E731291FB9085C0020C89E /* Assets.xcassets */,
-				F9E7312B1FB9085C0020C89E /* LaunchScreen.storyboard */,
 				F9E7312E1FB9085C0020C89E /* Info.plist */,
 			);
 			path = FoodSkout;
@@ -71,9 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9E731311FB9085C0020C89E /* Build configuration list for PBXNativeTarget "FoodSkout" */;
 			buildPhases = (
+				0E642D81BB75AAC49C92EFC2 /* [CP] Check Pods Manifest.lock */,
 				F9E7311B1FB9085C0020C89E /* Sources */,
 				F9E7311C1FB9085C0020C89E /* Frameworks */,
 				F9E7311D1FB9085C0020C89E /* Resources */,
+				497C8F1667EE7F02B52A2AA4 /* [CP] Embed Pods Frameworks */,
+				4803F2A5868FF26029D19E54 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,21 +279,97 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E7313B1FB969B90020C89E /* timeburnerbold.ttf in Resources */,
+				F9E7313C1FB969BC0020C89E /* timeburnernormal.ttf in Resources */,
+				F9E7313E1FBA0AF30020C89E /* Info.plist in Resources */,
+				90EDEC281FCFBDDC00A2150E /* Sheet1.csv in Resources */,
 				F9E7312D1FB9085C0020C89E /* LaunchScreen.storyboard in Resources */,
+				F9E7313F1FBA0AFA0020C89E /* TypoGraphica_demo.otf in Resources */,
 				F9E7312A1FB9085C0020C89E /* Assets.xcassets in Resources */,
 				F9E731281FB9085C0020C89E /* Main.storyboard in Resources */,
+				F9567EE81FBC1C7C0069D7DF /* turmeric.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E642D81BB75AAC49C92EFC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodSkout-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4803F2A5868FF26029D19E54 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		497C8F1667EE7F02B52A2AA4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GzipSwift/Gzip.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gzip.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F9E7311B1FB9085C0020C89E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9E731251FB9085C0020C89E /* ViewController.swift in Sources */,
+				90EDEC2B1FCFBE6500A2150E /* csv.swift in Sources */,
+				F9E37ECA1FC8AF0300EBD626 /* NutrientsViewController.swift in Sources */,
+				F98E57A21FD33DAD00DDE9AA /* IngredientBody.swift in Sources */,
+				F9E37EE01FD1DF7A00EBD626 /* FoodImg.swift in Sources */,
+				F9E37ED71FCE0AD100EBD626 /* ChooseOrgansViewController.swift in Sources */,
+				F9E731251FB9085C0020C89E /* HomeViewController.swift in Sources */,
+				F9A258E41FC3AA9400DE4C06 /* LowerTableViewCell.swift in Sources */,
 				F9E731231FB9085C0020C89E /* AppDelegate.swift in Sources */,
+				F9E37ED01FCA0C5E00EBD626 /* PercentageBar.swift in Sources */,
+				F9E731371FB933EC0020C89E /* GradientView.swift in Sources */,
+				90EDEC231FCFBD9D00A2150E /* Food.swift in Sources */,
+				F9567EE71FBBB3CF0069D7DF /* BackgroundButtonView.swift in Sources */,
+				F9D98CE51FC357B700E32C11 /* DisplayOrganViewController.swift in Sources */,
+				F9E37EDD1FCF8E6C00EBD626 /* Organ.swift in Sources */,
+				90EDEC251FCFBDA400A2150E /* Nutrient.swift in Sources */,
+				F9E37ED91FCE12C800EBD626 /* OrganCollectionViewCell.swift in Sources */,
+				F9E37EC81FC7A9A400EBD626 /* Networking.swift in Sources */,
+				F9567EEA1FBCD6AA0069D7DF /* UIView+Borders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +504,7 @@
 		};
 		F9E731321FB9085C0020C89E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59EEFFE89FB60C4DA6788C97 /* Pods-FoodSkout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +520,7 @@
 		};
 		F9E731331FB9085C0020C89E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93A1A556371A20857A042D94 /* Pods-FoodSkout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
