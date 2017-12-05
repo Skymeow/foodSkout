@@ -54,28 +54,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodSkout/ViewControllers/NutrientsViewController.swift"
-            timestampString = "534108541.748318"
+            timestampString = "534196991.683773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "NutrientsViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodSkout/ViewControllers/NutrientsViewController.swift"
-            timestampString = "534108541.748686"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "didReceiveMemoryWarning()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

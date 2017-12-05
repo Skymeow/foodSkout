@@ -74,16 +74,11 @@ class NutrientsViewController: UIViewController {
         let foodLabelObj = IngredientBody(yield: 1, ingredients: [ingredientObj])
         Networking.instance.fetch(route: .getNutrientsLabel, method: "POST", data: foodLabelObj) { (data, response) in
             if response == 200 {
-                print(data)
-//                let result = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
-//                print(result)
-//                let result = try? JSONDecoder().decode(IngredientResult.self, from: data)
-//                guard let dietLabelResult = result?.dietLabels,
-//                    let healthLabelResult = result?.healthLabels else { return }
-//                print(healthLabelResult)
-//                  let formatedLabel =
-//                self.foodDescriptionLabel = dietLabelResult + healthLabelResult
-                
+                let decoder = JSONDecoder()
+                let res = try? decoder.decode(IngredientResult.self, from: data)
+                guard let healthLabelResult = res?.healthLabels else { return }
+                print(healthLabelResult)
+                  
             }
         }
     }

@@ -117,11 +117,14 @@ class Networking {
         session.dataTask(with: request) { (data, response, error) in
             print(error?.localizedDescription)
             print(response)
-              let statusCode: Int = (response as!
-                HTTPURLResponse).statusCode
+
+            guard let responseCode = response as? HTTPURLResponse else {return}
+              let statusCode = responseCode.statusCode
               guard let data = data else { return }
-              print(data)
-              completion(data, statusCode)
+            let str = String.init(data: data, encoding: String.Encoding.isoLatin1)
+            let newData = str?.data(using: String.Encoding.utf8)
+            
+              completion(newData!, statusCode)
         }.resume()
   }
 }
