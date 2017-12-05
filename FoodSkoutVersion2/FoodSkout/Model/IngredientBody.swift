@@ -32,7 +32,7 @@ struct Ingredient: Codable {
 }
 
 struct IngredientResult: Decodable {
-    //    var dietLabels: [String]
+    let dietLabels: [String]
     let healthLabels: [String]
     
 }

@@ -12,7 +12,6 @@ import UIKit
 var backgroundButtonView: UIView = {
     let view = UIView()
     view.backgroundColor = UIColor(red:0.09, green:0.15, blue:0.22, alpha:1.0)
-//    view.addBorder(side: .top, thickness: 5, color: UIColor.red)
     
     return view
 }()

@@ -57,8 +57,8 @@ class DisplayOrganViewController: UIViewController {
         }
     }
     
-    var goodFoods = ["Walnut", "Salmon", "Banana"]
-    var badFoods = ["chips", "poops", "human"]
+    var goodFoods = [" ", " ", " "]
+    var badFoods = [" ", " ", " "]
 }
 
 extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate {

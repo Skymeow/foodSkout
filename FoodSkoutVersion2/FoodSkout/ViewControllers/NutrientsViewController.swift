@@ -36,6 +36,8 @@ class NutrientsViewController: UIViewController {
     
     @IBOutlet weak var nutrientLabel3: UILabel!
     
+    @IBOutlet weak var buttonView: UIStackView!
+    
     func getFoodImg(completion: @escaping (Bool) -> Void) {
         Networking.instance.fetch(route: .foodImg(foodImgQuery: foodName!), method: "GET", data: nil) { (data, response) in
             if response == 200 {
@@ -76,15 +78,19 @@ class NutrientsViewController: UIViewController {
             if response == 200 {
                 let decoder = JSONDecoder()
                 let res = try? decoder.decode(IngredientResult.self, from: data)
-                guard let healthLabelResult = res?.healthLabels else { return }
-                print(healthLabelResult)
-                
+                guard let healthLabelResult = res?.healthLabels, let dietLabelResult = res?.dietLabels else { return }
+                print(healthLabelResult, dietLabelResult)
+                let labelCombine = healthLabelResult.joined(separator: ", ")
+                DispatchQueue.main.async {
+                    self.foodDescriptionLabel.text = labelCombine
+                }
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         percentageBar1.value = 0.75
         percentageBar2.value = 0.45
         percentageBar3.value = 0.25
@@ -101,10 +107,11 @@ class NutrientsViewController: UIViewController {
         getLabelData()
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
+        self.buttonView.addBorder(side: .top, thickness: 0.65, color: UIColor(red:0.78, green:0.58, blue:0.58, alpha:1.0), leftOffset: 0, rightOffset: 0)
     }
+
 }
 
