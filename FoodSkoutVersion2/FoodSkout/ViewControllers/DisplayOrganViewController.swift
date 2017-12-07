@@ -45,6 +45,15 @@ class DisplayOrganViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        for alert controller
+        let alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)
+        let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
+        spinnerIndicator.color = UIColor.black
+        spinnerIndicator.startAnimating()
+        alertController.view.addSubview(spinnerIndicator)
+        self.present(alertController, animated: false, completion: nil)
+        
         let organUIImg = UIImage(named: "Organ\(row!)")
         self.organImg.contentMode = .scaleAspectFit
         self.organImg.image = organUIImg
@@ -57,6 +66,7 @@ class DisplayOrganViewController: UIViewController {
                 self.goodFoods = good; self.badFoods = bad
                 DispatchQueue.main.async {
                     self.lowerTableView.reloadData()
+                    alertController.dismiss(animated: true, completion: nil)
                 }
             }
         }
