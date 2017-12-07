@@ -28,13 +28,22 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var circleElement3: UIButton!
     
-    
     @IBOutlet weak var buttonStackView: UIStackView!
     
-  @IBAction func OrganTabbarButtonTapped(_ sender: UIButton) {
-    performSegue(withIdentifier: "toOrgans", sender: nil)
+    @IBAction func OrganTabbarButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ChooseOrgansViewController")
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        //self.navigationController?.pushViewController(ChooseOrgansViewController, animated: true)
+    // performSegue(withIdentifier: "toOrgans", sender: nil)
   }
   
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true);
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
   override func viewDidLoad() {
         super.viewDidLoad()
         /** for family: String in UIFont.familyNames

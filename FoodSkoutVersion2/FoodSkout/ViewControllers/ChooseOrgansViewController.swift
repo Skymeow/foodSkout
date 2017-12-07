@@ -14,6 +14,12 @@ class ChooseOrgansViewController: UIViewController {
     
     let organNames = ["brain", "heart", "liver", "stomach", "muscle", "thyroid", "lungs", "eye"]
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,8 +29,8 @@ class ChooseOrgansViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5 )
         
         collectionView.collectionViewLayout = layout
+        
     }
-    
     
     // MARK: collection view relaid out
     override func viewWillLayoutSubviews() {
@@ -66,7 +72,8 @@ extension ChooseOrgansViewController: UICollectionViewDelegate, UICollectionView
         if let displayVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DisplayOrganViewController") as? DisplayOrganViewController {
             displayVC.organName = organNames[row]
             displayVC.row = row
-            present(displayVC, animated: true)
+            self.navigationController?.pushViewController(displayVC, animated: true)
+            //present(displayVC, animated: true)
         }
         
     }

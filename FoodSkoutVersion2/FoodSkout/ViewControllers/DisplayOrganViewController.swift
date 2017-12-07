@@ -38,6 +38,11 @@ class DisplayOrganViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true);
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let organUIImg = UIImage(named: "Organ\(row!)")
@@ -94,7 +99,7 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
             getParamsForNutrients { (success) in
                 if success {
                     nutritionVC.foodUri = self.foodUriData
-                    self.present(nutritionVC, animated: true)
+                    self.navigationController?.pushViewController(nutritionVC, animated: true)
                 }
             }
             

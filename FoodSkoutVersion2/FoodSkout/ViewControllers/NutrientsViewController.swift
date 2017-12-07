@@ -82,12 +82,19 @@ class NutrientsViewController: UIViewController {
                 print(healthLabelResult, dietLabelResult)
                 let labelCombine = healthLabelResult.joined(separator: ", ")
                 DispatchQueue.main.async {
-                    self.foodDescriptionLabel.text = labelCombine
+                    self.foodDescriptionLabel.attributedText = self.makeAttributedStr(labelStr: labelCombine, lineSpacing: 10)
                 }
             }
         }
     }
     
+    
+    @IBAction func OrganNavBarButtonTapped(_ sender: UIButton) {
+        
+        if let organVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "organVC") as? ChooseOrgansViewController {
+            self.navigationController?.pushViewController(organVC, animated: true)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -104,6 +111,7 @@ class NutrientsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.navigationController?.isNavigationBarHidden = false
         getLabelData()
     }
     
@@ -115,3 +123,20 @@ class NutrientsViewController: UIViewController {
 
 }
 
+extension NutrientsViewController {
+    func makeAttributedStr(labelStr: String, lineSpacing: CGFloat = 1.5) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString(string: labelStr)
+        // *** Create instance of `NSMutableParagraphStyle`
+        let paragraphStyle = NSMutableParagraphStyle()
+        // *** set LineSpacing property in points ***
+        paragraphStyle.lineSpacing = lineSpacing // Whatever line spacing you want in points
+        
+        // *** Apply attribute to string ***
+        attributedString.addAttribute(NSAttributedStringKey.paragraphStyle,
+                                      value:paragraphStyle,
+                                      range:NSMakeRange(0, attributedString.length))
+        // *** Set Attributed String to your label ***
+//        label.attributedText = attributedString;
+        return attributedString
+    }
+}
