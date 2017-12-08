@@ -15,6 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // for present pageVC modally
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let pageVC = storyboard.instantiateViewController(withIdentifier: "pageVC")
+//            as! OnboardingPageViewController[OrganToFoodViewController]
+        self.window?.rootViewController?.present(pageVC, animated: true, completion: nil)
+        self.window?.makeKeyAndVisible()
+        
+        
+        
         UINavigationBar.appearance().barTintColor = UIColor(red: 252/255, green: 248/255, blue: 249/255, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor(red: 241/255, green: 36/255, blue: 120/255, alpha: 1.0)
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 241/255, green: 36/255, blue: 120/255, alpha: 1.0)]

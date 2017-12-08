@@ -18,6 +18,14 @@ class DisplayOrganViewController: UIViewController {
     
     var foodUriData: String?
     
+    var foodImgs: [FoodImg] = []
+    
+    var goodFoods = [" ", " ", " "]
+    
+    var badFoods = [" ", " ", " "]
+    
+    var allFood: [String]?
+    
     @IBOutlet weak var organImg: UIImageView!
     
     @IBOutlet weak var upperView: UIView!
@@ -34,6 +42,32 @@ class DisplayOrganViewController: UIViewController {
                 print(foodUri)
                 self.foodUriData = foodUri
                 completion(true)
+            }
+        }
+    }
+    
+    func getFoodImg(cellIndex: Int, completion: @escaping (Bool) -> Void) {
+        self.foodName = self.allFood?[cellIndex]
+        
+            Networking.instance.fetch(route: .foodImg(foodImgQuery: self.foodName!), method: "GET", data: nil) { (data, response) in
+                if response == 200 {
+                    let result = try? JSONDecoder().decode(AllFoodImgs.self, from: data)
+                    guard let foodImgsData = result?.hits else { return }
+                    print(foodImgsData)
+                    self.foodImgs = foodImgsData
+                    
+                    completion(true)
+                }
+            }
+    }
+    
+    func setCorrectImg(cellImg: UIImageView) {
+        let foodImgString = self.foodImgs[0].webformatURL
+        let foodImgUrl = URL(string: foodImgString)
+        let data = try? Data(contentsOf: foodImgUrl!)
+        DispatchQueue.main.async {
+            if let data = data {
+                cellImg.image = UIImage(data: data)
             }
         }
     }
@@ -63,7 +97,7 @@ class DisplayOrganViewController: UIViewController {
                 let organ = try? JSONDecoder().decode(Organ.self, from: data)
                 guard let good = organ?.goodFoods,
                     let bad =  organ?.badFoods else { return }
-                self.goodFoods = good; self.badFoods = bad
+                self.goodFoods = good; self.badFoods = bad; self.allFood = good + bad
                 DispatchQueue.main.async {
                     self.lowerTableView.reloadData()
                     alertController.dismiss(animated: true, completion: nil)
@@ -71,9 +105,6 @@ class DisplayOrganViewController: UIViewController {
             }
         }
     }
-    
-    var goodFoods = [" ", " ", " "]
-    var badFoods = [" ", " ", " "]
 }
 
 extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate {
@@ -84,11 +115,16 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let lowerTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LowerTableViewCell
-        lowerTableViewCell.imgView.image = UIImage(named: "turmeric")!
+//        lowerTableViewCell.imgView.image = UIImage(named: "turmeric")!
+        self.getFoodImg(cellIndex: indexPath.row) { (success) in
+            if success{
+                self.setCorrectImg(cellImg: lowerTableViewCell.imgView)
+            }
+        }
         if indexPath.section == 0 {
-            lowerTableViewCell.foodNameLabel.text? = goodFoods[indexPath.row]
+            lowerTableViewCell.foodNameLabel.text? = self.goodFoods[indexPath.row]
         } else {
-            lowerTableViewCell.foodNameLabel.text? = badFoods[indexPath.row]
+            lowerTableViewCell.foodNameLabel.text? = self.badFoods[indexPath.row]
         }
         lowerTableViewCell.imgView.contentMode = .scaleAspectFit
         
