@@ -395,7 +395,7 @@
                         <outlet property="lowerTableView" destination="2jj-TA-pjY" id="Zf1-IA-gUu"/>
                         <outlet property="organImg" destination="IWt-Cz-1un" id="4hm-dt-HUR"/>
                         <outlet property="upperView" destination="sGG-Nh-1Dw" id="h5a-TB-iYa"/>
-                        <segue destination="7W6-Vw-89X" kind="show" id="PNR-ea-CAb"/>
+                        <segue destination="7W6-Vw-89X" kind="show" id="uDP-a4-mZF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xzf-7F-HQK" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -109,7 +109,9 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
             getParamsForNutrients { (success) in
                 if success {
                     nutritionVC.foodUri = self.foodUriData
-                    self.navigationController?.pushViewController(nutritionVC, animated: true)
+                    DispatchQueue.main.async {
+                      self.navigationController?.pushViewController(nutritionVC, animated: true)
+                    }
                 }
             }
             

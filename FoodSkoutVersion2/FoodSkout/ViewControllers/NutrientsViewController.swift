@@ -91,7 +91,7 @@ class NutrientsViewController: UIViewController {
     
     @IBAction func OrganNavBarButtonTapped(_ sender: UIButton) {
         
-        if let organVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "organVC") as? ChooseOrgansViewController {
+        if let organVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChooseOrgansViewController") as? ChooseOrgansViewController {
             self.navigationController?.pushViewController(organVC, animated: true)
         }
     }
@@ -111,6 +111,7 @@ class NutrientsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
         self.navigationController?.isNavigationBarHidden = false
         getLabelData()
     }
