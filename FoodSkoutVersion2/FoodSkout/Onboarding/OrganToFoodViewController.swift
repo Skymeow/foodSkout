@@ -13,6 +13,10 @@ class OrganToFoodViewController: UIViewController {
     
     @IBOutlet weak var imagesStackView: UIStackView!
     
+    @IBOutlet weak var labelBig: UILabel!
+    
+    @IBOutlet weak var labelSmall: UILabel!
+    
     func animateViews() {
         imagesStackView.axis = .vertical
         
@@ -21,20 +25,15 @@ class OrganToFoodViewController: UIViewController {
             self.imagesStackView.transform =  CGAffineTransform.identity
             self.imagesStackView.alpha = 1
             
-//            self.labels.forEach { label in
-//                label.alpha = 1
-//            }
+            self.labelBig.alpha = 1
+            self.labelSmall.alpha = 1
             self.view.layoutIfNeeded()
         }
-        
         // Original state
         imagesStackView.transform = CGAffineTransform(scaleX: 0, y: 0)
         imagesStackView.alpha = 0
-        
-//        labels.forEach { label in
-//            label.alpha = 0
-//        }
-        
+        self.labelBig.alpha = 1
+        self.labelSmall.alpha = 1
         // Animate all the things!
         ThrottleHelper.throttle(seconds: 0.4) {
             
@@ -47,3 +46,4 @@ class OrganToFoodViewController: UIViewController {
         animateViews()
     }
 }
+

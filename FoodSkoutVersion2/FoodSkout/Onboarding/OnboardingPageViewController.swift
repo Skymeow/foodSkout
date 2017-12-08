@@ -36,12 +36,12 @@ class OnboardingPageViewController: UIPageViewController {
 extension OnboardingPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-       if viewController is StepTwo {
+        if viewController is StepTwo {
             // 2 -> 1
             return getStepOne()
         } else {
-        
-           return nil
+            
+            return nil
         }
     }
     
@@ -70,3 +70,4 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
 // MARK: - UIPageViewControllerDelegate methods
 
 extension OnboardingPageViewController: UIPageViewControllerDelegate {}
+

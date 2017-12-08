@@ -18,14 +18,6 @@ class DisplayOrganViewController: UIViewController {
     
     var foodUriData: String?
     
-    var foodImgs: [FoodImg] = []
-    
-    var goodFoods = [" ", " ", " "]
-    
-    var badFoods = [" ", " ", " "]
-    
-    var allFood: [String]?
-    
     @IBOutlet weak var organImg: UIImageView!
     
     @IBOutlet weak var upperView: UIView!
@@ -46,32 +38,6 @@ class DisplayOrganViewController: UIViewController {
         }
     }
     
-    func getFoodImg(cellIndex: Int, completion: @escaping (Bool) -> Void) {
-        self.foodName = self.allFood?[cellIndex]
-        
-            Networking.instance.fetch(route: .foodImg(foodImgQuery: self.foodName!), method: "GET", data: nil) { (data, response) in
-                if response == 200 {
-                    let result = try? JSONDecoder().decode(AllFoodImgs.self, from: data)
-                    guard let foodImgsData = result?.hits else { return }
-                    print(foodImgsData)
-                    self.foodImgs = foodImgsData
-                    
-                    completion(true)
-                }
-            }
-    }
-    
-    func setCorrectImg(cellImg: UIImageView) {
-        let foodImgString = self.foodImgs[0].webformatURL
-        let foodImgUrl = URL(string: foodImgString)
-        let data = try? Data(contentsOf: foodImgUrl!)
-        DispatchQueue.main.async {
-            if let data = data {
-                cellImg.image = UIImage(data: data)
-            }
-        }
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true);
         self.navigationController?.isNavigationBarHidden = false
@@ -79,7 +45,7 @@ class DisplayOrganViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        for alert controller
+        //        for alert controller
         let alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)
         let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
@@ -97,7 +63,7 @@ class DisplayOrganViewController: UIViewController {
                 let organ = try? JSONDecoder().decode(Organ.self, from: data)
                 guard let good = organ?.goodFoods,
                     let bad =  organ?.badFoods else { return }
-                self.goodFoods = good; self.badFoods = bad; self.allFood = good + bad
+                self.goodFoods = good; self.badFoods = bad
                 DispatchQueue.main.async {
                     self.lowerTableView.reloadData()
                     alertController.dismiss(animated: true, completion: nil)
@@ -105,6 +71,9 @@ class DisplayOrganViewController: UIViewController {
             }
         }
     }
+    
+    var goodFoods = [" ", " ", " "]
+    var badFoods = [" ", " ", " "]
 }
 
 extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate {
@@ -115,16 +84,11 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let lowerTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LowerTableViewCell
-//        lowerTableViewCell.imgView.image = UIImage(named: "turmeric")!
-        self.getFoodImg(cellIndex: indexPath.row) { (success) in
-            if success{
-                self.setCorrectImg(cellImg: lowerTableViewCell.imgView)
-            }
-        }
+        lowerTableViewCell.imgView.image = UIImage(named: "turmeric")!
         if indexPath.section == 0 {
-            lowerTableViewCell.foodNameLabel.text? = self.goodFoods[indexPath.row]
+            lowerTableViewCell.foodNameLabel.text? = goodFoods[indexPath.row]
         } else {
-            lowerTableViewCell.foodNameLabel.text? = self.badFoods[indexPath.row]
+            lowerTableViewCell.foodNameLabel.text? = badFoods[indexPath.row]
         }
         lowerTableViewCell.imgView.contentMode = .scaleAspectFit
         
@@ -146,7 +110,7 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
                 if success {
                     nutritionVC.foodUri = self.foodUriData
                     DispatchQueue.main.async {
-                      self.navigationController?.pushViewController(nutritionVC, animated: true)
+                     self.navigationController?.pushViewController(nutritionVC, animated: true)
                     }
                 }
             }
@@ -183,4 +147,3 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
         return view
     }
 }
-

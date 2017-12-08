@@ -12,9 +12,12 @@
 		90EDEC281FCFBDDC00A2150E /* Sheet1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 90EDEC271FCFBDDC00A2150E /* Sheet1.csv */; };
 		90EDEC2B1FCFBE6500A2150E /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDEC2A1FCFBE6500A2150E /* csv.swift */; };
 		F9567EE71FBBB3CF0069D7DF /* BackgroundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */; };
-		F98195FD1FDB04110090BD6E /* Onboarding in Resources */ = {isa = PBXBuildFile; fileRef = F98195FC1FDB04090090BD6E /* Onboarding */; };
-		F98195FF1FDB0C430090BD6E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98195FE1FDB0C430090BD6E /* Networking.swift */; };
 		F98196011FDB0CCF0090BD6E /* UIView+Boarders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98196001FDB0CCF0090BD6E /* UIView+Boarders.swift */; };
+		F98196071FDB1F9E0090BD6E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98196061FDB1F9E0090BD6E /* Networking.swift */; };
+		F981960A1FDB24790090BD6E /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98196091FDB24790090BD6E /* OnboardingPageViewController.swift */; };
+		F981960C1FDB24970090BD6E /* OrganToFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981960B1FDB24970090BD6E /* OrganToFoodViewController.swift */; };
+		F981960E1FDB24A30090BD6E /* StepTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981960D1FDB24A30090BD6E /* StepTwo.swift */; };
+		F98196101FDB25030090BD6E /* ThrottleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981960F1FDB25030090BD6E /* ThrottleHelper.swift */; };
 		F98E57A21FD33DAD00DDE9AA /* IngredientBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E57A11FD33DAD00DDE9AA /* IngredientBody.swift */; };
 		F9A258E41FC3AA9400DE4C06 /* LowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */; };
 		F9D98CE51FC357B700E32C11 /* DisplayOrganViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D98CE41FC357B700E32C11 /* DisplayOrganViewController.swift */; };
@@ -43,9 +46,12 @@
 		F93688021FD739FF0060E43C /* turmeric.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = turmeric.pdf; sourceTree = "<group>"; };
 		F93688031FD73A000060E43C /* TypoGraphica_demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypoGraphica_demo.otf; sourceTree = "<group>"; };
 		F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundButtonView.swift; sourceTree = "<group>"; };
-		F98195FC1FDB04090090BD6E /* Onboarding */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Onboarding; path = ../../OnboardingForFoodSkout/OnboardingForFoodSkout/Onboarding; sourceTree = "<group>"; };
-		F98195FE1FDB0C430090BD6E /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Networking.swift; path = ../../../../../Documents/Networking.swift; sourceTree = "<group>"; };
 		F98196001FDB0CCF0090BD6E /* UIView+Boarders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Boarders.swift"; sourceTree = "<group>"; };
+		F98196061FDB1F9E0090BD6E /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		F98196091FDB24790090BD6E /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		F981960B1FDB24970090BD6E /* OrganToFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganToFoodViewController.swift; sourceTree = "<group>"; };
+		F981960D1FDB24A30090BD6E /* StepTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwo.swift; sourceTree = "<group>"; };
+		F981960F1FDB25030090BD6E /* ThrottleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrottleHelper.swift; sourceTree = "<group>"; };
 		F98E57A11FD33DAD00DDE9AA /* IngredientBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientBody.swift; sourceTree = "<group>"; };
 		F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerTableViewCell.swift; sourceTree = "<group>"; };
 		F9D98CE41FC357B700E32C11 /* DisplayOrganViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayOrganViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +106,25 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		F98196081FDB1FA30090BD6E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F98196061FDB1F9E0090BD6E /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F98196111FDB25130090BD6E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F98196091FDB24790090BD6E /* OnboardingPageViewController.swift */,
+				F981960B1FDB24970090BD6E /* OrganToFoodViewController.swift */,
+				F981960D1FDB24A30090BD6E /* StepTwo.swift */,
+				F981960F1FDB25030090BD6E /* ThrottleHelper.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		F9E37ECB1FC9DE9700EBD626 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,15 +146,6 @@
 				F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		F9E37ECD1FC9DEC800EBD626 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				F98195FE1FDB0C430090BD6E /* Networking.swift */,
-			);
-			name = Network;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		F9E37ECE1FC9DEF300EBD626 /* Storyboards */ = {
@@ -177,13 +193,13 @@
 			isa = PBXGroup;
 			children = (
 				F9E731221FB9085C0020C89E /* AppDelegate.swift */,
-				F98195FC1FDB04090090BD6E /* Onboarding */,
+				F98196081FDB1FA30090BD6E /* Networking */,
 				90EDEC291FCFBE3F00A2150E /* Util */,
 				90EDEC261FCFBDC500A2150E /* Vendor */,
 				F9E37EDE1FCF8E7500EBD626 /* Model */,
+				F98196111FDB25130090BD6E /* Onboarding */,
 				F9E37ECB1FC9DE9700EBD626 /* ViewControllers */,
 				F9E37ECC1FC9DEBC00EBD626 /* Views */,
-				F9E37ECD1FC9DEC800EBD626 /* Network */,
 				F9567EEB1FBCD8550069D7DF /* Helpers */,
 				F9E37ECE1FC9DEF300EBD626 /* Storyboards */,
 				F9E731291FB9085C0020C89E /* Assets.xcassets */,
@@ -251,7 +267,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F98195FD1FDB04110090BD6E /* Onboarding in Resources */,
 				F9E7313E1FBA0AF30020C89E /* Info.plist in Resources */,
 				90EDEC281FCFBDDC00A2150E /* Sheet1.csv in Resources */,
 				F9E7312D1FB9085C0020C89E /* LaunchScreen.storyboard in Resources */,
@@ -270,19 +285,23 @@
 				90EDEC2B1FCFBE6500A2150E /* csv.swift in Sources */,
 				F9E37ECA1FC8AF0300EBD626 /* NutrientsViewController.swift in Sources */,
 				F98E57A21FD33DAD00DDE9AA /* IngredientBody.swift in Sources */,
-				F98195FF1FDB0C430090BD6E /* Networking.swift in Sources */,
+				F98196071FDB1F9E0090BD6E /* Networking.swift in Sources */,
+				F981960A1FDB24790090BD6E /* OnboardingPageViewController.swift in Sources */,
 				F9E37EE01FD1DF7A00EBD626 /* FoodImg.swift in Sources */,
 				F9E37ED71FCE0AD100EBD626 /* ChooseOrgansViewController.swift in Sources */,
 				F98196011FDB0CCF0090BD6E /* UIView+Boarders.swift in Sources */,
 				F9E731251FB9085C0020C89E /* HomeViewController.swift in Sources */,
 				F9A258E41FC3AA9400DE4C06 /* LowerTableViewCell.swift in Sources */,
 				F9E731231FB9085C0020C89E /* AppDelegate.swift in Sources */,
+				F98196101FDB25030090BD6E /* ThrottleHelper.swift in Sources */,
+				F981960C1FDB24970090BD6E /* OrganToFoodViewController.swift in Sources */,
 				F9E37ED01FCA0C5E00EBD626 /* PercentageBar.swift in Sources */,
 				F9E731371FB933EC0020C89E /* GradientView.swift in Sources */,
 				90EDEC231FCFBD9D00A2150E /* Food.swift in Sources */,
 				F9567EE71FBBB3CF0069D7DF /* BackgroundButtonView.swift in Sources */,
 				F9D98CE51FC357B700E32C11 /* DisplayOrganViewController.swift in Sources */,
 				F9E37EDD1FCF8E6C00EBD626 /* Organ.swift in Sources */,
+				F981960E1FDB24A30090BD6E /* StepTwo.swift in Sources */,
 				90EDEC251FCFBDA400A2150E /* Nutrient.swift in Sources */,
 				F9E37ED91FCE12C800EBD626 /* OrganCollectionViewCell.swift in Sources */,
 			);
