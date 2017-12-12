@@ -164,7 +164,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.090196078431372548" green="0.14901960784313725" blue="0.14361053666258172" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.090196078431372548" green="0.14901960784313725" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="bVU-jQ-7SF"/>
@@ -422,10 +422,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAH-54-EtH" userLabel="firstView">
-                                <rect key="frame" x="0.0" y="64" width="414" height="192"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jyr-Px-UTD">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="192"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -436,12 +436,12 @@
                                     <constraint firstAttribute="bottom" secondItem="jyr-Px-UTD" secondAttribute="bottom" id="sbq-HL-cOQ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdy-Rz-BB2">
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdy-Rz-BB2">
                                 <rect key="frame" x="0.0" y="256" width="414" height="480"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLm-X6-zFY">
                                         <rect key="frame" x="0.0" y="0.0" width="85" height="35"/>
-                                        <color key="backgroundColor" red="0.45603522010000003" green="0.73725490199999999" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.46999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="85" id="bF3-wt-Uis"/>
                                         </constraints>
@@ -453,7 +453,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvP-JC-FtZ">
                                         <rect key="frame" x="85" y="0.0" width="85" height="35"/>
-                                        <color key="backgroundColor" red="0.94509803920000002" green="0.14117647059999999" blue="0.47058823529999999" alpha="0.087756849319999997" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="85" id="HEL-SJ-GII"/>
                                         </constraints>
@@ -475,7 +475,7 @@
                                             <segue destination="9az-gy-ppQ" kind="embed" id="ERC-Lg-RM3"/>
                                         </connections>
                                     </containerView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="2C6-TY-o60" userLabel="Bottom Tab Bar Stack View">
+                                    <stackView clipsSubviews="YES" contentMode="scaleAspectFit" distribution="fillEqually" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="2C6-TY-o60" userLabel="Bottom Tab Bar Stack View">
                                         <rect key="frame" x="0.0" y="410" width="414" height="70"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBh-wE-g4Y">
@@ -528,7 +528,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PAH-54-EtH" firstAttribute="top" secondItem="jsV-xf-NnN" secondAttribute="top" id="ElL-kX-AnN"/>
+                            <constraint firstItem="PAH-54-EtH" firstAttribute="top" secondItem="k5o-Ri-0Wd" secondAttribute="top" id="ElL-kX-AnN"/>
                             <constraint firstItem="Rdy-Rz-BB2" firstAttribute="leading" secondItem="k5o-Ri-0Wd" secondAttribute="leading" id="RGc-7Q-okN"/>
                             <constraint firstItem="Rdy-Rz-BB2" firstAttribute="trailing" secondItem="k5o-Ri-0Wd" secondAttribute="trailing" id="dlk-jF-7oV"/>
                             <constraint firstItem="Rdy-Rz-BB2" firstAttribute="top" secondItem="PAH-54-EtH" secondAttribute="bottom" id="nKP-6c-mjR"/>
@@ -543,6 +543,8 @@
                     <connections>
                         <outlet property="buttonView" destination="2C6-TY-o60" id="CFC-6f-XLM"/>
                         <outlet property="foodImgView" destination="jyr-Px-UTD" id="TW4-RY-c1q"/>
+                        <outlet property="nutritionButton" destination="bLm-X6-zFY" id="lVK-9H-PUL"/>
+                        <outlet property="recipeButton" destination="vvP-JC-FtZ" id="mId-sn-h7U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDv-rg-iM9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -818,21 +820,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3c1-6Q-qmv">
-                                <rect key="frame" x="0.0" y="5" width="306" height="200"/>
+                                <rect key="frame" x="30" y="10" width="276" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjr-u7-OEG" userLabel="Detail:">
-                                        <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="27.666666666666664"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                        <color key="textColor" red="0.4549019608" green="0.73725490199999999" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="65.666666666666657" height="26.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhM-iG-ehL">
-                                        <rect key="frame" x="0.0" y="27.666666666666671" width="306" height="172.33333333333331"/>
-                                        <string key="text"> Food Description Label The childViewControllers property of UIViewController is a read-only array of child view controllers. We use this in the viewDidLoad of the master view controller to get references to the children and set the delegate:
+                                        <rect key="frame" x="0.0" y="26.333333333333329" width="0.0" height="173.66666666666669"/>
+                                        <string key="text"> The childViewControllers property of UIViewController is a read-only array of child view controllers. We use this in the viewDidLoad of the master view controller to get references to the children and set the delegate:
 
 </string>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                        <color key="textColor" red="0.45603522010000003" green="0.73725490199999999" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -841,22 +843,22 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YDq-3g-b8d" userLabel="Percentage Bars Stack View">
-                                <rect key="frame" x="15" y="220" width="286" height="150"/>
+                                <rect key="frame" x="15" y="225" width="286" height="145"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="wBC-iE-sMx">
-                                        <rect key="frame" x="0.0" y="0.0" width="92" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="145"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sugar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vG5-k1-5py">
-                                                <rect key="frame" x="1" y="0.0" width="90" height="21.666666666666657"/>
+                                                <rect key="frame" x="1" y="0.0" width="90" height="16.666666666666657"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="EAB-Qv-REp"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" red="0.61960784310000006" green="0.83921568629999999" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hbi-iF-2QP" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="13.666666666666671" y="22.666666666666657" width="64.999999999999986" height="127.33333333333334"/>
+                                                <rect key="frame" x="13.666666666666671" y="17.666666666666657" width="64.999999999999986" height="127.33333333333334"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="6eX-U0-WMY"/>
                                                 </constraints>
@@ -872,19 +874,19 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="EQa-MZ-AWG">
-                                        <rect key="frame" x="97" y="0.0" width="92" height="150"/>
+                                        <rect key="frame" x="97" y="0.0" width="92" height="145"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYK-S1-WjD">
-                                                <rect key="frame" x="1" y="0.0" width="90" height="21.666666666666657"/>
+                                                <rect key="frame" x="1" y="0.0" width="90" height="16.666666666666657"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Q94-UF-3m2"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" red="0.61960784310000006" green="0.83921568629999999" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQq-53-nrj" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="13.666666666666657" y="22.666666666666657" width="65" height="127.33333333333334"/>
+                                                <rect key="frame" x="13.666666666666657" y="17.666666666666657" width="65" height="127.33333333333334"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="zA1-cb-qbO"/>
                                                 </constraints>
@@ -895,19 +897,19 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ScT-Ks-bqH">
-                                        <rect key="frame" x="194" y="0.0" width="92" height="150"/>
+                                        <rect key="frame" x="194" y="0.0" width="92" height="145"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQ0-Bq-KH5">
-                                                <rect key="frame" x="1" y="0.0" width="90" height="21.666666666666657"/>
+                                                <rect key="frame" x="1" y="0.0" width="90" height="16.666666666666657"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="IPJ-tJ-Hfc"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" red="0.61960784310000006" green="0.83921568629999999" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50l-9I-Rqm" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="13.666666666666686" y="22.666666666666657" width="65" height="127.33333333333334"/>
+                                                <rect key="frame" x="13.666666666666686" y="17.666666666666657" width="65" height="127.33333333333334"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="d3p-ld-1nu"/>
                                                 </constraints>
@@ -925,13 +927,14 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <color key="backgroundColor" red="0.72156862745098038" green="0.83137254901960778" blue="0.65490196078431373" alpha="0.75468214897260277" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="YDq-3g-b8d" secondAttribute="bottom" id="HnP-Ia-eC8"/>
-                            <constraint firstItem="3c1-6Q-qmv" firstAttribute="top" secondItem="DsH-k2-tt7" secondAttribute="top" constant="5" id="PhD-4T-ax9"/>
+                            <constraint firstItem="3c1-6Q-qmv" firstAttribute="top" secondItem="DsH-k2-tt7" secondAttribute="top" constant="10" id="PhD-4T-ax9"/>
                             <constraint firstItem="YDq-3g-b8d" firstAttribute="leading" secondItem="DsH-k2-tt7" secondAttribute="leading" constant="15" id="Wdy-8H-N13"/>
                             <constraint firstAttribute="trailing" secondItem="YDq-3g-b8d" secondAttribute="trailing" constant="15" id="gd3-jU-5aa"/>
                             <constraint firstAttribute="trailing" secondItem="3c1-6Q-qmv" secondAttribute="trailing" constant="10" id="rAF-QL-obd"/>
-                            <constraint firstItem="3c1-6Q-qmv" firstAttribute="leading" secondItem="DsH-k2-tt7" secondAttribute="leading" id="tyx-jX-Gcj"/>
+                            <constraint firstItem="3c1-6Q-qmv" firstAttribute="leading" secondItem="DsH-k2-tt7" secondAttribute="leading" constant="30" id="tyx-jX-Gcj"/>
                             <constraint firstItem="YDq-3g-b8d" firstAttribute="top" secondItem="3c1-6Q-qmv" secondAttribute="bottom" constant="15" id="wsh-za-Dua"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GRa-Rs-JtZ"/>

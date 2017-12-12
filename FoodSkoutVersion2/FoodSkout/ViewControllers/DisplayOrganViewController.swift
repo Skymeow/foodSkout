@@ -11,17 +11,14 @@ import UIKit
 class DisplayOrganViewController: UIViewController {
     
     var organName: String?
-    
     var row: Int?
-    
     var foodName: String?
-    
     var foodUriData: String?
+    var goodFoods: [Goods]?
+    var badFoods: [Bads]?
     
     @IBOutlet weak var organImg: UIImageView!
-    
     @IBOutlet weak var upperView: UIView!
-    
     @IBOutlet weak var lowerTableView: UITableView!
     
     func getParamsForNutrients(completion: @escaping (Bool) -> Void) {
@@ -30,7 +27,6 @@ class DisplayOrganViewController: UIViewController {
             if response == 200 {
                 let result = try? JSONDecoder().decode(Params.self, from: data)
                 guard let paramsResult = result?.hints else { return }
-//                print(paramsResult)
                 let foodUri = paramsResult[0].food.uri
                 print(foodUri)
                 self.foodUriData = foodUri
@@ -65,6 +61,7 @@ class DisplayOrganViewController: UIViewController {
                 guard let good = organ?.goodFoods,
                     let bad =  organ?.badFoods else { return }
                 self.goodFoods = good; self.badFoods = bad
+                print(good, bad)
                 DispatchQueue.main.async {
                     self.lowerTableView.reloadData()
                     alertController.dismiss(animated: true, completion: nil)
@@ -72,9 +69,6 @@ class DisplayOrganViewController: UIViewController {
             }
         }
     }
-    
-    var goodFoods = [" ", " ", " "]
-    var badFoods = [" ", " ", " "]
 }
 
 extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate {
@@ -86,25 +80,33 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let lowerTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LowerTableViewCell
         lowerTableViewCell.imgView.image = UIImage(named: "turmeric")!
-        if indexPath.section == 0 {
-            lowerTableViewCell.foodNameLabel.text? = goodFoods[indexPath.row]
-        } else {
-            lowerTableViewCell.foodNameLabel.text? = badFoods[indexPath.row]
+        if goodFoods?[indexPath.row].name != nil {
+            lowerTableViewCell.foodNameLabel.text? = assignValueToCell(index: indexPath.row, section: indexPath.section)
+//            if indexPath.section == 0 {
+//                lowerTableViewCell.foodNameLabel.text? = goodFoods![indexPath.row].name
+//            } else {
+//                lowerTableViewCell.foodNameLabel.text? = badFoods![indexPath.row].name
+//            }
         }
         lowerTableViewCell.imgView.contentMode = .scaleAspectFit
         
         return lowerTableViewCell
     }
     
+    func assignValueToCell(index: Int, section: Int) -> String{
+        if section == 0 {
+            self.foodName = goodFoods![index].name
+        } else {
+            self.foodName = badFoods![index].name
+        }
+        return self.foodName!
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutrientsViewController") as? NutrientsViewController {
-            if indexPath.section == 0 {
-                nutritionVC.foodName = goodFoods[indexPath.row]
-                self.foodName = goodFoods[indexPath.row]
-            } else {
-                nutritionVC.foodName = badFoods[indexPath.row]
-                self.foodName = badFoods[indexPath.row]
+            if goodFoods?[indexPath.row].name != nil {
+                nutritionVC.foodName = assignValueToCell(index: indexPath.row, section: indexPath.section)
             }
             
             getParamsForNutrients { (success) in
