@@ -13,6 +13,7 @@ enum Route {
     case foodImg(foodImgQuery: String)
     case paramForNutrients(ingr: String)
     case getNutrientsLabel
+    case recipe(foodName: String)
     
     func path() -> String {
         switch self {
@@ -26,6 +27,8 @@ enum Route {
             return "parser"
         case .getNutrientsLabel:
             return "nutrients"
+        case .recipe:
+            return "search"
         default:
             return ""
         }
@@ -51,6 +54,12 @@ enum Route {
         case .getNutrientsLabel:
             return ["app_id": "338dc80d",
                     "app_key": "8af485e0c5915a60459b01f079a95863",]
+        case let .recipe(foodName):
+            return [
+                "app_id": "f5a7c7a3",
+                "app_key": "446accd73b9b96d52f80edd750adcdfb",
+                "q": foodName,
+            ]
         default:
             return [:]
         }
@@ -68,6 +77,8 @@ enum Route {
             return "https://api.edamam.com/api/food-database/"
         case .getNutrientsLabel:
             return "https://api.edamam.com/api/food-database/"
+        case .recipe:
+            return "https://api.edamam.com/"
         default:
             return ""
         }
@@ -88,6 +99,8 @@ enum Route {
             guard let ingredientBody = data as? IngredientBody else { return nil}
             let result = try? encoder.encode(ingredientBody)
             return result
+        case .recipe:
+            return nil
         default:
             return nil
         }
@@ -102,7 +115,6 @@ class Networking {
         let urlString = baseURL.appending(route.path())
         var toURL = URL(string: urlString)!
         toURL = toURL.appendingQueryParameters(_parametersDictionary: route.urlParameters())
-        print(toURL)
         var request = URLRequest(url: toURL)
         request.httpBody = route.body(data: data)
         request.httpMethod = method
@@ -111,13 +123,10 @@ class Networking {
             request.setValue(" application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             let bodyRequest = request.httpBody
             let resultReq = try? JSONSerialization.jsonObject(with: bodyRequest!, options: .allowFragments)
-            print(resultReq)
         }
         
         session.dataTask(with: request) { (data, response, error) in
-            print(error?.localizedDescription)
-            print(response)
-            
+       
             guard let responseCode = response as? HTTPURLResponse else {return}
             let statusCode = responseCode.statusCode
             guard let data = data else { return }

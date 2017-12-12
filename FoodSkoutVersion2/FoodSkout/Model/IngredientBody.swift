@@ -38,7 +38,7 @@ struct IngredientResult: Decodable {
 }
 
 struct Params: Decodable {
-    var parsed: [ParamsLayer]
+    var hints: [ParamsLayer]
 }
 
 struct ParamsLayer: Decodable {
