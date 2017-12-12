@@ -29,7 +29,8 @@ class DisplayOrganViewController: UIViewController {
         Networking.instance.fetch(route: .paramForNutrients(ingr: self.foodName!), method: "GET", data: nil){ (data, response) in
             if response == 200 {
                 let result = try? JSONDecoder().decode(Params.self, from: data)
-                guard let paramsResult = result?.parsed else { return }
+                guard let paramsResult = result?.hints else { return }
+//                print(paramsResult)
                 let foodUri = paramsResult[0].food.uri
                 print(foodUri)
                 self.foodUriData = foodUri

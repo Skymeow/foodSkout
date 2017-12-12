@@ -20,6 +20,7 @@
 		F9A258E41FC3AA9400DE4C06 /* LowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */; };
 		F9D1F5151FDF173B0051CC29 /* SelectedNutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1F5141FDF173B0051CC29 /* SelectedNutritionViewController.swift */; };
 		F9D1F5171FDF17520051CC29 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1F5161FDF17520051CC29 /* RecipeViewController.swift */; };
+		F9D1F5191FDF37590051CC29 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1F5181FDF37590051CC29 /* Recipe.swift */; };
 		F9D98CE51FC357B700E32C11 /* DisplayOrganViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D98CE41FC357B700E32C11 /* DisplayOrganViewController.swift */; };
 		F9E37ECA1FC8AF0300EBD626 /* NutrientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37EC91FC8AF0300EBD626 /* NutrientsViewController.swift */; };
 		F9E37ED01FCA0C5E00EBD626 /* PercentageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37ECF1FCA0C5E00EBD626 /* PercentageBar.swift */; };
@@ -54,6 +55,7 @@
 		F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerTableViewCell.swift; sourceTree = "<group>"; };
 		F9D1F5141FDF173B0051CC29 /* SelectedNutritionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedNutritionViewController.swift; sourceTree = "<group>"; };
 		F9D1F5161FDF17520051CC29 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		F9D1F5181FDF37590051CC29 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		F9D98CE41FC357B700E32C11 /* DisplayOrganViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayOrganViewController.swift; sourceTree = "<group>"; };
 		F9E37EC91FC8AF0300EBD626 /* NutrientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsViewController.swift; sourceTree = "<group>"; };
 		F9E37ECF1FCA0C5E00EBD626 /* PercentageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageBar.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				90EDEC221FCFBD9D00A2150E /* Food.swift */,
 				F9E37EDF1FD1DF7A00EBD626 /* FoodImg.swift */,
 				F98E57A11FD33DAD00DDE9AA /* IngredientBody.swift */,
+				F9D1F5181FDF37590051CC29 /* Recipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				F9E37ED01FCA0C5E00EBD626 /* PercentageBar.swift in Sources */,
 				F9E731371FB933EC0020C89E /* GradientView.swift in Sources */,
 				90EDEC231FCFBD9D00A2150E /* Food.swift in Sources */,
+				F9D1F5191FDF37590051CC29 /* Recipe.swift in Sources */,
 				F9567EE71FBBB3CF0069D7DF /* BackgroundButtonView.swift in Sources */,
 				F9D1F5151FDF173B0051CC29 /* SelectedNutritionViewController.swift in Sources */,
 				F9D98CE51FC357B700E32C11 /* DisplayOrganViewController.swift in Sources */,

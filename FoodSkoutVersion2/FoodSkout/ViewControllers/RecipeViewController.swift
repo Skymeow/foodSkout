@@ -9,27 +9,36 @@
 import UIKit
 
 class RecipeViewController: UIViewController {
+    
     var foodName: String?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    var recipeData: [Recipes]?
+    
+    @IBOutlet weak var recipeImg: UIImageView!
+    
+    @IBOutlet weak var recipeLabel: UILabel!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var contentView: UIView!
+    
+    override func viewDidLayoutSubviews() {
+        let scrollViewBounds = scrollView.bounds
+        let contentViewBounds = contentView.bounds
+        
+        var scrollViewInsets = UIEdgeInsets.zero
+        scrollViewInsets.top = scrollViewBounds.size.height
+        scrollViewInsets.top -= contentViewBounds.size.height
+        
+        scrollViewInsets.bottom = scrollViewBounds.size.height
+        scrollViewInsets.bottom -= contentViewBounds.size.height
+        scrollViewInsets.bottom += 1
+        
+        scrollView.contentInset = scrollViewInsets
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     }
-    */
-
 }
