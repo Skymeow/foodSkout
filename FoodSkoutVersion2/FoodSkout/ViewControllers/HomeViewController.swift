@@ -35,10 +35,15 @@ class HomeViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "ChooseOrgansViewController")
         
         self.navigationController?.pushViewController(vc, animated: true)
-        //self.navigationController?.pushViewController(ChooseOrgansViewController, animated: true)
-    // performSegue(withIdentifier: "toOrgans", sender: nil)
   }
   
+    @IBAction func nutritionTapped(_ sender: UIButton) {
+        let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutrientsViewController") as? NutrientsViewController
+        
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(nutritionVC!, animated: true)
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true);
         self.navigationController?.isNavigationBarHidden = true

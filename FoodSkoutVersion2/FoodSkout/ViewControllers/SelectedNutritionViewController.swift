@@ -26,8 +26,6 @@ class SelectedNutritionViewController: UIViewController {
     
     @IBOutlet weak var nutrientLabel3: UILabel!
     
-    @IBOutlet weak var buttonView: UIStackView!
-    
     func getLabelData() {
         let ingredientObj = Ingredient(quantity: 1, measureURI: "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram", foodURI: self.foodUri!)
         let foodLabelObj = IngredientBody(yield: 1, ingredients: [ingredientObj])
@@ -35,11 +33,24 @@ class SelectedNutritionViewController: UIViewController {
             if response == 200 {
                 let decoder = JSONDecoder()
                 let res = try? decoder.decode(IngredientResult.self, from: data)
-                guard let healthLabelResult = res?.healthLabels, let dietLabelResult = res?.dietLabels else { return }
-                print(healthLabelResult, dietLabelResult)
+                guard let healthLabelResult = res?.healthLabels, let dietLabelResult = res?.dietLabels, let primeNutrients = res?.totalNutrients else { return }
+                print(healthLabelResult, dietLabelResult, primeNutrients)
                 let labelCombine = healthLabelResult.joined(separator: ", ")
+                let base1 = primeNutrients.SUGAR.quantity
+                
+                let base2 = primeNutrients.FAT.quantity
+                
+                let base3 = primeNutrients.PROCNT.quantity
+
+                let totalBase = base1 + base2 + base3
+                let proteinPerc = base3 / totalBase
+                let fatPerc = base2 / totalBase
+                let sugarPerc = base1 / totalBase
                 DispatchQueue.main.async {
                     self.foodDescriptionLabel.attributedText = self.makeAttributedStr(labelStr: labelCombine, lineSpacing: 10)
+                    self.percentageBar1.value = sugarPerc
+                    self.percentageBar2.value = fatPerc
+                    self.percentageBar3.value = proteinPerc
                 }
             }
         }
@@ -52,16 +63,6 @@ class SelectedNutritionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        percentageBar1.value = 0.75
-        percentageBar2.value = 0.45
-        percentageBar3.value = 0.25
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        self.buttonView.addBorder(side: .top, thickness: 0.65, color: UIColor(red:0.78, green:0.58, blue:0.58, alpha:1.0), leftOffset: 0, rightOffset: 0)
     }
 }
 

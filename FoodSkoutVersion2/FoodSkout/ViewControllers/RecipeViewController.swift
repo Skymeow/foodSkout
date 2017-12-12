@@ -22,6 +22,8 @@ class RecipeViewController: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var recipeName: UILabel!
+    
     override func viewDidLayoutSubviews() {
         let scrollViewBounds = scrollView.bounds
         let contentViewBounds = contentView.bounds
