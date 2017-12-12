@@ -771,7 +771,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3c1-6Q-qmv">
-                                <rect key="frame" x="0.0" y="5" width="0.0" height="200"/>
+                                <rect key="frame" x="0.0" y="5" width="306" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjr-u7-OEG" userLabel="Detail:">
                                         <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="27.666666666666664"/>
@@ -780,7 +780,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhM-iG-ehL">
-                                        <rect key="frame" x="0.0" y="27.666666666666671" width="0.0" height="172.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="27.666666666666671" width="306" height="172.33333333333331"/>
                                         <string key="text"> Food Description Label The childViewControllers property of UIViewController is a read-only array of child view controllers. We use this in the viewDidLoad of the master view controller to get references to the children and set the delegate:
 
 </string>
@@ -794,13 +794,13 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YDq-3g-b8d" userLabel="Percentage Bars Stack View">
-                                <rect key="frame" x="15" y="220" width="0.0" height="150"/>
+                                <rect key="frame" x="15" y="220" width="286" height="150"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="wBC-iE-sMx">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="150"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Megnesia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vG5-k1-5py">
-                                                <rect key="frame" x="-15" y="0.0" width="90" height="0.0"/>
+                                                <rect key="frame" x="1" y="0.0" width="90" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="EAB-Qv-REp"/>
                                                 </constraints>
@@ -809,7 +809,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hbi-iF-2QP" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="-15" y="1" width="65" height="149"/>
+                                                <rect key="frame" x="13.666666666666671" y="1" width="64.999999999999986" height="149"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="6eX-U0-WMY"/>
                                                 </constraints>
@@ -825,10 +825,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="EQa-MZ-AWG">
-                                        <rect key="frame" x="-15" y="0.0" width="0.0" height="150"/>
+                                        <rect key="frame" x="97" y="0.0" width="92" height="150"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calcium" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYK-S1-WjD">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="0.0"/>
+                                                <rect key="frame" x="1" y="0.0" width="90" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Q94-UF-3m2"/>
                                                 </constraints>
@@ -837,7 +837,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQq-53-nrj" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="1" width="65" height="149"/>
+                                                <rect key="frame" x="13.666666666666657" y="1" width="65" height="149"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="zA1-cb-qbO"/>
                                                 </constraints>
@@ -848,10 +848,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ScT-Ks-bqH">
-                                        <rect key="frame" x="-15" y="0.0" width="0.0" height="150"/>
+                                        <rect key="frame" x="194" y="0.0" width="92" height="150"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zinc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQ0-Bq-KH5">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="0.0"/>
+                                                <rect key="frame" x="1" y="0.0" width="90" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="IPJ-tJ-Hfc"/>
                                                 </constraints>
@@ -860,7 +860,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50l-9I-Rqm" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="1" width="65" height="149"/>
+                                                <rect key="frame" x="13.666666666666686" y="1" width="65" height="149"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="d3p-ld-1nu"/>
                                                 </constraints>
@@ -878,21 +878,21 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="TPJ-uO-Gjn" userLabel="Bottom Tab Bar Stack View">
-                                <rect key="frame" x="0.0" y="375" width="0.0" height="70"/>
+                                <rect key="frame" x="0.0" y="375" width="316" height="70"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHa-ZE-66B">
-                                        <rect key="frame" x="15" y="15" width="0.0" height="47"/>
+                                        <rect key="frame" x="15" y="15" width="32" height="47"/>
                                         <state key="normal" image="TabBarHome"/>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1N-d6-wuc">
-                                        <rect key="frame" x="0.0" y="15" width="0.0" height="47"/>
+                                        <rect key="frame" x="142" y="15" width="32" height="47"/>
                                         <state key="normal" image="TabBarBody"/>
                                         <connections>
                                             <action selector="OrganNavBarButtonTapped:" destination="7W6-Vw-89X" eventType="touchUpInside" id="Ba7-iA-hnn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0y5-hq-sG6">
-                                        <rect key="frame" x="0.0" y="15" width="0.0" height="47"/>
+                                        <rect key="frame" x="269" y="15" width="32" height="47"/>
                                         <state key="normal" image="Star"/>
                                     </button>
                                 </subviews>

@@ -50,12 +50,12 @@ class NutrientsViewController: UIViewController {
     func setRecipeLabels() {
         let recipeName = self.recipeData?.recipe.label
         let recipeInstruction = self.recipeData?.recipe.ingredientLines
-        let num = recipeInstruction.count
+        let num = recipeInstruction?.count
         let format = ""
 //        for i in 0..< num {
 //            format = "i. %@/n"
 //        }
-        let result = String(format: format, arguments: recipeInstruction)
+//        let result = String(format: format, arguments: recipeInstruction)
 //        for i in recipeInstruction!.count {
 //            let instuctions = ""
 //            instructions += recipeInstruction?.joined(separator: "i. ")
