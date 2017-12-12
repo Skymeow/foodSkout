@@ -23,6 +23,22 @@ class NutrientsViewController: UIViewController {
     
     @IBOutlet weak var foodImgView: UIImageView!
     
+    @IBOutlet weak var buttonView: UIStackView!
+    
+    
+    @IBAction func homeTapped(_ sender: UIButton) {
+        let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeVC") as? HomeViewController
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(homeVC!, animated: true)
+        }
+    }
+    @IBAction func organTapped(_ sender: UIButton) {
+        let organVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChooseOrgansViewController") as? ChooseOrgansViewController
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(organVC!, animated: true)
+        }
+    }
+    
     fileprivate var selectedNutritionViewController: SelectedNutritionViewController?
     
     fileprivate var recipeViewController: RecipeViewController?
@@ -35,6 +51,14 @@ class NutrientsViewController: UIViewController {
     @IBAction func selectedReciTapped(_ sender: UIButton) {
         self.recipeViewController?.view.isHidden = false
         self.selectedNutritionViewController?.view.isHidden = true
+        //        for alert controller
+        let alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)
+        let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
+        spinnerIndicator.color = UIColor.black
+        spinnerIndicator.startAnimating()
+        alertController.view.addSubview(spinnerIndicator)
+        self.present(alertController, animated: false, completion: nil)
         
         Networking.instance.fetch(route: .recipe(foodName: self.foodName!), method: "GET", data: nil) { (data, response) in
             if response == 200 {
@@ -42,6 +66,8 @@ class NutrientsViewController: UIViewController {
                 guard let results = result else { return }
                 self.recipeData = results.hits[0]
                 self.setRecipeImg()
+                self.setRecipeLabels()
+                alertController.dismiss(animated: true, completion: nil)
             }
         }
         
@@ -50,17 +76,17 @@ class NutrientsViewController: UIViewController {
     func setRecipeLabels() {
         let recipeName = self.recipeData?.recipe.label
         let recipeInstruction = self.recipeData?.recipe.ingredientLines
-        let num = recipeInstruction?.count
-        let format = ""
-//        for i in 0..< num {
-//            format = "i. %@/n"
-//        }
-//        let result = String(format: format, arguments: recipeInstruction)
-//        for i in recipeInstruction!.count {
-//            let instuctions = ""
-//            instructions += recipeInstruction?.joined(separator: "i. ")
-//        }
-        
+        let num = (recipeInstruction?.count)! - 1
+        var results = ""
+        for i in 1...num {
+            let format = "\(i). %@\n"
+            let result = String(format: format, arguments: [recipeInstruction![i] as CVarArg])
+            results += result
+        }
+        DispatchQueue.main.async {
+            self.recipeViewController?.recipeName.text = recipeName
+            self.recipeViewController?.recipeLabel.text = results
+        }
     }
     
     func setRecipeImg() {
@@ -69,7 +95,7 @@ class NutrientsViewController: UIViewController {
         let data = try? Data(contentsOf: imgUrl!)
         if let data = data {
             DispatchQueue.main.async {
-                self.recipeViewController?.recipeImg.contentMode = .scaleAspectFit
+                self.recipeViewController?.recipeImg.contentMode = .scaleAspectFill
                 self.recipeViewController?.recipeImg.image = UIImage(data: data)
             }
         }
@@ -119,6 +145,12 @@ class NutrientsViewController: UIViewController {
        
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.buttonView.addBorder(side: .top, thickness: 0.65, color: UIColor(red:0.78, green:0.58, blue:0.58, alpha:1.0), leftOffset: 0, rightOffset: 0)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
  
@@ -133,8 +165,6 @@ class NutrientsViewController: UIViewController {
         selectedNutritionViewController = selectedNutritionController
         recipeViewController = recipeController
         selectedNutritionViewController?.foodUri = self.foodUri
-        print(foodUri)
-//        recipeViewController?.foodName = self.foodName
         self.recipeViewController?.view.isHidden = true
         self.selectedNutritionViewController?.view.isHidden = false
     }
