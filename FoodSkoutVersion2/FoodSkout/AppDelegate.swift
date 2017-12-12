@@ -19,15 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = pageVC
         self.window?.makeKeyAndVisible()
         // for present pageVC modally
-//        if (UserDefaults.standard.value(forKey: "name") as? String) == nil {
-////            show onboarding screen
-//            self.window?.rootViewController = pageVC
-//        } else {
-//            let homeVC = storyboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
-//            self.window?.rootViewController = UINavigationController(rootViewController: homeVC)
-////            storyboard.instantiateInitialViewController()
-//        }
-//        
+        let defaults = UserDefaults.standard
+        let initialViewController: UIViewController
+        let loggedIn = defaults.bool(forKey: "saw_onboarding")
+        
+        if loggedIn{
+            
+            initialViewController = UIStoryboard.initialViewController(for: .main)
+        } else {
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "pageVC") as! OnboardingPageViewController
+        }
+        
+        window?.rootViewController = initialViewController
+        window?.makeKeyAndVisible()
+
         UINavigationBar.appearance().barTintColor = UIColor(red: 252/255, green: 248/255, blue: 249/255, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor(red: 241/255, green: 36/255, blue: 120/255, alpha: 1.0)
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 241/255, green: 36/255, blue: 120/255, alpha: 1.0)]
