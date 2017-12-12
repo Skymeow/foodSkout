@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--LoginVC-->
+        <!--Login View Controller-->
         <scene sceneID="G3O-on-nBs">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="lP1-Ce-Jug" customClass="LoginVC" customModule="Trip_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="lP1-Ce-Jug" customClass="LoginViewController" customModule="FoodSkout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9UB-yu-zwf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +54,6 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="performLogin:" destination="lP1-Ce-Jug" eventType="touchUpInside" id="5E7-qG-4V5"/>
                                                     <action selector="performSignup:" destination="lP1-Ce-Jug" eventType="touchUpInside" id="9V0-l2-w0r"/>
                                                 </connections>
                                             </button>

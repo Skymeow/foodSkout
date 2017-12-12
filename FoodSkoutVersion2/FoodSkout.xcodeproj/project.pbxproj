@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E369649DF7B93A653550532 /* Pods_FoodSkout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E66457B4EDED82864EFBA68 /* Pods_FoodSkout.framework */; };
 		902950021FDF5A75000B17EC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902950011FDF5A75000B17EC /* User.swift */; };
 		902950041FDF5AC0000B17EC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 902950031FDF5AC0000B17EC /* Login.storyboard */; };
 		902950061FDF5B7C000B17EC /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902950051FDF5B7C000B17EC /* Storyboard+Utility.swift */; };
-		6E369649DF7B93A653550532 /* Pods_FoodSkout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E66457B4EDED82864EFBA68 /* Pods_FoodSkout.framework */; };
+		902950081FDF5FCD000B17EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902950071FDF5FCD000B17EC /* LoginViewController.swift */; };
+		9029500A1FDF6976000B17EC /* BasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902950091FDF6976000B17EC /* BasicAuth.swift */; };
 		90EDEC231FCFBD9D00A2150E /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDEC221FCFBD9D00A2150E /* Food.swift */; };
 		90EDEC251FCFBDA400A2150E /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDEC241FCFBDA400A2150E /* Nutrient.swift */; };
 		F9567EE71FBBB3CF0069D7DF /* BackgroundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */; };
@@ -42,11 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		296F30E4CF1F0746DA241C6B /* Pods-FoodSkout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodSkout.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout.release.xcconfig"; sourceTree = "<group>"; };
+		3E66457B4EDED82864EFBA68 /* Pods_FoodSkout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodSkout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		902950011FDF5A75000B17EC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		902950031FDF5AC0000B17EC /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		902950051FDF5B7C000B17EC /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
-		296F30E4CF1F0746DA241C6B /* Pods-FoodSkout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodSkout.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout.release.xcconfig"; sourceTree = "<group>"; };
-		3E66457B4EDED82864EFBA68 /* Pods_FoodSkout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodSkout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		902950071FDF5FCD000B17EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		902950091FDF6976000B17EC /* BasicAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAuth.swift; sourceTree = "<group>"; };
 		90EDEC221FCFBD9D00A2150E /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		90EDEC241FCFBDA400A2150E /* Nutrient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
 		BFBB9AD3EAEFD8C42E6B9EE8 /* Pods-FoodSkout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodSkout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 		F98196081FDB1FA30090BD6E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				902950091FDF6976000B17EC /* BasicAuth.swift */,
 				F98196061FDB1F9E0090BD6E /* Networking.swift */,
 			);
 			path = Networking;
@@ -149,6 +154,7 @@
 				F9E37EC91FC8AF0300EBD626 /* NutrientsViewController.swift */,
 				F9D1F5141FDF173B0051CC29 /* SelectedNutritionViewController.swift */,
 				F9D1F5161FDF17520051CC29 /* RecipeViewController.swift */,
+				902950071FDF5FCD000B17EC /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				902950081FDF5FCD000B17EC /* LoginViewController.swift in Sources */,
 				F9E37ECA1FC8AF0300EBD626 /* NutrientsViewController.swift in Sources */,
 				F98E57A21FD33DAD00DDE9AA /* IngredientBody.swift in Sources */,
 				F98196071FDB1F9E0090BD6E /* Networking.swift in Sources */,
@@ -376,6 +383,7 @@
 				F9E37ED01FCA0C5E00EBD626 /* PercentageBar.swift in Sources */,
 				F9E731371FB933EC0020C89E /* GradientView.swift in Sources */,
 				90EDEC231FCFBD9D00A2150E /* Food.swift in Sources */,
+				9029500A1FDF6976000B17EC /* BasicAuth.swift in Sources */,
 				F9D1F5191FDF37590051CC29 /* Recipe.swift in Sources */,
 				F9567EE71FBBB3CF0069D7DF /* BackgroundButtonView.swift in Sources */,
 				F9D1F5151FDF173B0051CC29 /* SelectedNutritionViewController.swift in Sources */,

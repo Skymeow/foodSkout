@@ -17,13 +17,16 @@ class StepTwo: UIViewController {
     
     @IBAction func gatstartedTapped(_ sender: UIButton) {
 //        UserDefaults.standard.set("user", forKey: "name")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let navVC = storyboard.instantiateViewController(withIdentifier: "navController") as! UINavigationController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = navVC
-        appDelegate.window?.makeKeyAndVisible()
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let navVC = storyboard.instantiateViewController(withIdentifier: "navController") as! UINavigationController
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.window?.rootViewController = navVC
+//        appDelegate.window?.makeKeyAndVisible()
 //        self.present(homeVC, animated: true, completion: nil)
 //        self.navigationController?.pushViewController(homeVC, animated: true)
+        let initialViewController = UIStoryboard.initialViewController(for: .login)
+        self.view.window?.rootViewController = initialViewController
+        self.view.window?.makeKeyAndVisible()
     }
     
     func animateViews() {

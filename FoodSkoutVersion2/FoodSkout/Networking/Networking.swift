@@ -14,6 +14,7 @@ enum Route {
     case paramForNutrients(ingr: String)
     case getNutrientsLabel
     case recipe(foodName: String)
+    case user
     
     func path() -> String {
         switch self {
@@ -29,8 +30,8 @@ enum Route {
             return "nutrients"
         case .recipe:
             return "search"
-        default:
-            return ""
+        case .user:
+            return "user"
         }
     }
     
@@ -38,7 +39,7 @@ enum Route {
         switch self {
         case let .organs(organName):
             return ["organ_name": organName]
-        case .foods:
+        case .foods, .user:
             return [:]
         case let .foodImg(foodImgQuery):
             return ["key": "7246347-e95eeb596160c710188dfa4ff",
@@ -60,15 +61,13 @@ enum Route {
                 "app_key": "446accd73b9b96d52f80edd750adcdfb",
                 "q": foodName,
             ]
-        default:
-            return [:]
         }
     }
     
     func baseURl() -> String {
         switch self {
-        case .organs:
-            return "https://foodskout.herokuapp.com/"
+        case .organs, .user:
+            return "http://127.0.0.1:5000/"
         case .foods:
             return ""
         case .foodImg:
@@ -79,12 +78,12 @@ enum Route {
             return "https://api.edamam.com/api/food-database/"
         case .recipe:
             return "https://api.edamam.com/"
-        default:
-            return ""
         }
     }
     
     func body(data:Encodable) -> Data? {
+        
+        let encoder = JSONEncoder()
         switch self {
         case .organs:
             return nil
@@ -95,17 +94,33 @@ enum Route {
         case .paramForNutrients:
             return nil
         case let .getNutrientsLabel:
-            let encoder = JSONEncoder()
             guard let ingredientBody = data as? IngredientBody else { return nil}
             let result = try? encoder.encode(ingredientBody)
             return result
         case .recipe:
             return nil
-        default:
-            return nil
+        case .user:
+            guard let model = data as? User else {return nil}
+            let result = try? encoder.encode(model)
+            return result
+        }
+    }
+    
+    func headers(data: Codable) -> [String: String] {
+        switch self {
+        case .organs, .foods, .foodImg, .paramForNutrients, .getNutrientsLabel, .recipe:
+            return [:]
+        case .user:
+            guard let model = data as? User,
+            let password = model.password else {return [:]}
+            
+            let basicHeader = BasicAuth.generateBasicAuthHeader(username: model.email, password: password)
+            return ["Authorization": basicHeader]
         }
     }
 }
+
+
 class Networking {
     static let instance = Networking()
     let session = URLSession.shared
@@ -118,9 +133,10 @@ class Networking {
         var request = URLRequest(url: toURL)
         request.httpBody = route.body(data: data)
         request.httpMethod = method
+        request.allHTTPHeaderFields = route.headers(data: data)
         if request.httpMethod == "POST"
         {
-            request.setValue(" application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             let bodyRequest = request.httpBody
             let resultReq = try? JSONSerialization.jsonObject(with: bodyRequest!, options: .allowFragments)
         }

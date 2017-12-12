@@ -339,7 +339,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aMg-oJ-bta" id="BBB-lt-gKN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="109.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-V7-lbA">
@@ -703,7 +703,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="445"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYv-Fx-yBU">
-                                                <rect key="frame" x="25" y="20" width="80" height="20.333333333333336"/>
+                                                <rect key="frame" x="25" y="20" width="80" height="20.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="RCh-6R-933"/>
                                                 </constraints>
@@ -750,6 +750,7 @@
                             <constraint firstAttribute="bottom" secondItem="Rb3-bE-W1u" secondAttribute="bottom" id="hZO-MV-oXO"/>
                             <constraint firstAttribute="trailing" secondItem="Rb3-bE-W1u" secondAttribute="trailing" id="vBv-IA-95g"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="vB7-Jw-wM6"/>
                     </view>
                     <connections>
                         <outlet property="contentView" destination="YGU-hp-9eW" id="zJe-Zk-XhL"/>
@@ -780,7 +781,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhM-iG-ehL">
-                                        <rect key="frame" x="0.0" y="27.666666666666671" width="306" height="172.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="27.666666666666671" width="0.0" height="172.33333333333331"/>
                                         <string key="text"> Food Description Label The childViewControllers property of UIViewController is a read-only array of child view controllers. We use this in the viewDidLoad of the master view controller to get references to the children and set the delegate:
 
 </string>
@@ -809,7 +810,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hbi-iF-2QP" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="13.666666666666671" y="1" width="64.999999999999986" height="149"/>
+                                                <rect key="frame" x="13.666666666666671" y="1" width="65" height="149"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="6eX-U0-WMY"/>
                                                 </constraints>
