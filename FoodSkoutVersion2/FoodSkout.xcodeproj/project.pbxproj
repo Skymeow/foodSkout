@@ -220,7 +220,6 @@
 		F9E731211FB9085C0020C89E /* FoodSkout */ = {
 			isa = PBXGroup;
 			children = (
-				F9E731221FB9085C0020C89E /* AppDelegate.swift */,
 				F98196081FDB1FA30090BD6E /* Networking */,
 				F9E37EDE1FCF8E7500EBD626 /* Model */,
 				F98196111FDB25130090BD6E /* Onboarding */,
@@ -229,6 +228,7 @@
 				F9567EEB1FBCD8550069D7DF /* Helpers */,
 				F9E37ECE1FC9DEF300EBD626 /* Storyboards */,
 				F9E731291FB9085C0020C89E /* Assets.xcassets */,
+				F9E731221FB9085C0020C89E /* AppDelegate.swift */,
 				F9E7312E1FB9085C0020C89E /* Info.plist */,
 			);
 			path = FoodSkout;

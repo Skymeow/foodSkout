@@ -21,9 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // for present pageVC modally
         let defaults = UserDefaults.standard
         let initialViewController: UIViewController
-        let loggedIn = defaults.bool(forKey: "saw_onboarding")
+        let onboarded = defaults.bool(forKey: "saw_onboarding")
+        let loggedIn = defaults.bool(forKey: "isLoggedIn")
         
-        if loggedIn{
+        if loggedIn && onboarded{
             
             initialViewController = UIStoryboard.initialViewController(for: .main)
         } else {
