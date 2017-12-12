@@ -342,7 +342,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="109.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-V7-lbA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-V7-lbA" customClass="CustomImageView" customModule="FoodSkout" customModuleProvider="target">
                                                     <rect key="frame" x="22" y="2" width="36" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="bsL-V7-lbA" secondAttribute="height" multiplier="1:1" id="Qd5-B4-YWT"/>
@@ -511,7 +511,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDv-rg-iM9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1305.7971014492755" y="19.565217391304348"/>
+            <point key="canvasLocation" x="1543" y="20"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E0Y-dR-ONz">
