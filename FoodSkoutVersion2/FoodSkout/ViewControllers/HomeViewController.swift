@@ -35,10 +35,15 @@ class HomeViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "ChooseOrgansViewController")
         
         self.navigationController?.pushViewController(vc, animated: true)
-        //self.navigationController?.pushViewController(ChooseOrgansViewController, animated: true)
-    // performSegue(withIdentifier: "toOrgans", sender: nil)
   }
   
+    @IBAction func nutritionTapped(_ sender: UIButton) {
+        let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutrientsViewController") as? NutrientsViewController
+        
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(nutritionVC!, animated: true)
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true);
         self.navigationController?.isNavigationBarHidden = true
@@ -46,17 +51,16 @@ class HomeViewController: UIViewController {
     
   override func viewDidLoad() {
         super.viewDidLoad()
-        /** for family: String in UIFont.familyNames
+         for family: String in UIFont.familyNames
         {
             print("\(family)")
             for names: String in UIFont.fontNames(forFamilyName: family)
             {
                 print("== \(names)")
             }
-        } */
+        }
         self.backgroundImg.image = UIImage(named: "turmeric")!
-        
-        headerLabel.font = UIFont(name: "Thonburi-Bold", size: 30)
+        headerLabel.font = UIFont(name: "Thonburi-Bold", size: 32)
         
         foodInfoLabel.text = "Turmeric is a rhizomatous herbaceous perennial plant of the ginger family, Zingiberaceae. It is native to Southeast Asia"
         foodInfoLabel.numberOfLines = 0

@@ -11,17 +11,16 @@ import UIKit
 class DisplayOrganViewController: UIViewController {
     
     var organName: String?
-    
     var row: Int?
-    
     var foodName: String?
-    
     var foodUriData: String?
+    var foodImgs: [FoodImg] = []
+    var goodFoods: [Goods]?
+    var badFoods: [Bads]?
+    var foodImgUrl: String?
     
     @IBOutlet weak var organImg: UIImageView!
-    
     @IBOutlet weak var upperView: UIView!
-    
     @IBOutlet weak var lowerTableView: UITableView!
     
     func getParamsForNutrients(completion: @escaping (Bool) -> Void) {
@@ -29,9 +28,8 @@ class DisplayOrganViewController: UIViewController {
         Networking.instance.fetch(route: .paramForNutrients(ingr: self.foodName!), method: "GET", data: nil){ (data, response) in
             if response == 200 {
                 let result = try? JSONDecoder().decode(Params.self, from: data)
-                guard let paramsResult = result?.parsed else { return }
+                guard let paramsResult = result?.hints else { return }
                 let foodUri = paramsResult[0].food.uri
-                print(foodUri)
                 self.foodUriData = foodUri
                 completion(true)
             }
@@ -45,7 +43,7 @@ class DisplayOrganViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        for alert controller
+        //        for alert controller
         let alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)
         let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
@@ -64,16 +62,15 @@ class DisplayOrganViewController: UIViewController {
                 guard let good = organ?.goodFoods,
                     let bad =  organ?.badFoods else { return }
                 self.goodFoods = good; self.badFoods = bad
+                print(good, bad)
                 DispatchQueue.main.async {
                     self.lowerTableView.reloadData()
                     alertController.dismiss(animated: true, completion: nil)
+                    
                 }
             }
         }
     }
-    
-    var goodFoods = [" ", " ", " "]
-    var badFoods = [" ", " ", " "]
 }
 
 extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate {
@@ -84,32 +81,50 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let lowerTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LowerTableViewCell
-        lowerTableViewCell.imgView.image = UIImage(named: "turmeric")!
-        if indexPath.section == 0 {
-            lowerTableViewCell.foodNameLabel.text? = goodFoods[indexPath.row]
-        } else {
-            lowerTableViewCell.foodNameLabel.text? = badFoods[indexPath.row]
+        
+        if goodFoods?[indexPath.row].name != nil {
+            lowerTableViewCell.foodNameLabel.text? = assignValueToCell(index: indexPath.row, section: indexPath.section, cell: lowerTableViewCell)
         }
-        lowerTableViewCell.imgView.contentMode = .scaleAspectFit
         
         return lowerTableViewCell
     }
     
+    func assignValueToCell(index: Int, section: Int, cell: LowerTableViewCell?) -> String{
+        if section == 0 {
+            cell?.imgView.loadImageFromUrlString(urlString: goodFoods![index].image_url)
+            self.foodName = goodFoods![index].name
+            self.foodImgUrl = goodFoods![index].image_url
+        } else {
+            cell?.imgView.loadImageFromUrlString(urlString: badFoods![index].image_url)
+            self.foodName = badFoods![index].name
+            self.foodImgUrl = badFoods![index].image_url
+        }
+        return self.foodName!
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let selectedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "selectedNutritionVC") as? SelectedNutritionViewController
         
         if let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutrientsViewController") as? NutrientsViewController {
-            if indexPath.section == 0 {
-                nutritionVC.foodName = goodFoods[indexPath.row]
-                self.foodName = goodFoods[indexPath.row]
+            if goodFoods?[indexPath.row].name != nil {
+                nutritionVC.foodName = assignValueToCell(index: indexPath.row, section: indexPath.section, cell: nil)
             } else {
-                nutritionVC.foodName = badFoods[indexPath.row]
-                self.foodName = badFoods[indexPath.row]
+                self.foodName = "avacodo"
             }
             
             getParamsForNutrients { (success) in
                 if success {
                     nutritionVC.foodUri = self.foodUriData
-                    self.navigationController?.pushViewController(nutritionVC, animated: true)
+//                    selectedVC?.foodUri = self.foodUriData
+                    nutritionVC.foodImgUrl = self.foodImgUrl
+                    print(indexPath.row)
+                    if indexPath.row >= 0 && indexPath.row < 3 {
+                        DispatchQueue.main.async {
+                            self.navigationController?.pushViewController(nutritionVC, animated: true)
+                        }
+                    } else {
+                        print("sorry you can't eat these")
+                    }
                 }
             }
             
@@ -127,20 +142,24 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
         let image = UIImage(named: "good")
-        let imgView = UIImageView(frame:CGRect(x: 3, y: 3, width: tableView.sectionHeaderHeight, height: tableView.sectionHeaderHeight))
-        imgView.image = image
-        imgView.contentMode = .scaleAspectFill
-        view.addSubview(imgView)
+        let image2 = UIImage(named: "bad")
+        let imgView = UIImageView(frame:CGRect(x: 3, y: 4, width: tableView.sectionHeaderHeight, height: tableView.sectionHeaderHeight))
+        imgView.contentMode = .scaleAspectFit
+        
         let label = UILabel(frame: CGRect(x: 10 + tableView.sectionHeaderHeight, y: 3, width: 40, height: tableView.sectionHeaderHeight))
         label.textColor = UIColor.white
+        
         if section == 0 {
             label.text = "good"
             view.backgroundColor = UIColor(red:0.40, green:0.84, blue:0.59, alpha:1.0)
+             imgView.image = image
         } else {
             label.text = "Bad"
             view.backgroundColor = UIColor(red:0.94, green:0.22, blue:0.22, alpha:1.0)
+             imgView.image = image2
         }
         view.addSubview(label)
+        view.addSubview(imgView)
         
         return view
     }
