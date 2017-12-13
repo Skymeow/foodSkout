@@ -824,10 +824,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3c1-6Q-qmv">
-                                <rect key="frame" x="30" y="10" width="286" height="100"/>
+                                <rect key="frame" x="15" y="10" width="301" height="100"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e8X-7i-jpi">
-                                        <rect key="frame" x="0.0" y="0.0" width="286" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="301" height="100"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hQ3-Un-rwX">
                                             <size key="itemSize" width="50" height="50"/>
@@ -944,7 +944,7 @@
                             <constraint firstItem="YDq-3g-b8d" firstAttribute="leading" secondItem="DsH-k2-tt7" secondAttribute="leading" constant="15" id="Wdy-8H-N13"/>
                             <constraint firstAttribute="trailing" secondItem="YDq-3g-b8d" secondAttribute="trailing" constant="15" id="gd3-jU-5aa"/>
                             <constraint firstAttribute="trailing" secondItem="3c1-6Q-qmv" secondAttribute="trailing" id="rAF-QL-obd"/>
-                            <constraint firstItem="3c1-6Q-qmv" firstAttribute="leading" secondItem="DsH-k2-tt7" secondAttribute="leading" constant="30" id="tyx-jX-Gcj"/>
+                            <constraint firstItem="3c1-6Q-qmv" firstAttribute="leading" secondItem="DsH-k2-tt7" secondAttribute="leading" constant="15" id="tyx-jX-Gcj"/>
                             <constraint firstItem="YDq-3g-b8d" firstAttribute="top" secondItem="3c1-6Q-qmv" secondAttribute="bottom" constant="15" id="wsh-za-Dua"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GRa-Rs-JtZ"/>
