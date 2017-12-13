@@ -18,11 +18,9 @@ class StepTwo: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     
     @IBAction func gatstartedTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let navVC = storyboard.instantiateViewController(withIdentifier: "navController") as! UINavigationController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = navVC
-        appDelegate.window?.makeKeyAndVisible()
+        let initialViewController = UIStoryboard.initialViewController(for: .login)
+        self.view.window?.rootViewController = initialViewController
+        self.view.window?.makeKeyAndVisible()
     }
     
     func animateViews() {

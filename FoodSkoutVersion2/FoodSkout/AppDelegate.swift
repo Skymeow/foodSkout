@@ -15,9 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let pageVC = storyboard.instantiateViewController(withIdentifier: "pageVC") as! OnboardingPageViewController
-        self.window?.rootViewController = pageVC
-        self.window?.makeKeyAndVisible()
         // for present pageVC modally
         let defaults = UserDefaults.standard
         let initialViewController: UIViewController
