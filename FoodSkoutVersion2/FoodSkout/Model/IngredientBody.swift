@@ -32,15 +32,14 @@ struct Ingredient: Codable {
 }
 
 struct IngredientResult: Decodable {
-    let dietLabels: [String]
     let healthLabels: [String]
     let totalNutrients: Mineral
 }
 
 struct Mineral: Decodable {
-    let SUGAR: Sugar
-    let FAT: Fa
-    let PROCNT: Pr
+    let SUGAR: Sugar?
+    let FAT: Fa?
+    let PROCNT: Pr?
 }
 
 struct Sugar: Decodable {

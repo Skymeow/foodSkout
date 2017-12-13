@@ -82,8 +82,6 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let lowerTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LowerTableViewCell
         
-        
-        
         if goodFoods?[indexPath.row].name != nil {
             lowerTableViewCell.foodNameLabel.text? = assignValueToCell(index: indexPath.row, section: indexPath.section, cell: lowerTableViewCell)
         }
@@ -105,7 +103,7 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "selectedNutritionVC") as? SelectedNutritionViewController
+//        let selectedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "selectedNutritionVC") as? SelectedNutritionViewController
         
         if let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutrientsViewController") as? NutrientsViewController {
             if goodFoods?[indexPath.row].name != nil {
@@ -117,10 +115,15 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
             getParamsForNutrients { (success) in
                 if success {
                     nutritionVC.foodUri = self.foodUriData
-                    selectedVC?.foodUri = self.foodUriData
+//                    selectedVC?.foodUri = self.foodUriData
                     nutritionVC.foodImgUrl = self.foodImgUrl
-                    DispatchQueue.main.async {
-                 self.navigationController?.pushViewController(nutritionVC, animated: true)
+                    print(indexPath.row)
+                    if indexPath.row >= 0 && indexPath.row < 3 {
+                        DispatchQueue.main.async {
+                            self.navigationController?.pushViewController(nutritionVC, animated: true)
+                        }
+                    } else {
+                        print("sorry you can't eat these")
                     }
                 }
             }

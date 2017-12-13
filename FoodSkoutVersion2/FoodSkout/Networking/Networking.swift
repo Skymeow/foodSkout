@@ -145,12 +145,14 @@ class Networking {
        
             guard let responseCode = response as? HTTPURLResponse else {return}
             let statusCode = responseCode.statusCode
+            
             guard let data = data else { return }
+            
             let str = String.init(data: data, encoding: String.Encoding.isoLatin1)
             let newData = str?.data(using: String.Encoding.utf8)
             
             completion(newData!, statusCode)
-            }.resume()
+        }.resume()
     }
 }
 
