@@ -18,9 +18,9 @@ class NutrientsViewController: UIViewController {
     var foodUri: String?
     var recipeData: Recipes?
     var checkIfLoaded: Bool = false
+    var foodImgUrl: String?
     
     fileprivate var selectedNutritionViewController: SelectedNutritionViewController?
-    
     fileprivate var recipeViewController: RecipeViewController?
     
     // MARK: IBOutlets
@@ -132,21 +132,10 @@ class NutrientsViewController: UIViewController {
         }
     }
     
-    func getFoodImg(completion: @escaping (Bool) -> Void) {
-        Networking.instance.fetch(route: .foodImg(foodImgQuery: foodName!), method: "GET", data: nil) { (data, response) in
-            if response == 200 {
-                let result = try? JSONDecoder().decode(AllFoodImgs.self, from: data)
-                guard let foodImgsData = result?.hits else { return }
-                self.foodImgs = foodImgsData
-                
-                completion(true)
-            }
-        }
-    }
-    
     func setCorrectImg() {
-        let foodImgString = self.foodImgs[0].webformatURL
-        let foodImgUrl = URL(string: foodImgString)
+        let foodImgString = self.foodImgUrl
+        if self.foodImgUrl != nil {
+        let foodImgUrl = URL(string: foodImgString!)
         let data = try? Data(contentsOf: foodImgUrl!)
         DispatchQueue.main.async {
             if let data = data {
@@ -154,14 +143,6 @@ class NutrientsViewController: UIViewController {
                 self.foodImgView.image = UIImage(data: data)
             }
         }
-    }
-    
-    func handleFunctionOrder(completion: @escaping completed) {
-        //       call getFoodImg() first then do the following
-        self.getFoodImg { (success) in
-            if success{
-                completion(true)
-            }
         }
     }
     
@@ -170,13 +151,7 @@ class NutrientsViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         self.navigationController?.navigationBar.isTranslucent = true
-        self.handleFunctionOrder { (success) -> Void in
-            if success {
-                // call this function first, then call whatever's inside of handleOrder
-                self.setCorrectImg()
-            }
-        }
-       
+        self.setCorrectImg()
     }
     
     override func viewDidLayoutSubviews() {

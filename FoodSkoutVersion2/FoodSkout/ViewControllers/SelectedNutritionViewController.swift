@@ -26,6 +26,7 @@ class SelectedNutritionViewController: UIViewController {
     @IBOutlet weak var nutrientLabel3: UILabel!
     
     func getLabelData(completion: @escaping (Bool) -> Void) {
+        if self.foodUri != nil {
         let ingredientObj = Ingredient(quantity: 1, measureURI: "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram", foodURI: self.foodUri!)
         let foodLabelObj = IngredientBody(yield: 1, ingredients: [ingredientObj])
         Networking.instance.fetch(route: .getNutrientsLabel, method: "POST", data: foodLabelObj) { (data, response) in
@@ -45,6 +46,7 @@ class SelectedNutritionViewController: UIViewController {
                 completion(true)
             }
         }
+        }
     }
     
     func setPercentagesbar() {
@@ -60,7 +62,7 @@ class SelectedNutritionViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.setPercentagesbar()
                     self.dataSource.items = self.healthLabelData
-
+                    
                     self.collectionView.dataSource = self.dataSource
                     self.collectionView.reloadData()
                 }
@@ -82,8 +84,12 @@ class SelectedNutritionViewController: UIViewController {
         dataSource.configureCell = { (collectionView, indexPath) -> UICollectionViewCell in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagsCell", for: indexPath) as! TagsCell
             print(self.healthLabelData)
-            cell.label.text = self.healthLabelData[indexPath.row]
-            
+            if self.healthLabelData != nil {
+                cell.label.text = self.healthLabelData[indexPath.row]
+            } else {
+                cell.label.text = ["VEGAN", "PALEO", "TREE_NUT_FREE", "RED_MEAT_FREE", "SESAME_FREE", "MUSTARD_FREE"][indexPath.row]
+            }
+           
             return cell
         }
     }
@@ -93,23 +99,5 @@ extension SelectedNutritionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: 150, height: 45)
-    }
-}
-
-extension SelectedNutritionViewController {
-    func makeAttributedStr(labelStr: String, lineSpacing: CGFloat = 1.5) -> NSAttributedString {
-        let attributedString = NSMutableAttributedString(string: labelStr)
-        // *** Create instance of `NSMutableParagraphStyle`
-        let paragraphStyle = NSMutableParagraphStyle()
-        // *** set LineSpacing property in points ***
-        paragraphStyle.lineSpacing = lineSpacing // Whatever line spacing you want in points
-        
-        // *** Apply attribute to string ***
-        attributedString.addAttribute(NSAttributedStringKey.paragraphStyle,
-                                      value:paragraphStyle,
-                                      range:NSMakeRange(0, attributedString.length))
-        // *** Set Attributed String to your label ***
-        //        label.attributedText = attributedString;
-        return attributedString
     }
 }
