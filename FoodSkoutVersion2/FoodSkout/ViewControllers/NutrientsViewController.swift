@@ -186,12 +186,12 @@ class NutrientsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let selectedNutritionController = childViewControllers.first as? SelectedNutritionViewController else  {
-            fatalError("Check storyboard for missing selectedNutritionViewController")
+        guard let recipeController = childViewControllers.first as? RecipeViewController else {
+            fatalError("Check storyboard for missing recipeViewController")
         }
         
-        guard let recipeController = childViewControllers.last as? RecipeViewController else {
-            fatalError("Check storyboard for missing recipeViewController")
+        guard let selectedNutritionController = childViewControllers.last as? SelectedNutritionViewController else  {
+            fatalError("Check storyboard for missing selectedNutritionViewController")
         }
         
         selectedNutritionViewController = selectedNutritionController

@@ -64,8 +64,8 @@
 		F9D1F5161FDF17520051CC29 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		F9D1F5181FDF37590051CC29 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		F9D1F51A1FE095480051CC29 /* lottepaperfang.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lottepaperfang.ttf; sourceTree = "<group>"; };
-		F9D1F51B1FE0A65A0051CC29 /* TagsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagsCell.swift; path = FoodSkout/Views/TagsCell.swift; sourceTree = SOURCE_ROOT; };
-		F9D1F51C1FE0A65A0051CC29 /* TagsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagsCell.xib; path = FoodSkout/Views/TagsCell.xib; sourceTree = SOURCE_ROOT; };
+		F9D1F51B1FE0A65A0051CC29 /* TagsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagsCell.swift; path = FoodSkout/Helpers/TagsCell.swift; sourceTree = SOURCE_ROOT; };
+		F9D1F51C1FE0A65A0051CC29 /* TagsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagsCell.xib; path = FoodSkout/Helpers/TagsCell.xib; sourceTree = SOURCE_ROOT; };
 		F9D1F51F1FE0AA250051CC29 /* TagsCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionDataSource.swift; sourceTree = "<group>"; };
 		F9D98CE41FC357B700E32C11 /* DisplayOrganViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayOrganViewController.swift; sourceTree = "<group>"; };
 		F9E37EC91FC8AF0300EBD626 /* NutrientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				F98196001FDB0CCF0090BD6E /* UIView+Boarders.swift */,
+				F9D1F51B1FE0A65A0051CC29 /* TagsCell.swift */,
+				F9D1F51C1FE0A65A0051CC29 /* TagsCell.xib */,
+				F9D1F51F1FE0AA250051CC29 /* TagsCollectionDataSource.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -169,9 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				F9E731261FB9085C0020C89E /* Main.storyboard */,
-				F9D1F51B1FE0A65A0051CC29 /* TagsCell.swift */,
-				F9D1F51C1FE0A65A0051CC29 /* TagsCell.xib */,
-				F9D1F51F1FE0AA250051CC29 /* TagsCollectionDataSource.swift */,
 				F9E7312B1FB9085C0020C89E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
