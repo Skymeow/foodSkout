@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cDs-Rw-tU1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cDs-Rw-tU1">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -43,7 +43,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="562"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phh-Pk-bc7">
-                                                <rect key="frame" x="35" y="380" width="379" height="92"/>
+                                                <rect key="frame" x="35" y="380" width="0.0" height="92"/>
                                                 <string key="text">    @IBAction func editInventoryTapped(_ sender: UIButton) {
         let inv = Inventory(context: coreDataStack.viewContext)
         inv.name = nameLabel.text
@@ -89,7 +89,7 @@
                                                         <rect key="frame" x="87" y="0.0" width="65" height="85"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mg1-rR-VqD">
-                                                                <rect key="frame" x="11.666666666666657" y="0.0" width="41.666666666666686" height="13"/>
+                                                                <rect key="frame" x="11.666666666666654" y="0.0" width="41.666666666666657" height="13"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -115,7 +115,7 @@
                                                         <rect key="frame" x="174" y="0.0" width="65" height="85"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clr-4x-CNU">
-                                                                <rect key="frame" x="11.666666666666657" y="0.0" width="41.666666666666657" height="13"/>
+                                                                <rect key="frame" x="11.666666666666654" y="0.0" width="41.666666666666657" height="13"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -150,14 +150,14 @@
                                                 <state key="normal" image="TabBarHome"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCf-DS-ASj">
-                                                <rect key="frame" x="181.33333333333334" y="15" width="66.333333333333314" height="47"/>
+                                                <rect key="frame" x="181.33333333333334" y="15" width="66.333333333333343" height="47"/>
                                                 <state key="normal" image="TabBarBody"/>
                                                 <connections>
                                                     <action selector="OrganTabbarButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1bO-kT-KSp"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mE1-8J-BnM">
-                                                <rect key="frame" x="347.66666666666674" y="15" width="66.333333333333314" height="47"/>
+                                                <rect key="frame" x="347.66666666666669" y="15" width="66.333333333333314" height="47"/>
                                                 <state key="normal" image="Star"/>
                                                 <connections>
                                                     <action selector="nutritionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ktm-fU-PNt"/>
@@ -345,15 +345,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="109.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-V7-lbA">
-                                                    <rect key="frame" x="15" y="2" width="36" height="36"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-V7-lbA" customClass="CustomImageView" customModule="FoodSkout" customModuleProvider="target">
+                                                    <rect key="frame" x="22" y="2" width="36" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="bsL-V7-lbA" secondAttribute="height" multiplier="1:1" id="Qd5-B4-YWT"/>
                                                         <constraint firstAttribute="width" constant="85" id="RDi-sH-HXm"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIl-gA-cJ0">
-                                                    <rect key="frame" x="209.99999999999997" y="10" width="103.33333333333329" height="20"/>
+                                                    <rect key="frame" x="210.00000000000003" y="10" width="103.33333333333334" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="haG-E7-lYU"/>
                                                     </constraints>
@@ -580,13 +580,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7F1-7Y-CaA">
-                                <rect key="frame" x="57" y="170.66666666666669" width="300" height="195.00000000000006"/>
+                                <rect key="frame" x="57" y="170.66666666666663" width="300" height="195"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FkO-J2-Ulh">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="195.00000000000003"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="195"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="walnuts" translatesAutoresizingMaskIntoConstraints="NO" id="hcn-fW-9xd">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90.000000000000028"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="hcn-fW-9xd" secondAttribute="height" id="IVK-1o-BJS"/>
                                                 </constraints>
@@ -597,10 +597,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BAA-yE-Hjc">
-                                        <rect key="frame" x="105" y="0.0" width="90" height="195.00000000000003"/>
+                                        <rect key="frame" x="105" y="0.0" width="90" height="195"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ginger" translatesAutoresizingMaskIntoConstraints="NO" id="Fug-Au-gfs">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90.000000000000028"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="lungs" translatesAutoresizingMaskIntoConstraints="NO" id="yAq-Xw-6sc">
                                                 <rect key="frame" x="0.0" y="105.00000000000003" width="90" height="90"/>
@@ -608,10 +608,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ecd-a1-sN5">
-                                        <rect key="frame" x="210" y="0.0" width="90" height="195.00000000000003"/>
+                                        <rect key="frame" x="210" y="0.0" width="90" height="195"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="salmon" translatesAutoresizingMaskIntoConstraints="NO" id="CEG-TK-WHX">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90.000000000000028"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="eye" translatesAutoresizingMaskIntoConstraints="NO" id="Y2E-NQ-w6u">
                                                 <rect key="frame" x="0.0" y="105.00000000000003" width="90" height="90"/>
@@ -634,7 +634,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse our index of nutrients to explore more health benefit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQz-9x-L6C">
-                                <rect key="frame" x="65.333333333333314" y="448.66666666666669" width="283.33333333333337" height="47"/>
+                                <rect key="frame" x="65.333333333333343" y="448.66666666666669" width="283.33333333333326" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="gmw-6l-tau"/>
                                 </constraints>

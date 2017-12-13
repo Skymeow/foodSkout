@@ -10,7 +10,7 @@ import UIKit
 
 class LowerTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var imgView: CustomImageView!
     
     @IBOutlet weak var foodNameLabel: UILabel!
     
@@ -22,6 +22,11 @@ class LowerTableViewCell: UITableViewCell {
         imgView.layer.cornerRadius = imgView.frame.width / 2
         imgView.layer.masksToBounds = false
         imgView.clipsToBounds = true
+    }
+    
+    
+    func configureCell() {
+        
     }
     //  lowerTableViewCell.imgView.layer.cornerRadius = lowerTableViewCell.imgView.frame.height / 2
     //  lowerTableViewCell.imgView.layer.masksToBounds = false
