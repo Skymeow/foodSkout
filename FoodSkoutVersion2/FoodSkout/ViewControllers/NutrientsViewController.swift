@@ -168,7 +168,8 @@ class NutrientsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.barTintColor = nil
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        self.navigationController?.navigationBar.isTranslucent = true
         self.handleFunctionOrder { (success) -> Void in
             if success {
                 // call this function first, then call whatever's inside of handleOrder

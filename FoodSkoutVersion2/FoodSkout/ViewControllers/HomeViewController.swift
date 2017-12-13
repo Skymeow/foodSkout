@@ -51,17 +51,16 @@ class HomeViewController: UIViewController {
     
   override func viewDidLoad() {
         super.viewDidLoad()
-        /** for family: String in UIFont.familyNames
+         for family: String in UIFont.familyNames
         {
             print("\(family)")
             for names: String in UIFont.fontNames(forFamilyName: family)
             {
                 print("== \(names)")
             }
-        } */
+        }
         self.backgroundImg.image = UIImage(named: "turmeric")!
-        
-        headerLabel.font = UIFont(name: "Thonburi-Bold", size: 30)
+        headerLabel.font = UIFont(name: "Thonburi-Bold", size: 32)
         
         foodInfoLabel.text = "Turmeric is a rhizomatous herbaceous perennial plant of the ginger family, Zingiberaceae. It is native to Southeast Asia"
         foodInfoLabel.numberOfLines = 0

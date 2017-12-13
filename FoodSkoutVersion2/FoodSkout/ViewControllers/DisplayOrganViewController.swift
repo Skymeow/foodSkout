@@ -82,11 +82,6 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
         lowerTableViewCell.imgView.image = UIImage(named: "turmeric")!
         if goodFoods?[indexPath.row].name != nil {
             lowerTableViewCell.foodNameLabel.text? = assignValueToCell(index: indexPath.row, section: indexPath.section)
-//            if indexPath.section == 0 {
-//                lowerTableViewCell.foodNameLabel.text? = goodFoods![indexPath.row].name
-//            } else {
-//                lowerTableViewCell.foodNameLabel.text? = badFoods![indexPath.row].name
-//            }
         }
         lowerTableViewCell.imgView.contentMode = .scaleAspectFit
         
@@ -132,20 +127,24 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
         let image = UIImage(named: "good")
-        let imgView = UIImageView(frame:CGRect(x: 3, y: 3, width: tableView.sectionHeaderHeight, height: tableView.sectionHeaderHeight))
-        imgView.image = image
-        imgView.contentMode = .scaleAspectFill
-        view.addSubview(imgView)
+        let image2 = UIImage(named: "bad")
+        let imgView = UIImageView(frame:CGRect(x: 3, y: 4, width: tableView.sectionHeaderHeight, height: tableView.sectionHeaderHeight))
+        imgView.contentMode = .scaleAspectFit
+        
         let label = UILabel(frame: CGRect(x: 10 + tableView.sectionHeaderHeight, y: 3, width: 40, height: tableView.sectionHeaderHeight))
         label.textColor = UIColor.white
+        
         if section == 0 {
             label.text = "good"
             view.backgroundColor = UIColor(red:0.40, green:0.84, blue:0.59, alpha:1.0)
+             imgView.image = image
         } else {
             label.text = "Bad"
             view.backgroundColor = UIColor(red:0.94, green:0.22, blue:0.22, alpha:1.0)
+             imgView.image = image2
         }
         view.addSubview(label)
+        view.addSubview(imgView)
         
         return view
     }

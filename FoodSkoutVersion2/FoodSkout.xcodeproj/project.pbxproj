@@ -22,6 +22,9 @@
 		F9D1F5151FDF173B0051CC29 /* SelectedNutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1F5141FDF173B0051CC29 /* SelectedNutritionViewController.swift */; };
 		F9D1F5171FDF17520051CC29 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1F5161FDF17520051CC29 /* RecipeViewController.swift */; };
 		F9D1F5191FDF37590051CC29 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1F5181FDF37590051CC29 /* Recipe.swift */; };
+		F9D1F51D1FE0A65A0051CC29 /* TagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1F51B1FE0A65A0051CC29 /* TagsCell.swift */; };
+		F9D1F51E1FE0A65A0051CC29 /* TagsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D1F51C1FE0A65A0051CC29 /* TagsCell.xib */; };
+		F9D1F5201FE0AA250051CC29 /* TagsCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1F51F1FE0AA250051CC29 /* TagsCollectionDataSource.swift */; };
 		F9D98CE51FC357B700E32C11 /* DisplayOrganViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D98CE41FC357B700E32C11 /* DisplayOrganViewController.swift */; };
 		F9E37ECA1FC8AF0300EBD626 /* NutrientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37EC91FC8AF0300EBD626 /* NutrientsViewController.swift */; };
 		F9E37ED01FCA0C5E00EBD626 /* PercentageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E37ECF1FCA0C5E00EBD626 /* PercentageBar.swift */; };
@@ -60,6 +63,10 @@
 		F9D1F5141FDF173B0051CC29 /* SelectedNutritionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedNutritionViewController.swift; sourceTree = "<group>"; };
 		F9D1F5161FDF17520051CC29 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		F9D1F5181FDF37590051CC29 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		F9D1F51A1FE095480051CC29 /* lottepaperfang.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lottepaperfang.ttf; sourceTree = "<group>"; };
+		F9D1F51B1FE0A65A0051CC29 /* TagsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagsCell.swift; path = FoodSkout/Views/TagsCell.swift; sourceTree = SOURCE_ROOT; };
+		F9D1F51C1FE0A65A0051CC29 /* TagsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagsCell.xib; path = FoodSkout/Views/TagsCell.xib; sourceTree = SOURCE_ROOT; };
+		F9D1F51F1FE0AA250051CC29 /* TagsCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionDataSource.swift; sourceTree = "<group>"; };
 		F9D98CE41FC357B700E32C11 /* DisplayOrganViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayOrganViewController.swift; sourceTree = "<group>"; };
 		F9E37EC91FC8AF0300EBD626 /* NutrientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsViewController.swift; sourceTree = "<group>"; };
 		F9E37ECF1FCA0C5E00EBD626 /* PercentageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageBar.swift; sourceTree = "<group>"; };
@@ -162,6 +169,9 @@
 			isa = PBXGroup;
 			children = (
 				F9E731261FB9085C0020C89E /* Main.storyboard */,
+				F9D1F51B1FE0A65A0051CC29 /* TagsCell.swift */,
+				F9D1F51C1FE0A65A0051CC29 /* TagsCell.xib */,
+				F9D1F51F1FE0AA250051CC29 /* TagsCollectionDataSource.swift */,
 				F9E7312B1FB9085C0020C89E /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -186,6 +196,7 @@
 				F9E731211FB9085C0020C89E /* FoodSkout */,
 				F9E731201FB9085C0020C89E /* Products */,
 				F93688001FD739FF0060E43C /* timeburnerbold.ttf */,
+				F9D1F51A1FE095480051CC29 /* lottepaperfang.ttf */,
 				F93688011FD739FF0060E43C /* timeburnernormal.ttf */,
 				F93688021FD739FF0060E43C /* turmeric.pdf */,
 				F93688031FD73A000060E43C /* TypoGraphica_demo.otf */,
@@ -285,6 +296,7 @@
 				F9E7312D1FB9085C0020C89E /* LaunchScreen.storyboard in Resources */,
 				F9E7312A1FB9085C0020C89E /* Assets.xcassets in Resources */,
 				F9E731281FB9085C0020C89E /* Main.storyboard in Resources */,
+				F9D1F51E1FE0A65A0051CC29 /* TagsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,10 +364,12 @@
 				F9E37ECA1FC8AF0300EBD626 /* NutrientsViewController.swift in Sources */,
 				F98E57A21FD33DAD00DDE9AA /* IngredientBody.swift in Sources */,
 				F98196071FDB1F9E0090BD6E /* Networking.swift in Sources */,
+				F9D1F5201FE0AA250051CC29 /* TagsCollectionDataSource.swift in Sources */,
 				F981960A1FDB24790090BD6E /* OnboardingPageViewController.swift in Sources */,
 				F9E37EE01FD1DF7A00EBD626 /* FoodImg.swift in Sources */,
 				F9E37ED71FCE0AD100EBD626 /* ChooseOrgansViewController.swift in Sources */,
 				F98196011FDB0CCF0090BD6E /* UIView+Boarders.swift in Sources */,
+				F9D1F51D1FE0A65A0051CC29 /* TagsCell.swift in Sources */,
 				F9E731251FB9085C0020C89E /* HomeViewController.swift in Sources */,
 				F9A258E41FC3AA9400DE4C06 /* LowerTableViewCell.swift in Sources */,
 				F9E731231FB9085C0020C89E /* AppDelegate.swift in Sources */,
