@@ -28,9 +28,14 @@ class DisplayOrganViewController: UIViewController {
         Networking.instance.fetch(route: .paramForNutrients(ingr: self.foodName!), method: "GET", data: nil){ (data, response) in
             if response == 200 {
                 let result = try? JSONDecoder().decode(Params.self, from: data)
-                guard let paramsResult = result?.hints else { return }
-                let foodUri = paramsResult[0].food.uri
-                self.foodUriData = foodUri
+                guard let paramsResult = result?.hints else { return
+                if !paramsResult.isEmpty {
+                    let foodUri = paramsResult[0].food.uri
+                    self.foodUriData = foodUri
+                } else {
+                    let foodUri = "http://www.edamam.com/ontologies/edamam.owl#Food_21030"
+                    self.foodUriData = foodUri
+                }
                 completion(true)
             }
         }
@@ -103,8 +108,6 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let selectedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "selectedNutritionVC") as? SelectedNutritionViewController
-        
         if let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutrientsViewController") as? NutrientsViewController {
             if goodFoods?[indexPath.row].name != nil {
                 nutritionVC.foodName = assignValueToCell(index: indexPath.row, section: indexPath.section, cell: nil)
