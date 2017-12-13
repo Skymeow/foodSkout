@@ -5,7 +5,7 @@
 //  Created by Sky Xu on 11/12/17.
 //  Copyright © 2017 Sky Xu. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 @UIApplicationMain
@@ -13,8 +13,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let pageVC = storyboard.instantiateViewController(withIdentifier: "pageVC") as! OnboardingPageViewController
+        self.window?.rootViewController = pageVC
+        self.window?.makeKeyAndVisible()
+        // for present pageVC modally
+        let defaults = UserDefaults.standard
+        let initialViewController: UIViewController
+        let onboarded = defaults.bool(forKey: "saw_onboarding")
+        let loggedIn = defaults.bool(forKey: "isLoggedIn")
+        
+        if loggedIn && onboarded{
+            
+            initialViewController = UIStoryboard.initialViewController(for: .main)
+        } else {
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "pageVC") as! OnboardingPageViewController
+        }
+        
+        window?.rootViewController = initialViewController
+        window?.makeKeyAndVisible()
+
         UINavigationBar.appearance().barTintColor = UIColor(red: 252/255, green: 248/255, blue: 249/255, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor(red: 241/255, green: 36/255, blue: 120/255, alpha: 1.0)
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 241/255, green: 36/255, blue: 120/255, alpha: 1.0)]
