@@ -93,7 +93,7 @@ enum Route {
             return nil
         case .paramForNutrients:
             return nil
-        case let .getNutrientsLabel:
+        case .getNutrientsLabel:
             guard let ingredientBody = data as? IngredientBody else { return nil}
             let result = try? encoder.encode(ingredientBody)
             return result
@@ -145,12 +145,9 @@ class Networking {
        
             guard let responseCode = response as? HTTPURLResponse else {return}
             let statusCode = responseCode.statusCode
-            
             guard let data = data else { return }
-            
             let str = String.init(data: data, encoding: String.Encoding.isoLatin1)
             let newData = str?.data(using: String.Encoding.utf8)
-            
             completion(newData!, statusCode)
         }.resume()
     }
