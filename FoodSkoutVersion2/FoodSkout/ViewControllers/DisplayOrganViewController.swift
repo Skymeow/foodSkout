@@ -18,9 +18,6 @@ class DisplayOrganViewController: UIViewController {
     var goodFoods: [Goods]?
     var badFoods: [Bads]?
     
-    var goodFoods: [String] = []
-    var badFoods: [String] = []
-    
     @IBOutlet weak var organImg: UIImageView!
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var lowerTableView: UITableView!
@@ -73,14 +70,6 @@ class DisplayOrganViewController: UIViewController {
                 }
             }
         }
-        
-        
-        self.handleFunctionOrder { (success) -> Void in
-            if success {
-                // call this function first, then call whatever's inside of handleOrder
-                print("funciona")
-            }
-        }
     }
 }
 
@@ -92,23 +81,22 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let lowerTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LowerTableViewCell
-        lowerTableViewCell.imgView.image = UIImage(named: "turmeric")!
+        
+        
+        
         if goodFoods?[indexPath.row].name != nil {
-            lowerTableViewCell.foodNameLabel.text? = assignValueToCell(index: indexPath.row, section: indexPath.section)
-//            if indexPath.section == 0 {
-//                lowerTableViewCell.foodNameLabel.text? = goodFoods![indexPath.row].name
-//            } else {
-//                lowerTableViewCell.foodNameLabel.text? = badFoods![indexPath.row].name
-//            }
+            lowerTableViewCell.foodNameLabel.text? = assignValueToCell(index: indexPath.row, section: indexPath.section, cell: lowerTableViewCell)
         }
         
         return lowerTableViewCell
     }
     
-    func assignValueToCell(index: Int, section: Int) -> String{
+    func assignValueToCell(index: Int, section: Int, cell: LowerTableViewCell?) -> String{
         if section == 0 {
+            cell?.imgView.loadImageFromUrlString(urlString: goodFoods![index].image_url)
             self.foodName = goodFoods![index].name
         } else {
+            cell?.imgView.loadImageFromUrlString(urlString: badFoods![index].image_url)
             self.foodName = badFoods![index].name
         }
         return self.foodName!
@@ -118,7 +106,7 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
         
         if let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutrientsViewController") as? NutrientsViewController {
             if goodFoods?[indexPath.row].name != nil {
-                nutritionVC.foodName = assignValueToCell(index: indexPath.row, section: indexPath.section)
+                nutritionVC.foodName = assignValueToCell(index: indexPath.row, section: indexPath.section, cell: nil)
             }
             
             getParamsForNutrients { (success) in
