@@ -17,6 +17,7 @@ class DisplayOrganViewController: UIViewController {
     var foodImgs: [FoodImg] = []
     var goodFoods: [Goods]?
     var badFoods: [Bads]?
+    var foodImgUrl: String?
     
     @IBOutlet weak var organImg: UIImageView!
     @IBOutlet weak var upperView: UIView!
@@ -29,7 +30,6 @@ class DisplayOrganViewController: UIViewController {
                 let result = try? JSONDecoder().decode(Params.self, from: data)
                 guard let paramsResult = result?.hints else { return }
                 let foodUri = paramsResult[0].food.uri
-                print(foodUri)
                 self.foodUriData = foodUri
                 completion(true)
             }
@@ -82,8 +82,6 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let lowerTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LowerTableViewCell
         
-        
-        
         if goodFoods?[indexPath.row].name != nil {
             lowerTableViewCell.foodNameLabel.text? = assignValueToCell(index: indexPath.row, section: indexPath.section, cell: lowerTableViewCell)
         }
@@ -95,25 +93,37 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
         if section == 0 {
             cell?.imgView.loadImageFromUrlString(urlString: goodFoods![index].image_url)
             self.foodName = goodFoods![index].name
+            self.foodImgUrl = goodFoods![index].image_url
         } else {
             cell?.imgView.loadImageFromUrlString(urlString: badFoods![index].image_url)
             self.foodName = badFoods![index].name
+            self.foodImgUrl = badFoods![index].image_url
         }
         return self.foodName!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let selectedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "selectedNutritionVC") as? SelectedNutritionViewController
         
         if let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutrientsViewController") as? NutrientsViewController {
             if goodFoods?[indexPath.row].name != nil {
                 nutritionVC.foodName = assignValueToCell(index: indexPath.row, section: indexPath.section, cell: nil)
+            } else {
+                self.foodName = "avacodo"
             }
             
             getParamsForNutrients { (success) in
                 if success {
                     nutritionVC.foodUri = self.foodUriData
-                    DispatchQueue.main.async {
-                        self.navigationController?.pushViewController(nutritionVC, animated: true)
+//                    selectedVC?.foodUri = self.foodUriData
+                    nutritionVC.foodImgUrl = self.foodImgUrl
+                    print(indexPath.row)
+                    if indexPath.row >= 0 && indexPath.row < 3 {
+                        DispatchQueue.main.async {
+                            self.navigationController?.pushViewController(nutritionVC, animated: true)
+                        }
+                    } else {
+                        print("sorry you can't eat these")
                     }
                 }
             }
@@ -155,38 +165,3 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
     }
 }
 
-
-extension DisplayOrganViewController {
-    func getFoodImg(completion: @escaping (Bool) -> Void) {
-        Networking.instance.fetch(route: .foodImg(foodImgQuery: "turmeric"), method: "GET", data: nil) { (data, response) in
-            if response == 200 {
-                let result = try? JSONDecoder().decode(AllFoodImgs.self, from: data)
-                guard let foodImgsData = result?.hits else { return }
-                self.foodImgs = foodImgsData
-                
-                completion(true)
-            }
-        }
-    }
-    
-    func setCorrectImg() {
-        let foodImgString = self.foodImgs[0].webformatURL
-        let foodImgUrl = URL(string: foodImgString)
-        let data = try? Data(contentsOf: foodImgUrl!)
-        DispatchQueue.main.async {
-            if let data = data {
-//                self.foodImgView.image = UIImage(data: data)
-            }
-        }
-    }
-    
-    func handleFunctionOrder(completion: @escaping completed) {
-        //       call getFoodImg() first then do the following
-        self.getFoodImg { (success) in
-            if success{
-                print("coolio")
-                completion(true)
-            }
-        }
-    }
-}
