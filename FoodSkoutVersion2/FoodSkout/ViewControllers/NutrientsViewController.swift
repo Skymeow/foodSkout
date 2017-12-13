@@ -168,7 +168,8 @@ class NutrientsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.barTintColor = nil
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        self.navigationController?.navigationBar.isTranslucent = true
         self.handleFunctionOrder { (success) -> Void in
             if success {
                 // call this function first, then call whatever's inside of handleOrder
@@ -185,12 +186,12 @@ class NutrientsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let selectedNutritionController = childViewControllers.first as? SelectedNutritionViewController else  {
-            fatalError("Check storyboard for missing selectedNutritionViewController")
+        guard let recipeController = childViewControllers.first as? RecipeViewController else {
+            fatalError("Check storyboard for missing recipeViewController")
         }
         
-        guard let recipeController = childViewControllers.last as? RecipeViewController else {
-            fatalError("Check storyboard for missing recipeViewController")
+        guard let selectedNutritionController = childViewControllers.last as? SelectedNutritionViewController else  {
+            fatalError("Check storyboard for missing selectedNutritionViewController")
         }
         
         selectedNutritionViewController = selectedNutritionController
