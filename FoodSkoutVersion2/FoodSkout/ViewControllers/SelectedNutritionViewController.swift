@@ -64,6 +64,13 @@ class SelectedNutritionViewController: UIViewController {
                     self.collectionView.dataSource = self.dataSource
                     self.collectionView.reloadData()
                 }
+            } else {
+                DispatchQueue.main.async {
+                    self.setPercentagesbar()
+                    self.dataSource.items = ["VEGAN", "PALEO", "TREE_NUT_FREE", "RED_MEAT_FREE", "SESAME_FREE", "MUSTARD_FREE"]
+                    self.collectionView.dataSource = self.dataSource
+                    self.collectionView.reloadData()
+                }
             }
         }
     }
