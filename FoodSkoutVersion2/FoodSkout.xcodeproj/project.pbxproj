@@ -16,6 +16,9 @@
 		9029500C1FE054E7000B17EC /* UIImage+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9029500B1FE054E7000B17EC /* UIImage+Request.swift */; };
 		90EDEC231FCFBD9D00A2150E /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDEC221FCFBD9D00A2150E /* Food.swift */; };
 		90EDEC251FCFBDA400A2150E /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDEC241FCFBDA400A2150E /* Nutrient.swift */; };
+		F949F7871FE397A100AB7DC7 /* FakeSelectedNutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949F7861FE397A100AB7DC7 /* FakeSelectedNutritionViewController.swift */; };
+		F949F7891FE3993B00AB7DC7 /* FakeNutrientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949F7881FE3993B00AB7DC7 /* FakeNutrientsViewController.swift */; };
+		F949F78B1FE39B8300AB7DC7 /* FakeRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949F78A1FE39B8300AB7DC7 /* FakeRecipeViewController.swift */; };
 		F9567EE71FBBB3CF0069D7DF /* BackgroundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */; };
 		F98196011FDB0CCF0090BD6E /* UIView+Boarders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98196001FDB0CCF0090BD6E /* UIView+Boarders.swift */; };
 		F98196071FDB1F9E0090BD6E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98196061FDB1F9E0090BD6E /* Networking.swift */; };
@@ -63,6 +66,9 @@
 		F93688011FD739FF0060E43C /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
 		F93688021FD739FF0060E43C /* turmeric.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = turmeric.pdf; sourceTree = "<group>"; };
 		F93688031FD73A000060E43C /* TypoGraphica_demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypoGraphica_demo.otf; sourceTree = "<group>"; };
+		F949F7861FE397A100AB7DC7 /* FakeSelectedNutritionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeSelectedNutritionViewController.swift; sourceTree = "<group>"; };
+		F949F7881FE3993B00AB7DC7 /* FakeNutrientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FakeNutrientsViewController.swift; path = FoodSkout/ViewControllers/FakeNutrientsViewController.swift; sourceTree = SOURCE_ROOT; };
+		F949F78A1FE39B8300AB7DC7 /* FakeRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeRecipeViewController.swift; sourceTree = "<group>"; };
 		F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundButtonView.swift; sourceTree = "<group>"; };
 		F98196001FDB0CCF0090BD6E /* UIView+Boarders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Boarders.swift"; sourceTree = "<group>"; };
 		F98196061FDB1F9E0090BD6E /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
@@ -168,6 +174,9 @@
 				F9D1F5141FDF173B0051CC29 /* SelectedNutritionViewController.swift */,
 				F9D1F5161FDF17520051CC29 /* RecipeViewController.swift */,
 				902950071FDF5FCD000B17EC /* LoginViewController.swift */,
+				F949F7881FE3993B00AB7DC7 /* FakeNutrientsViewController.swift */,
+				F949F78A1FE39B8300AB7DC7 /* FakeRecipeViewController.swift */,
+				F949F7861FE397A100AB7DC7 /* FakeSelectedNutritionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -381,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				902950081FDF5FCD000B17EC /* LoginViewController.swift in Sources */,
+				F949F7891FE3993B00AB7DC7 /* FakeNutrientsViewController.swift in Sources */,
 				F9E37ECA1FC8AF0300EBD626 /* NutrientsViewController.swift in Sources */,
 				F98E57A21FD33DAD00DDE9AA /* IngredientBody.swift in Sources */,
 				F98196071FDB1F9E0090BD6E /* Networking.swift in Sources */,
@@ -395,6 +405,8 @@
 				902950061FDF5B7C000B17EC /* Storyboard+Utility.swift in Sources */,
 				F9A258E41FC3AA9400DE4C06 /* LowerTableViewCell.swift in Sources */,
 				F9E731231FB9085C0020C89E /* AppDelegate.swift in Sources */,
+				F949F7871FE397A100AB7DC7 /* FakeSelectedNutritionViewController.swift in Sources */,
+				F949F78B1FE39B8300AB7DC7 /* FakeRecipeViewController.swift in Sources */,
 				F98196101FDB25030090BD6E /* ThrottleHelper.swift in Sources */,
 				F981960C1FDB24970090BD6E /* OrganToFoodViewController.swift in Sources */,
 				F9E37ED01FCA0C5E00EBD626 /* PercentageBar.swift in Sources */,
@@ -549,7 +561,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PCNZSAFPQA;
+				DEVELOPMENT_TEAM = 2CL75PM5U8;
 				INFOPLIST_FILE = FoodSkout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sky.FoodSkout;
@@ -565,7 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PCNZSAFPQA;
+				DEVELOPMENT_TEAM = 2CL75PM5U8;
 				INFOPLIST_FILE = FoodSkout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sky.FoodSkout;
