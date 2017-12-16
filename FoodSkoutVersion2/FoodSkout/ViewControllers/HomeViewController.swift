@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
   }
   
     @IBAction func nutritionTapped(_ sender: UIButton) {
-        let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NutrientsViewController") as? NutrientsViewController
+        let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FakeNutrientsViewController") as? FakeNutrientsViewController
         
         DispatchQueue.main.async {
             self.navigationController?.pushViewController(nutritionVC!, animated: true)
