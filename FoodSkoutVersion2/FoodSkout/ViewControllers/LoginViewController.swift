@@ -39,7 +39,6 @@ class LoginViewController: UIViewController {
         
         defaults.set(true, forKey: "isLoggedIn")
         Networking.instance.fetch(route: Route.user, method: "GET", data: nil) { (data, code)  in
-            print("hola")
             DispatchQueue.main.async {
                 let initialViewController = UIStoryboard.initialViewController(for: .main)
                 self.view.window?.rootViewController = initialViewController

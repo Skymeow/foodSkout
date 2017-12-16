@@ -34,6 +34,7 @@ struct Ingredient: Codable {
 struct IngredientResult: Decodable {
     let healthLabels: [String]
     let totalNutrients: Mineral
+    let totalDaily: [String:Nutrient]
 }
 
 struct Mineral: Decodable {

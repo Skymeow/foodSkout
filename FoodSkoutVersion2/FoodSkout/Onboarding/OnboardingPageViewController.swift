@@ -68,10 +68,6 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
-        
-        print(pageContentViewController)
-        print(orderedViewControllers.index(of: pageContentViewController)) 
-
         self.pageControl.currentPage = orderedViewControllers.index(of: pageContentViewController)!
     }
 

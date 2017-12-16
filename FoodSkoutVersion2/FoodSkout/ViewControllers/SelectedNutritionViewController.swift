@@ -13,9 +13,9 @@ class SelectedNutritionViewController: UIViewController {
     var foodUri: String?
     let dataSource = TagsCollectionDatasource(items: [])
     var healthLabelData: [String]?
-    var sugarPerc: Float?
-    var fatPerc: Float?
-    var proteinPerc: Float?
+    var nutrient1: Float?
+    var nutrient2: Float?
+    var nutrient3: Float?
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var percentageBar1: PercentageBar!
@@ -34,19 +34,33 @@ class SelectedNutritionViewController: UIViewController {
                 let decoder = JSONDecoder()
                 let res = try? decoder.decode(IngredientResult.self, from: data)
                 
+                guard var nutrients = res?.totalDaily.values.reversed() else {return}
+                
+                var fNu = nutrients.sorted(by: { (a, b) -> Bool in
+                    a > b
+                })
+                
+                print(fNu)
+                
+                
                 guard let labelResult = res else { return }
                 let healthLabelResult = res!.healthLabels
                 let primeNutrients = res!.totalNutrients
                 self.healthLabelData = healthLabelResult
-                let base1 = primeNutrients.SUGAR?.quantity
-                let base2 = primeNutrients.FAT?.quantity
-                let base3 = primeNutrients.PROCNT?.quantity
-                if base1 != nil &&  base2 != nil &&  base3 != nil {
-                    let totalBase = Float(base1!) + Float(base2!) + Float(base3!)
-                    self.proteinPerc = Float(base3!) / Float(totalBase)
-                    self.fatPerc = Float(base2!) / Float(totalBase)
-                    self.sugarPerc = Float(base1!) / Float(totalBase)
+                
+                DispatchQueue.main.async {
+                    self.nutrientLabel1.text = fNu[0].label
+                    self.nutrientLabel2.text = fNu[1].label
+                    self.nutrientLabel3.text = fNu[2].label
                 }
+                
+                let base1 = fNu[0].quantity
+                let base2 = fNu[1].quantity
+                let base3 = fNu[2].quantity
+                let totalBase = Float(base1) + Float(base2) + Float(base3)
+                self.nutrient3 = Float(base3) / Float(totalBase)
+                self.nutrient2 = Float(base2) / Float(totalBase)
+                self.nutrient1 = Float(base1) / Float(totalBase)
                 completion(true)
                 
                 }
@@ -55,10 +69,10 @@ class SelectedNutritionViewController: UIViewController {
     }
     
     func setPercentagesbar() {
-        if self.sugarPerc != nil && self.fatPerc != nil && self.proteinPerc != nil {
-            self.percentageBar1.value = self.sugarPerc!
-            self.percentageBar2.value = self.fatPerc!
-            self.percentageBar3.value = self.proteinPerc!
+        if self.nutrient1 != nil && self.nutrient2 != nil && self.nutrient3 != nil {
+            self.percentageBar1.value = self.nutrient1!
+            self.percentageBar2.value = self.nutrient2!
+            self.percentageBar3.value = self.nutrient3!
         }
     }
     

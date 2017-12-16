@@ -9,7 +9,23 @@
 import UIKit
 
 struct Nutrient: Codable{
-    var value: Double
-    var attr_id: Int
-    var name: String?
+    var label: String
+    var quantity: Float
+    var unit: String
+}
+
+extension Nutrient: Comparable {
+    static func == (lhs: Nutrient, rhs: Nutrient) -> Bool {
+        return lhs.label == rhs.label &&
+            lhs.quantity == rhs.quantity &&
+            lhs.unit == rhs.unit
+    }
+    
+    static func < (lhs: Nutrient, rhs: Nutrient) -> Bool {
+        return lhs.quantity < rhs.quantity
+    }
+    
+    static func > (lhs: Nutrient, rhs: Nutrient) -> Bool {
+        return lhs.quantity > rhs.quantity
+    }
 }

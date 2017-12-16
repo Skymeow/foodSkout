@@ -51,14 +51,6 @@ class HomeViewController: UIViewController {
     
   override func viewDidLoad() {
         super.viewDidLoad()
-         for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
         self.backgroundImg.image = UIImage(named: "turmeric")!
         headerLabel.font = UIFont(name: "Thonburi-Bold", size: 32)
         

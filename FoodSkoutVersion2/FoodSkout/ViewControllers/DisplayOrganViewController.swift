@@ -67,7 +67,7 @@ class DisplayOrganViewController: UIViewController {
                 guard let good = organ?.goodFoods,
                     let bad =  organ?.badFoods else { return }
                 self.goodFoods = good; self.badFoods = bad
-                print(good, bad)
+                
                 DispatchQueue.main.async {
                     self.lowerTableView.reloadData()
                     alertController.dismiss(animated: true, completion: nil)
@@ -118,9 +118,7 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
             getParamsForNutrients { (success) in
                 if success {
                     nutritionVC.foodUri = self.foodUriData
-//                    selectedVC?.foodUri = self.foodUriData
                     nutritionVC.foodImgUrl = self.foodImgUrl
-                    print(indexPath.row)
                     if indexPath.row >= 0 && indexPath.row < 3 {
                         DispatchQueue.main.async {
                             self.navigationController?.pushViewController(nutritionVC, animated: true)
