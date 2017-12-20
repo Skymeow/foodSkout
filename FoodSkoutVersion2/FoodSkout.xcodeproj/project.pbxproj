@@ -14,6 +14,7 @@
 		902950081FDF5FCD000B17EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902950071FDF5FCD000B17EC /* LoginViewController.swift */; };
 		9029500A1FDF6976000B17EC /* BasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902950091FDF6976000B17EC /* BasicAuth.swift */; };
 		9029500C1FE054E7000B17EC /* UIImage+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9029500B1FE054E7000B17EC /* UIImage+Request.swift */; };
+		903E13411FEAE5FF0054039F /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E13401FEAE5FF0054039F /* Route.swift */; };
 		90EDEC231FCFBD9D00A2150E /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDEC221FCFBD9D00A2150E /* Food.swift */; };
 		90EDEC251FCFBDA400A2150E /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDEC241FCFBDA400A2150E /* Nutrient.swift */; };
 		F949F7871FE397A100AB7DC7 /* FakeSelectedNutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949F7861FE397A100AB7DC7 /* FakeSelectedNutritionViewController.swift */; };
@@ -59,6 +60,7 @@
 		902950071FDF5FCD000B17EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		902950091FDF6976000B17EC /* BasicAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAuth.swift; sourceTree = "<group>"; };
 		9029500B1FE054E7000B17EC /* UIImage+Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Request.swift"; sourceTree = "<group>"; };
+		903E13401FEAE5FF0054039F /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		90EDEC221FCFBD9D00A2150E /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		90EDEC241FCFBDA400A2150E /* Nutrient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
 		BFBB9AD3EAEFD8C42E6B9EE8 /* Pods-FoodSkout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodSkout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				902950091FDF6976000B17EC /* BasicAuth.swift */,
 				F98196061FDB1F9E0090BD6E /* Networking.swift */,
+				903E13401FEAE5FF0054039F /* Route.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				F9E37EDD1FCF8E6C00EBD626 /* Organ.swift in Sources */,
 				F981960E1FDB24A30090BD6E /* StepTwo.swift in Sources */,
 				90EDEC251FCFBDA400A2150E /* Nutrient.swift in Sources */,
+				903E13411FEAE5FF0054039F /* Route.swift in Sources */,
 				F9E37ED91FCE12C800EBD626 /* OrganCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
