@@ -15,6 +15,7 @@
         <array key="AvenirNext.ttc">
             <string>AvenirNext-Heavy</string>
             <string>AvenirNext-Medium</string>
+            <string>AvenirNext-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -346,21 +347,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-V7-lbA" customClass="CustomImageView" customModule="FoodSkout" customModuleProvider="target">
-                                                    <rect key="frame" x="22" y="2" width="36" height="36"/>
+                                                    <rect key="frame" x="22" y="2" width="37" height="37"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="bsL-V7-lbA" secondAttribute="height" multiplier="1:1" id="Qd5-B4-YWT"/>
                                                         <constraint firstAttribute="width" constant="85" id="RDi-sH-HXm"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIl-gA-cJ0">
-                                                    <rect key="frame" x="210.00000000000003" y="10" width="103.33333333333334" height="20"/>
+                                                    <rect key="frame" x="213.33333333333337" y="10" width="100" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="haG-E7-lYU"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
-                                                        <fragment content="Label yo food">
+                                                        <fragment content="Food">
                                                             <attributes>
                                                                 <font key="NSFont" metaFont="system" size="17"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -636,10 +638,10 @@
                                 <color key="textColor" red="1" green="0.39129410980000001" blue="0.76113479539999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse our index of nutrients to explore more health benefit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQz-9x-L6C">
-                                <rect key="frame" x="65.333333333333343" y="448.66666666666669" width="283.33333333333326" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse our index of nutrients to explore the different health benefits they have on your body" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQz-9x-L6C">
+                                <rect key="frame" x="65" y="449" width="282" height="94"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="gmw-6l-tau"/>
+                                    <constraint firstAttribute="height" constant="94" id="gmw-6l-tau"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="0.93278077410000004" green="0.91360471720000003" blue="0.92900036060000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -654,7 +656,7 @@
                             <constraint firstAttribute="trailing" secondItem="Q7n-GS-qs8" secondAttribute="trailing" constant="5" id="Sqd-0K-fnj"/>
                             <constraint firstItem="7F1-7Y-CaA" firstAttribute="centerX" secondItem="BXc-al-oGC" secondAttribute="centerX" id="YSC-K4-l2B"/>
                             <constraint firstItem="Q7n-GS-qs8" firstAttribute="centerX" secondItem="BXc-al-oGC" secondAttribute="centerX" id="dlj-7C-eos"/>
-                            <constraint firstItem="HQz-9x-L6C" firstAttribute="centerX" secondItem="BXc-al-oGC" secondAttribute="centerX" id="eLd-Q5-GTq"/>
+                            <constraint firstItem="HQz-9x-L6C" firstAttribute="centerX" secondItem="BXc-al-oGC" secondAttribute="centerX" constant="-1" id="eLd-Q5-GTq"/>
                             <constraint firstItem="Q7n-GS-qs8" firstAttribute="leading" secondItem="BXc-al-oGC" secondAttribute="leading" constant="5" id="mcT-Yz-3ET"/>
                             <constraint firstItem="HQz-9x-L6C" firstAttribute="width" secondItem="Q7n-GS-qs8" secondAttribute="width" multiplier="0.7" id="rmX-sa-IHG"/>
                             <constraint firstAttribute="centerY" secondItem="7F1-7Y-CaA" secondAttribute="centerY" constant="100" id="v11-Kw-oFV"/>
@@ -670,7 +672,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E2n-w3-axE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1168" y="713"/>
+            <point key="canvasLocation" x="-1168.1159420289855" y="711.68478260869574"/>
         </scene>
         <!--StepTwo-->
         <scene sceneID="fgE-jN-d3X">
@@ -823,14 +825,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3c1-6Q-qmv">
-                                <rect key="frame" x="15" y="10" width="399" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" verticalCompressionResistancePriority="751" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3c1-6Q-qmv">
+                                <rect key="frame" x="15" y="10" width="301" height="65"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e8X-7i-jpi">
-                                        <rect key="frame" x="0.0" y="0.0" width="399" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="301" height="65"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hQ3-Un-rwX">
-                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="itemSize" width="50" height="30"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -839,26 +841,32 @@
                                     </collectionView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="k13-aF-OZT"/>
+                                    <constraint firstAttribute="height" constant="65" id="k13-aF-OZT"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YDq-3g-b8d" userLabel="Percentage Bars Stack View">
-                                <rect key="frame" x="15" y="125" width="384" height="250"/>
+                                <rect key="frame" x="15" y="85" width="286" height="290"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="wBC-iE-sMx">
-                                        <rect key="frame" x="0.0" y="0.0" width="124.66666666666667" height="250"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="290"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sugar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vG5-k1-5py">
-                                                <rect key="frame" x="17.333333333333336" y="0.0" width="90" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sugar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vG5-k1-5py">
+                                                <rect key="frame" x="-15" y="0.0" width="0.0" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="EAB-Qv-REp"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyc-dc-12F" userLabel="100%">
+                                                <rect key="frame" x="31" y="23" width="30.333333333333329" height="16.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hbi-iF-2QP" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="30" y="1" width="65" height="249"/>
+                                                <rect key="frame" x="13.666666666666671" y="40.666666666666671" width="65" height="249.33333333333331"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="6eX-U0-WMY"/>
                                                 </constraints>
@@ -874,19 +882,25 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="EQa-MZ-AWG">
-                                        <rect key="frame" x="129.66666666666666" y="0.0" width="124.66666666666666" height="250"/>
+                                        <rect key="frame" x="97" y="0.0" width="92" height="290"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYK-S1-WjD">
-                                                <rect key="frame" x="17.333333333333343" y="0.0" width="90" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sugar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK4-uT-jch">
+                                                <rect key="frame" x="-112" y="0.0" width="0.0" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Q94-UF-3m2"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="IBW-73-FU0"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYK-S1-WjD" userLabel="100%">
+                                                <rect key="frame" x="38" y="23" width="16.333333333333329" height="16.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQq-53-nrj" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="30" y="1" width="65" height="249"/>
+                                                <rect key="frame" x="13.666666666666657" y="40.666666666666671" width="65" height="249.33333333333331"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="zA1-cb-qbO"/>
                                                 </constraints>
@@ -902,19 +916,25 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ScT-Ks-bqH">
-                                        <rect key="frame" x="259.33333333333331" y="0.0" width="124.66666666666669" height="250"/>
+                                        <rect key="frame" x="194" y="0.0" width="92" height="290"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQ0-Bq-KH5">
-                                                <rect key="frame" x="17.333333333333371" y="0.0" width="90" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQ0-Bq-KH5">
+                                                <rect key="frame" x="-209" y="0.0" width="0.0" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="IPJ-tJ-Hfc"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di4-sn-bEf" userLabel="100%">
+                                                <rect key="frame" x="31" y="23" width="30.333333333333329" height="16.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50l-9I-Rqm" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="30" y="1" width="65" height="249"/>
+                                                <rect key="frame" x="13.666666666666686" y="40.666666666666671" width="65" height="249.33333333333331"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="d3p-ld-1nu"/>
                                                 </constraints>
@@ -945,15 +965,18 @@
                             <constraint firstAttribute="trailing" secondItem="YDq-3g-b8d" secondAttribute="trailing" constant="15" id="gd3-jU-5aa"/>
                             <constraint firstAttribute="trailing" secondItem="3c1-6Q-qmv" secondAttribute="trailing" id="rAF-QL-obd"/>
                             <constraint firstItem="3c1-6Q-qmv" firstAttribute="leading" secondItem="DsH-k2-tt7" secondAttribute="leading" constant="15" id="tyx-jX-Gcj"/>
-                            <constraint firstItem="YDq-3g-b8d" firstAttribute="top" secondItem="3c1-6Q-qmv" secondAttribute="bottom" constant="15" id="wsh-za-Dua"/>
+                            <constraint firstItem="YDq-3g-b8d" firstAttribute="top" secondItem="3c1-6Q-qmv" secondAttribute="bottom" constant="10" id="wsh-za-Dua"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GRa-Rs-JtZ"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="e8X-7i-jpi" id="f4G-45-QuA"/>
                         <outlet property="nutrientLabel1" destination="vG5-k1-5py" id="NTb-vK-OOL"/>
-                        <outlet property="nutrientLabel2" destination="fYK-S1-WjD" id="qrx-hQ-uQS"/>
+                        <outlet property="nutrientLabel2" destination="aK4-uT-jch" id="yYa-mg-2Xx"/>
                         <outlet property="nutrientLabel3" destination="bQ0-Bq-KH5" id="rGk-GH-v46"/>
+                        <outlet property="percentLabel1" destination="wyc-dc-12F" id="DDi-al-jOe"/>
+                        <outlet property="percentLabel2" destination="fYK-S1-WjD" id="SJ8-Gx-qbY"/>
+                        <outlet property="percentLabel3" destination="di4-sn-bEf" id="8be-3H-yYA"/>
                         <outlet property="percentageBar1" destination="Hbi-iF-2QP" id="062-hl-X2R"/>
                         <outlet property="percentageBar2" destination="CQq-53-nrj" id="gw1-BZ-Vn6"/>
                         <outlet property="percentageBar3" destination="50l-9I-Rqm" id="gsH-8b-EoH"/>
@@ -961,7 +984,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yV-g5-EKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2565" y="-242"/>
+            <point key="canvasLocation" x="2563.768115942029" y="-242.5271739130435"/>
         </scene>
         <!--Fake Nutrients View Controller-->
         <scene sceneID="ce9-2Y-ml4">

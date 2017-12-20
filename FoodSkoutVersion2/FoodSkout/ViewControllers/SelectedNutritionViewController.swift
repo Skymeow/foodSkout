@@ -24,6 +24,9 @@ class SelectedNutritionViewController: UIViewController {
     @IBOutlet weak var nutrientLabel1: UILabel!
     @IBOutlet weak var nutrientLabel2: UILabel!
     @IBOutlet weak var nutrientLabel3: UILabel!
+    @IBOutlet weak var percentLabel1: UILabel!
+    @IBOutlet weak var percentLabel2: UILabel!
+    @IBOutlet weak var percentLabel3: UILabel!
     
     func getLabelData(completion: @escaping (Bool) -> Void) {
         if self.foodUri != nil {
@@ -52,6 +55,10 @@ class SelectedNutritionViewController: UIViewController {
                     self.nutrientLabel1.text = fNu[0].label
                     self.nutrientLabel2.text = fNu[1].label
                     self.nutrientLabel3.text = fNu[2].label
+                    
+                    self.percentLabel1.text = "\(fNu[0].quantity)\(fNu[0].unit)"
+                    self.percentLabel2.text = "\(fNu[1].quantity)\(fNu[1].unit)"
+                    self.percentLabel3.text = "\(fNu[2].quantity)\(fNu[2].unit)"
                 }
                 
                 let base1 = fNu[0].quantity
@@ -101,6 +108,9 @@ class SelectedNutritionViewController: UIViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagsCell", for: indexPath) as! TagsCell
             if self.healthLabelData?[0] != nil {
                 cell.label.text = self.healthLabelData![indexPath.row]
+                cell.label.font = UIFont(name: "Avenir Next", size: 12)
+                cell.label.adjustsFontSizeToFitWidth = true
+                
             } 
             return cell
         }
@@ -110,6 +120,6 @@ class SelectedNutritionViewController: UIViewController {
 extension SelectedNutritionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 200, height: 45)
+        return CGSize(width: 100, height: 30)
     }
 }
