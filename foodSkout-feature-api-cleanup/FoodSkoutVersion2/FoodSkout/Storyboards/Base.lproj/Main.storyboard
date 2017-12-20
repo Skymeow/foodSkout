@@ -1053,9 +1053,10 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fake-pic" translatesAutoresizingMaskIntoConstraints="NO" id="mp5-WM-8BL">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
+                                        <color key="backgroundColor" red="0.13725490200000001" green="0.22352941179999999" blue="0.32549019610000002" alpha="0.4158818493150685" colorSpace="calibratedRGB"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.13725490200000001" green="0.22352941179999999" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="mp5-WM-8BL" secondAttribute="bottom" id="JhB-mg-o5q"/>
                                     <constraint firstItem="mp5-WM-8BL" firstAttribute="top" secondItem="p6n-5B-SiG" secondAttribute="top" id="U1Q-O7-7mY"/>
@@ -1191,10 +1192,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BU0-9g-Tbq">
-                                <rect key="frame" x="15" y="10" width="301" height="100"/>
+                                <rect key="frame" x="15" y="10" width="399" height="100"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SPx-Y6-8ON">
-                                        <rect key="frame" x="0.0" y="0.0" width="301" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="399" height="100"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V15-Id-60F">
                                             <size key="itemSize" width="50" height="50"/>
@@ -1210,13 +1211,13 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Zd8-K0-flp" userLabel="Percentage Bars Stack View">
-                                <rect key="frame" x="15" y="125" width="286" height="250"/>
+                                <rect key="frame" x="15" y="125" width="384" height="250"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3qY-OH-OPh">
-                                        <rect key="frame" x="0.0" y="0.0" width="92" height="250"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="124.66666666666667" height="250"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Curcumin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVW-ka-cfU">
-                                                <rect key="frame" x="1" y="0.0" width="90" height="0.0"/>
+                                                <rect key="frame" x="17.333333333333336" y="0.0" width="90" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="LoX-1S-bmc"/>
                                                 </constraints>
@@ -1225,7 +1226,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wd2-px-Jzg" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="13.666666666666671" y="1" width="65" height="249"/>
+                                                <rect key="frame" x="30" y="1" width="65" height="249"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="nF0-3h-f6x"/>
                                                 </constraints>
@@ -1241,10 +1242,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="aCB-lI-A30">
-                                        <rect key="frame" x="97" y="0.0" width="92" height="250"/>
+                                        <rect key="frame" x="129.66666666666666" y="0.0" width="124.66666666666666" height="250"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zinc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWw-2N-xV4">
-                                                <rect key="frame" x="1" y="0.0" width="90" height="0.0"/>
+                                                <rect key="frame" x="17.333333333333343" y="0.0" width="90" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="SgV-la-XPE"/>
                                                 </constraints>
@@ -1253,7 +1254,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Z1-de-ake" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="13.666666666666657" y="1" width="65" height="249"/>
+                                                <rect key="frame" x="30" y="1" width="65" height="249"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="dau-qf-wkf"/>
                                                 </constraints>
@@ -1269,10 +1270,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="1im-gS-Z8h">
-                                        <rect key="frame" x="194" y="0.0" width="92" height="250"/>
+                                        <rect key="frame" x="259.33333333333331" y="0.0" width="124.66666666666669" height="250"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="antioxidant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLH-Uc-RpN">
-                                                <rect key="frame" x="1" y="0.0" width="90" height="0.0"/>
+                                                <rect key="frame" x="17.333333333333371" y="0.0" width="90" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="cqb-nm-STR"/>
                                                 </constraints>
@@ -1281,7 +1282,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ube-eJ-R14" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="13.666666666666686" y="1" width="65" height="249"/>
+                                                <rect key="frame" x="30" y="1" width="65" height="249"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="y09-FX-dPz"/>
                                                 </constraints>
