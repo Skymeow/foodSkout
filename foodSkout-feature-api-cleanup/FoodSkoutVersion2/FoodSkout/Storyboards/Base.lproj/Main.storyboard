@@ -29,10 +29,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mq5-R9-FdU">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="-0.66666666666665719" y="0.0" width="414" height="736"/>
                             </imageView>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VNj-m9-bsZ" customClass="GradientView" customModule="FoodSkout" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="-0.66666666666665719" y="64" width="414" height="672"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" misplaced="YES" preservesSuperviewLayoutMargins="YES" text="Editor's  Pick" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zp3-vF-8H2">
                                         <rect key="frame" x="45" y="40" width="331" height="60"/>
@@ -42,7 +42,7 @@
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="G9N-kZ-o1q">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="577"/>
+                                        <rect key="frame" x="-0.66666666666665719" y="0.0" width="414" height="577"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phh-Pk-bc7">
                                                 <rect key="frame" x="35" y="380" width="0.0" height="107"/>
@@ -91,7 +91,7 @@
                                                         <rect key="frame" x="87" y="0.0" width="65" height="85"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mg1-rR-VqD">
-                                                                <rect key="frame" x="11.666666666666654" y="0.0" width="41.666666666666657" height="13"/>
+                                                                <rect key="frame" x="11.666666666666668" y="0.0" width="41.666666666666657" height="13"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -117,7 +117,7 @@
                                                         <rect key="frame" x="174" y="0.0" width="65" height="85"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clr-4x-CNU">
-                                                                <rect key="frame" x="11.666666666666654" y="0.0" width="41.666666666666657" height="13"/>
+                                                                <rect key="frame" x="11.666666666666682" y="0.0" width="41.666666666666657" height="13"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -144,22 +144,25 @@
                                         </subviews>
                                         <edgeInsets key="layoutMargins" top="380" left="35" bottom="0.0" right="0.0"/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="kqo-8a-BQf">
-                                        <rect key="frame" x="0.0" y="617" width="414" height="55"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="94" translatesAutoresizingMaskIntoConstraints="NO" id="kqo-8a-BQf">
+                                        <rect key="frame" x="-0.66666666666665719" y="617" width="414" height="55"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atE-og-rep">
-                                                <rect key="frame" x="15" y="15" width="69.666666666666671" height="32"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atE-og-rep">
+                                                <rect key="frame" x="15" y="15" width="70.333333333333329" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" image="TabBarHome"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCf-DS-ASj">
-                                                <rect key="frame" x="179.66666666666666" y="15" width="69.666666666666657" height="32"/>
+                                                <rect key="frame" x="179.33333333333334" y="15" width="70.333333333333343" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <state key="normal" image="TabBarBody"/>
                                                 <connections>
                                                     <action selector="OrganTabbarButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1bO-kT-KSp"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mE1-8J-BnM">
-                                                <rect key="frame" x="344.33333333333331" y="15" width="69.666666666666686" height="32"/>
+                                                <rect key="frame" x="343.66666666666663" y="15" width="70.333333333333314" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" image="Star"/>
                                                 <connections>
                                                     <action selector="nutritionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wyg-QD-9nc"/>
