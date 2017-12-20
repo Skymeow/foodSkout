@@ -44,29 +44,31 @@ class FakeNutrientsViewController: UIViewController {
         self.recipeViewController?.view.isHidden = true
         self.selectedNutritionViewController?.view.isHidden = false
         selectTab(button: sender)
-        resetButtons(button: self.recipeButton)
+        resetButtons(button: sender)
     }
     
     @IBAction func selectedReciTapped(_ sender: UIButton) {
         self.recipeViewController?.view.isHidden = false
         self.selectedNutritionViewController?.view.isHidden = true
         selectTab(button: sender)
-        resetButtons(button: self.nutritionButton)
+        resetButtons(button: sender)
+    }
+    
+    func selectTab (button: UIButton) {
+        // set recipt buttons to grey background color, nutri button background back to green
+        if button == self.nutritionButton {
+            button.setTitleColor(UIColor.white, for: .normal)
+        } else {
+            button.setTitleColor(UIColor.white, for: .normal)
+        }
     }
     
     func resetButtons (button: UIButton) {
-        // set both buttons to default background color
-        button.backgroundColor = UIColor.white
-        button.setTitleColor(UIColor.blue, for: .normal)
-    }
-    
-    func selectTab(button: UIButton) {
         if button == nutritionButton {
-            button.backgroundColor = UIColor(red: 0.7216, green: 0.8314, blue: 0.6549, alpha: 1.0)
+            self.recipeButton.setTitleColor(UIColor.darkGray, for: .normal)
         } else {
-            button.backgroundColor = UIColor(white: 0, alpha: 0.47)
+            self.nutritionButton.setTitleColor(UIColor.darkGray, for: .normal)
         }
-        button.setTitleColor(UIColor.white, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
