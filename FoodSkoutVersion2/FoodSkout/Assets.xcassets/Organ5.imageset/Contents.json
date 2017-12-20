@@ -2,12 +2,10 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "thyroid.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "thyroid (1).png",
       "scale" : "2x"
     },
     {
