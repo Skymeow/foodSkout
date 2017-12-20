@@ -8,6 +8,15 @@
 
 import Foundation
 
+/// An enumeration for the Routes bein used in the Networking Class
+///
+/// - organs: route to get organs from our API
+/// - foods: route to get foods from nutritionix API
+/// - foodImg: route to get the foods images from pixabay API
+/// - paramForNutrients: route to get the foods images from edamam API
+/// - getNutrientsLabel: route to get the foods images from edamam API
+/// - recipe: route to get a recipe from edama API
+/// - user: route to interact with user
 enum Route {
     case organs(organName: String)
     case foods
@@ -17,6 +26,10 @@ enum Route {
     case recipe(foodName: String)
     case user
     
+    
+    /// Get the path to append to the base url of the respective route
+    ///
+    /// - Returns: string for route
     func path() -> String {
         switch self {
         case .organs:
@@ -36,6 +49,9 @@ enum Route {
         }
     }
     
+    /// Generate URL parameters for the respective route
+    ///
+    /// - Returns: A dictionary containing the necessary url parameters
     func urlParameters() -> [String: String] {
         switch self {
         case let .organs(organName):
@@ -65,6 +81,9 @@ enum Route {
         }
     }
     
+    /// Get the base url for the respective route
+    ///
+    /// - Returns: the base url in string format
     func baseURl() -> String {
         switch self {
         case .organs, .user:
@@ -82,6 +101,11 @@ enum Route {
         }
     }
     
+    
+    /// Generate JSON body for post requests in the respective route
+    ///
+    /// - Parameter data: an Encodable object
+    /// - Returns: An encoded object
     func body(data:Encodable) -> Data? {
         
         let encoder = JSONEncoder()
@@ -107,6 +131,11 @@ enum Route {
         }
     }
     
+    
+    /// Get the headers for the specified route from a codable model
+    ///
+    /// - Parameter data: a Codable model
+    /// - Returns: a dictionary with the headers
     func headers(data: Codable) -> [String: String] {
         switch self {
         case .organs, .foods, .foodImg, .paramForNutrients, .getNutrientsLabel, .recipe:
