@@ -43,9 +43,6 @@ class SelectedNutritionViewController: UIViewController {
                     a > b
                 })
                 
-                print(fNu)
-                
-                
                 guard let labelResult = res else { return }
                 let healthLabelResult = res!.healthLabels
                 let primeNutrients = res!.totalNutrients

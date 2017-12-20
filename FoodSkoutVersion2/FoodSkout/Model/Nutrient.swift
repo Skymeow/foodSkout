@@ -14,6 +14,8 @@ struct Nutrient: Codable{
     var unit: String
 }
 
+
+// MARK: - Make the nutrient a Comparable object
 extension Nutrient: Comparable {
     static func == (lhs: Nutrient, rhs: Nutrient) -> Bool {
         return lhs.label == rhs.label &&
