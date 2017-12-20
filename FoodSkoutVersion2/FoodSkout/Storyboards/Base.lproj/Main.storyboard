@@ -851,7 +851,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="92" height="290"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sugar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vG5-k1-5py">
-                                                <rect key="frame" x="-15" y="0.0" width="0.0" height="22"/>
+                                                <rect key="frame" x="-64" y="0.0" width="0.0" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="EAB-Qv-REp"/>
                                                 </constraints>
@@ -885,7 +885,7 @@
                                         <rect key="frame" x="97" y="0.0" width="92" height="290"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sugar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK4-uT-jch">
-                                                <rect key="frame" x="-112" y="0.0" width="0.0" height="22"/>
+                                                <rect key="frame" x="-161" y="0.0" width="0.0" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="IBW-73-FU0"/>
                                                 </constraints>
@@ -919,7 +919,7 @@
                                         <rect key="frame" x="194" y="0.0" width="92" height="290"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQ0-Bq-KH5">
-                                                <rect key="frame" x="-209" y="0.0" width="0.0" height="22"/>
+                                                <rect key="frame" x="-258" y="0.0" width="0.0" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="IPJ-tJ-Hfc"/>
                                                 </constraints>
