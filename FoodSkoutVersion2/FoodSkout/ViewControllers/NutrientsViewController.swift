@@ -28,7 +28,6 @@ class NutrientsViewController: UIViewController {
     @IBOutlet weak var recipeButton: UIButton!
     @IBOutlet weak var nutritionButton: UIButton!
     @IBOutlet weak var foodImgView: UIImageView!
-    @IBOutlet weak var buttonView: UIStackView!
     
     
     // MARK: IBActions for Botttom Tabbar
@@ -156,7 +155,6 @@ class NutrientsViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.buttonView.addBorder(side: .top, thickness: 0.65, color: UIColor(red:0.78, green:0.58, blue:0.58, alpha:1.0), leftOffset: 0, rightOffset: 0)
     }
     
     override func viewDidLoad() {

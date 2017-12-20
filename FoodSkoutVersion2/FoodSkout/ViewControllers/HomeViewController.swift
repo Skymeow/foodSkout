@@ -28,22 +28,22 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var circleElement3: UIButton!
     
-    @IBOutlet weak var buttonStackView: UIStackView!
-    
-    @IBAction func OrganTabbarButtonTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ChooseOrgansViewController")
-        
-        self.navigationController?.pushViewController(vc, animated: true)
-  }
+//    @IBOutlet weak var buttonStackView: UIStackView!
+//
+//    @IBAction func OrganTabbarButtonTapped(_ sender: UIButton) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "ChooseOrgansViewController")
+//
+//        self.navigationController?.pushViewController(vc, animated: true)
+//  }
   
-    @IBAction func nutritionTapped(_ sender: UIButton) {
-        let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FakeNutrientsViewController") as? FakeNutrientsViewController
-        
-        DispatchQueue.main.async {
-            self.navigationController?.pushViewController(nutritionVC!, animated: true)
-        }
-    }
+//    @IBAction func nutritionTapped(_ sender: UIButton) {
+//        let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FakeNutrientsViewController") as? FakeNutrientsViewController
+//
+//        DispatchQueue.main.async {
+//            self.navigationController?.pushViewController(nutritionVC!, animated: true)
+//        }
+//    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true);
         self.navigationController?.isNavigationBarHidden = true
@@ -67,20 +67,20 @@ class HomeViewController: UIViewController {
         circleElement1.setTitle("E", for: .normal)
         circleElement1.setTitleColor(UIColor.white, for: .normal)
         circleElement1.titleLabel?.font = UIFont(name: "Thonburi-Bold", size: 38)
-        circleElement1.layer.cornerRadius = 0.5 * circleElement1.bounds.width
+        circleElement1.layer.cornerRadius = 0.5 * circleElement1.bounds.height
         
         circleElement2.setTitle("B", for: .normal)
         circleElement2.setTitleColor(UIColor.white, for: .normal)
         circleElement2.titleLabel?.font = UIFont(name: "Thonburi-Bold", size: 38)
-        circleElement2.layer.cornerRadius = 0.5 * circleElement2.bounds.width
+        circleElement2.layer.cornerRadius = 0.5 * circleElement2.bounds.height
         
         circleElement3.setTitle("C", for: .normal)
         circleElement3.setTitleColor(UIColor.white, for: .normal)
         circleElement3.titleLabel?.font = UIFont(name: "Thonburi-Bold", size: 38)
-        circleElement3.layer.cornerRadius = 0.5 * circleElement3.bounds.width
+        circleElement3.layer.cornerRadius = 0.5 * circleElement3.bounds.height
         
-        pinBackground(backgroundButtonView, to: buttonStackView)
-        
+//        pinBackground(backgroundButtonView, to: buttonStackView)
+    
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
