@@ -848,7 +848,7 @@
                                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
-                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="foodCell" id="fOH-I4-HbZ" customClass="FoodCollectionViewCell" customModule="hippieFoodScrollView" customModuleProvider="target">
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="foodCell" id="fOH-I4-HbZ" customClass="FoodCollectionViewCell" customModule="FoodSkout" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -872,7 +872,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AKS-7Q-qS6" userLabel="Food Cure Collection View" customClass="FoodCureCollectionView" customModule="hippieFoodScrollView" customModuleProvider="target">
+                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AKS-7Q-qS6" userLabel="Food Cure Collection View" customClass="FoodCureCollectionView" customModule="FoodSkout" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="42.999999999999986" width="414" height="202.66666666666663"/>
                                                                 <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vjm-Mu-orH">
@@ -882,7 +882,7 @@
                                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
-                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cureCell" id="5Ik-B8-yxD" customClass="FoodCureCollectionCell" customModule="hippieFoodScrollView" customModuleProvider="target">
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cureCell" id="5Ik-B8-yxD" customClass="FoodCureCollectionCell" customModule="FoodSkout" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -950,8 +950,11 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Ng5-HO-4oV"/>
                     <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fXu-7K-LKW">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.90000000000000002" green="0.097641509429999995" blue="0.40521226420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.88235294117647056" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="csG-UZ-rGk" kind="relationship" relationship="viewControllers" id="uSm-Jc-JyX"/>
@@ -967,7 +970,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="csG-UZ-rGk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="TabBarHome" id="HDH-Bo-u7S">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="3"/>
+                        <color key="badgeColor" red="1" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r1y-HB-2H5">
@@ -984,12 +987,12 @@
             </objects>
             <point key="canvasLocation" x="-2952" y="-1068"/>
         </scene>
-        <!--ChooseOrgans-->
+        <!--Organs-->
         <scene sceneID="KNi-2C-Wcl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qll-ii-7hl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="ChooseOrgans" image="TabBarBody" id="gxg-3Z-Qzf">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="3"/>
+                    <tabBarItem key="tabBarItem" title="Organs" image="TabBarBody" id="gxg-3Z-Qzf">
+                        <color key="badgeColor" red="1" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Utb-6d-tjK">
@@ -1008,7 +1011,7 @@
         <!--Superfood View Controller-->
         <scene sceneID="QPq-4J-FjP">
             <objects>
-                <viewController storyboardIdentifier="superVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E3b-8T-8Jc" customClass="SuperfoodViewController" customModule="hippieFoodScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="superVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E3b-8T-8Jc" customClass="SuperfoodViewController" customModule="FoodSkout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wDa-bq-SSF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1044,11 +1047,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Snx-fM-cov" customClass="RecipeTableView" customModule="hippieFoodScrollView" customModuleProvider="target">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Snx-fM-cov" customClass="RecipeTableView" customModule="FoodSkout" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="110" width="414" height="278"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeCell" id="LD6-bT-6UF" customClass="RecipeTableViewCell" customModule="hippieFoodScrollView" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeCell" id="LD6-bT-6UF" customClass="RecipeTableViewCell" customModule="FoodSkout" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LD6-bT-6UF" id="5cw-8q-akS">
@@ -1170,7 +1173,7 @@
         <!--Cure View Controller-->
         <scene sceneID="fVJ-zc-OvA">
             <objects>
-                <viewController storyboardIdentifier="cureVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HMD-aS-2Sq" customClass="CureViewController" customModule="hippieFoodScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cureVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HMD-aS-2Sq" customClass="CureViewController" customModule="FoodSkout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UgN-TQ-f76">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1225,8 +1228,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TabBarBody" width="42" height="42"/>
-        <image name="TabBarHome" width="42" height="42"/>
+        <image name="TabBarBody" width="24" height="24"/>
+        <image name="TabBarHome" width="24" height="24"/>
         <image name="brain" width="42" height="42"/>
         <image name="eye" width="42" height="42"/>
         <image name="food" width="780" height="500"/>

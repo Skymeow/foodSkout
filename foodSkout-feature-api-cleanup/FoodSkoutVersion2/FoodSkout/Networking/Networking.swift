@@ -59,8 +59,7 @@ enum Route {
             return [
                 "app_id": "f5a7c7a3",
                 "app_key": "446accd73b9b96d52f80edd750adcdfb",
-                "q": foodName,
-            ]
+                "q": foodName]
         }
     }
     
@@ -108,12 +107,11 @@ enum Route {
     
     func headers(data: Codable) -> [String: String] {
         switch self {
-    case .organs, .foods, .foodImg, .paramForNutrients, .getNutrientsLabel, .recipe:
+        case .organs, .foods, .foodImg, .paramForNutrients, .getNutrientsLabel, .recipe:
             return [:]
         case .user:
             guard let model = data as? User,
             let password = model.password else {return [:]}
-            
             let basicHeader = BasicAuth.generateBasicAuthHeader(username: model.email, password: password)
             return ["Authorization": basicHeader]
         }
@@ -126,7 +124,7 @@ class Networking {
     let session = URLSession.shared
     
     func fetch(route: Route, method: String, data: Encodable?, completion: @escaping (Data, Int) -> Void) {
-        var baseURL = route.baseURl()
+        let baseURL = route.baseURl()
         let urlString = baseURL.appending(route.path())
         var toURL = URL(string: urlString)!
         toURL = toURL.appendingQueryParameters(_parametersDictionary: route.urlParameters())
@@ -137,10 +135,8 @@ class Networking {
         if request.httpMethod == "POST"
         {
             request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-            let bodyRequest = request.httpBody
-            let resultReq = try? JSONSerialization.jsonObject(with: bodyRequest!, options: .allowFragments)
         }
-        
+        print(request)
         session.dataTask(with: request) { (data, response, error) in
        
             guard let responseCode = response as? HTTPURLResponse else {return}

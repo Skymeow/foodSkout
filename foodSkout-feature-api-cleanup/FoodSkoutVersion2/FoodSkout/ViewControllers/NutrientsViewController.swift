@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 typealias completed = (Bool) -> Void
 
 class NutrientsViewController: UIViewController {
