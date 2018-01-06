@@ -108,7 +108,7 @@ enum Route {
     
     func headers(data: Codable) -> [String: String] {
         switch self {
-        case .organs, .foods, .foodImg, .paramForNutrients, .getNutrientsLabel, .recipe:
+    case .organs, .foods, .foodImg, .paramForNutrients, .getNutrientsLabel, .recipe:
             return [:]
         case .user:
             guard let model = data as? User,

@@ -18,7 +18,7 @@ class StepTwo: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     
     @IBAction func gatstartedTapped(_ sender: UIButton) {
-        let initialViewController = UIStoryboard.initialViewController(for: .login)
+        let initialViewController = UIStoryboard.initialViewController(for: .main)
         self.view.window?.rootViewController = initialViewController
         self.view.window?.makeKeyAndVisible()
     }

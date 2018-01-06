@@ -8,91 +8,99 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
-    @IBOutlet weak var headerLabel: UILabel!
+class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate {
     
-    @IBOutlet weak var backgroundImg: UIImageView!
+    var foodDayLabelData = ["Tumeric", "Sushi Burrito", "Zonic"]
+    var cureLabelData = ["Fight Fatigue", "Reduce Migraines", "Fight Cramps"]
+    var foodImgData: [String]?
+    let dataSource1 = CollectionViewDataSource(items: [])
+    let dataSource2 = CollectionViewDataSource(items: [])
     
-    @IBOutlet weak var foodInfoLabel: UILabel!
+    @IBOutlet weak var foodCollectionView: UICollectionView!
+    @IBOutlet weak var cureCollectionView: UICollectionView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var exploreButton: UIButton!
     
-    @IBOutlet weak var nutritionElement1: UILabel!
+    func tapped(_ sender: FoodCollectionViewCell) {
+        let superFoodName = sender.superFoodName
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let superRecipeVC = storyBoard.instantiateViewController(withIdentifier: "superVC") as! SuperfoodViewController
+        superRecipeVC.superFoodName = superFoodName
+        self.navigationController?.pushViewController(superRecipeVC, animated: true)
+    }
     
-    @IBOutlet weak var nutritionElement2: UILabel!
+    func tappedCure(_ sender: CureCollectionViewCell) {
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let cureVC = storyBoard.instantiateViewController(withIdentifier: "cureVC") as! CureViewController
+        self.navigationController?.pushViewController(cureVC, animated: true)
+    }
     
-    @IBOutlet weak var nutritionElement3: UILabel!
-    
-    @IBOutlet weak var circleElement1: UIButton!
-    
-    @IBOutlet weak var circleElement2: UIButton!
-    
-    @IBOutlet weak var circleElement3: UIButton!
-    
-    @IBOutlet weak var buttonStackView: UIStackView!
-    
-    @IBAction func OrganTabbarButtonTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ChooseOrgansViewController")
+    func animateButton() {
+        let exploreAnimate = { self.exploreButton.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        }
         
-        self.navigationController?.pushViewController(vc, animated: true)
-  }
-  
-    @IBAction func nutritionTapped(_ sender: UIButton) {
-        let nutritionVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FakeNutrientsViewController") as? FakeNutrientsViewController
+        UIView.animate(withDuration: 1.5, delay: 2, options: [.autoreverse, .repeat, .allowUserInteraction, .curveEaseInOut], animations: exploreAnimate, completion: nil)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        let scrollBounds = self.scrollView.bounds
+        let contentBounds = self.contentView.bounds
+        var scrollViewInsets = UIEdgeInsets.zero
+        scrollViewInsets.top = scrollBounds.size.height
+        scrollViewInsets.top -= contentBounds.size.height
+        scrollViewInsets.bottom = scrollBounds.size.height
+        scrollViewInsets.bottom -= contentBounds.size.height
+        scrollViewInsets.bottom += 1
         
-        DispatchQueue.main.async {
-            self.navigationController?.pushViewController(nutritionVC!, animated: true)
+        scrollView.contentInset = scrollViewInsets
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.isHidden = true
+        self.animateButton()
+        self.dataSource1.items = self.foodDayLabelData
+        self.foodCollectionView.dataSource = self.dataSource1
+        self.foodCollectionView.reloadData()
+        
+        self.dataSource2.items = self.cureLabelData
+        self.cureCollectionView.dataSource = self.dataSource2
+        self.cureCollectionView.reloadData()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        foodCollectionView.delegate = self
+        let foodCell = UINib(nibName: "FoodCollectionViewCell", bundle: Bundle.main)
+        foodCollectionView.register(foodCell, forCellWithReuseIdentifier: "foodCell")
+        dataSource1.configureCell = {(foodCollectionView, indexPath) -> UICollectionViewCell in
+            let cell = foodCollectionView.dequeueReusableCell(withReuseIdentifier: "foodCell", for: indexPath) as! FoodCollectionViewCell
+            cell.delegate = self
+            cell.foodNameLabel.text = self.foodDayLabelData[indexPath.row]
+            cell.foodNameLabel.adjustsFontSizeToFitWidth = true
+            
+            return cell
+        }
+        
+        cureCollectionView.delegate = self
+        let cureCell = UINib(nibName: "CureCollectionViewCell", bundle: Bundle.main)
+        cureCollectionView.register(cureCell, forCellWithReuseIdentifier: "cureCell")
+        dataSource2.configureCell = {(CureCollectionView, indexPath) -> UICollectionViewCell in
+            let cell = self.cureCollectionView.dequeueReusableCell(withReuseIdentifier: "cureCell", for: indexPath) as! CureCollectionViewCell
+            cell.delegate = self
+            cell.diseaseName.text = self.cureLabelData[indexPath.row]
+            cell.diseaseName.adjustsFontSizeToFitWidth = true
+            
+            return cell
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true);
-        self.navigationController?.isNavigationBarHidden = true
+ }
+ 
+ extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height = self.foodCollectionView.bounds.size.height
+        return CGSize(width: 320, height: height)
     }
-    
-  override func viewDidLoad() {
-        super.viewDidLoad()
-        self.backgroundImg.image = UIImage(named: "turmeric")!
-        headerLabel.font = UIFont(name: "Thonburi-Bold", size: 32)
-        
-        foodInfoLabel.text = "Turmeric is a rhizomatous herbaceous perennial plant of the ginger family, Zingiberaceae. It is native to Southeast Asia"
-        foodInfoLabel.numberOfLines = 0
-        
-        nutritionElement1.text = "Ve"
-        nutritionElement2.text = "Vb"
-        nutritionElement3.text = "Vc"
-        nutritionElement1.textColor = UIColor(red:0.88, green:0.16, blue:0.33, alpha:1.0)
-        nutritionElement2.textColor = UIColor(red:0.88, green:0.16, blue:0.33, alpha:1.0)
-        nutritionElement3.textColor = UIColor(red:0.88, green:0.16, blue:0.33, alpha:1.0)
-        
-        circleElement1.setTitle("E", for: .normal)
-        circleElement1.setTitleColor(UIColor.white, for: .normal)
-        circleElement1.titleLabel?.font = UIFont(name: "Thonburi-Bold", size: 38)
-        circleElement1.layer.cornerRadius = 0.5 * circleElement1.bounds.width
-        
-        circleElement2.setTitle("B", for: .normal)
-        circleElement2.setTitleColor(UIColor.white, for: .normal)
-        circleElement2.titleLabel?.font = UIFont(name: "Thonburi-Bold", size: 38)
-        circleElement2.layer.cornerRadius = 0.5 * circleElement2.bounds.width
-        
-        circleElement3.setTitle("C", for: .normal)
-        circleElement3.setTitleColor(UIColor.white, for: .normal)
-        circleElement3.titleLabel?.font = UIFont(name: "Thonburi-Bold", size: 38)
-        circleElement3.layer.cornerRadius = 0.5 * circleElement3.bounds.width
-        
-        pinBackground(backgroundButtonView, to: buttonStackView)
-        
-    }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        backgroundButtonView.addBorder(side: .top, thickness: 0.65, color: UIColor(red:0.78, green:0.58, blue:0.58, alpha:1.0), leftOffset: 0, rightOffset: 0)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
-}
-
+ }
+ 

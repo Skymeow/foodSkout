@@ -11,7 +11,7 @@ import UIKit
 class SelectedNutritionViewController: UIViewController {
     var foodName: String?
     var foodUri: String?
-    let dataSource = TagsCollectionDatasource(items: [])
+    let dataSource = CollectionViewDataSource(items: [])
     var healthLabelData: [String]?
     var nutrient1: Float?
     var nutrient2: Float?

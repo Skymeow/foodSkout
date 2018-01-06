@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = UserDefaults.standard
         let initialViewController: UIViewController
         let onboarded = defaults.bool(forKey: "saw_onboarding")
-        let loggedIn = defaults.bool(forKey: "isLoggedIn")
+//        let loggedIn = defaults.bool(forKey: "isLoggedIn")
         
-        if loggedIn && onboarded{
+        if onboarded{
             
             initialViewController = UIStoryboard.initialViewController(for: .main)
         } else {

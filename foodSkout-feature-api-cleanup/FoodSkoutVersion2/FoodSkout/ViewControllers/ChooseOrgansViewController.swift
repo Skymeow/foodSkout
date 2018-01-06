@@ -13,16 +13,9 @@ class ChooseOrgansViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let organNames = ["brain", "heart", "liver", "stomach", "muscle", "thyroid", "lungs", "eye"]
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        self.navigationController?.isNavigationBarHidden = false
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 5
         layout.minimumLineSpacing = 5

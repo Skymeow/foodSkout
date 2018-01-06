@@ -28,23 +28,6 @@ class NutrientsViewController: UIViewController {
     @IBOutlet weak var recipeButton: UIButton!
     @IBOutlet weak var nutritionButton: UIButton!
     @IBOutlet weak var foodImgView: UIImageView!
-    @IBOutlet weak var buttonView: UIStackView!
-    
-    // MARK: IBActions for Botttom Tabbar
-    
-    @IBAction func homeTapped(_ sender: UIButton) {
-        let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeVC") as? HomeViewController
-        DispatchQueue.main.async {
-            self.navigationController?.pushViewController(homeVC!, animated: true)
-        }
-    }
-    
-    @IBAction func organTapped(_ sender: UIButton) {
-        let organVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChooseOrgansViewController") as? ChooseOrgansViewController
-        DispatchQueue.main.async {
-            self.navigationController?.pushViewController(organVC!, animated: true)
-        }
-    }
     
    // MARK: IBActions for buttons within VC
     
@@ -64,6 +47,31 @@ class NutrientsViewController: UIViewController {
         if  self.checkIfLoaded == false {
             showLoadingAlert()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.setCorrectImg()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        guard let recipeController = childViewControllers.first as? RecipeViewController else {
+            fatalError("Check storyboard for missing recipeViewController")
+        }
+        
+        guard let selectedNutritionController = childViewControllers.last as? SelectedNutritionViewController else  {
+            fatalError("Check storyboard for missing selectedNutritionViewController")
+        }
+        
+        selectedNutritionViewController = selectedNutritionController
+        recipeViewController = recipeController
+        selectedNutritionViewController?.foodUri = self.foodUri
+        self.recipeViewController?.view.isHidden = true
+        self.selectedNutritionViewController?.view.isHidden = false
     }
     
     func showLoadingAlert() {
@@ -145,36 +153,6 @@ class NutrientsViewController: UIViewController {
             }
         }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.setCorrectImg()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.buttonView.addBorder(side: .top, thickness: 0.65, color: UIColor(red:0.78, green:0.58, blue:0.58, alpha:1.0), leftOffset: 0, rightOffset: 0)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        guard let recipeController = childViewControllers.first as? RecipeViewController else {
-            fatalError("Check storyboard for missing recipeViewController")
-        }
-        
-        guard let selectedNutritionController = childViewControllers.last as? SelectedNutritionViewController else  {
-            fatalError("Check storyboard for missing selectedNutritionViewController")
-        }
-        
-        selectedNutritionViewController = selectedNutritionController
-        recipeViewController = recipeController
-        selectedNutritionViewController?.foodUri = self.foodUri
-        self.recipeViewController?.view.isHidden = true
-        self.selectedNutritionViewController?.view.isHidden = false
     }
 
 }
