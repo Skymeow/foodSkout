@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate {
     
-    var foodDayLabelData = ["Tumeric", "Sushi Burrito", "Zonic"]
+    var foodDayLabelData = ["Açai", "Goji Berries", "Cacao"]
     var cureLabelData = ["Fight Fatigue", "Reduce Migraines", "Fight Cramps"]
     var foodImgData: [String]?
     let dataSource1 = CollectionViewDataSource(items: [])

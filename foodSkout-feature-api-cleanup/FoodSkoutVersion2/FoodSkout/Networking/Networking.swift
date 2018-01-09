@@ -56,10 +56,22 @@ enum Route {
             return ["app_id": "338dc80d",
                     "app_key": "8af485e0c5915a60459b01f079a95863",]
         case let .recipe(foodName):
-            return [
-                "app_id": "f5a7c7a3",
-                "app_key": "446accd73b9b96d52f80edd750adcdfb",
-                "q": foodName]
+            let result = [
+                "app_id": "338dc80d",
+                "app_key": "8af485e0c5915a60459b01f079a95863",
+                "q": foodName,
+            ]
+//            let params = [
+//                "A": ["app_id": "f5a7c7a3"],
+//                "B": ["app_key": "446accd73b9b96d52f80edd750adcdfb"],
+//                "C": ["q": foodName],
+//            ]
+//            let sortedValue = params.sorted(by: {$0.0 < $1.0})
+//            var result: [String: String]
+//            for i in sortedValue {
+//                result.add(i.value)
+//            }
+            return result
         }
     }
     
