@@ -42,7 +42,7 @@ class DisplayOrganViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true);
+        super.viewWillAppear(true)
         self.navigationController?.isNavigationBarHidden = false
     }
     
@@ -112,7 +112,7 @@ extension DisplayOrganViewController: UITableViewDataSource, UITableViewDelegate
             if goodFoods?[indexPath.row].name != nil {
                 nutritionVC.foodName = assignValueToCell(index: indexPath.row, section: indexPath.section, cell: nil)
             } else {
-                self.foodName = "avacodo"
+                self.foodName = "avocado"
             }
             
             getParamsForNutrients { (success) in
