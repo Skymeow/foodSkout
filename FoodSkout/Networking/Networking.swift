@@ -6,22 +6,27 @@
 //
 
 import Foundation
+import OrderedDictionary
 
 enum Route {
     case organs(organName: String)
-    case foods
+    case superfood(superfoodName: String)
+    case foodcure(cureName: String)
     case foodImg(foodImgQuery: String)
     case paramForNutrients(ingr: String)
     case getNutrientsLabel
     case recipe(foodName: String)
     case user
     
+    
     func path() -> String {
         switch self {
         case .organs:
             return "organs"
-        case .foods:
-            return "foods"
+        case .superfood:
+            return "superfood"
+        case .foodcure:
+            return "foodcure"
         case .foodImg:
             return ""
         case .paramForNutrients:
@@ -35,12 +40,16 @@ enum Route {
         }
     }
     
-    func urlParameters() -> [String: String] {
+    func urlParameters() -> OrderedDictionary<String, String> {
         switch self {
         case let .organs(organName):
             return ["organ_name": organName]
-        case .foods, .user:
+        case .user:
             return [:]
+        case let .superfood(superfoodName):
+            return ["superfood_name": superfoodName]
+        case let .foodcure(cureName):
+            return ["superfood_name": cureName]
         case let .foodImg(foodImgQuery):
             return ["key": "7246347-e95eeb596160c710188dfa4ff",
                     "q": foodImgQuery,
@@ -50,42 +59,28 @@ enum Route {
             return [
                 "app_id": "338dc80d",
                 "app_key": "8af485e0c5915a60459b01f079a95863",
-                "ingr": ingr,
+                "ingr": ingr
             ]
         case .getNutrientsLabel:
             return ["app_id": "338dc80d",
                     "app_key": "8af485e0c5915a60459b01f079a95863",]
         case let .recipe(foodName):
-            let result = [
-                "app_id": "338dc80d",
-                "app_key": "8af485e0c5915a60459b01f079a95863",
-                "q": foodName,
+            let result: OrderedDictionary<String, String> = [
+                "app_id": "f5a7c7a3",
+                "app_key": "446accd73b9b96d52f80edd750adcdfb",
+                "q": foodName
             ]
-//            let params = [
-//                "A": ["app_id": "f5a7c7a3"],
-//                "B": ["app_key": "446accd73b9b96d52f80edd750adcdfb"],
-//                "C": ["q": foodName],
-//            ]
-//            let sortedValue = params.sorted(by: {$0.0 < $1.0})
-//            var result: [String: String]
-//            for i in sortedValue {
-//                result.add(i.value)
-//            }
             return result
         }
     }
     
     func baseURl() -> String {
         switch self {
-        case .organs, .user:
+        case .organs, .user, .superfood, .foodcure:
             return "https://foodskout.herokuapp.com/"
-        case .foods:
-            return ""
         case .foodImg:
             return "https://pixabay.com/api/"
-        case .paramForNutrients:
-            return "https://api.edamam.com/api/food-database/"
-        case .getNutrientsLabel:
+        case .paramForNutrients, .getNutrientsLabel:
             return "https://api.edamam.com/api/food-database/"
         case .recipe:
             return "https://api.edamam.com/"
@@ -96,20 +91,12 @@ enum Route {
         
         let encoder = JSONEncoder()
         switch self {
-        case .organs:
-            return nil
-        case .foods:
-            return nil
-        case .foodImg:
-            return nil
-        case .paramForNutrients:
+        case .organs, .superfood, .foodImg, .paramForNutrients, .recipe, .foodcure:
             return nil
         case .getNutrientsLabel:
             guard let ingredientBody = data as? IngredientBody else { return nil}
             let result = try? encoder.encode(ingredientBody)
             return result
-        case .recipe:
-            return nil
         case .user:
             guard let model = data as? User else {return nil}
             let result = try? encoder.encode(model)
@@ -119,8 +106,10 @@ enum Route {
     
     func headers(data: Codable) -> [String: String] {
         switch self {
-        case .organs, .foods, .foodImg, .paramForNutrients, .getNutrientsLabel, .recipe:
+        case .organs, .superfood, .foodImg, .paramForNutrients, .foodcure:
             return [:]
+        case .recipe, .getNutrientsLabel:
+            return ["Content-Type": "application/json"]
         case .user:
             guard let model = data as? User,
             let password = model.password else {return [:]}
@@ -144,10 +133,10 @@ class Networking {
         request.httpBody = route.body(data: data)
         request.httpMethod = method
         request.allHTTPHeaderFields = route.headers(data: data)
-        if request.httpMethod == "POST"
-        {
-            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        }
+//        if request.httpMethod == "POST"
+//        {
+//            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+//        }
         print(request)
         session.dataTask(with: request) { (data, response, error) in
        
@@ -165,7 +154,7 @@ protocol URLQueryParameterStringConvertible {
     var queryParameters: String { get }
 }
 
-extension Dictionary: URLQueryParameterStringConvertible {
+extension OrderedDictionary: URLQueryParameterStringConvertible {
     var queryParameters: String {
         var parts: [String] = []
         for (key, value) in self {
@@ -178,7 +167,7 @@ extension Dictionary: URLQueryParameterStringConvertible {
 }
 
 extension URL {
-    func appendingQueryParameters(_parametersDictionary: Dictionary<String, String>) -> URL {
+    func appendingQueryParameters(_parametersDictionary: OrderedDictionary<String, String>) -> URL {
         let URLString: String = String(format: "%@?%@", self.absoluteString, _parametersDictionary.queryParameters)
         return URL(string: URLString)!
     }
