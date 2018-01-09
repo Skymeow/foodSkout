@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FoodCollectionViewCell" customModule="FoodSkout" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="270" height="259"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="270" height="259"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="NYd-Hg-KuO">
+                        <rect key="frame" x="0.0" y="0.0" width="270" height="259"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turmeric" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOo-Bi-fF0">
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="184"/>
+                                <color key="backgroundColor" red="0.8877834174" green="0.92688578690000001" blue="0.86347653899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turmeric is a rhizomatous herbaceous perennial plant of the ginger family, Zingiberaceae. It is native to Southeast Asia." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TX-mx-qWM">
+                                <rect key="frame" x="5" y="184" width="260" height="75"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.71372549019607845" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="aBA-Gp-Vep"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jt-nx-zth">
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="184"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ba2-zy-fGJ">
+                                        <rect key="frame" x="68" y="67.5" width="135" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="etd-Sb-duP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86e-aF-F8L">
+                                        <rect key="frame" x="212" y="149" width="55" height="35"/>
+                                        <color key="backgroundColor" red="0.90000000000000002" green="0.097641509429999995" blue="0.40521226420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="abi-21-Bcz"/>
+                                            <constraint firstAttribute="height" constant="35" id="siL-n7-GsL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <state key="normal" title="Recipe">
+                                            <color key="titleColor" red="0.98823529409999999" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="recipeTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="mjB-em-QEE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.047058823529411764" green="0.074509803921568626" blue="0.10196078431372549" alpha="0.45000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Ba2-zy-fGJ" firstAttribute="centerX" secondItem="3jt-nx-zth" secondAttribute="centerX" id="AMl-cn-nPZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="86e-aF-F8L" secondAttribute="trailing" constant="3" id="Ma0-rX-1Dk"/>
+                                    <constraint firstItem="Ba2-zy-fGJ" firstAttribute="width" secondItem="3jt-nx-zth" secondAttribute="width" multiplier="1:2" id="OWG-wb-ckg"/>
+                                    <constraint firstItem="Ba2-zy-fGJ" firstAttribute="centerY" secondItem="3jt-nx-zth" secondAttribute="centerY" id="XJb-Ft-GTZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="86e-aF-F8L" secondAttribute="bottom" id="wIJ-B8-Spo"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.66666666666666663" green="0.71372549019607845" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.8877834174" green="0.92688578690000001" blue="0.86347653899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="7TX-mx-qWM" secondAttribute="bottom" id="1Qo-Kw-l5j"/>
+                            <constraint firstAttribute="bottom" secondItem="3jt-nx-zth" secondAttribute="bottom" constant="75" id="2uT-fQ-zqJ"/>
+                            <constraint firstItem="eOo-Bi-fF0" firstAttribute="leading" secondItem="NYd-Hg-KuO" secondAttribute="leading" id="49Q-SW-0rG"/>
+                            <constraint firstAttribute="trailing" secondItem="3jt-nx-zth" secondAttribute="trailing" id="908-SX-kAt"/>
+                            <constraint firstItem="7TX-mx-qWM" firstAttribute="leading" secondItem="NYd-Hg-KuO" secondAttribute="leading" constant="5" id="CrF-ak-YD3"/>
+                            <constraint firstAttribute="trailing" secondItem="7TX-mx-qWM" secondAttribute="trailing" constant="5" id="DHb-Af-eXX"/>
+                            <constraint firstItem="3jt-nx-zth" firstAttribute="leading" secondItem="NYd-Hg-KuO" secondAttribute="leading" id="HQ8-Du-h4Q"/>
+                            <constraint firstItem="3jt-nx-zth" firstAttribute="top" secondItem="NYd-Hg-KuO" secondAttribute="top" id="XOW-eZ-BFb"/>
+                            <constraint firstItem="eOo-Bi-fF0" firstAttribute="top" secondItem="NYd-Hg-KuO" secondAttribute="top" id="luC-Ja-62D"/>
+                            <constraint firstItem="7TX-mx-qWM" firstAttribute="top" secondItem="eOo-Bi-fF0" secondAttribute="bottom" id="rfk-W5-0na"/>
+                            <constraint firstAttribute="trailing" secondItem="eOo-Bi-fF0" secondAttribute="trailing" id="trX-iJ-cW6"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="NYd-Hg-KuO" secondAttribute="bottom" id="GQU-SX-hOu"/>
+                <constraint firstItem="NYd-Hg-KuO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bIP-dW-DCS"/>
+                <constraint firstItem="NYd-Hg-KuO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="dxG-TV-sHw"/>
+                <constraint firstAttribute="trailing" secondItem="NYd-Hg-KuO" secondAttribute="trailing" id="lyI-au-vJ7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="270" height="259"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="foodNameLabel" destination="Ba2-zy-fGJ" id="3fi-Wz-aQy"/>
+                <outlet property="foodOfDayImg" destination="eOo-Bi-fF0" id="1pl-Je-wZf"/>
+                <outlet property="foodOfDayLabel" destination="7TX-mx-qWM" id="vmH-fa-RrV"/>
+            </connections>
+            <point key="canvasLocation" x="150" y="253.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="turmeric" width="750" height="500"/>
+    </resources>
+</document>
