@@ -39,7 +39,7 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
     }
     
     func tapped(_ sender: FoodCollectionViewCell) {
-        let superFoodName = sender.superFoodName
+        let superFoodName = sender.foodNameLabel.text
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let superRecipeVC = storyBoard.instantiateViewController(withIdentifier: "superVC") as! SuperfoodViewController
         superRecipeVC.superFoodName = superFoodName
