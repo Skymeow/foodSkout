@@ -10,8 +10,8 @@ import OrderedDictionary
 
 enum Route {
     case organs(organName: String)
-    case superfood(superfoodName: String)
-    case foodcure(cureName: String)
+    case superfood
+    case foodcure
     case foodImg(foodImgQuery: String)
     case paramForNutrients(ingr: String)
     case getNutrientsLabel
@@ -44,12 +44,12 @@ enum Route {
         switch self {
         case let .organs(organName):
             return ["organ_name": organName]
-        case .user:
+        case .user, .superfood, .foodcure:
             return [:]
-        case let .superfood(superfoodName):
-            return ["superfood_name": superfoodName]
-        case let .foodcure(cureName):
-            return ["superfood_name": cureName]
+//        case .superfood:
+//            return ["superfood_name": superfoodName]
+//        case let .foodcure(cureName):
+//            return ["cureName": cureName]
         case let .foodImg(foodImgQuery):
             return ["key": "7246347-e95eeb596160c710188dfa4ff",
                     "q": foodImgQuery,
@@ -133,10 +133,6 @@ class Networking {
         request.httpBody = route.body(data: data)
         request.httpMethod = method
         request.allHTTPHeaderFields = route.headers(data: data)
-//        if request.httpMethod == "POST"
-//        {
-//            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-//        }
         print(request)
         session.dataTask(with: request) { (data, response, error) in
        

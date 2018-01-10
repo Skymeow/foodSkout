@@ -10,7 +10,15 @@ import UIKit
 
 class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate {
     
-    var foodDayLabelData = ["Açai", "Goji Berries", "Cacao"]
+    var foodDayLabelData: [Superfood]?
+    var superfoodImgData: Data?
+//    {
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.foodCollectionView.reloadData()
+//            }
+//        }
+//    }
     var cureLabelData = ["Fight Fatigue", "Reduce Migraines", "Fight Cramps"]
     var foodImgData: [String]?
     let dataSource1 = CollectionViewDataSource(items: [])
@@ -43,6 +51,33 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
         UIView.animate(withDuration: 1.5, delay: 2, options: [.autoreverse, .repeat, .allowUserInteraction, .curveEaseInOut], animations: exploreAnimate, completion: nil)
     }
     
+    func getSuperfoodData(completion: @escaping(Bool) -> Void) {
+        Networking.instance.fetch(route: .superfood, method: "GET", data: nil) { (data, response) in
+            if response == 200 {
+                let result = try? JSONDecoder().decode([Superfood].self, from: data)
+                guard let results = result else { return }
+                self.foodDayLabelData = results
+                print(results)
+                completion(true)
+            }
+        }
+    }
+    
+    func assignImg(urlString: String, imgView: UIImageView) {
+        var imgUrl: URL = URL(string: urlString)!
+        guard let imgData = try? Data(contentsOf: imgUrl) else { return }
+        DispatchQueue.main.async {
+            imgView.image = UIImage(data: imgData)
+        }
+    }
+    
+    func assignlabel(_ label1: UILabel, _ label2: UILabel, _ str1: String, _ str2: String) {
+        DispatchQueue.main.async {
+            label1.text = str1
+            label2.text = str2
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         let scrollBounds = self.scrollView.bounds
         let contentBounds = self.contentView.bounds
@@ -60,25 +95,32 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
         super.viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = true
         self.animateButton()
-        self.dataSource1.items = self.foodDayLabelData
-        self.foodCollectionView.dataSource = self.dataSource1
-        self.foodCollectionView.reloadData()
-        
+        getSuperfoodData{ (success) in
+            if success {
+                // MARK: wrap me in a completion block before assign datasource
+                DispatchQueue.main.async {
+                    self.dataSource1.items = self.foodDayLabelData!
+                    self.foodCollectionView.dataSource = self.dataSource1
+                    self.foodCollectionView.reloadData()
+                }
+            }
+        }
         self.dataSource2.items = self.cureLabelData
         self.cureCollectionView.dataSource = self.dataSource2
         self.cureCollectionView.reloadData()
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
         foodCollectionView.delegate = self
         let foodCell = UINib(nibName: "FoodCollectionViewCell", bundle: Bundle.main)
         foodCollectionView.register(foodCell, forCellWithReuseIdentifier: "foodCell")
         dataSource1.configureCell = {(foodCollectionView, indexPath) -> UICollectionViewCell in
             let cell = foodCollectionView.dequeueReusableCell(withReuseIdentifier: "foodCell", for: indexPath) as! FoodCollectionViewCell
             cell.delegate = self
-            cell.foodNameLabel.text = self.foodDayLabelData[indexPath.row]
-            cell.foodNameLabel.adjustsFontSizeToFitWidth = true
+            let superfoodStr = self.foodDayLabelData![indexPath.row].img
+            self.assignImg(urlString: superfoodStr, imgView: cell.foodOfDayImg)
+            self.assignlabel(cell.foodNameLabel, cell.foodOfDayLabel, self.foodDayLabelData![indexPath.row].superfood_name, self.foodDayLabelData![indexPath.row].description)
             
             return cell
         }

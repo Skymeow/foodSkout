@@ -53,6 +53,8 @@
 		F9F94FAB2001540400BC25D2 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F94FA92001540400BC25D2 /* TableViewDataSource.swift */; };
 		F9F94FAC2001540400BC25D2 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F94FAA2001540400BC25D2 /* CollectionViewDataSource.swift */; };
 		F9F94FBC20054EB700BC25D2 /* OrderedDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F94FB520054E2E00BC25D2 /* OrderedDictionary.framework */; };
+		F9F94FBF20067A2900BC25D2 /* Superfood.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F94FBE20067A2900BC25D2 /* Superfood.swift */; };
+		F9F94FC120067A4600BC25D2 /* Foodcure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F94FC020067A4600BC25D2 /* Foodcure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +143,8 @@
 		F9F94FA92001540400BC25D2 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		F9F94FAA2001540400BC25D2 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		F9F94FAD20054E2D00BC25D2 /* OrderedDictionary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OrderedDictionary.xcodeproj; path = Carthage/Checkouts/OrderedDictionary/OrderedDictionary.xcodeproj; sourceTree = SOURCE_ROOT; };
+		F9F94FBE20067A2900BC25D2 /* Superfood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Superfood.swift; path = FoodSkout/Model/Superfood.swift; sourceTree = SOURCE_ROOT; };
+		F9F94FC020067A4600BC25D2 /* Foodcure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Foodcure.swift; path = FoodSkout/Model/Foodcure.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +263,8 @@
 				F98E57A11FD33DAD00DDE9AA /* IngredientBody.swift */,
 				F9D1F5181FDF37590051CC29 /* Recipe.swift */,
 				902950011FDF5A75000B17EC /* User.swift */,
+				F9F94FBE20067A2900BC25D2 /* Superfood.swift */,
+				F9F94FC020067A4600BC25D2 /* Foodcure.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -532,11 +538,13 @@
 				F9D98CE51FC357B700E32C11 /* DisplayOrganViewController.swift in Sources */,
 				F9F94FA7200153DD00BC25D2 /* CureViewController.swift in Sources */,
 				F9D1F5171FDF17520051CC29 /* RecipeViewController.swift in Sources */,
+				F9F94FC120067A4600BC25D2 /* Foodcure.swift in Sources */,
 				F9E37EDD1FCF8E6C00EBD626 /* Organ.swift in Sources */,
 				F981960E1FDB24A30090BD6E /* StepTwo.swift in Sources */,
 				90EDEC251FCFBDA400A2150E /* Nutrient.swift in Sources */,
 				F9F94FA1200153B500BC25D2 /* FoodCollectionViewCell.swift in Sources */,
 				F9F94FA8200153DD00BC25D2 /* SuperfoodViewController.swift in Sources */,
+				F9F94FBF20067A2900BC25D2 /* Superfood.swift in Sources */,
 				F9E37ED91FCE12C800EBD626 /* OrganCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
