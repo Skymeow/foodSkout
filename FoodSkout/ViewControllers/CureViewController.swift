@@ -10,7 +10,7 @@ import UIKit
 
 class CureViewController: UIViewController {
     
-    var cureFoods = ["tumeric", "cucumber", "carrots", "chips", "jazz", "othershit"]
+    var goodCurefood: [String]?
     var dataSource = CollectionViewDataSource(items: [])
     
     @IBOutlet weak var diseaseImgView: UIImageView!
@@ -22,7 +22,7 @@ class CureViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         cureFoodCollectionView.dataSource = self.dataSource
-        dataSource.items = cureFoods
+        dataSource.items = goodCurefood!
         cureFoodCollectionView.reloadData()
     }
     
@@ -33,7 +33,7 @@ class CureViewController: UIViewController {
         cureFoodCollectionView.register(cell, forCellWithReuseIdentifier: "cureFoodCell")
         dataSource.configureCell = {(cureFoodCollectionView, indexPath) -> UICollectionViewCell in
             let cell = cureFoodCollectionView.dequeueReusableCell(withReuseIdentifier: "cureFoodCell", for: indexPath) as! CureFoodCell
-            cell.foodCureLabel.text = self.cureFoods[indexPath.row]
+            cell.foodCureLabel.text = self.goodCurefood?[indexPath.row]
             
             return cell
         }

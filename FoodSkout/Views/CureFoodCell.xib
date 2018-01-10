@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -61,8 +62,11 @@
                                     <action selector="buyTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="CmH-4N-CBh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CureFood" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7i-8c-g1E">
-                                <rect key="frame" x="51" y="106.5" width="84.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CureFood" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7i-8c-g1E">
+                                <rect key="frame" x="24" y="92" width="138.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Fa1-fl-DOK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -75,6 +79,7 @@
                             <constraint firstItem="l4e-3r-A8K" firstAttribute="leading" secondItem="Zgr-5x-tkc" secondAttribute="trailing" id="KAS-Lu-ual"/>
                             <constraint firstItem="i7i-8c-g1E" firstAttribute="centerX" secondItem="Ta0-Gb-rke" secondAttribute="centerX" id="Sva-Ef-D05"/>
                             <constraint firstItem="Zgr-5x-tkc" firstAttribute="leading" secondItem="Ta0-Gb-rke" secondAttribute="leading" id="diN-bb-eQD"/>
+                            <constraint firstItem="i7i-8c-g1E" firstAttribute="width" secondItem="Ta0-Gb-rke" secondAttribute="width" multiplier="1.5:2" id="obe-Kb-Rnk"/>
                             <constraint firstItem="i7i-8c-g1E" firstAttribute="centerY" secondItem="Ta0-Gb-rke" secondAttribute="centerY" id="qy4-yB-anG"/>
                             <constraint firstAttribute="trailing" secondItem="l4e-3r-A8K" secondAttribute="trailing" id="s36-lD-94Q"/>
                         </constraints>

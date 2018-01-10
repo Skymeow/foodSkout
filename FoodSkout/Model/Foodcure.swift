@@ -12,4 +12,5 @@ struct Foodcure: Codable {
     var cureName: String
     var detail: String
     var img: String
+    var goodFood: [String]
 }

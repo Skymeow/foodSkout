@@ -824,13 +824,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="506.33333333333331"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fsh-Iu-WCm">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="501.33333333333331"/>
+                                                <rect key="frame" x="5" y="0.0" width="404" height="501.33333333333331"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="kqW-b1-Qg2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="245.66666666666666"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="404" height="245.66666666666666"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Superfood" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqu-og-qTz">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="404" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="EW6-QR-3kc"/>
                                                                 </constraints>
@@ -839,7 +839,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gqp-6a-GzC" userLabel="Food Of The day Collection View">
-                                                                <rect key="frame" x="0.0" y="42.999999999999986" width="414" height="202.66666666666663"/>
+                                                                <rect key="frame" x="0.0" y="42.999999999999986" width="404" height="202.66666666666663"/>
                                                                 <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hOP-1I-1m9">
                                                                     <size key="itemSize" width="50" height="50"/>
@@ -861,10 +861,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="XCr-q6-nUp">
-                                                        <rect key="frame" x="0.0" y="255.66666666666669" width="414" height="245.66666666666669"/>
+                                                        <rect key="frame" x="0.0" y="255.66666666666669" width="404" height="245.66666666666669"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Cure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gM3-KT-RzH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="404" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="Za2-2r-dnd"/>
                                                                 </constraints>
@@ -873,7 +873,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AKS-7Q-qS6" userLabel="Food Cure Collection View" customClass="FoodCureCollectionView" customModule="FoodSkout" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="42.999999999999986" width="414" height="202.66666666666663"/>
+                                                                <rect key="frame" x="0.0" y="42.999999999999986" width="404" height="202.66666666666663"/>
                                                                 <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vjm-Mu-orH">
                                                                     <size key="itemSize" width="50" height="50"/>
@@ -898,10 +898,10 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="fsh-Iu-WCm" secondAttribute="trailing" id="52i-6u-ehO"/>
+                                            <constraint firstAttribute="trailing" secondItem="fsh-Iu-WCm" secondAttribute="trailing" constant="5" id="52i-6u-ehO"/>
                                             <constraint firstItem="fsh-Iu-WCm" firstAttribute="top" secondItem="d4v-Vu-wFe" secondAttribute="top" id="Onj-ZG-eED"/>
                                             <constraint firstAttribute="bottom" secondItem="fsh-Iu-WCm" secondAttribute="bottom" constant="5" id="Vgo-fg-2Zg"/>
-                                            <constraint firstItem="fsh-Iu-WCm" firstAttribute="leading" secondItem="d4v-Vu-wFe" secondAttribute="leading" id="fzv-r7-PUF"/>
+                                            <constraint firstItem="fsh-Iu-WCm" firstAttribute="leading" secondItem="d4v-Vu-wFe" secondAttribute="leading" constant="5" id="fzv-r7-PUF"/>
                                         </constraints>
                                     </view>
                                 </subviews>

@@ -10,25 +10,33 @@ import UIKit
 
 class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate {
     
+    var checkIfSuperfoodLoaded: Bool = false
+    var checkIfCurefoodLoaded: Bool = false
     var foodDayLabelData: [Superfood]?
-    var superfoodImgData: Data?
-//    {
-//        didSet {
-//            DispatchQueue.main.async {
-//                self.foodCollectionView.reloadData()
-//            }
-//        }
-//    }
-    var cureLabelData = ["Fight Fatigue", "Reduce Migraines", "Fight Cramps"]
-    var foodImgData: [String]?
+    var cureLabelData: [Foodcure]?
     let dataSource1 = CollectionViewDataSource(items: [])
     let dataSource2 = CollectionViewDataSource(items: [])
+    var goodCurefood: [String]?
+    let alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)
+    let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     
     @IBOutlet weak var foodCollectionView: UICollectionView!
     @IBOutlet weak var cureCollectionView: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var exploreButton: UIButton!
+    
+    func showLoadingAlert() {
+        self.spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
+        self.spinnerIndicator.color = UIColor.black
+        self.spinnerIndicator.startAnimating()
+        self.alertController.view.addSubview(spinnerIndicator)
+        self.present(alertController, animated: false, completion: nil)
+    }
+    
+    func killLoadingAlert() {
+        self.alertController.dismiss(animated: true, completion: nil)
+    }
     
     func tapped(_ sender: FoodCollectionViewCell) {
         let superFoodName = sender.superFoodName
@@ -41,6 +49,7 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
     func tappedCure(_ sender: CureCollectionViewCell) {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let cureVC = storyBoard.instantiateViewController(withIdentifier: "cureVC") as! CureViewController
+        cureVC.goodCurefood = self.goodCurefood
         self.navigationController?.pushViewController(cureVC, animated: true)
     }
     
@@ -57,7 +66,19 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
                 let result = try? JSONDecoder().decode([Superfood].self, from: data)
                 guard let results = result else { return }
                 self.foodDayLabelData = results
-                print(results)
+                self.checkIfSuperfoodLoaded = true
+                completion(true)
+            }
+        }
+    }
+    
+    func getCurefoodData(completion: @escaping(Bool) -> Void) {
+        Networking.instance.fetch(route: .foodcure, method: "GET", data: nil) { (data, response) in
+            if response == 200 {
+                let result = try? JSONDecoder().decode([Foodcure].self, from: data)
+                guard let results = result else { return }
+                self.cureLabelData = results
+                self.checkIfCurefoodLoaded = true
                 completion(true)
             }
         }
@@ -97,7 +118,6 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
         self.animateButton()
         getSuperfoodData{ (success) in
             if success {
-                // MARK: wrap me in a completion block before assign datasource
                 DispatchQueue.main.async {
                     self.dataSource1.items = self.foodDayLabelData!
                     self.foodCollectionView.dataSource = self.dataSource1
@@ -105,13 +125,25 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
                 }
             }
         }
-        self.dataSource2.items = self.cureLabelData
-        self.cureCollectionView.dataSource = self.dataSource2
-        self.cureCollectionView.reloadData()
+        
+        getCurefoodData{ (success) in
+            if success {
+                DispatchQueue.main.async {
+                    self.dataSource2.items = self.cureLabelData!
+                    self.cureCollectionView.dataSource = self.dataSource2
+                    self.cureCollectionView.reloadData()
+                    self.killLoadingAlert()
+                }
+            }
+        }
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        if self.checkIfSuperfoodLoaded == false && self.checkIfCurefoodLoaded == false{
+            showLoadingAlert()
+        }
+        
         foodCollectionView.delegate = self
         let foodCell = UINib(nibName: "FoodCollectionViewCell", bundle: Bundle.main)
         foodCollectionView.register(foodCell, forCellWithReuseIdentifier: "foodCell")
@@ -131,8 +163,10 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
         dataSource2.configureCell = {(CureCollectionView, indexPath) -> UICollectionViewCell in
             let cell = self.cureCollectionView.dequeueReusableCell(withReuseIdentifier: "cureCell", for: indexPath) as! CureCollectionViewCell
             cell.delegate = self
-            cell.diseaseName.text = self.cureLabelData[indexPath.row]
-            cell.diseaseName.adjustsFontSizeToFitWidth = true
+            self.goodCurefood = self.cureLabelData![indexPath.row].goodFood
+            let curefoodStr = self.cureLabelData![indexPath.row].img
+            self.assignImg(urlString: curefoodStr, imgView: cell.cureImg)
+            self.assignlabel(cell.diseaseName, cell.causeContext, self.cureLabelData![indexPath.row].cureName, self.cureLabelData![indexPath.row].detail)
             
             return cell
         }
