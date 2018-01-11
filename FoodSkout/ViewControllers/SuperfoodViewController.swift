@@ -14,27 +14,33 @@ class SuperfoodViewController: UIViewController {
     var dataSource = TableViewDataSource(items: [])
     var recipeData: Recipes?
     var recipeInstructions = [String]()
+    var stepArr = [String]()
     
     @IBOutlet weak var recipeTableView: UITableView!
+    @IBOutlet weak var recipeNameLabel: UILabel!
+    @IBOutlet weak var recipeImg: UIImageView!
     
-    func setRecipeLabels(_ label: UILabel, _ int: Int) {
+    func setRecipeLabels(_ label1: UILabel, _ label2: UILabel, _ int: Int) {
         let recipeName = self.recipeData?.recipe.label
         DispatchQueue.main.async {
-            label.text = self.recipeInstructions[int]
+            label1.text = self.recipeInstructions[int]
+            label2.text = self.stepArr[int]
+            self.recipeNameLabel.text = recipeName
         }
     }
     
-//    func setRecipeImg() {
-//        let imgString = self.recipeData?.recipe.image
-//        let imgUrl = URL(string: imgString!)
-//        let data = try? Data(contentsOf: imgUrl!)
-//        if let data = data {
-//            DispatchQueue.main.async {
-//                self.recipeViewController?.recipeImg.contentMode = .scaleAspectFill
-//                self.recipeViewController?.recipeImg.image = UIImage(data: data)
-//            }
-//        }
-//    }
+    func setRecipeImg() {
+        let imgString = self.recipeData?.recipe.image
+        let imgUrl = URL(string: imgString!)
+        let data = try? Data(contentsOf: imgUrl!)
+        if let data = data {
+            DispatchQueue.main.async {
+                self.recipeImg.contentMode = .scaleAspectFill
+                self.recipeImg.image = UIImage(data: data)
+            }
+        }
+    }
+    
     func getRecipe(completion: @escaping(Bool) -> Void){
         Networking.instance.fetch(route: .recipe(foodName: self.superFoodName!), method: "GET", data: nil) { (data, response) in
             if response == 200 {
@@ -44,9 +50,10 @@ class SuperfoodViewController: UIViewController {
                 let recipeInstruction = self.recipeData!.recipe.ingredientLines
                 let num = (recipeInstruction.count) - 1
                 for i in 1...num {
-                    let format = "\(i). %@\n"
-                    let result = String(format: format, arguments: [recipeInstruction[i] as CVarArg])
+                    let result = recipeInstruction[i].replacingOccurrences(of: "Â", with: "")
+                    let stepResult = "Step \(i)"
                     self.recipeInstructions.append(result)
+                    self.stepArr.append(stepResult)
                 }
                 
                 completion(true)
@@ -66,6 +73,7 @@ class SuperfoodViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.recipeTableView.dataSource = self.dataSource
                     self.recipeTableView.reloadData()
+                    self.setRecipeImg()
                 }
             }
         }
@@ -74,10 +82,11 @@ class SuperfoodViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         recipeTableView.delegate = self
         dataSource.configureCell = {(recipeTableView, indexPath) -> UITableViewCell in
             let cell = self.recipeTableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as! RecipeTableViewCell
-            self.setRecipeLabels(cell.instructions, indexPath.row)
+            self.setRecipeLabels(cell.instructions, cell.step, indexPath.row)
             
             return cell
         }

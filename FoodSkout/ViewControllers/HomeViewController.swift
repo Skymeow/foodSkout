@@ -26,6 +26,12 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var exploreButton: UIButton!
     
+    @IBAction func exploreTapped(_ sender: UIButton) {
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let organVC = storyBoard.instantiateViewController(withIdentifier: "ChooseOrgansViewController") as! ChooseOrgansViewController
+        self.navigationController?.pushViewController(organVC, animated: true)
+    }
+    
     func showLoadingAlert() {
         self.spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
         self.spinnerIndicator.color = UIColor.black

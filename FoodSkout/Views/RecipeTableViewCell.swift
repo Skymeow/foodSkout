@@ -12,6 +12,7 @@ class RecipeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var step: UILabel!
     @IBOutlet weak var instructions: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
