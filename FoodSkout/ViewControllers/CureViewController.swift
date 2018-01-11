@@ -12,9 +12,15 @@ class CureViewController: UIViewController {
     
     var goodCurefood: [Food]?
     var dataSource = CollectionViewDataSource(items: [])
+    var diseaseUrl: String?
+    var diseaseImg: CustomImageView!
     
-    @IBOutlet weak var diseaseImgView: UIImageView!
+    @IBOutlet weak var diseaseImgView: CustomImageView!
     @IBOutlet weak var cureFoodCollectionView: UICollectionView!
+    
+    func setDiseaseImg() {
+        diseaseImgView.loadImageFromUrlString(urlString: self.diseaseUrl!)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -24,19 +30,11 @@ class CureViewController: UIViewController {
         cureFoodCollectionView.dataSource = self.dataSource
         dataSource.items = goodCurefood!
         cureFoodCollectionView.reloadData()
-        
-//        for food in goodCurefood! {
-//            Networking.instance.fetch(route: .foodImg(foodImgQuery: food), method: "GET", data: nil, completion: { (data, statusCode) in
-//                guard let result = try? JSONDecoder().decode(FoodImg.self, from: data) else {return}
-//                print("results: \(result)")
-//                self.imagesURLs?.append(result.webformatURL)
-//
-//            })
-//        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        diseaseImgView.image = diseaseImg.image
         cureFoodCollectionView.delegate = self
         let cell = UINib(nibName: "CureFoodCell", bundle: Bundle.main)
         cureFoodCollectionView.register(cell, forCellWithReuseIdentifier: "cureFoodCell")

@@ -18,7 +18,7 @@ class SuperfoodViewController: UIViewController {
     
     @IBOutlet weak var recipeTableView: UITableView!
     @IBOutlet weak var recipeNameLabel: UILabel!
-    @IBOutlet weak var recipeImg: UIImageView!
+    @IBOutlet weak var recipeImg: CustomImageView!
     
     func setRecipeLabels(_ label1: UILabel, _ label2: UILabel, _ int: Int) {
         let recipeName = self.recipeData?.recipe.label
@@ -31,14 +31,7 @@ class SuperfoodViewController: UIViewController {
     
     func setRecipeImg() {
         let imgString = self.recipeData?.recipe.image
-        let imgUrl = URL(string: imgString!)
-        let data = try? Data(contentsOf: imgUrl!)
-        if let data = data {
-            DispatchQueue.main.async {
-                self.recipeImg.contentMode = .scaleAspectFill
-                self.recipeImg.image = UIImage(data: data)
-            }
-        }
+        recipeImg.loadImageFromUrlString(urlString: imgString!)
     }
     
     func getRecipe(completion: @escaping(Bool) -> Void){

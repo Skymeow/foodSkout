@@ -13,7 +13,7 @@ protocol passCureDelegate: class {
 }
 
 class CureCollectionViewCell: UICollectionViewCell {
-    
+    var goodCurefood: [Food]?
     @IBOutlet weak var cureImg: CustomImageView!
     @IBOutlet weak var causeContext: UILabel!
     @IBOutlet weak var diseaseName: UILabel!

@@ -16,7 +16,6 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
     var cureLabelData: [Foodcure]?
     let dataSource1 = CollectionViewDataSource(items: [])
     let dataSource2 = CollectionViewDataSource(items: [])
-    var goodCurefood: [Food]?
     let alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)
     let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     
@@ -55,7 +54,9 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
     func tappedCure(_ sender: CureCollectionViewCell) {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let cureVC = storyBoard.instantiateViewController(withIdentifier: "cureVC") as! CureViewController
-        cureVC.goodCurefood = self.goodCurefood
+        cureVC.goodCurefood = sender.goodCurefood
+        cureVC.diseaseImg = sender.cureImg
+//        let index = cureCollectionView.indexPath(for: sender)!
         self.navigationController?.pushViewController(cureVC, animated: true)
     }
     
@@ -87,14 +88,6 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
                 self.checkIfCurefoodLoaded = true
                 completion(true)
             }
-        }
-    }
-    
-    func assignImg(urlString: String, imgView: UIImageView) {
-        var imgUrl: URL = URL(string: urlString)!
-        guard let imgData = try? Data(contentsOf: imgUrl) else { return }
-        DispatchQueue.main.async {
-            imgView.image = UIImage(data: imgData)
         }
     }
     
@@ -149,6 +142,7 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
         if self.checkIfSuperfoodLoaded == false && self.checkIfCurefoodLoaded == false{
             showLoadingAlert()
         }
+
         
         foodCollectionView.delegate = self
         let foodCell = UINib(nibName: "FoodCollectionViewCell", bundle: Bundle.main)
@@ -157,7 +151,6 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
             let cell = foodCollectionView.dequeueReusableCell(withReuseIdentifier: "foodCell", for: indexPath) as! FoodCollectionViewCell
             cell.delegate = self
             let superfoodStr = self.foodDayLabelData![indexPath.row].img
-//            self.assignImg(urlString: superfoodStr, imgView: cell.foodOfDayImg)
             cell.foodOfDayImg.loadImageFromUrlString(urlString: superfoodStr)
             self.assignlabel(cell.foodNameLabel, cell.foodOfDayLabel, self.foodDayLabelData![indexPath.row].superfood_name, self.foodDayLabelData![indexPath.row].description)
             
@@ -170,7 +163,7 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
         dataSource2.configureCell = {(CureCollectionView, indexPath) -> UICollectionViewCell in
             let cell = self.cureCollectionView.dequeueReusableCell(withReuseIdentifier: "cureCell", for: indexPath) as! CureCollectionViewCell
             cell.delegate = self
-            self.goodCurefood = self.cureLabelData![indexPath.row].goodFood
+            cell.goodCurefood = self.cureLabelData![indexPath.row].goodFood
             let curefoodStr = self.cureLabelData![indexPath.row].img
             cell.cureImg.loadImageFromUrlString(urlString: curefoodStr)
             self.assignlabel(cell.diseaseName, cell.causeContext, self.cureLabelData![indexPath.row].cureName, self.cureLabelData![indexPath.row].detail)
