@@ -16,7 +16,7 @@ class FoodCollectionViewCell: UICollectionViewCell {
     var superFoodName: String?
     weak var delegate: passButtonDelegate?
     @IBOutlet weak var foodNameLabel: UILabel!
-    @IBOutlet weak var foodOfDayImg: UIImageView!
+    @IBOutlet weak var foodOfDayImg: CustomImageView!
     @IBOutlet weak var foodOfDayLabel: UILabel!
     
     @IBAction func recipeTapped(_ sender: UIButton) {

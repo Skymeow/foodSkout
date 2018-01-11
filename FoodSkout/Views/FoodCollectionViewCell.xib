@@ -23,7 +23,7 @@
                     <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="NYd-Hg-KuO">
                         <rect key="frame" x="0.0" y="0.0" width="270" height="259"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turmeric" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOo-Bi-fF0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turmeric" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOo-Bi-fF0" customClass="CustomImageView" customModule="FoodSkout" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="270" height="184"/>
                                 <color key="backgroundColor" red="0.8877834174" green="0.92688578690000001" blue="0.86347653899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>

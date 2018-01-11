@@ -14,7 +14,7 @@ protocol passCureDelegate: class {
 
 class CureCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var cureImg: UIImageView!
+    @IBOutlet weak var cureImg: CustomImageView!
     @IBOutlet weak var causeContext: UILabel!
     @IBOutlet weak var diseaseName: UILabel!
     weak var delegate: passCureDelegate?

@@ -23,7 +23,7 @@
                     <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="S7p-9G-4km">
                         <rect key="frame" x="0.0" y="0.0" width="270" height="259"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="migrain" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhZ-XQ-hnz" userLabel="Cure Img">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="migrain" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhZ-XQ-hnz" userLabel="Cure Img" customClass="CustomImageView" customModule="FoodSkout" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="270" height="176"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
