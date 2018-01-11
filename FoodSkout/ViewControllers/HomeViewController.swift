@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
     var cureLabelData: [Foodcure]?
     let dataSource1 = CollectionViewDataSource(items: [])
     let dataSource2 = CollectionViewDataSource(items: [])
-    var goodCurefood: [String]?
+    var goodCurefood: [Food]?
     let alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)
     let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     
@@ -120,7 +120,7 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.isHidden = true
         self.animateButton()
         getSuperfoodData{ (success) in
             if success {
@@ -157,7 +157,8 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
             let cell = foodCollectionView.dequeueReusableCell(withReuseIdentifier: "foodCell", for: indexPath) as! FoodCollectionViewCell
             cell.delegate = self
             let superfoodStr = self.foodDayLabelData![indexPath.row].img
-            self.assignImg(urlString: superfoodStr, imgView: cell.foodOfDayImg)
+//            self.assignImg(urlString: superfoodStr, imgView: cell.foodOfDayImg)
+            cell.foodOfDayImg.loadImageFromUrlString(urlString: superfoodStr)
             self.assignlabel(cell.foodNameLabel, cell.foodOfDayLabel, self.foodDayLabelData![indexPath.row].superfood_name, self.foodDayLabelData![indexPath.row].description)
             
             return cell
@@ -171,7 +172,7 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
             cell.delegate = self
             self.goodCurefood = self.cureLabelData![indexPath.row].goodFood
             let curefoodStr = self.cureLabelData![indexPath.row].img
-            self.assignImg(urlString: curefoodStr, imgView: cell.cureImg)
+            cell.cureImg.loadImageFromUrlString(urlString: curefoodStr)
             self.assignlabel(cell.diseaseName, cell.causeContext, self.cureLabelData![indexPath.row].cureName, self.cureLabelData![indexPath.row].detail)
             
             return cell

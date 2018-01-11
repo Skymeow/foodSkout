@@ -12,5 +12,10 @@ struct Foodcure: Codable {
     var cureName: String
     var detail: String
     var img: String
-    var goodFood: [String]
+    var goodFood: [Food]
+}
+
+struct Food: Codable {
+    var name: String
+    var image_url: String
 }

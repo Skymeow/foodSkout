@@ -10,7 +10,7 @@ import UIKit
 
 class CureViewController: UIViewController {
     
-    var goodCurefood: [String]?
+    var goodCurefood: [Food]?
     var dataSource = CollectionViewDataSource(items: [])
     
     @IBOutlet weak var diseaseImgView: UIImageView!
@@ -18,12 +18,21 @@ class CureViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         cureFoodCollectionView.dataSource = self.dataSource
         dataSource.items = goodCurefood!
         cureFoodCollectionView.reloadData()
+        
+//        for food in goodCurefood! {
+//            Networking.instance.fetch(route: .foodImg(foodImgQuery: food), method: "GET", data: nil, completion: { (data, statusCode) in
+//                guard let result = try? JSONDecoder().decode(FoodImg.self, from: data) else {return}
+//                print("results: \(result)")
+//                self.imagesURLs?.append(result.webformatURL)
+//
+//            })
+//        }
     }
     
     override func viewDidLoad() {
@@ -33,8 +42,9 @@ class CureViewController: UIViewController {
         cureFoodCollectionView.register(cell, forCellWithReuseIdentifier: "cureFoodCell")
         dataSource.configureCell = {(cureFoodCollectionView, indexPath) -> UICollectionViewCell in
             let cell = cureFoodCollectionView.dequeueReusableCell(withReuseIdentifier: "cureFoodCell", for: indexPath) as! CureFoodCell
-            cell.foodCureLabel.text = self.goodCurefood?[indexPath.row]
-            
+            guard let curefood = self.goodCurefood else { return UICollectionViewCell()}
+            cell.foodCureLabel.text = curefood[indexPath.row].name
+            cell.foodCureImg.loadImageFromUrlString(urlString: curefood[indexPath.row].image_url)
             return cell
         }
     }

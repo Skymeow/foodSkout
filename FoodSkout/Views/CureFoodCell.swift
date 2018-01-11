@@ -11,6 +11,7 @@ import UIKit
 class CureFoodCell: UICollectionViewCell {
 
     @IBOutlet weak var foodCureLabel: UILabel!
+    @IBOutlet weak var foodCureImg: CustomImageView!
     
     @IBAction func buyTapped(_ sender: UIButton) {
         

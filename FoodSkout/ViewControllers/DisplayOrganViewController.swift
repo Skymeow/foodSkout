@@ -14,7 +14,6 @@ class DisplayOrganViewController: UIViewController {
     var row: Int?
     var foodName: String?
     var foodUriData: String?
-    var foodImgs: [FoodImg] = []
     var goodFoods: [Goods]?
     var badFoods: [Bads]?
     var foodImgUrl: String?

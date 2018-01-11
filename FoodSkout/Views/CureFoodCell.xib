@@ -20,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="185" height="234"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tumeric" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UIn-Me-yIA">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walnuts" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UIn-Me-yIA" customClass="CustomImageView" customModule="FoodSkout" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="185" height="234"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -105,12 +105,13 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="185" height="234"/>
             <connections>
+                <outlet property="foodCureImg" destination="UIn-Me-yIA" id="tR8-6u-FkD"/>
                 <outlet property="foodCureLabel" destination="i7i-8c-g1E" id="nUr-Hl-lvZ"/>
             </connections>
             <point key="canvasLocation" x="126.5" y="168"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="tumeric" width="820" height="492"/>
+        <image name="walnuts" width="366" height="366"/>
     </resources>
 </document>
