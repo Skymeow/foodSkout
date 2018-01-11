@@ -19,14 +19,6 @@ class SuperfoodViewController: UIViewController {
     
     func setRecipeLabels(_ label: UILabel, _ int: Int) {
         let recipeName = self.recipeData?.recipe.label
-        let recipeInstruction = self.recipeData?.recipe.ingredientLines
-        let num = (recipeInstruction?.count)! - 1
-
-        for i in 1...num {
-            let format = "\(i). %@\n"
-            let result = String(format: format, arguments: [recipeInstruction![i] as CVarArg])
-            self.recipeInstructions.append(result)
-        }
         DispatchQueue.main.async {
             label.text = self.recipeInstructions[int]
         }
@@ -49,6 +41,14 @@ class SuperfoodViewController: UIViewController {
                 let result = try? JSONDecoder().decode(Recipe.self, from: data)
                 guard let results = result else { return }
                 self.recipeData = results.hits[0]
+                let recipeInstruction = self.recipeData!.recipe.ingredientLines
+                let num = (recipeInstruction.count) - 1
+                for i in 1...num {
+                    let format = "\(i). %@\n"
+                    let result = String(format: format, arguments: [recipeInstruction[i] as CVarArg])
+                    self.recipeInstructions.append(result)
+                }
+                
                 completion(true)
             }
         }
@@ -70,10 +70,6 @@ class SuperfoodViewController: UIViewController {
             }
         }
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
     }
     
     override func viewDidLoad() {
