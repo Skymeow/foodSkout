@@ -120,7 +120,7 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = false
         self.animateButton()
         getSuperfoodData{ (success) in
             if success {
