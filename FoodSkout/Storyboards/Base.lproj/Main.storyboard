@@ -1011,7 +1011,7 @@
             </objects>
             <point key="canvasLocation" x="-2952" y="-247"/>
         </scene>
-        <!--Superfood View Controller-->
+        <!--Recipe-->
         <scene sceneID="QPq-4J-FjP">
             <objects>
                 <viewController storyboardIdentifier="superVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E3b-8T-8Jc" customClass="SuperfoodViewController" customModule="FoodSkout" customModuleProvider="target" sceneMemberID="viewController">
@@ -1165,6 +1165,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gee-jH-fcl"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Recipe" id="GnT-BB-tKL"/>
                     <connections>
                         <outlet property="recipeImg" destination="8ll-fO-2Ab" id="Fu6-1i-gGp"/>
                         <outlet property="recipeNameLabel" destination="KZu-0s-7Yz" id="cvu-Ui-Dhx"/>
@@ -1175,7 +1176,7 @@
             </objects>
             <point key="canvasLocation" x="-1316" y="-1574"/>
         </scene>
-        <!--Cure View Controller-->
+        <!--Relieve-->
         <scene sceneID="fVJ-zc-OvA">
             <objects>
                 <viewController storyboardIdentifier="cureVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HMD-aS-2Sq" customClass="CureViewController" customModule="FoodSkout" customModuleProvider="target" sceneMemberID="viewController">
@@ -1222,6 +1223,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YDy-Dy-jL2"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Relieve" id="n6U-st-RJ5"/>
                     <connections>
                         <outlet property="cureFoodCollectionView" destination="6QL-yt-vd6" id="Gij-UT-GUu"/>
                         <outlet property="diseaseImgView" destination="X5R-ON-J5B" id="Sqb-Eb-9nP"/>
