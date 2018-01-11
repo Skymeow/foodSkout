@@ -45,10 +45,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYe-IL-nlS">
-                                        <rect key="frame" x="207" y="133" width="55" height="35"/>
+                                        <rect key="frame" x="192" y="133" width="70" height="35"/>
                                         <color key="backgroundColor" red="0.90000000000000002" green="0.097641509429999995" blue="0.40521226420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="55" id="Afd-Jp-U1S"/>
+                                            <constraint firstAttribute="width" constant="70" id="Afd-Jp-U1S"/>
                                             <constraint firstAttribute="height" constant="35" id="QLw-Ip-wCH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
