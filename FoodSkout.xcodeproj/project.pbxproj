@@ -40,7 +40,6 @@
 		F9E7312A1FB9085C0020C89E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E731291FB9085C0020C89E /* Assets.xcassets */; };
 		F9E7312D1FB9085C0020C89E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E7312B1FB9085C0020C89E /* LaunchScreen.storyboard */; };
 		F9E731371FB933EC0020C89E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E731361FB933EC0020C89E /* GradientView.swift */; };
-		F9E7313E1FBA0AF30020C89E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9E7312E1FB9085C0020C89E /* Info.plist */; };
 		F9F94F9E200153B500BC25D2 /* CureFoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F94F97200153B400BC25D2 /* CureFoodCell.xib */; };
 		F9F94F9F200153B500BC25D2 /* CureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F94F98200153B400BC25D2 /* CureCollectionViewCell.swift */; };
 		F9F94FA0200153B500BC25D2 /* CureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F94F99200153B400BC25D2 /* CureCollectionViewCell.xib */; };
@@ -421,7 +420,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9E7313E1FBA0AF30020C89E /* Info.plist in Resources */,
 				F9E7312D1FB9085C0020C89E /* LaunchScreen.storyboard in Resources */,
 				F9F94FA3200153B500BC25D2 /* FoodCollectionViewCell.xib in Resources */,
 				F9F94FA0200153B500BC25D2 /* CureCollectionViewCell.xib in Resources */,

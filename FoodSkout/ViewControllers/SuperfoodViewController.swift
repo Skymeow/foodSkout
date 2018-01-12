@@ -23,7 +23,7 @@ class SuperfoodViewController: UIViewController {
     
     @IBAction func buyTapped(_ sender: UIButton) {
         let amazonUrl = URL(string: "https://www.amazon.com")
-        let vc = SFSafariViewController(url: amazonUrl!, entersReaderIfAvailable: true)
+        let vc = SFSafariViewController(url: amazonUrl!)
         self.present(vc, animated: true)
     }
     

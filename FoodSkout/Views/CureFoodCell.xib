@@ -62,7 +62,7 @@
                                     <action selector="buyTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="OlA-Qa-PVB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CureFood" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7i-8c-g1E">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CureFood" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7i-8c-g1E">
                                 <rect key="frame" x="24" y="92" width="138.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Fa1-fl-DOK"/>

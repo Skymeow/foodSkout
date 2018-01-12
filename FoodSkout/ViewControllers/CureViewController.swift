@@ -65,7 +65,7 @@ extension CureViewController: UICollectionViewDelegateFlowLayout{
 extension CureViewController: PassBuy {
     func actionSent(_ sender: CureFoodCell) {
         let amazonUrl = URL(string: "https://www.amazon.com")
-        let vc = SFSafariViewController(url: amazonUrl!, entersReaderIfAvailable: true)
+        let vc = SFSafariViewController(url: amazonUrl!)
         self.present(vc, animated: true)
     }
 }

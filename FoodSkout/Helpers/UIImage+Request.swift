@@ -26,6 +26,7 @@ class CustomImageView: UIImageView {
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let err = error {
+                print(err)
                 return
             }
             
