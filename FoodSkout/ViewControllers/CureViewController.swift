@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class CureViewController: UIViewController {
     
@@ -34,6 +35,7 @@ class CureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         diseaseImgView.image = diseaseImg.image
         cureFoodCollectionView.delegate = self
         let cell = UINib(nibName: "CureFoodCell", bundle: Bundle.main)
@@ -41,6 +43,7 @@ class CureViewController: UIViewController {
         dataSource.configureCell = {(cureFoodCollectionView, indexPath) -> UICollectionViewCell in
             let cell = cureFoodCollectionView.dequeueReusableCell(withReuseIdentifier: "cureFoodCell", for: indexPath) as! CureFoodCell
             guard let curefood = self.goodCurefood else { return UICollectionViewCell()}
+            cell.delegate = self
             cell.foodCureLabel.text = curefood[indexPath.row].name
             cell.foodCureImg.loadImageFromUrlString(urlString: curefood[indexPath.row].image_url)
             return cell
@@ -56,5 +59,13 @@ extension CureViewController: UICollectionViewDelegateFlowLayout{
         let height = collectionView.bounds.size.height * 0.3
         
         return CGSize(width: width, height: height)
+    }
+}
+
+extension CureViewController: PassBuy {
+    func actionSent(_ sender: CureFoodCell) {
+        let amazonUrl = URL(string: "https://www.amazon.com")
+        let vc = SFSafariViewController(url: amazonUrl!, entersReaderIfAvailable: true)
+        self.present(vc, animated: true)
     }
 }

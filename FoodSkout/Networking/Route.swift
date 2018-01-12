@@ -112,10 +112,11 @@ enum Route {
         case .recipe, .getNutrientsLabel:
             return ["Content-Type": "application/json"]
         case .user:
-            guard let model = data as? User,
-                let password = model.password else {return [:]}
-            let basicHeader = BasicAuth.generateBasicAuthHeader(username: model.email, password: password)
-            return ["Authorization": basicHeader]
+//            guard let model = data as? User,
+//                let password = model.password else {return [:]}
+//            let basicHeader = BasicAuth.generateBasicAuthHeader(username: model.email, password: password)
+//            return ["Authorization": basicHeader]
+            return [:]
         }
     }
 }

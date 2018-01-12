@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import OrderedDictionary
 
 class Networking {
     static let instance = Networking()

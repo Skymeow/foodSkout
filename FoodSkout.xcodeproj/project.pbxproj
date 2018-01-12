@@ -10,7 +10,6 @@
 		6E369649DF7B93A653550532 /* Pods_FoodSkout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E66457B4EDED82864EFBA68 /* Pods_FoodSkout.framework */; };
 		902950021FDF5A75000B17EC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902950011FDF5A75000B17EC /* User.swift */; };
 		902950061FDF5B7C000B17EC /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902950051FDF5B7C000B17EC /* Storyboard+Utility.swift */; };
-		9029500A1FDF6976000B17EC /* BasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902950091FDF6976000B17EC /* BasicAuth.swift */; };
 		9029500C1FE054E7000B17EC /* UIImage+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9029500B1FE054E7000B17EC /* UIImage+Request.swift */; };
 		90E0541D2008312F00E7D1A6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E0541C2008312F00E7D1A6 /* Route.swift */; };
 		90EDEC251FCFBDA400A2150E /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDEC241FCFBDA400A2150E /* Nutrient.swift */; };
@@ -94,7 +93,6 @@
 		3E66457B4EDED82864EFBA68 /* Pods_FoodSkout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodSkout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		902950011FDF5A75000B17EC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		902950051FDF5B7C000B17EC /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
-		902950091FDF6976000B17EC /* BasicAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAuth.swift; sourceTree = "<group>"; };
 		9029500B1FE054E7000B17EC /* UIImage+Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Request.swift"; sourceTree = "<group>"; };
 		90E0541C2008312F00E7D1A6 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		90EDEC241FCFBDA400A2150E /* Nutrient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 		F98196081FDB1FA30090BD6E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				902950091FDF6976000B17EC /* BasicAuth.swift */,
 				F98196061FDB1F9E0090BD6E /* Networking.swift */,
 				90E0541C2008312F00E7D1A6 /* Route.swift */,
 			);
@@ -531,7 +528,6 @@
 				F9E37ED01FCA0C5E00EBD626 /* PercentageBar.swift in Sources */,
 				9029500C1FE054E7000B17EC /* UIImage+Request.swift in Sources */,
 				F9E731371FB933EC0020C89E /* GradientView.swift in Sources */,
-				9029500A1FDF6976000B17EC /* BasicAuth.swift in Sources */,
 				F9F94FA4200153B500BC25D2 /* CureFoodCell.swift in Sources */,
 				F9F94FAB2001540400BC25D2 /* TableViewDataSource.swift in Sources */,
 				F9D1F5191FDF37590051CC29 /* Recipe.swift in Sources */,

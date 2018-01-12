@@ -8,13 +8,19 @@
 
 import UIKit
 
+protocol PassBuy: class {
+    func actionSent(_ sender: CureFoodCell)
+}
 class CureFoodCell: UICollectionViewCell {
+    
+    weak var delegate: PassBuy?
     
     @IBOutlet weak var foodCureLabel: UILabel!
     @IBOutlet weak var foodCureImg: CustomImageView!
     
     @IBAction func buyTapped(_ sender: UIButton) {
-        
+        print("buy tapped")
+        delegate?.actionSent(self)
     }
     
     override func awakeFromNib() {

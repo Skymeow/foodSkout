@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class SuperfoodViewController: UIViewController {
     
@@ -19,6 +20,12 @@ class SuperfoodViewController: UIViewController {
     @IBOutlet weak var recipeTableView: UITableView!
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var recipeImg: CustomImageView!
+    
+    @IBAction func buyTapped(_ sender: UIButton) {
+        let amazonUrl = URL(string: "https://www.amazon.com")
+        let vc = SFSafariViewController(url: amazonUrl!, entersReaderIfAvailable: true)
+        self.present(vc, animated: true)
+    }
     
     func setRecipeLabels(_ label1: UILabel, _ label2: UILabel, _ int: Int) {
         let recipeName = self.recipeData?.recipe.label

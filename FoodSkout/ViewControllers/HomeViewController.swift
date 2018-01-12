@@ -56,7 +56,7 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
         let cureVC = storyBoard.instantiateViewController(withIdentifier: "cureVC") as! CureViewController
         cureVC.goodCurefood = sender.goodCurefood
         cureVC.diseaseImg = sender.cureImg
-//        let index = cureCollectionView.indexPath(for: sender)!
+
         self.navigationController?.pushViewController(cureVC, animated: true)
     }
     
