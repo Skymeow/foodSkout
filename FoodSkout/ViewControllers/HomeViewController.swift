@@ -139,6 +139,8 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UserDefaults.standard.set(true, forKey: "saw_onboarding")
         if self.checkIfSuperfoodLoaded == false && self.checkIfCurefoodLoaded == false{
             showLoadingAlert()
         }
