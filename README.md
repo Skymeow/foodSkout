@@ -12,6 +12,9 @@ FoodSkout was created from the need of finding nutritional information quicker. 
 
 What things you need to install the software and how to install them
 
+* Swift 4
+* Xcode 9
+* iOS 8.0+ / macOS 10.10+
 * [Cocoapods](https://cocoapods.org/) - Dependency Manager
 ```
 sudo gem install cocoapods
@@ -32,7 +35,7 @@ No tests have been written
 ## Built With
 
 * [Keychain Swift](https://github.com/evgenyneu/keychain-swift) - Used to save basic user information
-* [SimulatorStatusMagic](https://github.com/shinydevelopment/SimulatorStatusMagic) - Testing and Debugging
+* [SimulatorStatusMagic](https://github.com/shinydevelopment/SimulatorStatusMagic) - Screenshoting in simulator for deployment
 * [OrderedDictionary](https://github.com/lukaskubanek/OrderedDictionary) - Used to build http query parameters in a specific order
 
 ## Contributing
