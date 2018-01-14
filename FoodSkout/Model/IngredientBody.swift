@@ -33,24 +33,30 @@ struct Ingredient: Codable {
 
 struct IngredientResult: Decodable {
     let healthLabels: [String]
-    let totalNutrients: [String:Nutrient]
+//    let totalNutrients: Mineral
     let totalDaily: [String:Nutrient]
 }
 
-struct Sugar: Decodable {
-    let quantity: Float
-    let unit: String
-}
-
-struct Fa: Decodable {
-    let quantity: Float
-    let unit: String
-}
-
-struct Pr: Decodable {
-    let quantity: Float
-    let unit: String
-}
+//struct Mineral: Decodable {
+//    let SUGAR: Sugar?
+//    let FAT: Fa?
+//    let PROCNT: Pr?
+//}
+//
+//struct Sugar: Decodable {
+//    let quantity: Float
+//    let unit: String
+//}
+//
+//struct Fa: Decodable {
+//    let quantity: Float
+//    let unit: String
+//}
+//
+//struct Pr: Decodable {
+//    let quantity: Float
+//    let unit: String
+//}
 
 struct Params: Decodable {
     var hints: [ParamsLayer]

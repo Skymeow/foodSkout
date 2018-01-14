@@ -1,0 +1,6 @@
+app_identifier "com.sky.FoodSkout" # The bundle identifier of your app
+apple_id "Mingze Xu" # Your Apple email address
+
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

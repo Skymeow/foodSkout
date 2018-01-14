@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Uv4-fv-ZD8" customClass="CureCollectionViewCell" customModule="FoodSkout" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="270" height="259"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="270" height="259"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="S7p-9G-4km">
+                        <rect key="frame" x="0.0" y="0.0" width="270" height="259"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="migrain" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhZ-XQ-hnz" userLabel="Cure Img" customClass="CustomImageView" customModule="FoodSkout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="176"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5r-Vy-n4F">
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="176"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fight Migrain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQR-31-XXc">
+                                        <rect key="frame" x="68" y="63" width="135" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="AWq-jr-ISf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYe-IL-nlS">
+                                        <rect key="frame" x="192" y="133" width="70" height="35"/>
+                                        <color key="backgroundColor" red="0.90000000000000002" green="0.097641509429999995" blue="0.40521226420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="Afd-Jp-U1S"/>
+                                            <constraint firstAttribute="height" constant="35" id="QLw-Ip-wCH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <state key="normal" title="Food">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cureTapped:" destination="Uv4-fv-ZD8" eventType="touchUpInside" id="8qv-TB-age"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.047058823530000002" green="0.074509803920000006" blue="0.1019607843" alpha="0.45000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="pQR-31-XXc" firstAttribute="width" secondItem="V5r-Vy-n4F" secondAttribute="width" multiplier="1:2" id="C4h-Nh-7pR"/>
+                                    <constraint firstAttribute="trailing" secondItem="QYe-IL-nlS" secondAttribute="trailing" constant="8" id="CwL-tW-GWA"/>
+                                    <constraint firstItem="pQR-31-XXc" firstAttribute="centerX" secondItem="V5r-Vy-n4F" secondAttribute="centerX" id="VWB-Oi-u0S"/>
+                                    <constraint firstAttribute="bottom" secondItem="QYe-IL-nlS" secondAttribute="bottom" constant="8" id="WQH-3N-YYo"/>
+                                    <constraint firstItem="pQR-31-XXc" firstAttribute="centerY" secondItem="V5r-Vy-n4F" secondAttribute="centerY" id="qTK-Au-SYa"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Common Causes: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTZ-Es-g0b" userLabel="Common Cause">
+                                <rect key="frame" x="8" y="179" width="257" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="P8F-pT-IYn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not enough sleep and fuel, sleep apneal, Iron deficiency anemia, hypothyroidism." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AZ-C3-1Vi" userLabel="Label Context">
+                                <rect key="frame" x="8" y="191" width="254" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="HtU-vu-xi0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2196078431372549" green="0.67843137254901964" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yhZ-XQ-hnz" firstAttribute="leading" secondItem="S7p-9G-4km" secondAttribute="leading" id="9o2-jB-ydn"/>
+                            <constraint firstAttribute="trailing" secondItem="7AZ-C3-1Vi" secondAttribute="trailing" constant="8" id="BNW-wd-Bdp"/>
+                            <constraint firstItem="YTZ-Es-g0b" firstAttribute="leading" secondItem="S7p-9G-4km" secondAttribute="leading" constant="8" id="FLz-28-0EL"/>
+                            <constraint firstItem="7AZ-C3-1Vi" firstAttribute="top" secondItem="YTZ-Es-g0b" secondAttribute="bottom" constant="-3" id="GsQ-RZ-zWE"/>
+                            <constraint firstAttribute="bottom" secondItem="7AZ-C3-1Vi" secondAttribute="bottom" constant="8" id="LIg-49-4wV"/>
+                            <constraint firstItem="7AZ-C3-1Vi" firstAttribute="leading" secondItem="S7p-9G-4km" secondAttribute="leading" constant="8" id="MbP-bx-Mne"/>
+                            <constraint firstAttribute="trailing" secondItem="YTZ-Es-g0b" secondAttribute="trailing" constant="5" id="PgD-VZ-FgM"/>
+                            <constraint firstAttribute="trailing" secondItem="yhZ-XQ-hnz" secondAttribute="trailing" id="RHS-fg-8eb"/>
+                            <constraint firstItem="yhZ-XQ-hnz" firstAttribute="top" secondItem="S7p-9G-4km" secondAttribute="top" id="gd0-s4-Zi7"/>
+                            <constraint firstItem="V5r-Vy-n4F" firstAttribute="top" secondItem="S7p-9G-4km" secondAttribute="top" id="gnb-Nq-Ma3"/>
+                            <constraint firstItem="YTZ-Es-g0b" firstAttribute="top" secondItem="V5r-Vy-n4F" secondAttribute="bottom" constant="3" id="lWN-j1-YKN"/>
+                            <constraint firstItem="V5r-Vy-n4F" firstAttribute="leading" secondItem="S7p-9G-4km" secondAttribute="leading" id="lp9-jp-5hd"/>
+                            <constraint firstItem="YTZ-Es-g0b" firstAttribute="top" secondItem="yhZ-XQ-hnz" secondAttribute="bottom" constant="3" id="lr7-ta-IY6"/>
+                            <constraint firstAttribute="trailing" secondItem="V5r-Vy-n4F" secondAttribute="trailing" id="njM-WQ-QSg"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="S7p-9G-4km" firstAttribute="leading" secondItem="Uv4-fv-ZD8" secondAttribute="leading" id="EOP-qa-PyC"/>
+                <constraint firstAttribute="trailing" secondItem="S7p-9G-4km" secondAttribute="trailing" id="Jlo-Rz-ZgO"/>
+                <constraint firstAttribute="bottom" secondItem="S7p-9G-4km" secondAttribute="bottom" id="Ufg-8w-eFg"/>
+                <constraint firstItem="S7p-9G-4km" firstAttribute="top" secondItem="Uv4-fv-ZD8" secondAttribute="top" id="frG-6c-u1r"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ndW-xa-yBv"/>
+            <size key="customSize" width="270" height="259"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="causeContext" destination="7AZ-C3-1Vi" id="M3J-O5-NMe"/>
+                <outlet property="cureImg" destination="yhZ-XQ-hnz" id="yTb-ey-6W8"/>
+                <outlet property="diseaseName" destination="pQR-31-XXc" id="umu-p2-92h"/>
+            </connections>
+            <point key="canvasLocation" x="150" y="253.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="migrain" width="900" height="600"/>
+    </resources>
+</document>

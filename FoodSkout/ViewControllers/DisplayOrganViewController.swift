@@ -14,7 +14,6 @@ class DisplayOrganViewController: UIViewController {
     var row: Int?
     var foodName: String?
     var foodUriData: String?
-    var foodImgs: [FoodImg] = []
     var goodFoods: [Goods]?
     var badFoods: [Bads]?
     var foodImgUrl: String?
@@ -42,8 +41,11 @@ class DisplayOrganViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true);
-        self.navigationController?.isNavigationBarHidden = false
+        super.viewWillAppear(true)
+//         self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
     
     override func viewDidLoad() {

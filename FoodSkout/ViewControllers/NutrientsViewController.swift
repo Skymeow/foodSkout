@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 typealias completed = (Bool) -> Void
 
 class NutrientsViewController: UIViewController {
@@ -29,41 +28,51 @@ class NutrientsViewController: UIViewController {
     @IBOutlet weak var nutritionButton: UIButton!
     @IBOutlet weak var foodImgView: UIImageView!
     
-    
-    // MARK: IBActions for Botttom Tabbar
-    
-    @IBAction func homeTapped(_ sender: UIButton) {
-        let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeVC") as? HomeViewController
-        DispatchQueue.main.async {
-            self.navigationController?.pushViewController(homeVC!, animated: true)
-        }
-    }
-    
-    @IBAction func organTapped(_ sender: UIButton) {
-        let organVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChooseOrgansViewController") as? ChooseOrgansViewController
-        DispatchQueue.main.async {
-            self.navigationController?.pushViewController(organVC!, animated: true)
-        }
-    }
-    
    // MARK: IBActions for buttons within VC
     
     @IBAction func selectedNutriTapped(_ sender: UIButton) {
         self.recipeViewController?.view.isHidden = true
         self.selectedNutritionViewController?.view.isHidden = false
         selectTab(button: sender)
-        resetButtons(button: self.recipeButton)
+        resetButtons(button: sender)
     }
     
     @IBAction func selectedReciTapped(_ sender: UIButton) {
         self.recipeViewController?.view.isHidden = false
         self.selectedNutritionViewController?.view.isHidden = true
         selectTab(button: sender)
-        resetButtons(button: self.nutritionButton)
+        resetButtons(button: sender)
         // If the data has been loaded previously no need to load it again.
         if  self.checkIfLoaded == false {
             showLoadingAlert()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.navigationController?.navigationBar.isHidden = false
+//        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.setCorrectImg()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        guard let recipeController = childViewControllers.first as? RecipeViewController else {
+            fatalError("Check storyboard for missing recipeViewController")
+        }
+        
+        guard let selectedNutritionController = childViewControllers.last as? SelectedNutritionViewController else  {
+            fatalError("Check storyboard for missing selectedNutritionViewController")
+        }
+        
+        selectedNutritionViewController = selectedNutritionController
+        recipeViewController = recipeController
+        selectedNutritionViewController?.foodUri = self.foodUri
+        self.recipeViewController?.view.isHidden = true
+        self.selectedNutritionViewController?.view.isHidden = false
     }
     
     func showLoadingAlert() {
@@ -88,19 +97,21 @@ class NutrientsViewController: UIViewController {
         }
     }
     
-    func resetButtons (button: UIButton) {
-        // set both buttons to default background color
-        button.backgroundColor = UIColor.white
-        button.setTitleColor(UIColor.blue, for: .normal)
+    func selectTab (button: UIButton) {
+        // set recipt buttons to grey background color, nutri button background back to green
+        if button == self.nutritionButton {
+            button.setTitleColor(UIColor.white, for: .normal)
+        } else {
+            button.setTitleColor(UIColor.white, for: .normal)
+        }
     }
     
-    func selectTab(button: UIButton) {
+    func resetButtons (button: UIButton) {
         if button == nutritionButton {
-            button.backgroundColor = UIColor(red: 0.7216, green: 0.8314, blue: 0.6549, alpha: 1.0)
+            self.recipeButton.setTitleColor(UIColor.darkGray, for: .normal)
         } else {
-            button.backgroundColor = UIColor(white: 0, alpha: 0.47)
+            self.nutritionButton.setTitleColor(UIColor.darkGray, for: .normal)
         }
-        button.setTitleColor(UIColor.white, for: .normal)
     }
    
     func setRecipeLabels() {
@@ -143,35 +154,6 @@ class NutrientsViewController: UIViewController {
             }
         }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.setCorrectImg()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        guard let recipeController = childViewControllers.first as? RecipeViewController else {
-            fatalError("Check storyboard for missing recipeViewController")
-        }
-        
-        guard let selectedNutritionController = childViewControllers.last as? SelectedNutritionViewController else  {
-            fatalError("Check storyboard for missing selectedNutritionViewController")
-        }
-        
-        selectedNutritionViewController = selectedNutritionController
-        recipeViewController = recipeController
-        selectedNutritionViewController?.foodUri = self.foodUri
-        self.recipeViewController?.view.isHidden = true
-        self.selectedNutritionViewController?.view.isHidden = false
     }
 
 }

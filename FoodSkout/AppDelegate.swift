@@ -10,19 +10,17 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        // for present pageVC modally
         let defaults = UserDefaults.standard
         let initialViewController: UIViewController
         let onboarded = defaults.bool(forKey: "saw_onboarding")
-        let loggedIn = defaults.bool(forKey: "isLoggedIn")
         
-        if loggedIn && onboarded{
-            
+        if onboarded{
             initialViewController = UIStoryboard.initialViewController(for: .main)
         } else {
             initialViewController = storyboard.instantiateViewController(withIdentifier: "pageVC") as! OnboardingPageViewController

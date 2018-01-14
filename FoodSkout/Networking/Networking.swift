@@ -6,20 +6,14 @@
 //
 
 import Foundation
+import OrderedDictionary
 
 class Networking {
     static let instance = Networking()
     let session = URLSession.shared
     
-    /// Make a http request
-    ///
-    /// - Parameters:
-    ///   - route: A case from the Route Enum
-    ///   - method: the http method we're going to use (GET, POST, PUT, DELETE)
-    ///   - data: an optional encodable object for when we need to PUT or POST
-    ///   - completion: closure that returns the data and the status code from the request
     func fetch(route: Route, method: String, data: Encodable?, completion: @escaping (Data, Int) -> Void) {
-        var baseURL = route.baseURl()
+        let baseURL = route.baseURl()
         let urlString = baseURL.appending(route.path())
         var toURL = URL(string: urlString)!
         toURL = toURL.appendingQueryParameters(_parametersDictionary: route.urlParameters())
@@ -27,13 +21,7 @@ class Networking {
         request.httpBody = route.body(data: data)
         request.httpMethod = method
         request.allHTTPHeaderFields = route.headers(data: data)
-        if request.httpMethod == "POST"
-        {
-            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-            let bodyRequest = request.httpBody
-            let resultReq = try? JSONSerialization.jsonObject(with: bodyRequest!, options: .allowFragments)
-        }
-        
+        print(request)
         session.dataTask(with: request) { (data, response, error) in
        
             guard let responseCode = response as? HTTPURLResponse else {return}
@@ -46,16 +34,11 @@ class Networking {
     }
 }
 
-
-/// A protocol to convert the query parameters returned in a request
 protocol URLQueryParameterStringConvertible {
     var queryParameters: String { get }
 }
 
-// MARK: - URLQueryParameterStringConvertible
-extension Dictionary: URLQueryParameterStringConvertible {
-    
-    /// transform a dictionary of paramenters into a query parameters string
+extension OrderedDictionary: URLQueryParameterStringConvertible {
     var queryParameters: String {
         var parts: [String] = []
         for (key, value) in self {
@@ -67,14 +50,8 @@ extension Dictionary: URLQueryParameterStringConvertible {
     }
 }
 
-
-// MARK: - URL extension
 extension URL {
-    /// Append a query parameter string to the url. The parameters string is created from a dictionary
-    ///
-    /// - Parameter _parametersDictionary: The query parameters Dictionary that will be transformed into a String
-    /// - Returns: A URL with the query parameters
-    func appendingQueryParameters(_parametersDictionary: Dictionary<String, String>) -> URL {
+    func appendingQueryParameters(_parametersDictionary: OrderedDictionary<String, String>) -> URL {
         let URLString: String = String(format: "%@?%@", self.absoluteString, _parametersDictionary.queryParameters)
         return URL(string: URLString)!
     }
