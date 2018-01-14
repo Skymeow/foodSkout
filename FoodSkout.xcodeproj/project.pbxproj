@@ -21,6 +21,8 @@
 		F981960E1FDB24A30090BD6E /* StepTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981960D1FDB24A30090BD6E /* StepTwo.swift */; };
 		F98196101FDB25030090BD6E /* ThrottleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981960F1FDB25030090BD6E /* ThrottleHelper.swift */; };
 		F98E57A21FD33DAD00DDE9AA /* IngredientBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E57A11FD33DAD00DDE9AA /* IngredientBody.swift */; };
+		F9991C542009803100A12C8B /* FoodSkoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9991C532009803100A12C8B /* FoodSkoutUITests.swift */; };
+		F9991C602009815A00A12C8B /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9991C5F2009815A00A12C8B /* SnapshotHelper.swift */; };
 		F9A258E41FC3AA9400DE4C06 /* LowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */; };
 		F9D1F5151FDF173B0051CC29 /* SelectedNutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1F5141FDF173B0051CC29 /* SelectedNutritionViewController.swift */; };
 		F9D1F5171FDF17520051CC29 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1F5161FDF17520051CC29 /* RecipeViewController.swift */; };
@@ -57,6 +59,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F9991C562009803100A12C8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9E731171FB9085C0020C89E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9E7311E1FB9085C0020C89E;
+			remoteInfo = FoodSkout;
+		};
 		F9F94FB420054E2E00BC25D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F9F94FAD20054E2D00BC25D2 /* OrderedDictionary.xcodeproj */;
@@ -108,6 +117,10 @@
 		F981960D1FDB24A30090BD6E /* StepTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTwo.swift; sourceTree = "<group>"; };
 		F981960F1FDB25030090BD6E /* ThrottleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrottleHelper.swift; sourceTree = "<group>"; };
 		F98E57A11FD33DAD00DDE9AA /* IngredientBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientBody.swift; sourceTree = "<group>"; };
+		F9991C512009803100A12C8B /* FoodSkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodSkoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9991C532009803100A12C8B /* FoodSkoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSkoutUITests.swift; sourceTree = "<group>"; };
+		F9991C552009803100A12C8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9991C5F2009815A00A12C8B /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerTableViewCell.swift; sourceTree = "<group>"; };
 		F9D1F5141FDF173B0051CC29 /* SelectedNutritionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedNutritionViewController.swift; sourceTree = "<group>"; };
 		F9D1F5161FDF17520051CC29 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +160,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F9991C4E2009803100A12C8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9E7311C1FB9085C0020C89E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,6 +226,16 @@
 				F981960F1FDB25030090BD6E /* ThrottleHelper.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		F9991C522009803100A12C8B /* FoodSkoutUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F9991C532009803100A12C8B /* FoodSkoutUITests.swift */,
+				F9991C5F2009815A00A12C8B /* SnapshotHelper.swift */,
+				F9991C552009803100A12C8B /* Info.plist */,
+			);
+			path = FoodSkoutUITests;
 			sourceTree = "<group>";
 		};
 		F9E37ECB1FC9DE9700EBD626 /* ViewControllers */ = {
@@ -272,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				F9E731211FB9085C0020C89E /* FoodSkout */,
+				F9991C522009803100A12C8B /* FoodSkoutUITests */,
 				F9E731201FB9085C0020C89E /* Products */,
 				F93688001FD739FF0060E43C /* timeburnerbold.ttf */,
 				F9D1F51A1FE095480051CC29 /* lottepaperfang.ttf */,
@@ -287,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				F9E7311F1FB9085C0020C89E /* FoodSkout.app */,
+				F9991C512009803100A12C8B /* FoodSkoutUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -323,6 +355,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F9991C502009803100A12C8B /* FoodSkoutUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9991C5E2009803100A12C8B /* Build configuration list for PBXNativeTarget "FoodSkoutUITests" */;
+			buildPhases = (
+				F9991C4D2009803100A12C8B /* Sources */,
+				F9991C4E2009803100A12C8B /* Frameworks */,
+				F9991C4F2009803100A12C8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9991C572009803100A12C8B /* PBXTargetDependency */,
+			);
+			name = FoodSkoutUITests;
+			productName = FoodSkoutUITests;
+			productReference = F9991C512009803100A12C8B /* FoodSkoutUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F9E7311E1FB9085C0020C89E /* FoodSkout */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9E731311FB9085C0020C89E /* Build configuration list for PBXNativeTarget "FoodSkout" */;
@@ -350,10 +400,15 @@
 		F9E731171FB9085C0020C89E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Sky Xu";
 				TargetAttributes = {
+					F9991C502009803100A12C8B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+						TestTargetID = F9E7311E1FB9085C0020C89E;
+					};
 					F9E7311E1FB9085C0020C89E = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -380,6 +435,7 @@
 			projectRoot = "";
 			targets = (
 				F9E7311E1FB9085C0020C89E /* FoodSkout */,
+				F9991C502009803100A12C8B /* FoodSkoutUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -416,6 +472,13 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F9991C4F2009803100A12C8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9E7311D1FB9085C0020C89E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -459,10 +522,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FoodSkout/Pods-FoodSkout-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SimulatorStatusMagic/SimulatorStatusMagic.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimulatorStatusMagic.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -502,6 +567,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F9991C4D2009803100A12C8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9991C542009803100A12C8B /* FoodSkoutUITests.swift in Sources */,
+				F9991C602009815A00A12C8B /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9E7311B1FB9085C0020C89E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -549,6 +623,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F9991C572009803100A12C8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9E7311E1FB9085C0020C89E /* FoodSkout */;
+			targetProxy = F9991C562009803100A12C8B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		F9E731261FB9085C0020C89E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -569,6 +651,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F9991C582009803100A12C8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Mingze Xu (A3KV3V94JT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 8;
+				DEVELOPMENT_TEAM = A3KV3V94JT;
+				INFOPLIST_FILE = FoodSkoutUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sky.FoodSkoutUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "97486e90-c45a-4538-87a4-7eaf79e07737";
+				PROVISIONING_PROFILE_SPECIFIER = "com.sky.FoodSkout AppStore";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FoodSkout;
+			};
+			name = Debug;
+		};
+		F9991C592009803100A12C8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Mingze Xu (A3KV3V94JT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 8;
+				DEVELOPMENT_TEAM = A3KV3V94JT;
+				INFOPLIST_FILE = FoodSkoutUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sky.FoodSkoutUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "97486e90-c45a-4538-87a4-7eaf79e07737";
+				PROVISIONING_PROFILE_SPECIFIER = "com.sky.FoodSkout AppStore";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FoodSkout;
+			};
+			name = Release;
+		};
 		F9E7312F1FB9085C0020C89E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -598,7 +722,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Mingze Xu (A3KV3V94JT)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -655,7 +779,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Mingze Xu (A3KV3V94JT)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -681,15 +805,20 @@
 			baseConfigurationReference = BFBB9AD3EAEFD8C42E6B9EE8 /* Pods-FoodSkout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PCNZSAFPQA;
+				CURRENT_PROJECT_VERSION = 8;
+				DEVELOPMENT_TEAM = A3KV3V94JT;
 				INFOPLIST_FILE = FoodSkout/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sky.FoodSkout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -698,21 +827,35 @@
 			baseConfigurationReference = 296F30E4CF1F0746DA241C6B /* Pods-FoodSkout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PCNZSAFPQA;
+				CURRENT_PROJECT_VERSION = 8;
+				DEVELOPMENT_TEAM = A3KV3V94JT;
 				INFOPLIST_FILE = FoodSkout/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sky.FoodSkout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F9991C5E2009803100A12C8B /* Build configuration list for PBXNativeTarget "FoodSkoutUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9991C582009803100A12C8B /* Debug */,
+				F9991C592009803100A12C8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F9E7311A1FB9085C0020C89E /* Build configuration list for PBXProject "FoodSkout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

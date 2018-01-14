@@ -29,10 +29,12 @@ class CollectionViewDataSource<Item>: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let configureCell = configureCell else {
+        if let configureCell = configureCell {
+            print("okey \(configureCell)")
+        } else {
             precondition(false, "You didn't pass a configurecell closure to configurecell")
         }
         
-        return configureCell(collectionView, indexPath)
+        return configureCell!(collectionView, indexPath)
     }
 }

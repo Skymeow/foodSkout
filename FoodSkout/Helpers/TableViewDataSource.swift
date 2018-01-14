@@ -30,11 +30,13 @@ class TableViewDataSource<Item>: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let configureCell = configureCell else {
+        if let configureCell = configureCell {
+            print("okey \(configureCell)")
+        } else {
             precondition(false, "You didn't pass a configurecell closure to configurecell")
         }
-        
-        return configureCell(tableView, indexPath)
+       
+        return configureCell!(tableView, indexPath)
     }
     
 }

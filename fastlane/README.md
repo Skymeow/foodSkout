@@ -18,11 +18,36 @@ xcode-select --install
 
 # Available Actions
 ## iOS
+### ios provision
+```
+fastlane ios provision
+```
+Creating a code signing certificate and provisioning profile
 ### ios custom_lane
 ```
 fastlane ios custom_lane
 ```
 Description of what the lane does
+### ios screenshot
+```
+fastlane ios screenshot
+```
+Take screenshots
+### ios build
+```
+fastlane ios build
+```
+Create ipa
+### ios upload
+```
+fastlane ios upload
+```
+Upload to App Store
+### ios tests
+```
+fastlane ios tests
+```
+
 
 ----
 
