@@ -3,11 +3,7 @@
 FoodSkout was created from the need of finding nutritional information quicker. Instead of using countless hours to find how different foods affect different parts and processes of your body, us at FoodSkout will compile all that information in one place so you can start improving your health right now.
 
 
-<img src="Readme_graphics/chooseOrgan.png" width=30% disp>
-<img src="Readme_graphics/cureFood.png" width=30%>
-
-<img src="Readme_graphics/homepage.png" width=30%>
-<img src="Readme_graphics/nutrientsandrecipe.png" width=30%>
+<img src="Readme_graphics/chooseOrgan.png" width=40% display="inline"> <img src="Readme_graphics/cureFood.png" width=40% display="inline"> <img src="Readme_graphics/homepage.png" width=40% display="inline"> <img src="Readme_graphics/nutrientsandrecipe.png" width=40% display="inline">
 
 ## Getting Started
 
