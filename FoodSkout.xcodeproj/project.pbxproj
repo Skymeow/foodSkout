@@ -14,7 +14,6 @@
 		90E0541D2008312F00E7D1A6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E0541C2008312F00E7D1A6 /* Route.swift */; };
 		90EDEC251FCFBDA400A2150E /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDEC241FCFBDA400A2150E /* Nutrient.swift */; };
 		F9567EE71FBBB3CF0069D7DF /* BackgroundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */; };
-		F98196011FDB0CCF0090BD6E /* UIView+Boarders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98196001FDB0CCF0090BD6E /* UIView+Boarders.swift */; };
 		F98196071FDB1F9E0090BD6E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98196061FDB1F9E0090BD6E /* Networking.swift */; };
 		F981960A1FDB24790090BD6E /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98196091FDB24790090BD6E /* OnboardingPageViewController.swift */; };
 		F981960C1FDB24970090BD6E /* OrganToFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981960B1FDB24970090BD6E /* OrganToFoodViewController.swift */; };
@@ -110,7 +109,6 @@
 		F93688021FD739FF0060E43C /* turmeric.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = turmeric.pdf; sourceTree = "<group>"; };
 		F93688031FD73A000060E43C /* TypoGraphica_demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypoGraphica_demo.otf; sourceTree = "<group>"; };
 		F9567EE61FBBB3CF0069D7DF /* BackgroundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundButtonView.swift; sourceTree = "<group>"; };
-		F98196001FDB0CCF0090BD6E /* UIView+Boarders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Boarders.swift"; sourceTree = "<group>"; };
 		F98196061FDB1F9E0090BD6E /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		F98196091FDB24790090BD6E /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		F981960B1FDB24970090BD6E /* OrganToFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganToFoodViewController.swift; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 		F9567EEB1FBCD8550069D7DF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				F98196001FDB0CCF0090BD6E /* UIView+Boarders.swift */,
 				9029500B1FE054E7000B17EC /* UIImage+Request.swift */,
 				902950051FDF5B7C000B17EC /* Storyboard+Utility.swift */,
 				F9F94FAA2001540400BC25D2 /* CollectionViewDataSource.swift */,
@@ -587,7 +584,6 @@
 				902950021FDF5A75000B17EC /* User.swift in Sources */,
 				F9E37EE01FD1DF7A00EBD626 /* FoodImg.swift in Sources */,
 				F9E37ED71FCE0AD100EBD626 /* ChooseOrgansViewController.swift in Sources */,
-				F98196011FDB0CCF0090BD6E /* UIView+Boarders.swift in Sources */,
 				F9D1F51D1FE0A65A0051CC29 /* TagsCell.swift in Sources */,
 				F9E731251FB9085C0020C89E /* HomeViewController.swift in Sources */,
 				F9F94FAC2001540400BC25D2 /* CollectionViewDataSource.swift in Sources */,

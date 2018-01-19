@@ -32,6 +32,8 @@ class Networking {
             completion(newData!, statusCode)
         }.resume()
     }
+    
+    // MARK: Create resource-specific methods for fetching & modeling your data models
 }
 
 protocol URLQueryParameterStringConvertible {

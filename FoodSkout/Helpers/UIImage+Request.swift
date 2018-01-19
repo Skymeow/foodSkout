@@ -10,6 +10,7 @@ import UIKit
 
 var imageCache = NSCache<AnyObject, AnyObject>()
 
+// custom class to convert url to img and cache them
 class CustomImageView: UIImageView {
     
     var imageUrlString: String?
@@ -24,6 +25,7 @@ class CustomImageView: UIImageView {
             return
         }
         
+        //   networking request to convert url to img
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let err = error {
                 print(err)
@@ -32,6 +34,7 @@ class CustomImageView: UIImageView {
             
             guard let imageData = data else {return}
             
+            // update imgView
             DispatchQueue.main.async {
                 guard let imageToCache = UIImage(data: imageData) else {return}
                 

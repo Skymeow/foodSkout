@@ -25,10 +25,10 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var exploreButton: UIButton!
     
+    // MARK: View lifecycle methods here
+    
     @IBAction func exploreTapped(_ sender: UIButton) {
-        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let organVC = storyBoard.instantiateViewController(withIdentifier: "ChooseOrgansViewController") as! ChooseOrgansViewController
-        self.navigationController?.pushViewController(organVC, animated: true)
+        self.tabBarController?.selectedIndex = 1
     }
     
     func showLoadingAlert() {
@@ -55,6 +55,7 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let cureVC = storyBoard.instantiateViewController(withIdentifier: "cureVC") as! CureViewController
         cureVC.goodCurefood = sender.goodCurefood
+        //MARK: let dataSource = CollectionViewDataSource(items: sender.goodCurefood)
         cureVC.diseaseImg = sender.cureImg
 
         self.navigationController?.pushViewController(cureVC, animated: true)
@@ -99,16 +100,18 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
     }
     
     override func viewDidLayoutSubviews() {
-        let scrollBounds = self.scrollView.bounds
-        let contentBounds = self.contentView.bounds
-        var scrollViewInsets = UIEdgeInsets.zero
-        scrollViewInsets.top = scrollBounds.size.height
-        scrollViewInsets.top -= contentBounds.size.height
-        scrollViewInsets.bottom = scrollBounds.size.height
-        scrollViewInsets.bottom -= contentBounds.size.height
-        scrollViewInsets.bottom += 1
-        
-        scrollView.contentInset = scrollViewInsets
+        // MARK: Can remove this code since we set "Bounce Vertically"
+        //       on the scrollview. This property is .alwaysBouncesVertically
+//        let scrollBounds = self.scrollView.bounds
+//        let contentBounds = self.contentView.bounds
+//        var scrollViewInsets = UIEdgeInsets.zero
+//        scrollViewInsets.top = scrollBounds.size.height
+//        scrollViewInsets.top -= contentBounds.size.height
+//        scrollViewInsets.bottom = scrollBounds.size.height
+//        scrollViewInsets.bottom -= contentBounds.size.height
+//        scrollViewInsets.bottom += 1
+//        
+//        scrollView.contentInset = scrollViewInsets
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -147,6 +150,8 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
 
         
         foodCollectionView.delegate = self
+        // MARK: foodCollectionView.dataSource = dataSource1
+        
         let foodCell = UINib(nibName: "FoodCollectionViewCell", bundle: Bundle.main)
         foodCollectionView.register(foodCell, forCellWithReuseIdentifier: "foodCell")
         dataSource1.configureCell = {(foodCollectionView, indexPath) -> UICollectionViewCell in

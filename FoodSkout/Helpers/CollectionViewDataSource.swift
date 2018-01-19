@@ -12,7 +12,11 @@ import UIKit
 typealias cellCallback = (UICollectionView, IndexPath) -> UICollectionViewCell
 
 class CollectionViewDataSource<Item>: NSObject, UICollectionViewDataSource {
-    var items: [Item]
+    var items: [Item] {
+        didSet {
+            //reload collection view
+        }
+    }
     var configureCell: cellCallback?
     
     init(items: [Item]) {

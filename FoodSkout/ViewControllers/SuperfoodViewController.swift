@@ -13,6 +13,13 @@ class SuperfoodViewController: UIViewController {
     
     var superFoodName: String?
     var dataSource = TableViewDataSource(items: [])
+//    {
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.recipeTableView.reloadData()
+//            }
+//        }
+//    }
     var recipeData: Recipes?
     var recipeInstructions = [String]()
     var stepArr = [String]()
@@ -26,6 +33,8 @@ class SuperfoodViewController: UIViewController {
         let vc = SFSafariViewController(url: amazonUrl!)
         self.present(vc, animated: true)
     }
+    
+    // MARK: update UI
     
     func setRecipeLabels(_ label1: UILabel, _ label2: UILabel, _ int: Int) {
         let recipeName = self.recipeData?.recipe.label
@@ -41,6 +50,8 @@ class SuperfoodViewController: UIViewController {
         recipeImg.loadImageFromUrlString(urlString: imgString!)
     }
     
+    // MARK: networking request to fetch recipe
+    
     func getRecipe(completion: @escaping(Bool) -> Void){
         Networking.instance.fetch(route: .recipe(foodName: self.superFoodName!), method: "GET", data: nil) { (data, response) in
             if response == 200 {
@@ -49,6 +60,8 @@ class SuperfoodViewController: UIViewController {
                 self.recipeData = results.hits[0]
                 let recipeInstruction = self.recipeData!.recipe.ingredientLines
                 let num = (recipeInstruction.count) - 1
+                self.recipeInstructions = [String]()
+                self.stepArr = [String]()
                 for i in 1...num {
                     let result = recipeInstruction[i].replacingOccurrences(of: "Â", with: "")
                     let stepResult = "Step \(i)"
@@ -74,7 +87,9 @@ class SuperfoodViewController: UIViewController {
                     self.recipeTableView.dataSource = self.dataSource
                     self.recipeTableView.reloadData()
                     self.setRecipeImg()
+//                    self.recipeTableView.dataSource = nil
                 }
+//                self.recipeTableView.dataSource = nil
             }
         }
         
@@ -96,7 +111,8 @@ class SuperfoodViewController: UIViewController {
 
 extension SuperfoodViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height = self.recipeTableView.bounds.size.height / CGFloat(self.dataSource.items.count)
+//        let height = self.recipeTableView.bounds.size.height / CGFloat(self.dataSource.items.count)
+        let height = CGFloat(55)
         
         return height
     }
