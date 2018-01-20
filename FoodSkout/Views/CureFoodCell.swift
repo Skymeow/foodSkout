@@ -19,7 +19,6 @@ class CureFoodCell: UICollectionViewCell {
     @IBOutlet weak var foodCureImg: CustomImageView!
     
     @IBAction func buyTapped(_ sender: UIButton) {
-        print("buy tapped")
         delegate?.actionSent(self)
     }
     

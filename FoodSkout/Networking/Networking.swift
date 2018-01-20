@@ -21,7 +21,6 @@ class Networking {
         request.httpBody = route.body(data: data)
         request.httpMethod = method
         request.allHTTPHeaderFields = route.headers(data: data)
-        print(request)
         session.dataTask(with: request) { (data, response, error) in
        
             guard let responseCode = response as? HTTPURLResponse else {return}

@@ -20,7 +20,6 @@ class CureCollectionViewCell: UICollectionViewCell {
     weak var delegate: passCureDelegate?
     
     @IBAction func cureTapped(_ sender: UIButton) {
-        print("cure food tapped")
         delegate?.tappedCure(self)
     }
     

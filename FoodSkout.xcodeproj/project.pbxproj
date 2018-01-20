@@ -23,6 +23,8 @@
 		F9991C542009803100A12C8B /* FoodSkoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9991C532009803100A12C8B /* FoodSkoutUITests.swift */; };
 		F9991C602009815A00A12C8B /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9991C5F2009815A00A12C8B /* SnapshotHelper.swift */; };
 		F9A258E41FC3AA9400DE4C06 /* LowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */; };
+		F9BCA6872013D4CD006FAB8D /* UIColor&Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCA6862013D4CD006FAB8D /* UIColor&Extension.swift */; };
+		F9BCA68D2013D9E0006FAB8D /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCA68C2013D9E0006FAB8D /* CustomNavigationController.swift */; };
 		F9D1F5151FDF173B0051CC29 /* SelectedNutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1F5141FDF173B0051CC29 /* SelectedNutritionViewController.swift */; };
 		F9D1F5171FDF17520051CC29 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1F5161FDF17520051CC29 /* RecipeViewController.swift */; };
 		F9D1F5191FDF37590051CC29 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1F5181FDF37590051CC29 /* Recipe.swift */; };
@@ -120,6 +122,8 @@
 		F9991C552009803100A12C8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9991C5F2009815A00A12C8B /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		F9A258E31FC3AA9400DE4C06 /* LowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerTableViewCell.swift; sourceTree = "<group>"; };
+		F9BCA6862013D4CD006FAB8D /* UIColor&Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor&Extension.swift"; sourceTree = "<group>"; };
+		F9BCA68C2013D9E0006FAB8D /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		F9D1F5141FDF173B0051CC29 /* SelectedNutritionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedNutritionViewController.swift; sourceTree = "<group>"; };
 		F9D1F5161FDF17520051CC29 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		F9D1F5181FDF37590051CC29 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 				902950051FDF5B7C000B17EC /* Storyboard+Utility.swift */,
 				F9F94FAA2001540400BC25D2 /* CollectionViewDataSource.swift */,
 				F9F94FA92001540400BC25D2 /* TableViewDataSource.swift */,
+				F9BCA6862013D4CD006FAB8D /* UIColor&Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				F9E37EC91FC8AF0300EBD626 /* NutrientsViewController.swift */,
 				F9D1F5141FDF173B0051CC29 /* SelectedNutritionViewController.swift */,
 				F9D1F5161FDF17520051CC29 /* RecipeViewController.swift */,
+				F9BCA68C2013D9E0006FAB8D /* CustomNavigationController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -579,6 +585,7 @@
 			files = (
 				F9E37ECA1FC8AF0300EBD626 /* NutrientsViewController.swift in Sources */,
 				F98E57A21FD33DAD00DDE9AA /* IngredientBody.swift in Sources */,
+				F9BCA6872013D4CD006FAB8D /* UIColor&Extension.swift in Sources */,
 				F98196071FDB1F9E0090BD6E /* Networking.swift in Sources */,
 				F981960A1FDB24790090BD6E /* OnboardingPageViewController.swift in Sources */,
 				902950021FDF5A75000B17EC /* User.swift in Sources */,
@@ -588,6 +595,7 @@
 				F9E731251FB9085C0020C89E /* HomeViewController.swift in Sources */,
 				F9F94FAC2001540400BC25D2 /* CollectionViewDataSource.swift in Sources */,
 				902950061FDF5B7C000B17EC /* Storyboard+Utility.swift in Sources */,
+				F9BCA68D2013D9E0006FAB8D /* CustomNavigationController.swift in Sources */,
 				F9A258E41FC3AA9400DE4C06 /* LowerTableViewCell.swift in Sources */,
 				F9F94F9F200153B500BC25D2 /* CureCollectionViewCell.swift in Sources */,
 				F9E731231FB9085C0020C89E /* AppDelegate.swift in Sources */,

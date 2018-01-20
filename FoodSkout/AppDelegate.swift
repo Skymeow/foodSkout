@@ -30,12 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()
 
-        // MARK: UIColor.hex() Extension: ex. UIColor.hex(0xF3F3F3)
-        UINavigationBar.appearance().barTintColor = UIColor(red: 252/255, green: 248/255, blue: 249/255, alpha: 1.0)
-        UINavigationBar.appearance().tintColor = UIColor(red: 241/255, green: 36/255, blue: 120/255, alpha: 1.0)
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 241/255, green: 36/255, blue: 120/255, alpha: 1.0)]
-        UINavigationBar.appearance().shadowImage = UIImage()
-        
         return true
     }
 
