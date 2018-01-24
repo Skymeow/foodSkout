@@ -19,10 +19,6 @@ class CureViewController: UIViewController {
     @IBOutlet weak var diseaseImgView: CustomImageView!
     @IBOutlet weak var cureFoodCollectionView: UICollectionView!
     
-    func setDiseaseImg() {
-        diseaseImgView.loadImageFromUrlString(urlString: self.diseaseUrl!)
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = false

@@ -7,6 +7,7 @@
 //
 import Foundation
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,10 +30,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()
-
+        
+        UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
+        application.registerForRemoteNotifications()
+        
         return true
     }
-
+// To send user notification
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+//        UserDefaults.standard.set(deviceTokenString, forKey: "deviceToken")
+        
+        print("APNs device token: \(deviceTokenString)")
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

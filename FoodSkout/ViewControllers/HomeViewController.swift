@@ -99,20 +99,7 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
         }
     }
     
-    override func viewDidLayoutSubviews() {
-        // MARK: Can remove this code since we set "Bounce Vertically"
-        //       on the scrollview. This property is .alwaysBouncesVertically
-//        let scrollBounds = self.scrollView.bounds
-//        let contentBounds = self.contentView.bounds
-//        var scrollViewInsets = UIEdgeInsets.zero
-//        scrollViewInsets.top = scrollBounds.size.height
-//        scrollViewInsets.top -= contentBounds.size.height
-//        scrollViewInsets.bottom = scrollBounds.size.height
-//        scrollViewInsets.bottom -= contentBounds.size.height
-//        scrollViewInsets.bottom += 1
-//        
-//        scrollView.contentInset = scrollViewInsets
-    }
+    //    "Bounce Vertically", on the scrollview. This property is .alwaysBouncesVertically
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -154,6 +141,7 @@ class HomeViewController: UIViewController, passButtonDelegate, passCureDelegate
         
         let foodCell = UINib(nibName: "FoodCollectionViewCell", bundle: Bundle.main)
         foodCollectionView.register(foodCell, forCellWithReuseIdentifier: "foodCell")
+        //   create a struct for cell to shrink the block of code
         dataSource1.configureCell = {(foodCollectionView, indexPath) -> UICollectionViewCell in
             let cell = foodCollectionView.dequeueReusableCell(withReuseIdentifier: "foodCell", for: indexPath) as! FoodCollectionViewCell
             cell.delegate = self
