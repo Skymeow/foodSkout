@@ -576,16 +576,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health Labels:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgT-6k-tg1">
-                                <rect key="frame" x="5" y="3" width="455" height="0.0"/>
+                                <rect key="frame" x="5" y="3" width="414" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFill" verticalCompressionResistancePriority="751" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3c1-6Q-qmv">
-                                <rect key="frame" x="10" y="8" width="450" height="100"/>
+                                <rect key="frame" x="10" y="8" width="414" height="100"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e8X-7i-jpi">
-                                        <rect key="frame" x="0.0" y="0.0" width="450" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hQ3-Un-rwX">
                                             <size key="itemSize" width="50" height="30"/>
@@ -601,16 +601,16 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top 3 beneficial Nutrients:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjF-c3-bah">
-                                <rect key="frame" x="5" y="118" width="455" height="20"/>
+                                <rect key="frame" x="5" y="118" width="414" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YDq-3g-b8d" userLabel="Percentage Bars Stack View">
-                                <rect key="frame" x="5" y="143" width="450" height="242"/>
+                                <rect key="frame" x="5" y="143" width="0.0" height="242"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wBC-iE-sMx">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="242"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="242"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top nutrition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vG5-k1-5py">
                                                 <rect key="frame" x="-5" y="0.0" width="0.0" height="0.0"/>
@@ -621,7 +621,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily/Gram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3b-5T-2ZO">
-                                                <rect key="frame" x="34" y="0.0" width="82" height="0.0"/>
+                                                <rect key="frame" x="-5" y="0.0" width="82" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -633,7 +633,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hbi-iF-2QP" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="42.666666666666671" y="0.0" width="65" height="242"/>
+                                                <rect key="frame" x="-5" y="0.0" width="65" height="242"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="6eX-U0-WMY"/>
                                                 </constraints>
@@ -649,10 +649,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EQa-MZ-AWG">
-                                        <rect key="frame" x="150" y="0.0" width="150" height="242"/>
+                                        <rect key="frame" x="-5" y="0.0" width="0.0" height="242"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top nutrition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK4-uT-jch">
-                                                <rect key="frame" x="-155" y="0.0" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="IBW-73-FU0"/>
                                                 </constraints>
@@ -660,19 +660,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily/Gram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hW4-AH-KJ2">
-                                                <rect key="frame" x="34" y="0.0" width="82" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="3" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYK-S1-WjD" userLabel="100%">
-                                                <rect key="frame" x="-155" y="0.0" width="0.0" height="3"/>
+                                                <rect key="frame" x="0.0" y="3" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                 <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQq-53-nrj" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="42.666666666666657" y="3" width="65" height="239"/>
+                                                <rect key="frame" x="0.0" y="3" width="65" height="239"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="zA1-cb-qbO"/>
                                                 </constraints>
@@ -688,10 +688,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ScT-Ks-bqH">
-                                        <rect key="frame" x="300" y="0.0" width="150" height="242"/>
+                                        <rect key="frame" x="-5" y="0.0" width="0.0" height="242"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top nutrition" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQ0-Bq-KH5">
-                                                <rect key="frame" x="-305" y="0.0" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="IPJ-tJ-Hfc"/>
                                                 </constraints>
@@ -699,19 +699,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily/Gram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqB-gq-vzb">
-                                                <rect key="frame" x="34" y="0.0" width="82" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="3" width="82" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di4-sn-bEf" userLabel="100%">
-                                                <rect key="frame" x="-305" y="0.0" width="0.0" height="3"/>
+                                                <rect key="frame" x="0.0" y="3" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                 <color key="textColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50l-9I-Rqm" customClass="PercentageBar" customModule="FoodSkout" customModuleProvider="target">
-                                                <rect key="frame" x="42.666666666666686" y="3" width="65" height="239"/>
+                                                <rect key="frame" x="0.0" y="3" width="65" height="239"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="d3p-ld-1nu"/>
                                                 </constraints>
